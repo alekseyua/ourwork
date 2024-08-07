@@ -1,0 +1,22 @@
+.wrapper{
+  //.wrapper__container{}
+  &__container{    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+  }
+  //.wrapper__container-body{}
+  &__container-body{
+    // &::after{
+    //   width: 1000vw;
+    //   height: 100%;
+    //   top: 0px;
+    //   content: '';
+    //   position: absolute;
+    //   z-index: -1;
+    //   background-color: var(--background-color);
+    //   left: -100%;
+    // }
+  }
+}

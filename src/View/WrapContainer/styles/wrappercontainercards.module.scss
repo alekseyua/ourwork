@@ -1,0 +1,24 @@
+.wrapper{
+  //.wrapper__container{}
+  &__container{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(auto, 1fr));
+    grid-gap: 10px;
+    filter: blur(var(--filter-blur));
+    pointer-events: var(--pointer-events);
+  }
+  //.wrapper__background-fone{}
+  &__background-fone{
+
+    &::after{
+      content: "";
+      position: fixed;
+      display: block;
+      width: 100vw;
+      height: 100%;
+      // left: 0;
+      // top: 0;
+      background: var(--background-color-block);
+    }
+  }
+}

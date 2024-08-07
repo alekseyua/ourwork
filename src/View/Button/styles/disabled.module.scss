@@ -1,0 +1,9 @@
+
+.button--disabled{
+    pointer-events: none;
+    background-color: var(--background-color-block-disabled) !important;
+    &:hover{
+      cursor: not-allowed;
+    }
+  }
+  

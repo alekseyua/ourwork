@@ -1,0 +1,16 @@
+.footer-menu{
+  //.footer-menu__container{}
+  &__container{
+    display: grid;
+    width: 100%;
+    grid-auto-flow: column;
+    justify-items: center;
+    justify-content: space-around;
+    position: relative;
+    //.footer-menu__container-item{}
+    &-item{
+      position: relative;
+       padding: 0;
+    }
+  }
+}

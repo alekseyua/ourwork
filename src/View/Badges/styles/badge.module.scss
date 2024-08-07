@@ -1,0 +1,12 @@
+.badge{
+  //.badge__container{}
+  &__container{
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    right: -3px;
+    top: -3px;
+    background-color: var(--background-color-icon-red);
+    border-radius: 50%;
+  }
+}

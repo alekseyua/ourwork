@@ -1,0 +1,151 @@
+
+.checkbox {
+  //.checkbox__auto-payment{}
+  &__auto-payment{
+    padding: 0;
+    & + label{
+      transform: scale(0.75) translate(-2px, -4px);
+    }
+  }
+  //.checkbox__container{}
+  &__container {
+    // width: 100%;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+    > label {  //??? нужно просмотреть чтобы ни чего не сломалось в других местах сделал для каталога
+        color: #000;
+        // pointer-events: all;
+    }
+  }
+
+  //.checkbox__label{}
+  &__label {
+    font-size: 16px;
+    // margin-left: 10px;
+    display: inline-block; // to make it easier to click
+    color: #c3c3c3;
+    cursor: pointer;
+    position: relative; // important    
+    display: flex;
+    align-items: center;
+
+    // Now we'll create the checkbox object    
+    span:last-child {
+      position: relative;
+      left: 10px;
+      border: none !important;
+      color: #000;
+    }
+    span:not(:last-child) {
+      top: 1px;
+      display: inline-block;
+      position: relative;
+      background-color: var(--background-color-fone-roze);
+      width: 20px; // width: 25px для круглого
+      height: 20px; // height: 25px для круглого
+      min-width: 20px;
+      transform-origin: center;
+      border: 1px solid var(--background-color-button-red);
+      border-radius: 5px;
+      // border-radius: 50%; // делает круглый 
+      vertical-align: -6px;
+      // margin-right: 10px;
+      transition: background-color 150ms 200ms, transform 350ms cubic-bezier(.78, -1.22, .17, 1.89); // custom ease effect for bouncy animation
+
+      // Now we'll create the "tick" using pseudo elements - those will be basically two lines that will be rotated to form the "tick"
+
+      &:before {
+        content: "";
+        width: 0px;
+        height: 1px;
+        border-radius: 2px; // so that the tick has nice rounded look
+        background: var(--bgc-fair-pink);
+        position: absolute;
+        transform: rotate(45deg);
+        top: 8px; // top: 13px; для круглого
+        left: 3px; // left: 9px; для круглого
+        transition: width 50ms ease 50ms;
+        transform-origin: 0% 0%;
+      }
+
+      &:after {
+        content: "";
+        width: 0;
+        height: 1px;
+        border-radius: 2px; // so that the tick has nice rounded look
+        background: var(--bgc-fair-pink);
+        position: absolute;
+        transform: rotate(305deg);
+        top: 13px; // top: 16px; для круглого
+        left: 8px; // left: 10px; для круглого
+        transition: width 50ms ease;
+        transform-origin: 0% 0%;
+      }
+    }
+  }
+}
+
+
+// input[type="checkbox"] {
+  //.type-checkbox{}
+.type-checkbox{
+  display: none; // hide the system checkbox
+
+  // Let's add some effects after the checkbox is checked
+
+  &:checked {
+    +label {
+      span:not(:last-child) {
+        background-color: var(--bgc-fair-pink);
+        // transform: scale(1.25); // enlarge the box
+        border: 1px solid var(--text-color-red);
+        min-width: 16px;
+        &:after {
+          width: 13px;
+          background: var(--text-color-red);
+          transition: width 150ms ease 100ms; // enlarge the tick
+        }
+
+        &:before {
+          width: 8px;
+          background: var(--text-color-red);
+          transition: width 150ms ease 100ms; // enlarge the tick
+        }
+      }
+
+      &:hover {
+
+        // copy the states for onMouseOver to avoid flickering
+        span:not(:last-child) {
+          background-color: var(--bgc-fair-pink);
+          // transform: scale(1.25); // enlarge the box
+
+          &:after {
+            width: 13px;
+            background: var(--text-color-red);
+            transition: width 150ms ease 100ms; // enlarge the tick
+          }
+
+          &:before {
+            width: 8px; 
+            background: var(--text-color-red);
+            transition: width 150ms ease 100ms; // enlarge the tick
+          }
+        }
+      }
+    }
+  }
+}
+
+.color-field {
+//.color-field__icon{}
+  &__icon {
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    border: 1px solid #333333;
+    margin-right: 6px;
+    display: block;
+  }
+}

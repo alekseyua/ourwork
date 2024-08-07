@@ -1,0 +1,13 @@
+.more{
+    //.more__button{}
+    &__button{
+        width: 100%;
+        height: 36px;
+        background-color: var(--background-color-button-red);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-color-white); 
+    }
+}

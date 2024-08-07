@@ -1,0 +1,86 @@
+.application{
+  //.application__container{}
+  &__container{
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 20px;
+    &:not(:last-child){
+      margin-bottom: 14px;
+    }
+    //.application__container-title{}
+    &-title{
+      border-radius: 5px;
+      padding: 13px 16px;
+      display: flex;
+      border: 1px solid var(--border-color);
+      justify-content: space-around;
+      align-items: center;
+      position: relative;
+      height: auto;
+      overflow: hidden;
+    }
+    //.application__container-item-title{}
+    &-item-title{
+      padding: 0;
+      flex: 33%;
+      text-wrap: balance;
+      line-height: 100%;
+      margin-left: 16px;
+      position: relative;
+      color: var(--text-color-opacity);
+      font-weight: 400;
+      font-family: 'HelveticaNeue';
+      font-size: 14px;
+      line-height: 18px;
+      &:not(:last-child){
+        &::after{
+          content: "";
+          width: 1px;
+          height: 100vh;
+          background-color: var(--border-color);
+          position: absolute;
+          right: 0;
+          top: -1000%;
+        }
+      }
+    }
+    //.application__container-description{}
+    &-description{
+      padding: 0px;
+    }
+    //.application__container-control-card{}
+    &-control-card{
+      padding: 0;
+      display: grid;
+
+      grid-template-columns: auto auto auto;
+      justify-items: start;
+      justify-content: space-between;
+    }
+    //.application__container-preload-images{}
+    &-preload-images{
+      display: grid;
+      gap: 8px;
+      grid-template-columns: repeat(4, auto);
+    }
+
+  }
+  &__item{
+    //.application__item-description{}
+    &-description{
+      padding: 0;
+      color: var(--text-color-opacity);
+      font-weight: 400;
+      font-family: 'HelveticaNeue';
+      font-size: 12px;
+      line-height: 18px;
+    }
+    //.application__item-preload-images{}
+    &-preload-images{
+      width: 64px;
+      height: 64px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+  }
+}

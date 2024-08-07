@@ -1,0 +1,129 @@
+.icon{
+  //.icon__rotation{}
+  &__rotation {
+    animation: cercl-rotate 2s linear infinite;
+  }
+  //.icon__bg-roze-38{}
+  &__bg-roze-38{
+    position: relative;
+    &::after{
+      content: '';
+      position: absolute;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgb(229 76 60 / 10%);
+      // background-color: var(--bgc-fair-pink);
+      // translate: -10px -10px;
+      // top: -12px;
+      // left: -13px;
+      transform: translate(-12px,-12px);
+      border-radius: 10px;
+    }
+
+  }
+  //.icon__bg-roze-38-checked{}
+  &__bg-roze-38-checked{
+    position: relative;
+    &::after{
+      content: '';
+      position: absolute;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgb(229 76 60 / 10%);
+      // background-color: var(--bgc-fair-pink);
+      // translate: -12px -12px;
+      // top: -10px;
+      // left: -10px;
+      transform: translate(-12px,-12px);
+      border-radius: 10px;
+    }
+  }
+  //.icon__bg-roze-38-checked-footer{}
+  &__bg-roze-38-checked-footer{
+    position: relative;
+    &::after{
+      content: '';
+      position: absolute;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgb(229 76 60 / 10%);
+      transform: translate(-11px,-10px);
+      border-radius: 10px;
+    }
+  }
+
+  //.icon__bg-dark-blue{}
+  &__bg-dark-blue{
+    position: relative;
+    &::after{
+      content: '';
+      position: absolute;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--background-color-dark-Nile-blue);
+      border-radius: 50%;
+      z-index: -1;
+      // top: -10px;
+      // left: -10px;
+      transform: translate(-11px,-9px);
+      // translate: -12px -12px;
+    }
+
+  }
+  //.icon__bg-dark-red{}
+  &__bg-dark-red{
+    position: relative;
+    &::after{
+      content: '';
+      position: absolute;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--background-color-button-red);
+      border-radius: 50%;
+      z-index: -1;
+      // top: -10px;
+      // left: -10px;
+      transform: translate(-11px,-9px);
+
+      // translate: -12px -12px;
+    }
+
+  }
+}
+
+@keyframes cercl-rotate {
+	0% {
+    transform: rotate(0deg);
+  }
+
+	25% {
+    transform: rotate(45deg);
+  }
+
+	50%  {
+    transform: rotate(90deg);
+  }
+	
+  75%  {
+    transform: rotate(135deg);
+  }
+
+	100% {
+    transform: rotate(180deg);
+	}
+}

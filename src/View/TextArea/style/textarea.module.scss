@@ -1,0 +1,80 @@
+
+.textarea{
+    //.textarea__container{}
+    &__container{
+        background-color: var(--background-color-block);
+        padding: 0;
+        min-height: 96px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        width: calc(100%);
+        margin: 0 auto;
+        border-color: var(--border-color);
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    //.textarea__label{}
+    &__label{
+        padding: 0;
+        position: absolute;
+        top: -15px;
+        font-size: 13px;
+        left: 10px;
+        color: var(--text-color);
+    }
+    //.textarea__textarea{}
+    &__textarea{
+        padding: 14px 14px;        
+        position: relative;
+        font-size: 14px;
+        letter-spacing: 0px;
+        width: calc(100% - 0px);
+        margin: 0 auto;  
+        color: var(--text-color);
+        font-feature-settings: 'case' on;
+        font-family: "HelveticaNeue";
+        font-style: normal;
+        font-weight: 400;
+        line-height: 18px; 
+
+        &::placeholder{
+            color: var(--placeholder-color);
+            font-size: 12px;
+            letter-spacing: 0px;
+            font-family: "HelveticaNeue";
+            font-style: normal;
+            font-weight: 400;
+            line-height: 18px;
+
+        }
+    }
+    //.textarea__help-text{}
+    &__help-text{
+        padding: 0;
+        position: absolute;
+        top: 91%;
+        right: 16px;
+        background: var(--background-color-block);
+        color: var(--red-color);
+    }
+    //.textarea-application-background{}
+    &-application-background{
+        background-color: var(--background-color-block);
+    }
+    //.textarea-application{}
+    &-application{        
+        //.textarea-application--anketa{}
+        &--anketa{
+            overflow: hidden;
+            margin-top: 0;
+            border-radius: 8px;
+        }
+    }
+}
+
+.feedback__textarea{
+    height: 88px;
+}

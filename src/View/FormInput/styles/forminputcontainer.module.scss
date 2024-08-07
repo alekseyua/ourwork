@@ -1,0 +1,9 @@
+.form-input{
+  //.form-input__container{}
+&__container{
+  padding: var(--padding-container);
+  transition: all .5s ease-in-out;  
+  background-color: transparent;
+  filter: blur(var(--filter-blur));
+}
+}

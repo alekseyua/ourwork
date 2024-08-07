@@ -1,0 +1,12 @@
+.btn_hide{
+    //.btn_hide__button{}
+    &__button{
+        width: 100%;
+        height: 36px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        color: var(--text-color); 
+    }
+}

@@ -1,0 +1,33 @@
+.favorite{
+  //.favorite__wrap-conrainer{}
+  &__wrap-conrainer{
+    width: 46px;
+    height: 46px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    background-color: var(--background-color-block);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  //.favorite__badge-favorite{}
+  &__badge-favorite{
+    width: 12px;
+    font-family: 'HelveticaNeue';
+    font-weight: 500;
+    height: 12px;
+    background-color: var(--background-color-button-red);
+    color: var(--text-color-white);
+    font-size: 8px;
+    display: flex;
+    line-height: 2px;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    border-radius: 50%;
+  }
+
+}
