@@ -1,16 +1,12 @@
 import qs from "query-string";
 import axios from 'axios';
-import { API_ENGINES_MARKET_REDIRECT, HOST, HOST_NEW } from "../helpers/config";
+import { HOST } from "../helpers/config";
 
 const Api = {
   hostname: "",
   get: async function (url, params, controller = null) {
     try {
-      if (url.includes(API_ENGINES_MARKET_REDIRECT)) {
-        this.hostname = HOST_NEW;
-      } else {
-        this.hostname = HOST;
-      }
+      this.hostname = HOST;
       const res = await axios(
         `${this.hostname}${url}?${qs.stringify(params)}`,
         {
@@ -30,11 +26,7 @@ const Api = {
     }
   },
   post: async function (url, params, config = {}) {
-    if (url.includes(API_ENGINES_MARKET_REDIRECT)) {
-      this.hostname = HOST_NEW;
-    } else {
-      this.hostname = HOST;
-    }
+    this.hostname = HOST;
     try {
       const res = await axios(`${this.hostname}${url}`, {
         method: "POST",
@@ -54,11 +46,7 @@ const Api = {
   },
 
   delete: async function (url, params) {
-    if (url.includes(API_ENGINES_MARKET_REDIRECT)) {
-      this.hostname = HOST_NEW;
-    } else {
-      this.hostname = HOST;
-    }
+    this.hostname = HOST;
     const res = await axios(`${this.hostname}${url}`, {
       method: "DELETE",
       withCredentials: true,

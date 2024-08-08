@@ -36,8 +36,8 @@ export default function IncominRequestsUnit({
   return (
     <WrapContainer>
       <Offset mt={15} />
-      <InfoBlockContainer message={message[currentTab]} />
-      <Offset mt={9} />
+      {/* <InfoBlockContainer message={message[currentTab]} />
+      <Offset mt={9} /> */}
       {resSelectCard[currentTab] && resSelectCard[currentTab]?.count ? (
         <>
           <CardFilterSelect

@@ -57,49 +57,10 @@ export default function WithRouter(Component) {
     }
 
     useEffect(() => {
-      if((getLocaleStore('lastPathForDetailCardMarket') === "/emirate_join" || getLocaleStore('lastPathForDetailCardMarket') === "/emirate_join/")) setLocaleStore("lastPathForDetailCardMarket", "");
-      if((getLocaleStore('lastPathForFiltersMarket') === "/emirate_join" || getLocaleStore('lastPathForFiltersMarket') === "/emirate_join/")) setLocaleStore('lastPathForFiltersMarket', "");
-      if((getLocaleStore(LASTURL) === "/emirate_join" || getLocaleStore(LASTURL) === "/emirate_join/")) setLocaleStore(LASTURL,'')
-      if((getLocaleStore(PREVURL) === "/emirate_join" || getLocaleStore(PREVURL) === "/emirate_join/")) setLocaleStore(PREVURL, "");
-      if (linkRedirectEmirate(pathname)) {
-        navigate('/')
-        openOnlyURl("https://t.me/zap_emirates", true, true, 700);
-        return;
-      }
       // Anything in here is fired on component mount.
-      dispatch(ACTION_GET_ACCESSES);
+      // dispatch(ACTION_GET_ACCESSES);
       saveLastPast(pathname);
-      const listOfExceptionRequestPage = ["/make-request/unit", "/make-request/spare", "/marketplace/info-card"];
-      if (!listOfExceptionRequestPage.includes(pathname)) {
-        dispatch(ACTION_RESET_LIST_PREPARE_PRODUCTS);
-        dispatch(ACTION_SET_VALUE_UNIT_SPARE_NULL);
-        setLocaleStore("oem", null);
-        setLocaleStore("optionsModel",null);
-        setLocaleStore("optionsGeneration", null);
-        setLocaleStore("isAddMultiData", null);
 
-      }
-      const listApplyResetFilters = ["/", "/make-request", "/marketplace/main"];
-      if (!!!getSessionStore("savePlaceLastLocationOpenCardMarket")) {
-        if (!statusResetFilters) {
-          statusResetFilters = true;
-          if (
-            listApplyResetFilters.includes(pathname) &&
-            getSessionStore("isFilterMarket")
-          ) {
-            funcDelay(
-              () =>
-                dispatch(ACTION_RESET_FILTER_INTO_MARKET, {
-                  callback: () => {
-                    console.log("okkkkkkkk");
-                  },
-                }),
-              200
-            );
-          }
-        }
-      }
-      getMarkPage({ pathname });
       initButtomApply({
         action: ACTION_SET_CONTROLL_BUTTON,
         dispatch,

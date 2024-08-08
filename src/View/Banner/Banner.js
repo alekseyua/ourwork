@@ -6,10 +6,8 @@ import 'swiper/scss';
 import 'swiper/scss/pagination';
 import 'swiper/scss/autoplay';
 import '../../styles/swiper-user-style.scss'
-import BannerContent from './Detali/BannerContent';
 import { Autoplay, Pagination } from 'swiper';
-import BannerContentContainer from './Detali/BannerContentContainer';
-import BannerChain from './BannerChain/BannerChain';
+
 
 export default function Banner({
   handlerChangeScreen
@@ -39,39 +37,18 @@ export default function Banner({
         }}
         modules={[Autoplay, Pagination]}
       >
-        {/* <SwiperSlide>
-          <BannerContent handlerChangeScreen={handlerChangeScreen} />
-        </SwiperSlide> */}
         <SwiperSlide>
-          <BannerChain handlerChangeScreen={handlerChangeScreen} />
-        </SwiperSlide>
-        {/* <SwiperSlide>
-          <BannerContentContainer>
+          <div
+            style={{
+              width: '99.9%',
+              height: '140px',
+              border: '1px solid var(--bg-item)',
+              backgroundColor: 'var(--bg-item)',
+              borderRadius: 10
+            }}
+          >this is new banner</div>
 
-            <div style={{
-              width: '100%',
-              height: 136,
-              padding: 25,
-              color: 'var(--text-color-white)'
-            }}>
-              Тут может быть Ваша реклама
-            </div>
-          </BannerContentContainer>
         </SwiperSlide>
-        <SwiperSlide><BannerContent /></SwiperSlide>
-        <SwiperSlide>
-          <BannerContentContainer>
-
-            <div style={{
-              width: '100%',
-              height: 136,
-              padding: 25,
-              color: 'var(--text-color-white)'
-            }}>
-              И здесь тоже
-            </div>
-          </BannerContentContainer>
-        </SwiperSlide> */}
       </Swiper>
     </BannerContainer>
   );

@@ -27,7 +27,7 @@ export default function BannerContent({
         />
       </BannerControllerContainer>
       <Icon
-        image={'https://botrazbor.ru/media/market/basket-shop.svg'}
+        image={'https://garsing.shop/media/market/basket-shop.svg'}
         width={ 138}
         height={138}
         style={{
@@ -38,7 +38,7 @@ export default function BannerContent({
       />
       {/* <Image
         source={{
-          uri: 'https://botrazbor.ru/media/market/basket-shop.svg'
+          uri: 'https://garsing.shop/media/market/basket-shop.svg'
         }}
         style={{
           width: 138,

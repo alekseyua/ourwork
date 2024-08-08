@@ -41,7 +41,7 @@ if( !list?.length) return;
                   .map((item, index) => (
                     <MenuItemContainer
                       style={{
-                        backgroundColor: hardColorBlockById?.length ? hardColorBlockById[index]?.id === index ? hardColorBlockById[index].colorBackground : 'var(--bgc-fair-pink)' : 'var(--bgc-fair-pink)',
+                        backgroundColor: hardColorBlockById?.length ? hardColorBlockById[index]?.id === index ? hardColorBlockById[index].colorBackground : 'var(--bg-item)' : 'var(--bg-item)',
                         // width: widthMobile - margin,
                         width: '100%',
                         height: item.height,
@@ -127,7 +127,7 @@ if( !list?.length) return;
                     return (
                       <MenuItemContainer
                         style={{
-                          backgroundColor: hardColorBlockById?.length ? hardColorBlockById[index]?.id === index ? hardColorBlockById[index].colorBackground : 'var(--bgc-fair-pink)' : 'var(--bgc-fair-pink)',
+                          backgroundColor: hardColorBlockById?.length ? hardColorBlockById[index]?.id === index ? hardColorBlockById[index].colorBackground : 'var(--bg-item)' : 'var(--bg-item)',
                           width: (widthMobile - 22) / 2,
                           height: 154,
                           filter: `blur(var(--filter-blur))`,

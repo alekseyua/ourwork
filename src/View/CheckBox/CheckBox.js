@@ -53,6 +53,7 @@ const CheckBox = ({
   value,
   label,
   style = {},
+  role,
   name,
   id,
   ...props
@@ -97,6 +98,7 @@ const CheckBox = ({
           <span style={{ backgroundColor: colorField }} className={styles['color-field__icon']}></span>
         ) : null
       }
+      <div className={styles['checkbox__container-trigger']}>
       <input
         key={name}
         onChange={() => { }} //чтобы не ругался реакт
@@ -106,6 +108,7 @@ const CheckBox = ({
         disabled={disabled}
         checked={checked}
         label={label}
+        role={role}
         name={name}//iAgreeDataProcessing   ----- name="check" 
         id={id}
         style={{
@@ -114,6 +117,14 @@ const CheckBox = ({
         value={value}
         {...props}
       />
+      {
+        role?
+        <span className={styles['checkbox__switch-state']}>
+        <span className={styles['checkbox__switch-container']}>
+          <span className={styles['checkbox__switch-position']}> </span>
+        </span>        
+      </span>
+      :
       <label
         htmlFor={id}
         className={classNameLabelCheckBox}
@@ -123,6 +134,7 @@ const CheckBox = ({
           {label}
         </span>
       </label>
+      }
 
       {
         helptext ?
@@ -141,6 +153,7 @@ const CheckBox = ({
             }}>{helptext}</span>
           : null
       }
+      </div>
       {children}
 
     </div>

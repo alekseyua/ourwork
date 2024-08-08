@@ -35,7 +35,7 @@ const ImageGalaryMP = ({
       <LazyLoadImage
         alt={'image.alt'}
         effect="blur"
-        src={ item?.image_urls?.length   && item?.image_urls[0]?.url ? item?.image_urls[0]?.url : 'https://botrazbor.ru/media/new/banners/motor_baner.png'}
+        src={ item?.image_urls?.length   && item?.image_urls[0]?.url ? item?.image_urls[0]?.url : 'https://garsing.shop/media/new/banners/motor_baner.png'}
         scrollPosition={scrollPosition}
         placeholderSrc={iconLightTheme}
         onClick={() => isClick && item?.image_urls?.length ?

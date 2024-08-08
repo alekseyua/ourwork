@@ -24,7 +24,7 @@ export default function CardReviewTop({
       <CardTopLeftBlock>
         <CardTopDecorBlock
           style={{
-            backgroundColor: item.rating_number === 1 ? 'var(--background-color-button-red)' : 'var(--bgc-fair-pink)'
+            backgroundColor: item.rating_number === 1 ? 'var(--background-color-button-red)' : 'var(--bg-item)'
           }}
         >
           {

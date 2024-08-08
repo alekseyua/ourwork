@@ -1,5 +1,5 @@
 import React from 'react'
-import MenuContainer from './Detali/MenuContainer'
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/scss';
 import 'swiper/scss/pagination';

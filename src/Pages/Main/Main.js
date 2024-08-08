@@ -21,8 +21,8 @@ const Main = ({
   return (
     <WrapRootContainer>
       <Offset mb={20} />
-      <Banner handlerChangeScreen={handlerChangeScreen} />
-      {/* <MenuSlider list={[...mainMenu]} handlerChangeScreen={handlerChangeScreen}/> */}
+      <Banner />
+      <Offset mb={20} />
       <MenuSliderContainer>
         <MenuSliderV2
           list={[...mainMenu]} 
@@ -30,35 +30,7 @@ const Main = ({
         />
       </MenuSliderContainer>
       <Offset mb={17} />
-      <HeaderTitleActionComponent
-        list={headerTitleCatalog}
-      />
-
-      <Offset mt={9} />
-      <MainCatalogMPComponent
-        isUpblock={true}
-      />
-      <Offset mt={38} />
-
-      <HeaderTitleActionComponent
-        list={headerTitleFAQ}
-      />
-      <Offset mt={10} />
-      <AccordionContainer
-        styleItem={{
-          paddingTop: '14px ',
-          paddingBottom: '14px ',
-          filter: `blur(var(--filter-blur))`,
-        }}
-        styleItemIcon={{
-          width: '14px',
-          height: '14px'
-        }}
-        list={listFAQ}
-      />
-      <Offset mt={24} />
-      <MainFeedbackComponent list={linksFeedback} />
-      {/* <Offset mt={16} /> */}
+    
     </WrapRootContainer>
   );
 };

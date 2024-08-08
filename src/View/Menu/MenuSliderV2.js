@@ -2,9 +2,7 @@ import React from 'react'
 import MenuContainer from './Detali/MenuContainer'
 import MenuItemContainer from './Detali/MenuItemContainer';
 import MenuItemTitle from './Detali/MenuItemTitle';
-import MenuItemIconContainer from './Detali/MenuItemIconContainer';
 import Icon from '../Icon/Icon';
-import MenuItemContainerIcons from './Detali/MenuItemContainerIcons';
 
 
 
@@ -20,8 +18,6 @@ function MenuSliderV2({
     <MenuContainer
       setMenuRef={setMenuRef}
       style={{
-        marginTop: 15,
-        // overflow: 'auto',
         filter: `blur(var(--filter-blur))`,
         gap: '15px'
       }}
@@ -43,21 +39,16 @@ function MenuSliderV2({
                 onClick={() => handlerChangeScreen({path: item.slug}) }
               >
                 <MenuItemTitle style={{ top: 15, left: 16 }}>{item.name}</MenuItemTitle>
-                <MenuItemContainerIcons
+                <Icon
+                  image={item.image}                     
                   style={{
-                    left: 10
+                    position: 'absolute',
+                    width: '90%',
+                    height: '90%',
+                    left: 8,
+                    top: 25
                   }}
-                >
-                  <MenuItemIconContainer
-                  style={{ top: -2, left: 6 }}
-                  >
-                    <Icon
-                      image={item.image}                     
-                      width={14}
-                      height={14}
-                    />
-                  </MenuItemIconContainer>
-                </MenuItemContainerIcons>
+                />
               </MenuItemContainer>
             )
           })

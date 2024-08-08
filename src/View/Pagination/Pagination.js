@@ -68,7 +68,7 @@ function Pagination({
                                         'transporent' 
                                       : +currentPage === +item ?
                                           'var(--background-color-icon-red)' 
-                                          : 'var(--bgc-fair-pink)'
+                                          : 'var(--bg-item)'
                                     }}>                                      
                                       {item}
                                     </PaginationItem>

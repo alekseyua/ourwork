@@ -14,6 +14,7 @@ const Footer = ({
   statusLoadingData,
   handlerChangeScreen,
 }) => {
+  console.log(listMenuFooter)
   return (
     <footer
       style={{
@@ -43,22 +44,20 @@ const Footer = ({
                       opacity: el.isActive ? 1 : 0.5,
                     }}
                     isFavorite={isFavorite}
-                    onClick={() => !statusLoadingData && handlerChangeScreen({ path: el.slug })}
+                    onClick={() => handlerChangeScreen({ path: el.slug })}
+                    // onClick={() => !statusLoadingData && handlerChangeScreen({ path: el.slug })}
                   >
                     <Icon
-                      image={idPage === +el.id ? el.image[0] : el.image[1]}
-                      height={18}
-                      width={18}
-                      addClass={
-                        el.id === 2
-                          ? idPage === +el.id
-                            ? "icon__bg-dark-red"
-                            : "icon__bg-dark-blue"
-                          : idPage === +el.id
-                          ? "icon__bg-roze-38-checked-footer"
-                          : ""
-                      }
+                      image={el.image}
+                      height={20}
+                      width={20}
+                      // addClass={
+                        // idPage === +el.id
+                        // ? "icon__bg-roze-38-checked-footer"
+                        // : "icon__bg-dark-red"
+                      // }
                     />
+                    <span className={styles["footer__menu-bottom-title"]}>{el.text}</span>
                     {isFavorite && el.id === 3 ? <BadgeFavoriteMenu /> : null}
                   </WrapItemFooterMenu>
                 );

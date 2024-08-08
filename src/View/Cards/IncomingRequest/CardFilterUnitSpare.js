@@ -69,6 +69,7 @@ export default function CardFilterUnitSpare({
           >
             <CheckBox
               checked={card?.status_unit?.status}
+              role="switch"
               disabled={
                 statusLoadingData
                   ? statusLoadingData
@@ -115,6 +116,7 @@ export default function CardFilterUnitSpare({
           >
             <CheckBox
               checked={card?.status_spare?.status}
+              role="switch"
               disabled={
                 statusLoadingData
                   ? statusLoadingData

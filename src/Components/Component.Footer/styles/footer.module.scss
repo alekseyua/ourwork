@@ -1,4 +1,9 @@
 .footer{
+    //footer__menu-bottom-title
+    &__menu-bottom-title{
+        color: var(--text-color-white);
+        font-size: 12px;
+    }
     //.footer__list-container{}
     &__list-container{
         display: flex;
@@ -111,7 +116,7 @@
         bottom: 0;
         width: 100%;
         z-index: 9998;
-        background-color: var(--background-color-block);
+        background-color: var(--bg-menu-bottom);
         padding: 0 15px;
         box-shadow: 1px 1px 10px #000000a1;
 

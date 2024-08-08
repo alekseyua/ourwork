@@ -7,7 +7,9 @@ import {
   unicArrayFilters,
 } from "../../helpers/helpers";
 import {
-  API_GET_FILTER,
+  API_GET_FILTER_BRANDS,
+  API_GET_FILTER_GENERATION,
+  API_GET_FILTER_MODELS,
   API_SET_FILTER,
   DEFAULT_PAGE_SIZE_INCOMING_REQUEST,
 } from "../../helpers/config";
@@ -415,7 +417,7 @@ export const filtersIncominRequest = (store) => {
         page_size: data?.page_size ?? DEFAULT_PAGE_SIZE_INCOMING_REQUEST,
         // page: data?.page ?? currentPageBrandFilter,
         page: data?.page ?? getSessionStore("currentPageFilters") ?? 1,
-        url: API_GET_FILTER,
+        url: +data.current_tab === 0? API_GET_FILTER_BRANDS : +data.current_tab === 1? API_GET_FILTER_MODELS : API_GET_FILTER_GENERATION,
         abortController: data?.abortControllerFilter,
         dataRequst: (res) => {
           if (res === undefined) return;

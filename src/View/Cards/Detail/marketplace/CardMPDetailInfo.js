@@ -33,7 +33,7 @@ const CardMPDetailInfo = ({
   return (
     <>
       <ViewsImage
-        images={item?.image_urls?.length && item?.image_urls.length ? item?.image_urls : [{ url: 'https://botrazbor.ru/media/new/banners/motor_baner.png' }]}
+        images={item?.image_urls?.length && item?.image_urls.length ? item?.image_urls : [{ url: 'https://garsing.shop/media/new/banners/motor_baner.png' }]}
         fullscreenCard={true}
       />
       {

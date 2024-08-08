@@ -1,13 +1,11 @@
 import { Dimensions } from "react-native-web";
-import { arrowRightWhite, chat, createRequestDefault, editMarket, engine, fileAdditionOne, fix_bugs, help, homeFooterActive, homeFooterDefault, incomingSetting, 
+import { arrowRightWhite, chat, createRequestDefault, editMarket, engine, fileAdditionOne, filter, filterWhite, fix_bugs, help, home, homeFooterActive, homeFooterDefault, incomingSetting, 
   marketFooterActive, marketFooterDefault, piston, play, plusDarkBlue, profileFooterActive, profileFooterDefault, rowVertical, securityUser, shieldTick, shoppingCart, 
   starFooterActive, starFooterDefault, starStrokeWhite, starmenu, unitTurbo } from "../images";
 
 const width = Dimensions.get('window').width;
-// export const HOST_NEW = 'https://botrazbor.ru/telegram';
 //  hosting
-export const HOST_NEW = 'https://razbor-market.ru';
-export const HOST = 'https://botrazbor.ru';
+export const HOST = 'https://garsing.shop/api/v1';
 
 export const GET_DATA_ACCESS = '/subscription/api_get_page/'; //'/subscription/api_get_page_access/';
 export const API_DISMISS = "/telegram/api_change_status_popup_phone/"; 
@@ -15,10 +13,13 @@ export const API_DISMISS = "/telegram/api_change_status_popup_phone/";
 export const API_GET_PAGE = '/telegram/api_get_page/';
 export const API_GET_CARS = '/telegram/api_get_cars/';
 // incomin filters
-export const API_SET_FILTER = '/telegram/api_set_filters_v3/';
+
+export const API_SET_FILTER = '/subscription/filters/';
 export const API_SEARCH_FILTER = '/telegram/api_search_filters_v2/';
 export const API_SEARCH_FILTERS = '/telegram/api_search_filters/';
-export const API_GET_FILTER = '/telegram/api_get_filters_v3/';
+export const API_GET_FILTER_BRANDS = '/subscription/filters/get_filters_brands/';
+export const API_GET_FILTER_MODELS = '/subscription/filters/get_filters_models/';
+export const API_GET_FILTER_GENERATION = '/subscription/filters/get_filters_generations/';
 // requests
 export const API_GET_COUNTRIES = '/telegram/api_get_countrys/';
 export const API_GET_REQUEST_BY_TYPE = '/telegram/api_get_requests_by_type/';
@@ -109,21 +110,21 @@ export const FEEDBACK = '/feedback'
 export const FEEDBACK_GET_MANY_FOR_IDEA = '/feedback-get-money-for-idea';
 export const FIXEDS_BUGS = '/fixed-bugs';
 
-{/* **********************ФИЛЬТРЫ -> Входящие заявки ****************** */ }
+{/* **********************ФИЛЬТРЫ -> Фильтра ****************** */ }
 export const INCOMING_REQUEST_MENU = '/filters';
 export const INCOMING_REQUEST_UNIT_SPARE = '/filters/unit-spare';
 export const INCOMING_REQUEST_INFO_SETTING = '/filters/info-setting';
 export const INCOMING_REQUEST_TRUCK = '/filters/truck';
 export const INCOMING_REQUEST_RESPAIR = '/filters/respair';
 export const INCOMING_REQUEST_TRANSPORT = '/filters/transport';
-{/* *****************РЕЙТИНГ И ОТЗЫВЫ*********************** */ }
+{/* *****************Рейтинг*********************** */ }
 export const REITING_MENU = '/rating';
 export const REITING_FULL_INFO = '/rating/full-info';
 export const REITING_CREATE = '/rating/create-rating';
 export const REITING_WARRANT_ADMIN = '/rating/garant-admin';
 export const REITING_WARRANT_MEMBER = '/rating/garant-members';
 
-{/* *****************СОЗДАТЬ ЗАПРОС*********************** */ }
+{/* *****************Ищу (создать запрос)*********************** */ }
 export const MAKE_REQUEST_MENU = '/make-request';
 export const MAKE_REQUEST_UNIT = '/make-request/unit';
 export const MAKE_REQUEST_SPARE = '/make-request/spare';
@@ -162,10 +163,21 @@ export const ONE_CARD_CHAIN_MOTOR = '/card-china-motors'
 
 export const menuTop = [
   {
-    name: "Создать запрос",
+    name: "Фильтра",
+    slug: INCOMING_REQUEST_UNIT_SPARE,
+    id: 8,
+    text: "Фильтра",
+    image: filter,
+    type: "page_filters",
+    url: null,
+    isActive: true,
+    isFooter: false,
+  },
+  {
+    name: "Ищу (создать запрос)",
     slug: MAKE_REQUEST_MENU,
     id: 2,
-    text: "Создать запрос",
+    text: "Ищу (создать запрос)",
     image: createRequestDefault,
     type: "page_make_requests",
     url: null,
@@ -173,40 +185,7 @@ export const menuTop = [
     isFooter: false,
   },
   {
-    name: "Входящие заявки",
-    slug: INCOMING_REQUEST_MENU,
-    id: 8,
-    text: "Входящие заявки",
-    image: incomingSetting,
-    type: "page_filters",
-    url: null,
-    isActive: true,
-    isFooter: false,
-  },
-  {
-    name: "Совместные закупки",
-    slug: "https://t.me/zap_emirates",
-    id: 6,
-    text: "Совместные закупки",
-    image: shoppingCart,
-    type: "page_emirates",
-    url: null,
-    isActive: true,
-    isFooter: false,
-  },
-  {
-    name: "Разместить авто на продажу",
-    slug: CAR_SALE,
-    id: 10,
-    text: "продажа авто",
-    image: shoppingCart,
-    type: "page_sell_auto",
-    url: null,
-    isActive: true,
-    isFooter: false,
-  },
-  {
-    name: "Рейтинг и отзывы",
+    name: "Рейтинг",
     slug: REITING_MENU,
     id: 9,
     text: "Рейтинг",
@@ -217,18 +196,41 @@ export const menuTop = [
     isFooter: false,
   },
 ];
+
 export const menuFooter = [
   {
     "name": "",
     "slug": ROOT,
     "id": 1,
-    "text": "Main",
-    "image": [homeFooterActive, homeFooterDefault],
+    "text": "Главная",
+    "image": home,
     "type": "page_main",
     "url": null,
     isActive: true,
     isFooter: true,
   },
+  {
+    name: "Фильтра",
+    slug: INCOMING_REQUEST_UNIT_SPARE,
+    id: 8,
+    text: "Фильтра",
+    image: filterWhite,
+    type: "page_filters",
+    url: null,
+    isActive: true,
+    isFooter: true,
+  },
+  {
+    "name": "Ищу (создать запрос)",
+    "slug": MAKE_REQUEST_MENU,
+    "id": 2,
+    "text": "Ищу (создать запрос)",
+    "image": [createRequestDefault, createRequestDefault],
+    "type": "page_make_requests",
+    "url": null,
+    isActive: true,
+    isFooter: true,
+  }, 
   {
     "name": "Рейтинг",
     "slug": REITING_MENU,
@@ -240,39 +242,7 @@ export const menuFooter = [
     isActive: true,
     isFooter: true,
   },
-  {
-    "name": "Создать запрос",
-    "slug": MAKE_REQUEST_MENU,
-    "id": 2,
-    "text": "Создать запрос",
-    "image": [createRequestDefault, createRequestDefault],
-    "type": "page_make_requests",
-    "url": null,
-    isActive: true,
-    isFooter: true,
-  },
-  {
-    "name": "Маркет",
-    "slug": MARKETPLACE_MAIN,
-    "id": 3,
-    "text": "Маркет",
-    "image": [marketFooterActive, marketFooterDefault],
-    "type": "page_market",
-    "url": null,    
-    isActive: true,
-    isFooter: true,
-  },
-  {
-    "name": "Профиль",
-    "slug": PROFILE_MENU,
-    "id": 4,
-    "text": "Профиль",
-    "image": [profileFooterActive, profileFooterDefault],
-    "type": "page_profile",
-    "url": null,
-    isActive: true,
-    isFooter: true,
-  },
+  
 ]
 
 export const menuRequests = [
