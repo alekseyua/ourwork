@@ -58,7 +58,7 @@ export default function WithRouter(Component) {
 
     useEffect(() => {
       // Anything in here is fired on component mount.
-      // dispatch(ACTION_GET_ACCESSES);
+      dispatch(ACTION_GET_ACCESSES);
       saveLastPast(pathname);
 
       initButtomApply({

@@ -65,7 +65,9 @@ export const initDataParamsPost = (params) => {
   const first_name = user?.first_name;
   const last_name = user?.last_name;
   const username = user?.username;
+  const user_id = getLocaleStore('user_id');
 
+  user_id !== undefined && fd.set("user_id", user_id);
   telegram_id !== undefined && fd.set("telegram_id", telegram_id);
   first_name !== undefined && fd.set("first_name", first_name);
   last_name !== undefined && fd.set("last_name", last_name);
@@ -440,32 +442,36 @@ export const initDataParamsPostOrGet = (params) => {
   const last_name = user?.last_name;
   const username = user?.username;
   // const username = getLocaleStore(USERNAME)? getLocaleStore(USERNAME) : user?.username;
-
+  const user_id = getLocaleStore('user_id');
+  user_id !== undefined &&  (params = { ...params, "user_id": user_id});
+  console.log({user_id})
   telegram_id !== undefined &&
     (params = { ...params, telegram_id: telegram_id });
-  first_name !== undefined && (params = { ...params, first_name: first_name });
-  last_name !== undefined && (params = { ...params, last_name: last_name });
-  username !== undefined && (params = { ...params, username: username });
-  start_param && (params = { ...params, blogger_code: start_param });
+  // first_name !== undefined && (params = { ...params, first_name: first_name });
+  // last_name !== undefined && (params = { ...params, last_name: last_name });
+  // username !== undefined && (params = { ...params, username: username });
+  // start_param && (params = { ...params, blogger_code: start_param });
   // console.log({username})
   let newParams = {};
-  if (!!id_request_info) {
-    newParams = { ...newParams, request_id: id_request_info };
-  }
-  if (!!id_user_info) {
-    newParams = { ...newParams, id_user: id_user_info };
-  }
+  // if (!!id_request_info) {
+  //   newParams = { ...newParams, request_id: id_request_info };
+  // }
+  // if (!!id_user_info) {
+  //   newParams = { ...newParams, id_user: id_user_info };
+  // }
 
-  if (params?.user_id) {
-    newParams = { ...newParams, user_id: params?.user_id };
-  }
+  // if (params?.user_id) {
+  //   newParams = { ...newParams, user_id: params?.user_id };
+  // }
   // delete params['lowHigh'];
   const listExcept = [
     "current_tab",
     "abortController",
     "blockButtonActive",
     "lowHigh",
+    'blockButtonDisabled',
   ];
+  console.log({params})
   for (let key in params) {
     if (
       params[key] === undefined ||

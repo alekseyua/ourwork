@@ -19,22 +19,11 @@ import CarSellComponent from "../Pages/CarSell/SpareRequest/CarSellComponent";
 import BackgroundPreloader from "../View/Preloaders/BackgroundPreloader";
 import OwnRequestEditComponent from "../Pages/Requests/OwnRequestEdit/OwnRequestEditComponent";
 import FixBugsContainer from "../Pages/FixBugs/FixBugsContainer";
-import CatalogchainMotorsContainer from "../Pages/CatalogchainMotors/CatalogchainMotorsContainer";
-import DetaliCardsMotorChainContainer from "../Pages/CatalogchainMotors/DetaliCardsMotorChain/DetaliCardsMotorChainContainer";
 
 const Layout = React.lazy(() => import("../Pages/Layuot/Layout"));
 const Main = React.lazy(() => import("../Pages/Main/MainComponent"));
 
 const FeedbackGetMonyForIdeaComponent = React.lazy(() => import("../Components/FeedbackSections/FeedbackGetMonyForIdeaComponent"));
-
-const MarketPlaceContainer = React.lazy(() => import("../Pages/MarketPlace/MarketPlaceContainer"));
-const MyFavoriteContainer = React.lazy(() => import("../Pages/MarketPlace/MyFavorite/MyFavoriteContainer"));
-const FiltersContainer = React.lazy(() => import("../View/Filters/FiltersContainer"));
-const CreateCardMarketPlaceContainer = React.lazy(() => import("../Pages/MarketPlace/CreateCardMarketPlace/CreateCardMarketPlaceContainer"));
-const DetailsCardsMPContainer = React.lazy(() => import("../Pages/MarketPlace/DetailsCardsMP/DetailCardsMPContainer"));
-const EditCardMarketPlaceContainer = React.lazy(() => import("../Pages/MarketPlace/EditCardMarketPlace/EditCardMarketPlaceContainer"));
-const AddFileMarketPlace = React.lazy(() => import("../Components/Component.CreateMarket/Component.AddFileMarketPlace"));
-const MyMarketplacePageContainer = React.lazy(() => import("../Pages/MarketPlace/MyMarketPlace/MyMarketplacePageContainer"));
 // ******************************************************************
 const ProfileContainer = React.lazy(() => import("../Pages/Profile/ProfileContainer"));
 const SubscribeContainer = React.lazy(() => import("../Pages/Profile/Subscribe/SubscribeContainer"));
@@ -86,16 +75,6 @@ export const router = createBrowserRouter(
                         {/* <Route path={FEEDBACK_GET_MANY_FOR_IDEA} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><FeedbackGetMonyForIdeaComponent /></ErrorHandler></Suspense>} />
                         <Route path={FIXEDS_BUGS} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><FixBugsContainer /></ErrorHandler></Suspense>} /> */}
 
-                        {/* ******************"Маркет"********************** */}
-                        {/* <Route path={MARKETPLACE_MAIN} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><MarketPlaceContainer /></ErrorHandler></Suspense>} />
-                        <Route path={MARKETPLACE_FAVORITE} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><MyFavoriteContainer /></ErrorHandler></Suspense>} />
-                        <Route path={MARKETPLACE_FILTER} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><FiltersContainer /></ErrorHandler></Suspense>} />
-                        <Route path={MARKETPLACE_DETAILY_CARD} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><DetailsCardsMPContainer /></ErrorHandler></Suspense>} />
-                        <Route path={MARKETPLACE_ADD_CARDS_FROM_FILE} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><AddFileMarketPlace /></ErrorHandler></Suspense>} />
-                        <Route path={MARKETPLACE_OWN_CARDS} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><MyMarketplacePageContainer /></ErrorHandler></Suspense>} />
-                        <Route path={MARKETPLACE_CREATE_CARD} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><CreateCardMarketPlaceContainer /></ErrorHandler></Suspense>} />
-                        <Route path={`${MARKETPLACE_EDIT_OWN_CARD}/:id`} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><EditCardMarketPlaceContainer /></ErrorHandler></Suspense>} /> */}
-
                         {/* ******************Профиль и Информация********************** */}
                 
                         {/* <Route path={PROFILE_MENU} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><ProfileContainer /></ErrorHandler></Suspense>} /> // Профиль  +
@@ -122,10 +101,7 @@ export const router = createBrowserRouter(
                         <Route path={REITING_WARRANT_MEMBER} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><RaitingAndReviewWarrantlyForMembersComponent /></ErrorHandler></Suspense>} /> //Наши гаранты участники +
                         {/* *****************продажа авто*********************** */}
                         {/* <Route path={CAR_SALE} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><CarSellComponent /></ErrorHandler></Suspense>} /> //продажа авто */}
-                        {/* *****************Китайские моторы*********************** */}
-                        {/* <Route path={CHAIN_MOTORS} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><CatalogchainMotorsContainer /></ErrorHandler></Suspense>} /> //список маторов из китая
-                        <Route path={ONE_CARD_CHAIN_MOTOR} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><DetaliCardsMotorChainContainer/></ErrorHandler></Suspense>} /> //развернутая карточка мотор из китая */}
-                        
+                   
                         <Route path="*" element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><Main /></ErrorHandler></Suspense>} />
                 </Route>
         )

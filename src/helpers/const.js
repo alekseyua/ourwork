@@ -137,7 +137,7 @@ export async function saveLastPast(pathname) {
 
 export const getMarkPage = ({ pathname }) => {
   document.querySelector("body").style.setProperty("overflow", "auto");
-  document.documentElement.style.setProperty("--filter-blur", `0px`);
+  document.documentElement.style.setProperty("--filter-blur", `unset`);
   document.documentElement.style.setProperty(
     "--margin-bottom-isselect",
     `35px`

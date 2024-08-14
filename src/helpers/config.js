@@ -7,7 +7,8 @@ const width = Dimensions.get('window').width;
 //  hosting
 export const HOST = 'https://garsing.shop/api/v1';
 
-export const GET_DATA_ACCESS = '/subscription/api_get_page/'; //'/subscription/api_get_page_access/';
+// export const GET_DATA_ACCESS = '/subscription/api_get_page/'; //'/subscription/api_get_page_access/';
+export const GET_DATA_ACCESS = '/telegram/user/get_user/'; //'/subscription/api_get_page_access/';
 export const API_DISMISS = "/telegram/api_change_status_popup_phone/"; 
 
 export const API_GET_PAGE = '/telegram/api_get_page/';

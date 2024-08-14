@@ -1,5 +1,6 @@
 import { API_DISMISS, GET_DATA_ACCESS, MARKETPLACE_EDIT_OWN_CARD, REITING_FULL_INFO } from "../../helpers/config";
 import { handlerAccessResponse, handlerSharePhone } from "../../helpers/helpers";
+import { setLocaleStore } from "../../helpers/utils";
 import { ACTION_GET, ACTION_POST, _INIT } from "../api-store/getpage"
 
 export const ACTION_SET_DATA_ACCESS = 'setDataAccess';
@@ -31,7 +32,8 @@ export const access = store => {
 
         const isWarning = handlerAccessResponse(res, dispatch);
         if (isWarning) return;
-        handlerSharePhone(res, dispatch);
+        // handlerSharePhone(res, dispatch);
+        setLocaleStore('user_id',res.id)
         dispatch(ACTION_SET_DATA_ACCESS, res)
       }
     }
