@@ -88,19 +88,19 @@ class IncominRequestsUnitContainer extends PureComponent {
       pathBackButton: () => this.comebackPrevFilters(-1),
     });
 
-    this.props.dispatch(ACTION_SET_BUTTON_HEADER_ACTION, {
-      isVisible: true,
-      buttons: [
-        {
-          action: () =>
-            this.handlerChangeScreen({ path: INCOMING_REQUEST_INFO_SETTING }),
-          iconLeft: help,
-          styleIconsLeft: { height: 12 },
-          title: "Как настроить?",
-          className: "button__controll--roze",
-        },
-      ],
-    });
+    // this.props.dispatch(ACTION_SET_BUTTON_HEADER_ACTION, {
+    //   isVisible: true,
+    //   buttons: [
+    //     {
+    //       action: () =>
+    //         this.handlerChangeScreen({ path: INCOMING_REQUEST_INFO_SETTING }),
+    //       iconLeft: help,
+    //       styleIconsLeft: { height: 12 },
+    //       title: "Как настроить?",
+    //       className: "button__controll--roze",
+    //     },
+    //   ],
+    // });
     this.setState((state) => ({
       ...state,
       loadCatalog: true,

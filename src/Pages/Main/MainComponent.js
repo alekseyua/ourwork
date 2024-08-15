@@ -28,26 +28,18 @@ class MainComponent extends React.PureComponent {
     });
     window.performance.mark('mark_fully_loaded');
 
-    this.props.dispatch(ACTION_SET_BUTTON_HEADER_ACTION, {
-      isVisible: true,
-      buttons: [
-        {
-          action: () => this.handlerChangeScreen({ path: MAKE_REQUEST_MENU }),
-          iconLeft: plus,
-          styleIconsLeft: { height: 12 },
-          title: 'Создать запрос',
-          className: 'button__controll--red'
-        },
-        {
-          action: () => this.handlerChangeScreen({ path: PROFILE_MENU }),
-          iconLeft: userWhite,
-          styleIconsLeft: { height: 12 },
-          style: { marginLeft: 10 },
-          title: '',
-          className: 'button__header-profile'
-        }
-      ]
-    })
+    // this.props.dispatch(ACTION_SET_BUTTON_HEADER_ACTION, {
+    //   isVisible: true,
+    //   buttons: [
+    //     {
+    //       action: () => this.handlerChangeScreen({ path: MAKE_REQUEST_MENU }),
+    //       iconLeft: plus,
+    //       styleIconsLeft: { height: 12 },
+    //       title: 'Создать запрос',
+    //       className: 'button__controll--red'
+    //     },
+    //   ]
+    // })
   }
 
   handlerChangeScreen = ({ path }) => {

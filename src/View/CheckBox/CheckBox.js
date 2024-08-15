@@ -141,7 +141,7 @@ const CheckBox = ({
           <span
             style={{
               paddingLeft: 27,
-              left: -20,
+              left: -10,
               pointerEvents: disabled ? 'none' : 'all',
               color: `var(--text-color)`,
               position: 'relative',
