@@ -470,7 +470,6 @@ const UnitSpareRequest = ({
                   onChange={(phone) => {
                     console.log({ phone });
                     setFieldValue("phone_number", phone);
-
                     if (phone?.length === 2) {
                       handlerChangeDataValues({
                         phone_number: null,
