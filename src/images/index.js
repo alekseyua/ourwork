@@ -17,12 +17,20 @@ import fog from './baner/fog.svg'
 import test from './baner/test.jpg'
 import play from './play_icon.svg';
 import createRequestDefault from './icon/create-request.svg';
-import starmenu from './icon/review.svg';
+import createRequestWhite from './icon/create-request-white.svg';
+import starmenu from './icon/review-like.svg';
+import starmenuWhite from './icon/review-like-white.svg';
+import sellCarWhite from './icon/sell-car-white.svg';
+import sellCar from './icon/sell-car.svg';
 
 import engine from './icon/engine-motor-2.svg'
 import piston from './icon/piston-motor.svg'
 
+import carSell from './icon/car-sales.svg';
+import carSpareSell from './icon/car-accident.svg';
 
+import securityUser from './icon/agreement-bussiness.svg'
+import shieldTick from './icon/signing-the-contract.svg'
 
 
 const help = 'https://garsing.shop/media/market/help.svg';
@@ -52,7 +60,6 @@ const chatCheck = 'https://garsing.shop/media/market/chat-check.svg';
 const settingRed = 'https://garsing.shop/media/market/setting-red.svg';
 const bascketRed = 'https://garsing.shop/media/market/bascket-red.svg';
 const arrowRight = 'https://garsing.shop/media/market/arrowRight.svg';
-const shieldTick = 'https://garsing.shop/media/market/shield-tick.svg';
 const heardBlack = 'https://garsing.shop/media/market/heard-black.svg';
 const docSuccess = 'https://garsing.shop/media/market/doc-success.svg';
 const editMarket = 'https://garsing.shop/media/market/edit-market.svg';
@@ -67,7 +74,6 @@ const actionSquer = 'https://garsing.shop/media/market/action-squer.svg';
 const plusDarkBlue = 'https://garsing.shop/media/market/plus-dark-blue.svg';
 const settingThree = 'https://garsing.shop/media/market/setting-three.svg';
 const settingWhite = 'https://garsing.shop/media/market/setting-white.svg';
-const securityUser = 'https://garsing.shop/media/market/security-user.svg';
 const shoppingCart = 'https://garsing.shop/media/market/shopping-cart.svg';
 const bascketWhite = 'https://garsing.shop/media/market/bascket-white.svg';
 const fakeImageFile = 'https://garsing.shop/media/market/fake-image-file.svg';
@@ -97,8 +103,15 @@ export {
   filter,
   filterWhite,
   home,
-
-
+  createRequestWhite,
+  starmenu,
+  starmenuWhite,
+  sellCarWhite,
+  sellCar,
+  carSell,
+  carSpareSell,
+  shieldTick,
+  securityUser,
 
 
     aggrigate,
@@ -133,7 +146,6 @@ export {
     crossRed,
     twoCloud,
     location,
-    starmenu,
     userWhite,
     arrowDown,
     myRequest,
@@ -144,7 +156,6 @@ export {
     settingRed,
     bascketRed,
     arrowRight,
-    shieldTick,
     heardBlack,
     docSuccess,
     editMarket,
@@ -159,7 +170,6 @@ export {
     plusDarkBlue,
     settingThree,
     settingWhite,
-    securityUser,
     shoppingCart,
     bascketWhite,
     fakeImageFile,

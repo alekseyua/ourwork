@@ -95,25 +95,6 @@ class UnitRequestComponent extends Component {
         this.props.dispatch(ACTION_SET_CONTROLL_BUTTON, { show: true });
   }
 
-  deleteClasses = (id, values, setFieldValue) => {
-    setFieldValue(
-      "classes",
-      values.classes.filter((el, i) => i !== id)
-    );
-    this.handlerChangeDataValues({
-      ...values,
-      classes: values.classes.filter((el, i) => i !== id),
-    });
-    if (values.classes.filter((el, i) => i !== id).length === 0) {
-      setFieldValue("model_id", "");
-      setFieldValue("generation_id", "");
-      setLocaleStore("isAddMultiData", true);
-      this.setState((state) => ({
-        ...state,
-        isAddMultiData: true,
-      }));
-    }
-  };
   componentDidUpdate(prevProps, prevState) {
     if (
       prevProps?.valuesUnitSpare?.classes?.length !==

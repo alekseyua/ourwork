@@ -7,7 +7,7 @@ const phoneRegExp2 = /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/;
 export const createMarket = (message) =>
   object().shape({
     title: string()
-      .trim()
+      // .trim()
       .nonNullable()
       .min(3, message.title.shot)
       .max(100, message.title.long)
@@ -45,8 +45,8 @@ export const createMarket = (message) =>
 
 export const aggrigateSchema = (message) =>
   object().shape({
-    brand_id: string().trim().required(message.brand_id.required),
-    model_id: string().trim().required(message.model_id.required),
+    brand_id: string().required(message.brand_id.required),
+    model_id: string().required(message.model_id.required),
     // model_id: array().test(
     //   "model-error",
     //   message.brand_id.required,
@@ -55,9 +55,8 @@ export const aggrigateSchema = (message) =>
     //     return false;
     //   }
     // ),
-    generation_id: string().trim().required(message.generation_id.required),
+    generation_id: string().required(message.generation_id.required),
     text: string()
-      .trim()
       .min(3, message.text.shot)
       .max(700, message.text.long)
       .required(message.text.required),

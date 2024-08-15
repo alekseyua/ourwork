@@ -154,7 +154,6 @@ export const setDataButtonBottonTrigger = ({
  * @param {callback data from request} callback
  * @returns
  */
-let prevClassesForEdit = [];
 export const activeButtonBootomForConfirm = (
   values,
   action,
@@ -162,11 +161,7 @@ export const activeButtonBootomForConfirm = (
   status_user,
 ) => {
   const checkValueCondition = (values, tg, action) => {
-    if (action === "edit_unit" || action === "edit_spare") {
-      if (!values?.brand_id && values?.classes?.length) {
-        prevClassesForEdit = values.classes;
-      }
-    }
+
     switch (action) {
       case "sell-car":
         return values.text && values.image.length;
@@ -237,18 +232,16 @@ export const activeButtonBootomForConfirm = (
       case "text":
         return !!values.text;
       case "unit_spare":
-        console.log(prevClassesForEdit, " = ", values);
         if (status_user === 1){
           return !!(
             !!values?.text?.length &&
             values?.brand_id &&
-            values?.classes.length && values?.phone_number
+            values?.phone_number
           );
         }
           return !!(
             !!values?.text?.length &&
-            values?.brand_id &&
-            values?.classes.length
+            values?.brand_id
           );
       case "edit_unit":
         const status_edit_unit =
@@ -256,9 +249,6 @@ export const activeButtonBootomForConfirm = (
           values?.generation_id ||
           values?.image?.length ||
           values?.delete_request_images?.length;
-        if (values?.classes?.length) {
-          prevClassesForEdit = values?.classes.length;
-        }
         return status_edit_unit;
       case "edit_spare":
         const status_edit_spare =
@@ -266,9 +256,6 @@ export const activeButtonBootomForConfirm = (
           values?.generation_id ||
           values?.image?.length ||
           values?.delete_request_images?.length;
-        if (values?.classes?.length) {
-          prevClassesForEdit = values?.classes.length;
-        }
         return status_edit_spare;
 
       case "edit_truck":

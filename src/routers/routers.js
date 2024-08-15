@@ -13,12 +13,14 @@ import { MARKETPLACE_ADD_CARDS_FROM_FILE, MARKETPLACE_CREATE_CARD, MARKETPLACE_D
         MAKE_REQUEST_OWN_EDIT_REQUEST,
         FIXEDS_BUGS,
         CHAIN_MOTORS,
-        ONE_CARD_CHAIN_MOTOR} from "../helpers/config";
+        ONE_CARD_CHAIN_MOTOR,
+        CAR_SALE_MENU} from "../helpers/config";
 import ErrorHandler from "../Pages/ErrorHandler/ErrorHandler";
 import CarSellComponent from "../Pages/CarSell/SpareRequest/CarSellComponent";
 import BackgroundPreloader from "../View/Preloaders/BackgroundPreloader";
 import OwnRequestEditComponent from "../Pages/Requests/OwnRequestEdit/OwnRequestEditComponent";
 import FixBugsContainer from "../Pages/FixBugs/FixBugsContainer";
+import CarSellMenuComponent from "../Pages/CarSell/CarSellMenu/CarSellMenuComponent";
 
 const Layout = React.lazy(() => import("../Pages/Layuot/Layout"));
 const Main = React.lazy(() => import("../Pages/Main/MainComponent"));
@@ -65,7 +67,21 @@ export const router = createBrowserRouter(
                         <Route path={MAKE_REQUEST_SPARE} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><SpareRequestComponent /></ErrorHandler></Suspense>} /> //ЗАПРОС НА ЗАПЧАСТЬ +
                         <Route path={MAKE_REQUEST_OWN_REQUEST} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><OwnRequestComponent /></ErrorHandler></Suspense>} /> // мои заявоки +
                         <Route path={MAKE_REQUEST_OWN_EDIT_REQUEST} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><OwnRequestEditComponent/></ErrorHandler></Suspense>} /> // мои заявоки edit
+                        {/* *****************продажа авто*********************** */}
+                        <Route path={CAR_SALE_MENU} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><CarSellMenuComponent /></ErrorHandler></Suspense>} /> //продажа авто
+                        <Route path={CAR_SALE} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><CarSellComponent /></ErrorHandler></Suspense>} /> //продажа авто
+                   
+                        {/* *****************РЕЙТИНГ И ОТЗЫВЫ*********************** */}
+                        <Route path={REITING_MENU} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><RaitingAndReviewMainComponent /></ErrorHandler></Suspense>} /> //РЕЙТИНГ И ОТЗЫВЫ  +
                         
+                        <Route path={REITING_FULL_INFO + '/:id'} element={<Suspense fallback={<BackgroundPreloader />}><RaitingAndReviewInfoAboutUserComponent /></Suspense>} /> //РЕЙТИНГ И ОТЗЫВЫ  +
+                        <Route path={REITING_CREATE} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><RaitingAndReviewCreateReviewComponent /></ErrorHandler></Suspense>} /> //НАПИСАТЬ ОТЗЫВ  - нет ключа info +
+                        <Route path={REITING_WARRANT_ADMIN} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><RaitingAndReviewWarrantlyForAdminComponent /></ErrorHandler></Suspense>} /> //ГАРАНТ ОТ АДМИНИСТРАЦИИ +
+                        <Route path={REITING_WARRANT_MEMBER} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><RaitingAndReviewWarrantlyForMembersComponent /></ErrorHandler></Suspense>} /> //Наши гаранты участники +
+                        
+
+
+
                         {/* <Route path={INCOMING_REQUEST_MENU} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><IncominRequestsComponent /></ErrorHandler></Suspense>} /> // ФИЛЬТРЫ +
                         <Route path={INCOMING_REQUEST_TRUCK} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><IncomingRequestTruckComponent /></ErrorHandler></Suspense>} /> // ГРУЗОВЫЕ +
                         <Route path={INCOMING_REQUEST_RESPAIR} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><IncomingRequestRespairComponent /></ErrorHandler></Suspense>} /> // Услуги по ремонту +
@@ -87,15 +103,6 @@ export const router = createBrowserRouter(
                         <Route path={PROFILE_INFO} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><InfoPageProfile /></ErrorHandler></Suspense>} /> //инфо о работе бота */}
 
 
-                        {/* *****************РЕЙТИНГ И ОТЗЫВЫ*********************** */}
-                        <Route path={REITING_MENU} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><RaitingAndReviewMainComponent /></ErrorHandler></Suspense>} /> //РЕЙТИНГ И ОТЗЫВЫ  +
-                        <Route path={REITING_FULL_INFO + '/:id'} element={<Suspense fallback={<BackgroundPreloader />}><RaitingAndReviewInfoAboutUserComponent /></Suspense>} /> //РЕЙТИНГ И ОТЗЫВЫ  +
-                        <Route path={REITING_CREATE} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><RaitingAndReviewCreateReviewComponent /></ErrorHandler></Suspense>} /> //НАПИСАТЬ ОТЗЫВ  - нет ключа info +
-                        <Route path={REITING_WARRANT_ADMIN} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><RaitingAndReviewWarrantlyForAdminComponent /></ErrorHandler></Suspense>} /> //ГАРАНТ ОТ АДМИНИСТРАЦИИ +
-                        <Route path={REITING_WARRANT_MEMBER} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><RaitingAndReviewWarrantlyForMembersComponent /></ErrorHandler></Suspense>} /> //Наши гаранты участники +
-                        {/* *****************продажа авто*********************** */}
-                        {/* <Route path={CAR_SALE} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><CarSellComponent /></ErrorHandler></Suspense>} /> //продажа авто */}
-                   
                         <Route path="*" element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><Main /></ErrorHandler></Suspense>} />
                 </Route>
         )

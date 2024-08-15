@@ -86,9 +86,9 @@ const UnitSpareRequest = ({
           brand_id: valuesUnitSpare?.brand_id ?? "",
           model_id: valuesUnitSpare?.model_id ?? "",
           generation_id: valuesUnitSpare?.generation_id ?? "",
-          classes:
-            // listClasses={this.props.valuesUnitSpare?.classes ?? []}
-            dataCurrentRequest?.classes ?? valuesUnitSpare?.classes ?? [], //
+          // classes:
+          //   // listClasses={this.props.valuesUnitSpare?.classes ?? []}
+          //   dataCurrentRequest?.classes ?? valuesUnitSpare?.classes ?? [], //
           text: dataCurrentRequest?.text ?? valuesUnitSpare?.text ?? "",
           image: dataCurrentRequest?.image ?? valuesUnitSpare?.image ?? null,
           oem: dataCurrentRequest?.oem ?? valuesUnitSpare?.oem ?? "",
@@ -230,13 +230,13 @@ const UnitSpareRequest = ({
                   setFieldValue("brand_id", value);
                   setFieldValue("generation_id", "");
                   setFieldValue("model_id", "");
-                  setFieldValue("classes", []);
+                  // setFieldValue("classes", []);
                   changeState();
                   handlerChangeData({
                     type,
                     brand_id: value,
                     handlerChangeDataRequest: (res) => {
-                      const copyData = res.results.slice();
+                      const copyData = res.slice();
                       return handlerChangeDataRequest({
                         setFieldValue,
                         results: copyData,
@@ -244,13 +244,12 @@ const UnitSpareRequest = ({
                       });
                     },
                   });
-                  handlerChangeDataValues({
-                    brand_id: value,
-                    classes: [],
-                  });
+                  // handlerChangeDataValues({
+                  //   brand_id: value,
+                  //   classes: [],
+                  // });
                 }}
               />
-              {isAddMultiData && (
                 <React.Fragment>
                   <Offset mt={16} />
                   <Label style={{ fontWeight: 700 }}>Модель авто</Label>
@@ -297,8 +296,9 @@ const UnitSpareRequest = ({
                         handlerChangeData({
                           type,
                           model_id: value,
+                          brand_id: values.brand_id,
                           handlerChangeDataRequest: (res) => {
-                            const copyData = res.results.slice();
+                            const copyData = res.slice();
                             handlerChangeDataRequest({
                               setFieldValue,
                               results: copyData,
@@ -314,8 +314,7 @@ const UnitSpareRequest = ({
                     />
                   </TooltipComponent>
                 </React.Fragment>
-              )}
-              {isAddMultiData && (
+
                 <React.Fragment>
                   <Offset mt={18} />
 
@@ -360,37 +359,10 @@ const UnitSpareRequest = ({
                       }}
                       onChange={async (value) => {
                         setFieldValue("generation_id", value);
-                        setFieldValue("classes", [
-                          ...values.classes,
-                          {
-                            model_id: values.model_id,
-                            generation_id: value,
-                            model_name: values.optionsModel.filter(
-                              (el) => el.value === +values.model_id
-                            )[0]?.title,
-                            generation_name: values.optionsGeneration.filter(
-                              (el) => el.value === +value
-                            )[0]?.title,
-                          },
-                        ]);
                         handlerChangeDataValues({
                           brand_id: values.brand_id,
-                          model_id: value.model_id,
+                          model_id: values.model_id,
                           generation_id: value,
-
-                          classes: [
-                            ...values.classes,
-                            {
-                              model_id: values.model_id,
-                              generation_id: value,
-                              model_name: values.optionsModel.filter(
-                                (el) => el.value === +values.model_id
-                              )[0]?.title,
-                              generation_name: values.optionsGeneration.filter(
-                                (el) => el.value === +value
-                              )[0]?.title,
-                            },
-                          ],
                         });
                         await delay(500);
                         setErrors({ ...errors, generation_id: "" });
@@ -398,63 +370,7 @@ const UnitSpareRequest = ({
                     />
                   </TooltipComponent>
                 </React.Fragment>
-              )}
 
-              {!isAddMultiData && (
-                <React.Fragment>
-                  <Offset mt={15} />
-
-                  <WrapTwoColumnGrid
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-end",
-                    }}
-                  >
-                    <WrapRowGrid>Добавить ещё модель?</WrapRowGrid>{" "}
-                    <Icon
-                      image={plus}
-                      onClick={() =>
-                        handlerAddClasses(
-                          setFieldValue,
-                          dataCurrentRequest?.brand
-                        )
-                      }
-                      style={{
-                        filter: "brightness(0.4)",
-                        // filter: "blur(var(--filter-blur))",
-                      }}
-                    />
-                  </WrapTwoColumnGrid>
-                  <Offset mt={15} />
-                </React.Fragment>
-              )}
-              <Offset mt={15} />
-              {values?.classes?.length
-                ? values.classes.map((item, i) => {
-                    return (
-                      <WrapTwoColumnGrid
-                        style={{
-                          display: "flex",
-                          justifyContent: "space-between",
-                        }}
-                      >
-                        <WrapRowGrid>
-                          {i + 1}. {item?.model ?? item?.model_name} ---{" "}
-                          {item?.generation ?? item.generation_name}{" "}
-                        </WrapRowGrid>
-                        <Icon
-                          image={listRemove}
-                          style={{
-                            filter: "blur(var(--filter-blur))",
-                          }}
-                          onClick={() =>
-                            deleteClasses(i, values, setFieldValue)
-                          }
-                        />
-                      </WrapTwoColumnGrid>
-                    );
-                  })
-                : null}
               <Offset mt={15} />
               <Label style={{ fontWeight: 700 }}>Телефон</Label>
               <div>

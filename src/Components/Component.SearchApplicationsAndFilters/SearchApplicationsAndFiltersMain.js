@@ -4,7 +4,6 @@ import SearchAndFilterAdvert from '../SearchSection/SearchAndFilterAdvert'
 import WithRouter from '../../HOC/WithRouter'
 import { ACTION_GET_LIST_CARDS_MARKET } from '../../store/marketplace/marketplace'
 import { ACTION_SET_FILTER_INTO_MARKET } from '../../store/marketplace/filtermarketplace/filtermarketplace'
-import { MARKETPLACE_FILTER } from '../../helpers/config'
 
 class SearchApplicationsAndFiltersMain extends PureComponent {
 
@@ -14,7 +13,6 @@ class SearchApplicationsAndFiltersMain extends PureComponent {
 
   changeScreen = ({path}) => this.props.navigate(path);
 
-  handlerFiltersOpen = (status = true, param) => this.changeScreen({path: MARKETPLACE_FILTER});
 
   render() {
     return (

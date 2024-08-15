@@ -1,5 +1,5 @@
 import { activeButtonBootomForConfirm, getOptions, handlerWarningInfoMessageResponse } from "../../helpers/helpers";
-import { API_CREATE_REQUEST, API_CREATE_REQUEST_V2, API_DELETE_IMAGE_FROM_REQUEST, API_DELETE_REQUEST, API_DUBLICATE_REQUEST, API_ENGINES_MARKET, API_GET_CARS, API_GET_COUNTRIES, API_GET_PAGE, API_GET_REQUEST_BY_TYPE, API_UPDATE_REQUEST, DEFAULT_PAGE_SIZE, MAKE_REQUEST_MENU } from "../../helpers/config";
+import { API_CREATE_REQUEST_V2, API_DELETE_IMAGE_FROM_REQUEST, API_DELETE_REQUEST, API_DUBLICATE_REQUEST, API_GET_CARS, API_GET_CARS_BRANDS, API_GET_CARS_GENEGATIONS, API_GET_CARS_MODELS, API_GET_COUNTRIES, API_GET_REQUEST_BY_TYPE, API_UPDATE_REQUEST, DEFAULT_PAGE_SIZE, MAKE_REQUEST_MENU } from "../../helpers/config";
 import { contentCopy, docSuccess } from "../../images";
 import { ACTION_GET, ACTION_POST, _INIT } from "../api-store/getpage";
 import { ACTION_OPEN_MODAL, ACTION_SET_CONTROLL_BUTTON, ACTION_SET_CONTROLL_BUTTON_NULL } from "../helpers/helpers-store";
@@ -44,8 +44,9 @@ id,
   store.on(_INIT, () => ({ listBrands: [] }));
   store.on(ACTION_SET_LIST_BRANDS, (_, data) => ({ listBrands: [...data] }));
   store.on(ACTION_GET_LIST_BRANDS, (_, data = {}, { dispatch }) => {
+
     let params = {
-      url: API_GET_CARS,
+      url:API_GET_CARS_BRANDS,
       page_id: 2,
       type: 'brand',
       dataRequst: (res) => {
@@ -61,10 +62,25 @@ id,
   });
 
   store.on(ACTION_GET_NEW_LIST_DATA, (_, data, { dispatch }) => {
+    let url = '';
+    switch (data.type) {
+      case 'brand':
+        url = API_GET_CARS_BRANDS
+        break;
+      case 'model':
+        url = API_GET_CARS_MODELS
+        break;
+      case 'generation':        
+        url = API_GET_CARS_GENEGATIONS
+        break;
+    
+      default:
+        break;
+    }
     let params = {
       type: data.type,
       dataRequst: data.handlerChangeDataRequest,
-      url: API_GET_CARS,
+      url, 
     };
     if (data.brand_id) {
       params = {
@@ -95,28 +111,6 @@ id,
       ...valuesUnitSpare,
       ...data
     }
-    if (
-      data?.brand_id &&
-      !(data?.sub_type === "edit_unit" || data?.sub_type === "edit_spare")
-    ) {
-      newValuesUnitSpare = {
-        ...newValuesUnitSpare,
-        model_id: "",
-        generation_id: "",
-      };
-    }
-    if(data?.model_id){
-      newValuesUnitSpare = {
-        ...newValuesUnitSpare,
-        generation_id: ""
-      }
-    }
-    if(data?.oem && data.oem.length > 2) {
-      const params = {
-        oem: data.oem,      
-      };
-      dispatch(ACTION_GET_PREPARE_PRODUTS, params);
-    }
 
     const isActiveButton = activeButtonBootomForConfirm({ ...newValuesUnitSpare }, data.sub_type, ()=>{}, member);
     if (isActiveButton) {
@@ -140,6 +134,7 @@ id,
     }
     return ({ valuesUnitSpare: newValuesUnitSpare })
   });
+
   const initListPrepare = {
     count: 0,
     current_page: 0,

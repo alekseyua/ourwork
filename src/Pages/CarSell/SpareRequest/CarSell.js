@@ -85,58 +85,59 @@ const CarSell = ({ dispatch, handlerChangeDataValues }) => {
           );
         }}
       </Formik>
-        <WrapContainerBlock
-          style={{
-            // backgroundColor: "#fde9e9",
-            fontWeight: 600,
-            padding: "20px 0 40px",
-            position: "absolute",
-            bottom: -150,
-          }}
-        >
-          {/* <Label style={{ fontWeight: 700 }}>Посетить группу</Label> */}
-          <Offset mt={40} />
-          <LinkGoTo
-            position={"left"}
-            url={"https://t.me/avtobayer"}
-            fontSize={12}
-            // color={link.color}
-            style={{
-              alignItems: "center",
-              fontWeight: 600,
-              backgroundColor: "var(--background-color-button-red)",
-              color: "var(--text-color-white)",
-              zIndex: 11,
-              position: "relative",
-              width: "100%",
-              minHeight: 46,
-              justifyContent: "center",
-              borderRadius: 12
-            }}
-          >
-            {/* <Icon
-              image={cell_car}
-              width={15}
-              height={15}
-              mr={5}
-              style={{ top: -2 }}
-            /> */}
-            {"Посетить группу"}
-          </LinkGoTo>
-          {/* <div
-            style={{
-              backgroundColor: "#fde9e9",
-              position: "absolute",
-              width: "1000%",
-              height: "100%",
-              left: "-20%",
-              zIndex: -1,
-              top: 0,
-            }}
-          ></div> */}
-        </WrapContainerBlock>
         <Offset mt={15} />
     </WrapContainer>
   );
 };
 export default WithWrapContainer(CarSell);
+
+        // <WrapContainerBlock
+        //   style={{
+        //     // backgroundColor: "#fde9e9",
+        //     fontWeight: 600,
+        //     padding: "20px 0 40px",
+        //     position: "absolute",
+        //     bottom: -150,
+        //   }}
+        // >
+        //   {/* <Label style={{ fontWeight: 700 }}>Посетить группу</Label> */}
+        //   <Offset mt={40} />
+        //   <LinkGoTo
+        //     position={"left"}
+        //     url={"https://t.me/avtobayer"}
+        //     fontSize={12}
+        //     // color={link.color}
+        //     style={{
+        //       alignItems: "center",
+        //       fontWeight: 600,
+        //       backgroundColor: "var(--background-color-button-red)",
+        //       color: "var(--text-color-white)",
+        //       zIndex: 11,
+        //       position: "relative",
+        //       width: "100%",
+        //       minHeight: 46,
+        //       justifyContent: "center",
+        //       borderRadius: 12
+        //     }}
+        //   >
+        //     {/* <Icon
+        //       image={cell_car}
+        //       width={15}
+        //       height={15}
+        //       mr={5}
+        //       style={{ top: -2 }}
+        //     /> */}
+        //     {"Посетить группу"}
+        //   </LinkGoTo>
+        //   {/* <div
+        //     style={{
+        //       backgroundColor: "#fde9e9",
+        //       position: "absolute",
+        //       width: "1000%",
+        //       height: "100%",
+        //       left: "-20%",
+        //       zIndex: -1,
+        //       top: 0,
+        //     }}
+        //   ></div> */}
+        // </WrapContainerBlock>

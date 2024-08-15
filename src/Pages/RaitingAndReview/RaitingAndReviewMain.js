@@ -11,6 +11,7 @@ import SearchComponent from '../../Components/SearchSection/SearchComponent';
 import { ACTION_SET_SEARCH_TEXT_FILTER } from '../../store/raiting-review/raiting-review';
 import WrapRootContainer from '../../View/WrapContainer/WrapRootContainer';
 import FormInputContainer from '../../View/FormInput/FormInputContainer';
+import MenuSliderV2 from '../../View/Menu/MenuSliderV2';
 
 export default function RaitingAndReviewMain({
   listMenu,
@@ -26,11 +27,12 @@ export default function RaitingAndReviewMain({
 }) {
   return (
     <WrapRootContainer>
-      <Menu
-        list={listMenu}
-        handlerScreen={handlerChangeScreen}
-        iconSize={18}
-      />
+
+
+        <MenuSliderV2
+          list={listMenu} 
+          handlerChangeScreen={handlerChangeScreen} 
+        />
       <Offset mt={17} />
       {/* <NavigationIncominRequests
         handlerChangeSection={handlerChangeSection}

@@ -1,7 +1,7 @@
 import { Dimensions } from "react-native-web";
-import { arrowRightWhite, chat, createRequestDefault, editMarket, engine, fileAdditionOne, filter, filterWhite, fix_bugs, help, home, homeFooterActive, homeFooterDefault, incomingSetting, 
-  marketFooterActive, marketFooterDefault, piston, play, plusDarkBlue, profileFooterActive, profileFooterDefault, rowVertical, securityUser, shieldTick, shoppingCart, 
-  starFooterActive, starFooterDefault, starStrokeWhite, starmenu, unitTurbo } from "../images";
+import { arrowRightWhite, carSell, carSpareSell, chat, createRequestDefault, createRequestWhite, editMarket, engine, fileAdditionOne, filter, filterWhite, fix_bugs, help, home, homeFooterActive, homeFooterDefault, incomingSetting, 
+  marketFooterActive, marketFooterDefault, piston, play, plusDarkBlue, profileFooterActive, profileFooterDefault, rowVertical, securityUser, sellCar, sellCarWhite, shieldTick, shoppingCart, 
+  starFooterActive, starFooterDefault, starStrokeWhite, starmenu, starmenuWhite, unitTurbo } from "../images";
 
 const width = Dimensions.get('window').width;
 //  hosting
@@ -13,7 +13,9 @@ export const API_DISMISS = "/telegram/api_change_status_popup_phone/";
 
 export const API_GET_PAGE = '/telegram/api_get_page/';
 // export const API_GET_CARS = '/telegram/api_get_cars/';
-export const API_GET_CARS = '/parsing/brands/';
+export const API_GET_CARS_BRANDS = '/parsing/brands/';
+export const API_GET_CARS_MODELS = '/parsing/models/';
+export const API_GET_CARS_GENEGATIONS = '/parsing/generations/';
 // incomin filters
 
 export const API_SET_FILTER = '/subscription/filters/';
@@ -67,13 +69,15 @@ export const API_OPTIONS_LIST_ENGINES = '/api_engines/get_';
 
 
 // review
-export const API_GET_ALL_RAITINGS = '/telegram/api_get_all_users_list/'//"/api_get_all_ratings/" //
+export const API_GET_ALL_GARANT_MEMBERS = '/rating/feedbacks/get_user_feedbacks/';
+export const API_GET_LIST_CITIES_WARRANT_MEMBER = '/telegram/api_get_garant_members/';
+
+export const API_GET_ALL_RAITINGS = '/rating/feedbacks/'//"/api_get_all_ratings/" //
+export const API_TOP_RAITING = '/rating/feedbacks/';
+
 export const API_CREATE_RAITING = '/telegram/api_create_rating/';
 export const API_CREATE_UPDATE_REPLY_RAITING ="/telegram/api_create_update_reply/";
-export const API_TOP_RAITING = '/telegram/api_top_rating/';
-export const API_GET_ALL_GARANT_MEMBERS = '/telegram/api_get_all_garant_members/';
 export const API_GET_CITY_MEMBERS = '/telegram/api_get_city_members_v2/';//'/api_get_city_members/';
-export const API_GET_LIST_CITIES_WARRANT_MEMBER = '/telegram/api_get_garant_members/';
 // https://botrazbor.ru/telegram/api_get_all_users_list/
 export const API_GET_RATINGS = "/telegram/api_get_ratings/"
 // profile
@@ -159,6 +163,7 @@ export const PROFILE_INFO = '/info-work-bot';
 
 // sale car  
 export const CAR_SALE = '/create-car-sale';
+export const CAR_SALE_MENU = '/create-car-sale-menu';
 
 // Chain motors
 export const CHAIN_MOTORS = "/china-motors";
@@ -200,6 +205,17 @@ export const menuTop = [
     isActive: true,
     isFooter: false,
   },
+  {
+    "name": "Продать",
+    "slug": CAR_SALE_MENU,
+    "id": 10,
+    "text": "Продать",
+    "image": sellCar,
+    "type": "page_sell",
+    "url": null,
+    isActive: true,
+    isFooter: false,
+  },
 ];
 
 export const menuFooter = [
@@ -230,7 +246,7 @@ export const menuFooter = [
     "slug": MAKE_REQUEST_MENU,
     "id": 2,
     "text": "Ищу (создать запрос)",
-    "image": createRequestDefault,
+    "image": createRequestWhite,
     "type": "page_make_requests",
     "url": null,
     isActive: true,
@@ -241,8 +257,19 @@ export const menuFooter = [
     "slug": REITING_MENU,
     "id": 9,
     "text": "Рейтинг",
-    "image": [starFooterActive, starFooterDefault],
+    "image": starmenuWhite,
     "type": "page_rating",
+    "url": null,
+    isActive: true,
+    isFooter: true,
+  },
+  {
+    "name": "Продать",
+    "slug": CAR_SALE_MENU,
+    "id": 10,
+    "text": "Продать",
+    "image": sellCarWhite,
+    "type": "page_sell",
     "url": null,
     isActive: true,
     isFooter: true,
@@ -258,7 +285,7 @@ export const menuRequests = [
     "text": "Запрос \n на агрегат",
     "image": engine,
     "type": "Запрос",
-    "url": "https://botrazbor.ru/telegram/api_get_cars/",
+    "url": "",
     isActive: true,
     isSlider: false
   },
@@ -269,7 +296,31 @@ export const menuRequests = [
     "text": "Запрос на запчасть",
     "image": piston,
     "type": "Запрос",
-    "url": "https://botrazbor.ru/telegram/api_get_cars/",
+    "url": "",
+    isActive: true,
+    isSlider: false
+  }, 
+]
+export const menuCarSell = [
+  {
+    "name": "Авто в разборе",
+    "slug": CAR_SALE,
+    "id": 8,
+    "text": "Авто \n в разборе",
+    "image": carSpareSell,
+    "type": "sell-spare",
+    "url": "",
+    isActive: true,
+    isSlider: false
+  },
+  {
+    "name": "Продам авто",
+    "slug": 'https://t.me/sell_autoua',
+    "id": 9,
+    "text": "Продам авто",
+    "image": carSell,
+    "type": "sell",
+    "url": "",
     isActive: true,
     isSlider: false
   }, 
