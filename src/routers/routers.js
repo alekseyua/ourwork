@@ -22,6 +22,7 @@ import FixBugsContainer from "../Pages/FixBugs/FixBugsContainer";
 
 const Layout = React.lazy(() => import("../Pages/Layuot/Layout"));
 const Main = React.lazy(() => import("../Pages/Main/MainComponent"));
+const RequestsComponent = React.lazy(() => import("../Pages/Requests/RequestsComponent"));
 
 const FeedbackGetMonyForIdeaComponent = React.lazy(() => import("../Components/FeedbackSections/FeedbackGetMonyForIdeaComponent"));
 // ******************************************************************
@@ -38,7 +39,6 @@ const RaitingAndReviewWarrantlyForAdminComponent = React.lazy(() => import("../P
 const RaitingAndReviewWarrantlyForMembersComponent = React.lazy(() => import("../Pages/RaitingAndReview/RaitingAndReviewWarrantlyForMembers/RaitingAndReviewWarrantlyForMembersComponent"));
 // ******************************************************************
 
-const RequestsComponent = React.lazy(() => import("../Pages/Requests/RequestsComponent"));
 const UnitRequestComponent = React.lazy(() => import("../Pages/Requests/UnitRequest/UnitRequestComponent"));
 const SpareRequestComponent = React.lazy(() => import("../Pages/Requests/SpareRequest/SpareRequestComponent"));
 const TruckRequestComponent = React.lazy(() => import("../Pages/Requests/TruckRequest/TruckRequestComponent"));

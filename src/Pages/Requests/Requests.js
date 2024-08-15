@@ -8,6 +8,8 @@ import WrapContainerPreloader from '../../View/Preloaders/WrapContainerPreloader
 import Preloader from '../../View/Preloaders/Preloader'
 import MainCatalogMPComponent from '../../Components/Component.CatalogMP/MainCatalogMPComponent'
 import { linksFeedback } from '../../helpers/config'
+import MenuSliderContainer from '../../View/Menu/styles/MenuSliderContainer'
+import MenuSliderV2 from '../../View/Menu/MenuSliderV2'
 
 export default function Requests({
   listMenu = [],
@@ -21,25 +23,23 @@ export default function Requests({
   return (
     <WrapContainer>
       <Offset mb={14} />
-      <Menu
+      {/* <Menu
         list={listMenu}
         handlerScreen={handlerChangeScreen}
         accessRedirect={accessRedirect}
         hardColorBlockById={hardColorBlockById}
         firstButtonArrow
 
-      />
-      <Offset mb={16} />
-      <HeaderTitleActionComponent
-        list={headerTitleCatalog}
-      />
-      <Offset mt={12} />
-      <MainCatalogMPComponent
-        distationtopSearch={365}
-        isUpblock={true}
-      />
+      /> */}
+      <MenuSliderContainer>
+        <MenuSliderV2
+          list={listMenu} 
+          handlerChangeScreen={handlerChangeScreen} 
+        />
+      </MenuSliderContainer>
+     
       <Offset mt={24} />
-      <MainFeedbackComponent list={linksFeedback} />
+      {/* <MainFeedbackComponent list={linksFeedback} /> */}
 
     </WrapContainer>
   )

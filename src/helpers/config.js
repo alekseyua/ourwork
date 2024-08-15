@@ -226,7 +226,7 @@ export const menuFooter = [
     "slug": MAKE_REQUEST_MENU,
     "id": 2,
     "text": "Ищу (создать запрос)",
-    "image": [createRequestDefault, createRequestDefault],
+    "image": createRequestDefault,
     "type": "page_make_requests",
     "url": null,
     isActive: true,
@@ -268,40 +268,7 @@ export const menuRequests = [
     "url": "https://botrazbor.ru/telegram/api_get_cars/",
     isActive: true,
     isSlider: false
-  },
-  {
-    "name": "Запрос на ремонт",
-    "slug": MAKE_REQUEST_RESPAIR,
-    "id": 10,
-    "text": "Запрос на ремонт",
-    "image": arrowRightWhite,
-    "type": "Запрос",
-    "url": null,
-    isActive: true,
-    isSlider: true
-  },
-  {
-    "name": "Запрос на грузоперевозки",
-    "slug": MAKE_REQUEST_TRANSPORT,
-    "id": 12,
-    "text": "Запрос на грузоперевозки",
-    "image": arrowRightWhite,
-    "type": "Запрос",
-    "url": null,
-    isActive: true,
-    isSlider: true
-  },
-  {
-    "name": "Запрос на грузовые",
-    "slug": MAKE_REQUEST_TRUCK,
-    "id": 11,
-    "text": "Запрос на грузовые",
-    "image": arrowRightWhite,
-    "type": "Страница",
-    "url": null,
-    isActive: true,
-    isSlider: true
-  },  
+  }, 
 ]
 
 export const menuRaitingAndReview = [
