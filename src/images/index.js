@@ -17,8 +17,13 @@ import fog from './baner/fog.svg'
 import test from './baner/test.jpg'
 import play from './play_icon.svg';
 import createRequestDefault from './icon/create-request.svg';
-
 import starmenu from './icon/review.svg';
+
+import engine from './icon/engine-motor-2.svg'
+import piston from './icon/piston-motor.svg'
+
+
+
 
 const help = 'https://garsing.shop/media/market/help.svg';
 const chat = 'https://garsing.shop/media/market/chat.svg';
@@ -29,8 +34,6 @@ const plus = 'https://garsing.shop/media/market/plus.svg';
 const cross = 'https://garsing.shop/media/market/cross.svg';
 const cloud = 'https://garsing.shop/media/market/cloud.svg';
 const search = 'https://garsing.shop/media/market/search.svg';
-const engine = 'https://garsing.shop/media/market/engine.svg';
-const piston = 'https://garsing.shop/media/market/piston.svg';
 const penRed = 'https://garsing.shop/media/market/pen-red.svg';
 const checked = 'https://garsing.shop/media/market/checked.svg';
 const penGrey = 'https://garsing.shop/media/market/pen-grey.svg';
