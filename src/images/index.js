@@ -16,7 +16,9 @@ import foneGradient from './baner/fone_2.svg'
 import fog from './baner/fog.svg'
 import test from './baner/test.jpg'
 import play from './play_icon.svg';
+import createRequestDefault from './icon/create-request.svg';
 
+import starmenu from './icon/review.svg';
 
 const help = 'https://garsing.shop/media/market/help.svg';
 const chat = 'https://garsing.shop/media/market/chat.svg';
@@ -37,7 +39,6 @@ const addFile = 'https://garsing.shop/media/market/add-file.svg';
 const crossRed = 'https://garsing.shop/media/market/cross-red.svg';
 const twoCloud = 'https://garsing.shop/media/market/two-cloud.svg';
 const location = 'https://garsing.shop/media/market/location.svg';
-const starmenu = 'https://garsing.shop/media/market/star-menu.svg';
 const userWhite = 'https://garsing.shop/media/market/user-white.svg';
 const arrowDown = 'https://garsing.shop/media/market/arrowDownNoFill.svg';
 const myRequest = 'https://garsing.shop/media/market/my-request.svg';
@@ -86,7 +87,7 @@ const settingRedRotation = "https://garsing.shop/media/market/setting-red-rotati
 const marketFooterDefault = 'https://garsing.shop/media/market/market-footer.svg';
 const profileFooterActive = 'https://garsing.shop/media/market/profile-footer-active.svg';
 const profileFooterDefault = 'https://garsing.shop/media/market/profile-footer.svg';
-const createRequestDefault = 'https://garsing.shop/media/market/create-request.svg';
+// const createRequestDefault = 'https://garsing.shop/media/market/create-request.svg';
 
 
 export {

@@ -79,8 +79,9 @@ class MainComponent extends React.PureComponent {
   render() {
     return (
       <Main
-        listFAQ={this.state.listFAQ}
         mainMenu={checkAccess(menuTop, this.props.access)}
+
+        listFAQ={this.state.listFAQ}
         headerTitleFAQ={this.state.headerTitleFAQ}
         listToggleTheme={this.state?.listToggleTheme}
         headerTitleCatalog={this.state.headerTitleCatalog}

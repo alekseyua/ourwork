@@ -3,13 +3,15 @@
   --bg-menu-bottom:#000000;
   --bg-menu-top:#000000;
   --bg-block:#ed7014;
+  --text-color: #ed7014; 
+  --background-color-block: #C4C4C4;
+  // --text-color: #0b1f35; 
 
 
 
 
   
 
-  --background-color-block: rgb(255, 255, 255); // White
   --background-color-block-disabled: rgb(201, 205, 211); // Ghost
   --background-color-dark-Nile-blue: rgb(25, 49, 74); // Nile blue
   --background-color-Mirage-blue: rgb(11, 31, 53); // Mirage
@@ -28,7 +30,6 @@
   --background-color-blur: rgba(0, 0, 0, 0.3);
   --background-color-light-roze: rgb(253, 233, 233);
 
-  --text-color: #0b1f35; 
   --text-color-red: #DD4434;
   --text-color-rlight-blue: #2F80ED;
   --text-color-opacity: rgba(11, 31, 53, 0.6);
@@ -94,7 +95,7 @@
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:active{
-    -webkit-box-shadow: 0 0 0 30px var(--background-color-block) inset !important;
+    -webkit-box-shadow: 0 0 0 30px var(--bg-menu-top) inset !important;
     -webkit-text-fill-color: var(--text-color) !important;
 }
 //.#form-payment-access__discription-context-item-title-description-3{}
@@ -222,7 +223,7 @@ select {
   align-items: center;
   flex-direction: column;
   transition: top .8s ease-out 0s;
-  background-color: var(--background-color-block);
+  background-color: var(--bg-menu-top);
   margin-top: 0px;
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
   scrollbar-width: none;  /* Firefox */
@@ -302,7 +303,7 @@ select {
     position: absolute;
     right: 0;
     top: 0;
-    background-color: var(--background-color-block);
+    background-color: var(--bg-menu-top);
     content: '';
     height: 100%;
     width: 50%;
