@@ -146,6 +146,7 @@ class UnitRequestComponent extends Component {
     }));
   };
   render() {
+    console.log(this.props.listBrands)
     return (
       <UnitSpareRequest
         onClickOutside={this.onClickOutside}

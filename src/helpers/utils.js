@@ -444,7 +444,6 @@ export const initDataParamsPostOrGet = (params) => {
   // const username = getLocaleStore(USERNAME)? getLocaleStore(USERNAME) : user?.username;
   const user_id = getLocaleStore('user_id');
   user_id !== undefined &&  (params = { ...params, "user_id": user_id});
-  console.log({user_id})
   telegram_id !== undefined &&
     (params = { ...params, telegram_id: telegram_id });
   // first_name !== undefined && (params = { ...params, first_name: first_name });
@@ -471,7 +470,6 @@ export const initDataParamsPostOrGet = (params) => {
     "lowHigh",
     'blockButtonDisabled',
   ];
-  console.log({params})
   for (let key in params) {
     if (
       params[key] === undefined ||
@@ -485,7 +483,6 @@ export const initDataParamsPostOrGet = (params) => {
       newParams = { ...newParams, [key]: params[key] };
     }
   }
-  // console.log({newParams})
   return newParams;
 };
 

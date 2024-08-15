@@ -81,7 +81,6 @@ export const getPage = store => {
       let newData = { ...data };
       delete newData["url"];
       delete newData["controllerSearchMP"];
-      console.log({ data, controllButton });
       if (data?.blockButtonDisabled) {
         dispatch(ACTION_SET_CONTROLL_BUTTON, { isFetch: true });
       } else {

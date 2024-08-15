@@ -19,26 +19,7 @@ class MainComponent extends React.PureComponent {
         addClass={'button__main-menu-show-all'}
         onClick={() => this.props.navigate(MARKETPLACE_MAIN)}
       >{'Все'}</Button>
-    ],
-    headerTitleFAQ: ['Вопросы и ответы'],
-    listFAQ: [
-      {
-        title: 'Как создать запрос на агрегат?',
-        description: 'Чтобы найти запчасть, нажмите: «Синяя кнопка меню — Запрос — агрегат/запчасть.» ',
-        icon: plusDarkBlue
-      },
-      {
-        title: 'Что делать, если истекает подписка?',
-        description: 'Оплата подписки: Синяя кнопка меню — профиль  — подписка. Выберите необходимый доступ.',
-        icon: plusDarkBlue
-      },
-      {
-        title: 'Как настроить входящие заявки?',
-        description: 'Чтобы начать получать целевые Входящие заявки, нажмите: Синяя кнопка меню — Входящие заявки — и выберите марки, модели и поколения авто от которых у вас есть запчасти.',
-        icon: plusDarkBlue
-      },
-    ],
-    
+    ],   
   }
 
   componentDidMount() {

@@ -12,7 +12,8 @@ export const GET_DATA_ACCESS = '/telegram/user/get_user/'; //'/subscription/api_
 export const API_DISMISS = "/telegram/api_change_status_popup_phone/"; 
 
 export const API_GET_PAGE = '/telegram/api_get_page/';
-export const API_GET_CARS = '/telegram/api_get_cars/';
+// export const API_GET_CARS = '/telegram/api_get_cars/';
+export const API_GET_CARS = '/parsing/brands/';
 // incomin filters
 
 export const API_SET_FILTER = '/subscription/filters/';

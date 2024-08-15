@@ -8,8 +8,6 @@ import { LAST_PATH_OWN_REQUEST, MAKE_REQUEST_MENU } from '../../../helpers/confi
 import { ACTION_OPEN_MODAL, ACTION_SET_BUTTON_HEADER_ACTION } from '../../../store/helpers/helpers-store';
 import { plus } from '../../../images';
 import { delay } from '../../../helpers/const';
-import TransportRequest from '../TransportRequest/TransportRequest';
-import TruckRequest from '../TruckRequest/TruckRequest';
 
 class OwnRequestEditComponent extends Component {
   state = {
@@ -212,26 +210,6 @@ class OwnRequestEditComponent extends Component {
           handlerAddClasses={this.handlerAddClasses}
           deleteClasses={this.deleteClasses}
           changeState={this.changeState}
-        />
-      );
-    }
-    if (getLocaleStore("itemTabRequest") === "transport") {
-      return (
-        <TransportRequest
-          edit
-          dispatch={this.props.dispatch}
-          handlerChangeDataValues={this.handlerChangeDataValues}
-          dataCurrentRequest={this.state.data}
-        />
-      );
-    }
-    if (getLocaleStore("itemTabRequest") === "truck") {
-      return (
-        <TruckRequest
-          edit
-          dispatch={this.props.dispatch}
-          handlerChangeDataValues={this.handlerChangeDataValues}
-          dataCurrentRequest={this.state.data}
         />
       );
     }

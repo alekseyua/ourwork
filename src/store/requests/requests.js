@@ -51,10 +51,9 @@ id,
       dataRequst: (res) => {
         const isWarning = handlerWarningInfoMessageResponse(res, dispatch);
         if (isWarning) return;
-        if (res?.length) {
-          if(typeof data?.callback === 'function') data.callback();
-          dispatch(ACTION_SET_LIST_BRANDS, [...getOptions(res)]);
-        }
+        if(typeof data?.callback === 'function') data.callback();
+        console.log({res})
+        dispatch(ACTION_SET_LIST_BRANDS, [...getOptions(res.results)]);
       },
       ...data,
     };

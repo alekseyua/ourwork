@@ -41,10 +41,7 @@ const RaitingAndReviewWarrantlyForMembersComponent = React.lazy(() => import("..
 
 const UnitRequestComponent = React.lazy(() => import("../Pages/Requests/UnitRequest/UnitRequestComponent"));
 const SpareRequestComponent = React.lazy(() => import("../Pages/Requests/SpareRequest/SpareRequestComponent"));
-const TruckRequestComponent = React.lazy(() => import("../Pages/Requests/TruckRequest/TruckRequestComponent"));
-const TransportRequestComponent = React.lazy(() => import("../Pages/Requests/TransportRequest/TransportRequestComponent"));
 const OwnRequestComponent = React.lazy(() => import("../Pages/Requests/OwnRequest/OwnRequestComponent"));
-const RespairRequestComponent = React.lazy(() => import("../Pages/Requests/RespairRequest/RespairRequestComponent"));
 // ******************************************************************
 const IncominRequestsComponent = React.lazy(() => import("../Pages/IncominRequests/IncominRequestsComponent"));
 const IncominRequestsUnitContainer = React.lazy(() => import("../Pages/IncominRequests/IncominRequestsUnit/IncominRequestsUnitContainer"));
@@ -62,6 +59,12 @@ export const router = createBrowserRouter(
 
                         {/* **********************ФИЛЬТРЫ -> Входящие заявки ****************** */}
                         <Route path={INCOMING_REQUEST_UNIT_SPARE} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><IncominRequestsUnitContainer /></ErrorHandler></Suspense>} /> //Только Агрегаты +
+                        {/* *****************СОЗДАТЬ ЗАПРОС*********************** */}
+                        <Route path={MAKE_REQUEST_MENU} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><RequestsComponent /></ErrorHandler></Suspense>} /> // СОЗДАТЬ ЗАПРОС  menu++
+                        <Route path={MAKE_REQUEST_UNIT} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><UnitRequestComponent /></ErrorHandler></Suspense>} /> //Запрос на агрегат +
+                        <Route path={MAKE_REQUEST_SPARE} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><SpareRequestComponent /></ErrorHandler></Suspense>} /> //ЗАПРОС НА ЗАПЧАСТЬ +
+                        <Route path={MAKE_REQUEST_OWN_REQUEST} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><OwnRequestComponent /></ErrorHandler></Suspense>} /> // мои заявоки +
+                        <Route path={MAKE_REQUEST_OWN_EDIT_REQUEST} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><OwnRequestEditComponent/></ErrorHandler></Suspense>} /> // мои заявоки edit
                         
                         {/* <Route path={INCOMING_REQUEST_MENU} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><IncominRequestsComponent /></ErrorHandler></Suspense>} /> // ФИЛЬТРЫ +
                         <Route path={INCOMING_REQUEST_TRUCK} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><IncomingRequestTruckComponent /></ErrorHandler></Suspense>} /> // ГРУЗОВЫЕ +
@@ -83,15 +86,6 @@ export const router = createBrowserRouter(
                         <Route path={PROFILE_MY_REVIEW} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><OwnProfileReviewComponent /></ErrorHandler></Suspense>} /> //мои отзывы
                         <Route path={PROFILE_INFO} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><InfoPageProfile /></ErrorHandler></Suspense>} /> //инфо о работе бота */}
 
-                        {/* *****************СОЗДАТЬ ЗАПРОС*********************** */}
-                        <Route path={MAKE_REQUEST_MENU} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><RequestsComponent /></ErrorHandler></Suspense>} /> // СОЗДАТЬ ЗАПРОС  ++
-                        <Route path={MAKE_REQUEST_UNIT} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><UnitRequestComponent /></ErrorHandler></Suspense>} /> //Запрос на агрегат +
-                        <Route path={MAKE_REQUEST_SPARE} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><SpareRequestComponent /></ErrorHandler></Suspense>} /> //ЗАПРОС НА ЗАПЧАСТЬ +
-                        <Route path={MAKE_REQUEST_RESPAIR} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><RespairRequestComponent /></ErrorHandler></Suspense>} /> //ЗАПРОС НА РЕМОНТ +
-                        <Route path={MAKE_REQUEST_TRANSPORT} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><TransportRequestComponent /></ErrorHandler></Suspense>} /> //ЗАПРОС НА ГРУЗОВЫЕ  +
-                        <Route path={MAKE_REQUEST_TRUCK} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><TruckRequestComponent /></ErrorHandler></Suspense>} /> // ЗАПРОС НА ГРУЗОПЕРЕВОЗКИ +
-                        <Route path={MAKE_REQUEST_OWN_REQUEST} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><OwnRequestComponent /></ErrorHandler></Suspense>} /> // мои заявоки +
-                        <Route path={MAKE_REQUEST_OWN_EDIT_REQUEST} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><OwnRequestEditComponent/></ErrorHandler></Suspense>} /> // мои заявоки +
 
                         {/* *****************РЕЙТИНГ И ОТЗЫВЫ*********************** */}
                         <Route path={REITING_MENU} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><RaitingAndReviewMainComponent /></ErrorHandler></Suspense>} /> //РЕЙТИНГ И ОТЗЫВЫ  +
