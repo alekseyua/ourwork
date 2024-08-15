@@ -23,25 +23,7 @@ class OwnRequestComponent extends Component {
         id: 1,
         type: 'spare',
         active: false
-      },
-      {
-        title: 'На грузовые',
-        id: 2,
-        type: 'truck',
-        active: false
-      },
-      {
-        title: 'На грузоперевозки',
-        id: 3,
-        type: 'transport',
-        active: false
-      },
-      // {
-      //   title: 'На ремонт',
-      //   id: 4,
-      //   type: 'respair',
-      //   active: false
-      // },
+      },  
     ]
   }
 

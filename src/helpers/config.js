@@ -23,11 +23,11 @@ export const API_GET_FILTER_BRANDS = '/subscription/filters/get_filters_brands/'
 export const API_GET_FILTER_MODELS = '/subscription/filters/get_filters_models/';
 export const API_GET_FILTER_GENERATION = '/subscription/filters/get_filters_generations/';
 // requests
-export const API_CREATE_REQUEST_V2 = '/parsing/parsing/';
+export const API_CREATE_REQUEST_V2 = '/request/requests/';
+export const API_GET_REQUEST_BY_TYPE = '/????/';
 
 
 export const API_GET_COUNTRIES = '/telegram/api_get_countrys/';
-export const API_GET_REQUEST_BY_TYPE = '/telegram/api_get_requests_by_type/';
 export const API_DUBLICATE_REQUEST = '/telegram/api_dublicate_request/';
 export const API_DELETE_REQUEST = '/telegram/api_delete_request/';
 export const API_GET_USER_RAITING = '/telegram/api_get_users_rating/';
