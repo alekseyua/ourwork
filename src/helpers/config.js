@@ -23,6 +23,9 @@ export const API_GET_FILTER_BRANDS = '/subscription/filters/get_filters_brands/'
 export const API_GET_FILTER_MODELS = '/subscription/filters/get_filters_models/';
 export const API_GET_FILTER_GENERATION = '/subscription/filters/get_filters_generations/';
 // requests
+export const API_CREATE_REQUEST_V2 = '/parsing/parsing/';
+
+
 export const API_GET_COUNTRIES = '/telegram/api_get_countrys/';
 export const API_GET_REQUEST_BY_TYPE = '/telegram/api_get_requests_by_type/';
 export const API_DUBLICATE_REQUEST = '/telegram/api_dublicate_request/';
@@ -35,7 +38,6 @@ export const API_DELETE_USER_FEEDBACK_LEFT = "/telegram/api_delete_feedback/";
 export const API_GET_USER_FULL_DETAIL_INFO = '/telegram/api_get_user_full_detail_info/';
 export const API_GET_CONTEXT = '/telegram/api_get_context/';
 export const API_CREATE_REQUEST = '/telegram/api_create_request/';
-export const API_CREATE_REQUEST_V2 = '/telegram/api_create_request_V2/';
 export const API_UPDATE_REQUEST = "/telegram/api_update_request/";
 export const API_CHECK_DELETE_IMAGE_REQUEST = "/telegram/api_check_request_images/";
 export const API_CREATE_REVIEW = '/telegram/api_create_review/';

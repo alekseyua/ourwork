@@ -117,7 +117,6 @@ id,
       };
       dispatch(ACTION_GET_PREPARE_PRODUTS, params);
     }
-    console.log({data})
 
     const isActiveButton = activeButtonBootomForConfirm({ ...newValuesUnitSpare }, data.sub_type, ()=>{}, member);
     if (isActiveButton) {
@@ -149,35 +148,7 @@ id,
   store.on(_INIT, () => ({
     listPrepare: initListPrepare,
   }));
-  store.on(ACTION_SET_LIST_PREPARE_PRODUCTS, (_, data) => ({ listPrepare: data }));
-  store.on(ACTION_RESET_LIST_PREPARE_PRODUCTS, (_, data) => ({
-    listPrepare: initListPrepare,
-  }));
-  store.on(ACTION_GET_PREPARE_PRODUTS, ({ listPrepare }, data = {}, { dispatch }) => {
-    try {
-      //92405A7000
-      const params = {
-        url: API_ENGINES_MARKET,
-        page_size: 4,
-        page: data?.page ?? 1,
-        blockButtonDisabled:true,
-        dataRequst: (res) => {
-          if (res === undefined) return;
-          const isWarning = handlerWarningInfoMessageResponse(res, dispatch);
-          if (isWarning) return;
-          dispatch(ACTION_SET_LIST_PREPARE_PRODUCTS, {
-            ...listPrepare,
-            ...res,
-            results: data?.page? [...listPrepare.results, ...res.results] : res.results
-          });
-        },
-        ...data,
-      };
-      dispatch(ACTION_GET, params);
-    } catch (error) {
-      console.log("erorr catch", error);
-    }
-  });
+
 
   store.on(_INIT, () => ({ listCountries: [] }));
   store.on(ACTION_SET_LIST_COUNTRY, (_, data) => ({ listCountries: [...data] }));

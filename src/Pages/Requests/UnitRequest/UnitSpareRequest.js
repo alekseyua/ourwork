@@ -205,33 +205,7 @@ const UnitSpareRequest = ({
                   />
                 </FormInputContainer>
               </div>
-              <Offset mt={10} />
-              {
-                // показать список карточек
-                // добавить кнопку скрыть
-                // добавить кнопку показать ещё (ok)
-                !!prepareProducts?.count ? (
-                  <ButtonHide onClick={handlerShowHide} isShow={isShowHide} />
-                ) : null
-              }
-              {isShowHide && !!prepareProducts?.count ? (
-                <React.Fragment>
-                  <CardOEM list={prepareProducts.results} />
-                  <Offset mt={10} />
-                </React.Fragment>
-              ) : null}
-              {isShowHide &&
-              prepareProducts?.count > 4 &&
-              prepareProducts?.count !== prepareProducts.results.length ? (
-                <React.Fragment>
-                  <ButtonMore
-                    currentPage={prepareProducts.current_page}
-                    countCards={prepareProducts?.count}
-                    onClick={handlerMorePrepare}
-                  />
-                  <Offset mt={18} />
-                </React.Fragment>
-              ) : null}
+              <Offset mt={10} />           
               <Label style={{ fontWeight: 700 }}>Марка авто</Label>
               <Offset mt={10} />
               <NativeSelect
@@ -262,7 +236,7 @@ const UnitSpareRequest = ({
                     type,
                     brand_id: value,
                     handlerChangeDataRequest: (res) => {
-                      const copyData = res.slice();
+                      const copyData = res.results.slice();
                       return handlerChangeDataRequest({
                         setFieldValue,
                         results: copyData,
@@ -324,7 +298,7 @@ const UnitSpareRequest = ({
                           type,
                           model_id: value,
                           handlerChangeDataRequest: (res) => {
-                            const copyData = res.slice();
+                            const copyData = res.results.slice();
                             handlerChangeDataRequest({
                               setFieldValue,
                               results: copyData,
@@ -492,7 +466,7 @@ const UnitSpareRequest = ({
                   type={"number"}
                   isIconLeft={false}
                   name={"phone"}
-                  placeholder={"+7 (000) 000-00-00"}
+                  placeholder={"+3 (80) 000-00-00"}
                   onChange={(phone) => {
                     console.log({ phone });
                     setFieldValue("phone_number", phone);
