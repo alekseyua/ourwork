@@ -1,6 +1,9 @@
 import filter from './icon/compilerexplorer.svg'
 import filterWhite from './icon/compilerexplorer-white.svg'
 import home from './icon/home.svg'
+import myRequest from './icon/create-request.svg'
+import cloud from './icon/send-review.svg';
+
 
 
 import cell_car from './1.jpg';
@@ -31,6 +34,14 @@ import carSpareSell from './icon/car-accident.svg';
 
 import securityUser from './icon/agreement-bussiness.svg'
 import shieldTick from './icon/signing-the-contract.svg'
+import starRaitingFillRed from './icon/star-full.svg'
+import starRaiting from './icon/star.svg'
+import settingRed from './icon/compilerexplorer.svg'
+import settingWhite from './icon/compilerexplorer.svg'
+import arrowRightWhite from './icon/arrow-right.svg'
+
+
+const settingRedRotation = "https://garsing.shop/media/market/setting-red-rotation.svg";
 
 
 const help = 'https://garsing.shop/media/market/help.svg';
@@ -40,7 +51,6 @@ const done = 'https://garsing.shop/media/market/done.svg';
 const stop = 'https://garsing.shop/media/market/stop.svg';
 const plus = 'https://garsing.shop/media/market/plus.svg';
 const cross = 'https://garsing.shop/media/market/cross.svg';
-const cloud = 'https://garsing.shop/media/market/cloud.svg';
 const search = 'https://garsing.shop/media/market/search.svg';
 const penRed = 'https://garsing.shop/media/market/pen-red.svg';
 const checked = 'https://garsing.shop/media/market/checked.svg';
@@ -52,12 +62,10 @@ const twoCloud = 'https://garsing.shop/media/market/two-cloud.svg';
 const location = 'https://garsing.shop/media/market/location.svg';
 const userWhite = 'https://garsing.shop/media/market/user-white.svg';
 const arrowDown = 'https://garsing.shop/media/market/arrowDownNoFill.svg';
-const myRequest = 'https://garsing.shop/media/market/my-request.svg';
 const attention = 'https://garsing.shop/media/market/attention.svg';
 const subscribe = 'https://garsing.shop/media/market/subscribe.svg';
 const unitTurbo = 'https://garsing.shop/media/market/unit-turbo.svg';
 const chatCheck = 'https://garsing.shop/media/market/chat-check.svg';
-const settingRed = 'https://garsing.shop/media/market/setting-red.svg';
 const bascketRed = 'https://garsing.shop/media/market/bascket-red.svg';
 const arrowRight = 'https://garsing.shop/media/market/arrowRight.svg';
 const heardBlack = 'https://garsing.shop/media/market/heard-black.svg';
@@ -66,14 +74,12 @@ const editMarket = 'https://garsing.shop/media/market/edit-market.svg';
 const basketShop = 'https://garsing.shop/media/market/basket-shop.png';
 const fileSuccess = 'https://garsing.shop/media/market/file-success.svg';
 const fullRedHart = 'https://garsing.shop/media/market/fullRedHart.svg';
-const starRaiting = 'https://garsing.shop/media/market/StarRaiting.svg';
 const background = 'https://garsing.shop/media/market/background.png';
 const rowVertical = 'https://garsing.shop/media/market/row-vertical.svg';
 const contentCopy = 'https://garsing.shop/media/market/content_copy.svg';
 const actionSquer = 'https://garsing.shop/media/market/action-squer.svg';
 const plusDarkBlue = 'https://garsing.shop/media/market/plus-dark-blue.svg';
 const settingThree = 'https://garsing.shop/media/market/setting-three.svg';
-const settingWhite = 'https://garsing.shop/media/market/setting-white.svg';
 const shoppingCart = 'https://garsing.shop/media/market/shopping-cart.svg';
 const bascketWhite = 'https://garsing.shop/media/market/bascket-white.svg';
 const fakeImageFile = 'https://garsing.shop/media/market/fake-image-file.svg';
@@ -84,15 +90,12 @@ const arrowLeftWhite = 'https://garsing.shop/media/market/arrow-left-white.svg';
 const fileAdditionOne = 'https://garsing.shop/media/market/file-addition-one.svg';
 const starStrokeWhite = 'https://garsing.shop/media/market/star-stroke-white.svg';
 const incomingSetting = 'https://garsing.shop/media/market/incoming-setting.svg';
-const arrowRightWhite = 'https://garsing.shop/media/market/arrow-right-white.svg';
 const starFooterActive = 'https://garsing.shop/media/market/star-active.svg';
 const homeFooterActive = 'https://garsing.shop/media/market/home-footer-active.svg';
 const starFooterDefault = 'https://garsing.shop/media/market/star-footer.svg';
 const homeFooterDefault = 'https://garsing.shop/media/market/home-footer.svg';
-const starRaitingFillRed = 'https://garsing.shop/media/market/StarRaitingFillRed.svg';
 const marketFooterActive = 'https://garsing.shop/media/market/market-footer-active.svg';
 const fileAdditionOneRed = 'https://garsing.shop/media/market/file-addition-one-red.svg';
-const settingRedRotation = "https://garsing.shop/media/market/setting-red-rotation.svg";
 const marketFooterDefault = 'https://garsing.shop/media/market/market-footer.svg';
 const profileFooterActive = 'https://garsing.shop/media/market/profile-footer-active.svg';
 const profileFooterDefault = 'https://garsing.shop/media/market/profile-footer.svg';

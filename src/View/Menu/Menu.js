@@ -71,11 +71,11 @@ if( !list?.length) return;
                         firstButtonArrow &&
                           <MenuItemIconContainer
                             style={{
-                              backgroundColor: 'var(--background-color-dark-Nile-blue)'
+                              backgroundColor: 'var(--text-color-blue)'
                             }}
                           >
                             <Icon
-                              image={arrowRightWhite}
+                             src={arrowRightWhite}
                               width={14}
                               height={14} />
                           </MenuItemIconContainer>
@@ -96,14 +96,14 @@ if( !list?.length) return;
                                     key={index}
                                   >
                                     <Icon
-                                      image={image} />
+                                     src={image} />
                                   </MenuItemIconContainer>
                                 )
                               })}
                         </WrapContainerBlock>
                         {isMark && isMark.includes(item.id) ?
                           <Icon
-                            image={actionSquer}
+                           src={actionSquer}
                             style={{
                               position: 'absolute',
                               right: -4,
@@ -149,11 +149,11 @@ if( !list?.length) return;
                             firstButtonArrow &&
                             <MenuItemIconContainer
                             style={{
-                              backgroundColor: 'var(--background-color-dark-Nile-blue)'
+                              backgroundColor: 'var(--text-color-blue)'
                             }}
                             >
                               <Icon
-                                image={arrowRightWhite}
+                               src={arrowRightWhite}
                                 width={14}
                                 height={14}
                               />
@@ -161,7 +161,7 @@ if( !list?.length) return;
                           }
                           <MenuItemIconContainer>
                             <Icon
-                              image={item.image}
+                             src={item.image}
                             // width={18}
                             // height={18}
                             />
@@ -216,7 +216,7 @@ if( !list?.length) return;
                         {
                           isMark && isMark.includes(item.id) ?
                           <Icon
-                              image={actionSquer}
+                             src={actionSquer}
                               style={{
                                 position: 'absolute',
                                 right: 8,
@@ -235,7 +235,7 @@ if( !list?.length) return;
                         <MenuItemContainerIcons>
                           <MenuItemIconContainer>
                             <Icon
-                              image={item.image}
+                             src={item.image}
                               width={iconSize}
                               height={iconSize}
                             />

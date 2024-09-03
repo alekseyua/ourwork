@@ -31,7 +31,7 @@ export default function CardFilterSelect({
           {
             item?.image &&
             <Icon
-              image={item.image}
+             src={item.image}
               width={24}
               height={24}
             />

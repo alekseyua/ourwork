@@ -10,7 +10,6 @@ import useClickInside from '../../HOC/useClickInside';
 import useClickOutside from '../../HOC/useClickOutside';
 import Label from '../Label/Label';
 import Offset from '../Offset';
-import { ACTION_SET_CONTROLL_BUTTON } from '../../store/helpers/helpers-store';
 import PhoneInput from 'react-phone-number-input/input';
 
 const Input = ({
@@ -120,7 +119,7 @@ const Input = ({
         {icon && (
           <Icon
             invert={0}
-            image={icon}
+           src={icon}
             width={14}
             height={14}
             mt={17}
@@ -232,7 +231,7 @@ const Input = ({
         {iconRight && (
           <Icon
             invert={0}
-            image={iconRight}
+           src={iconRight}
             style={{
               right: 0,
               position: "absolute",

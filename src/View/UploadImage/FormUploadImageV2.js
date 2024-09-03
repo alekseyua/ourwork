@@ -105,7 +105,7 @@ const FormUploadImageV2 = ({
                 }}
               >
                 <Icon
-                  image={image}
+                 src={image}
                   width={18}
                   height={18}
                   style={{
@@ -128,7 +128,7 @@ const FormUploadImageV2 = ({
             ) : (
               <label className={styles["upload-image__form-label"]}>
                 <Icon
-                  image={image}
+                 src={image}
                   width={25}
                   height={25}
                   invert={0}

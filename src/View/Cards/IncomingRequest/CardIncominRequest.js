@@ -33,7 +33,7 @@ export default function CardIncominRequest({
           {
             card?.image &&
             <Icon
-              image={card.image}
+             src={card.image}
               width={24}
               height={24}
             />

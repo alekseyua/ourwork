@@ -121,12 +121,12 @@ const SelectDesktop = ({
       >
         <span>
           {textPlaceholder.image ? (
-            <Icon image={textPlaceholder.image} width={15} height={15} />
+            <Icon src={textPlaceholder.image} width={15} height={15} />
           ) : null}
         </span>
         <span>{textPlaceholder.text}</span>
         {textPlaceholder.icon ? (
-          <Icon image={textPlaceholder.icon} width={15} height={15} />
+          <Icon src={textPlaceholder.icon} width={15} height={15} />
         ) : null}
         <div
           className={classNames({
@@ -150,7 +150,7 @@ const SelectDesktop = ({
         })}
         slot="suffix"
         id={"droppown-select"}
-        image={arrowDown}
+       src={arrowDown}
         width={10}
         height={10}
         invert={0}

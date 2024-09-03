@@ -52,7 +52,7 @@ export default function Profile({
               // }}
               width={14}
               height={14}
-              image={subscribe}
+             src={subscribe}
             />
           </WrapIconBlock>
           <WrapRowGrid
@@ -143,7 +143,7 @@ export default function Profile({
           <Offset mb={8} />
           <InfoContainer>
             <InfoIconBlock>
-              <Icon width={14} height={14} image={attention} />
+              <Icon width={14} height={14}src={attention} />
             </InfoIconBlock>
             <InfoTextBlock
               style={{ fontWeight: 500, color: "var(--text-color-red)" }}
@@ -203,7 +203,7 @@ export default function Profile({
               Инструкция по работе с ботом
             </BlockTitle>
             <WrapIconBlock>
-              <Icon width={14} height={14} image={arrowRightRed} />
+              <Icon width={14} height={14}src={arrowRightRed} />
             </WrapIconBlock>
           </WrapTwoColumnGrid>
         </WrapContainerBlockBorder>
@@ -228,7 +228,7 @@ export default function Profile({
               Промо-ролик для друзей
             </BlockTitle>
             <WrapIconBlock>
-              <Icon width={14} height={14} image={arrowRightRed} />
+              <Icon width={14} height={14}src={arrowRightRed} />
             </WrapIconBlock>
           </WrapTwoColumnGrid>
         </WrapContainerBlockBorder>
@@ -248,7 +248,7 @@ export default function Profile({
               Видео о верификации
             </BlockTitle>
             <WrapIconBlock>
-              <Icon width={14} height={14} image={arrowRightRed} />
+              <Icon width={14} height={14}src={arrowRightRed} />
             </WrapIconBlock>
           </WrapTwoColumnGrid>
         </WrapContainerBlockBorder>

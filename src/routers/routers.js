@@ -19,7 +19,6 @@ import ErrorHandler from "../Pages/ErrorHandler/ErrorHandler";
 import CarSellComponent from "../Pages/CarSell/SpareRequest/CarSellComponent";
 import BackgroundPreloader from "../View/Preloaders/BackgroundPreloader";
 import OwnRequestEditComponent from "../Pages/Requests/OwnRequestEdit/OwnRequestEditComponent";
-import FixBugsContainer from "../Pages/FixBugs/FixBugsContainer";
 import CarSellMenuComponent from "../Pages/CarSell/CarSellMenu/CarSellMenuComponent";
 
 const Layout = React.lazy(() => import("../Pages/Layuot/Layout"));

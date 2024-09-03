@@ -1,12 +1,9 @@
 import { handlerWarningInfoMessageResponse } from "../../helpers/helpers";
-import { API_ENGINES_MARKET, API_ENGINES_ADD_FAVORITE, DEFAULT_PAGE_SIZE_MARKET, API_GET_LIST_MY_CARDS_MARKETPLACE } from '../../helpers/config';
 import { ACTION_GET, _INIT, ACTION_POST } from "../api-store/getpage";
 import {
   ACTION_SET_MESSAGE_ERROR,
   ACTION_SET_MESSAGE_ERROR_NULL,
 } from "../raiting-review/raiting-review";
-import { ACTION_SET_AMOUNT_SELECT_OPTIONS } from "./createCardMarketPlace/createCardMarketPlace";
-import { ACTION_SET_CARDS_MY_MARKET } from "./myMarketplace/myMarketplace";
 import { ACTION_SET_OPTIONS_MARKET } from "./filtermarketplace/filtermarketplace";
 import { setLocaleStore, setSessionStore } from "../../helpers/utils";
 import { funcDelay } from "../../helpers/const";
@@ -20,8 +17,6 @@ export const ACTION_SET_LIST_CARDS_MARKET = "setMainListMarket*";
 
 export const ACTION_SET_TEXT_SEARCH_MARKET_CARDS = "setTextInputMarketSearch";
 export const ACTION_RESET_TEXT_SEARCH_MARKET_CARDS = "setTextInputMarketSearchNull";
-export const ACTION_RESET_TEXT_SEARCH_INTERACTIVE = "setTextInputSearchInteractiveNull";
-export const ACTION_SET_TEXT_SEARCH_INTERACTIVE = "setTextInputSearchInteractive";
 
 export const ACTION_SET_CURRENT_PAGE_MARKET = "setCurrentPageMarket";
 export const ACTION_RESET_CURRENT_PAGE_MARKET = "resetCurrentPageMarket";
@@ -39,15 +34,7 @@ export const marketplace = (store) => {
       return { textInputMarketSearch: data.q };
     }
   );
-
-  store.on(_INIT, () => ({ textInputInteractive: "" }));
-  store.on(ACTION_RESET_TEXT_SEARCH_INTERACTIVE, (_, data) => ({
-    textInputInteractive: ""
-  }));
-  store.on(ACTION_SET_TEXT_SEARCH_INTERACTIVE, ({ _ }, data, { dispatch }) => {
-    return { textInputInteractive: data.q };
-  });
-
+  
   store.on(
     ACTION_SET_SEARCH_OWN_CARDS,
     ({ textInputMarketSearch }, data, { dispatch }) => {

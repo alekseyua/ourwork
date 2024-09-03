@@ -31,7 +31,7 @@ export default function IncominRequests({
           <Icon
             width={14}
             height={14}
-            image={attention}
+           src={attention}
           />
         </InfoIconBlock>
         <InfoTextBlock

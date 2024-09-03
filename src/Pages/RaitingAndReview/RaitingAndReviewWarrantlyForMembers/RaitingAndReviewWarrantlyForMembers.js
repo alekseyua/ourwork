@@ -34,7 +34,7 @@ export default function RaitingAndReviewWarrantlyForMembers({
         }}
       /> */}
       <SearchSectionWithOfferContainer
-        textToolTip={'"Города с таким названием нет в списке"'}
+        textToolTip={'Города с таким названием нет в списке'}
         isCity={true}
         isIconLeft={true}
         data={listCities}

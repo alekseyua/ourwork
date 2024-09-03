@@ -46,7 +46,7 @@ const CardMPDetailInfo = ({
               {
                 item?.country || item?.city || item?.address ?
                   <CardMPContainerRow>
-                    <Icon width={16} height={16} image={location} />
+                    <Icon width={16} height={16}src={location} />
                     <CardMPText style={{ padding: 3, color: 'var(--text-color-opacity)' }}>{item?.country ? item?.country : ''} {item?.city ? item.city : ''} {item?.address ? item.address : ''}</CardMPText>
                   </CardMPContainerRow>
                   : null
@@ -54,7 +54,7 @@ const CardMPDetailInfo = ({
               {item?.price ? <CardMPPrice catalog={true}>{getNumberSpace(item.price)} <span>₽</span> </CardMPPrice> : null}
 
               {!!item.user && <CardMPContainerRow style={{ marginTop: 9 }}>
-                <Icon width={16} height={16} image={user} />
+                <Icon width={16} height={16}src={user} />
                 <CardMPText style={{ padding: 3, color: 'var(--text-color-opacity)' }}>{item.user}</CardMPText>
               </CardMPContainerRow>}
 
@@ -92,7 +92,7 @@ const CardMPDetailInfo = ({
                   onClick={() => { hendlerFavorite({ status: item.is_favorite, id_card: item.id }) }}
                 >
                   <Icon
-                    image={!item?.is_favorite ? heardRedBorder : fullRedHart}
+                   src={!item?.is_favorite ? heardRedBorder : fullRedHart}
                     width={16}
                     height={16}
                   />

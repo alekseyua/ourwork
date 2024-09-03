@@ -140,9 +140,9 @@ const Button = ({
               datanoclick={datanoClick}
               {...props}
             >
-              {iconLeft ? <Icon slot="icon-right" className={styles[classNameIcon]} style={{ ...styleIconsLeft }} onClick={onClickIcon} image={iconLeft} width={25} height={25} /> : null}
+              {iconLeft ? <Icon slot="icon-right" className={styles[classNameIcon]} style={{ ...styleIconsLeft }} onClick={onClickIcon}src={iconLeft} width={25} height={25} /> : null}
               {children}
-              {iconRight ? <Icon slot="icon-left" className={styles[classNameIcon]} style={{ ...styleIconsRight }} onClick={onClickIcon} image={iconRight} width={25} height={25} /> : null}
+              {iconRight ? <Icon slot="icon-left" className={styles[classNameIcon]} style={{ ...styleIconsRight }} onClick={onClickIcon}src={iconRight} width={25} height={25} /> : null}
               {helptext ? helptext : null}
 
             </button>
@@ -158,9 +158,9 @@ const Button = ({
               rel="noopener noreferrer"
               {...props}
             >
-              {iconLeft ? <Icon slot="icon-right" className={styles[classNameIcon]} style={{ ...styleIconsLeft }} onClick={onClickIcon} image={iconLeft} width={25} height={25} /> : null}
+              {iconLeft ? <Icon slot="icon-right" className={styles[classNameIcon]} style={{ ...styleIconsLeft }} onClick={onClickIcon}src={iconLeft} width={25} height={25} /> : null}
               {children}
-              {iconRight ? <Icon slot="icon-left" className={styles[classNameIcon]} style={{ ...styleIconsRight }} onClick={onClickIcon} image={iconRight} width={25} height={25} /> : null}
+              {iconRight ? <Icon slot="icon-left" className={styles[classNameIcon]} style={{ ...styleIconsRight }} onClick={onClickIcon}src={iconRight} width={25} height={25} /> : null}
               {helptext ? helptext : null}
             </Link>
         )}

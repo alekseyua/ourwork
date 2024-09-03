@@ -68,7 +68,7 @@ class AccordionContainer extends Component {
                     // isShow={this.state.isShowDescription}
                     data_desc={i}
                     isOpen={this.state.listOpenDesc.includes(i)}
-                    image={item.icon}
+                   src={item.icon}
                     styleItemIcon={{
                       ...(this.props?.styleItemIcon ?? {}),
                     }}

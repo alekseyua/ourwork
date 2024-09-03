@@ -118,7 +118,7 @@ export default function CardApplication({
                             }}
                           >
                             <Icon
-                              image={image.url}
+                             src={image.url}
                               width={63}
                               height={63}
                               style={{

@@ -23,7 +23,7 @@ export default function OptionsSelect({
             style={{ zIndex: 99999, pointerEvents: "all" }}
             {...elData}
           >
-            <Icon image={el.image} width={15} height={15} />
+            <Icon src={el.image} width={15} height={15} />
             {title}
           </span>
         );

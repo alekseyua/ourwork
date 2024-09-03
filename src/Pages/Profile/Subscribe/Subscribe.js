@@ -95,7 +95,7 @@ function Subscribe({
                         addClass={"icon__bg-roze-38-checked"}
                         width={14}
                         height={14}
-                        image={checked}
+                       src={checked}
                       />
                     </WrapIconBlock>
                     <WrapRowGrid
@@ -246,7 +246,7 @@ function Subscribe({
             Перейти к оплате
             {isLoading ? (
               <Icon
-                image={settingRedRotation}
+               src={settingRedRotation}
                 width={20}
                 height={20}
                 style={{

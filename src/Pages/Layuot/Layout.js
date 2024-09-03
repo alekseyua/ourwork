@@ -173,7 +173,7 @@ const Layout = ({
                   <>
                     <Offset mb={42} />
                     <Icon
-                      image={
+                     src={
                         modal?.icon
                           ? modal?.icon
                           : modal?.error
@@ -271,7 +271,6 @@ const Layout = ({
               <Offset mb={"var(--margin-bottom-isselect)"} />
             </React.Suspense>
           </main>
-          {!isAuth() && (
             <Footer
               isBlur={isBlur}
               idPage={idPage}
@@ -281,7 +280,6 @@ const Layout = ({
               isFavorite={!!favoriteMPCards?.count}
               statusLoadingData={controllButton.isFetch}
             />
-          )}
         </div>
       </React.Fragment>
     );

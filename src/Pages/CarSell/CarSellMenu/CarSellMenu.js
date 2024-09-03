@@ -4,7 +4,7 @@ import Preloader from '../../../View/Preloaders/Preloader';
 import WrapContainer from '../../../View/WrapContainer/WrapContainer';
 import Offset from '../../../View/Offset';
 import MenuSliderContainer from '../../../View/Menu/styles/MenuSliderContainer';
-import MenuSliderV2 from '../../../View/Menu/MenuSliderV2';
+import MenuSlider from '../../../View/Menu/MenuSlider';
 
 
 export default function CarSellMenu({
@@ -16,7 +16,7 @@ export default function CarSellMenu({
     <WrapContainer>
       <Offset mb={14} />
       <MenuSliderContainer>
-        <MenuSliderV2
+        <MenuSlider
           list={listMenu} 
           handlerChangeScreen={handlerChangeScreen} 
         />

@@ -32,7 +32,7 @@ function DownloadProgressBar({
         className={styles['progressbar__success-load']}
       >
             <Icon 
-              image={checked}
+             src={checked}
               width={45}
               height={35}
             />

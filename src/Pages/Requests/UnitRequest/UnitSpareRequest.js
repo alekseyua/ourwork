@@ -5,57 +5,37 @@ import NativeSelect from '../../../View/Select/NativeSelect/NativeSelect';
 import Offset from '../../../View/Offset';
 import TextArea from '../../../View/TextArea/TextArea';
 import WithWrapContainer from '../../../HOC/WithWrapContainer';
-import { addFile, listRemove, plus, 
-  // listRemove
- } from '../../../images';
+import { addFile} from '../../../images';
 import FormUploadImageV2 from '../../../View/UploadImage/FormUploadImageV2';
 import { messageErrorValidation } from '../../../helpers/schemaValidations/messgeSchemaValidations';
 import { aggrigateSchema } from '../../../helpers/schemaValidations/schemaValidate';
 import WrapContainerPreloader from '../../../View/Preloaders/WrapContainerPreloader';
 import Preloader from '../../../View/Preloaders/Preloader';
-import { autoFocusFormInput, getLocaleStore, handlerChangeDataRequest, removeFocusFormInput, setLocaleStore } from '../../../helpers/utils';
+import { getLocaleStore, handlerChangeDataRequest, setLocaleStore } from '../../../helpers/utils';
 import { ACTION_SET_CONTROLL_BUTTON } from '../../../store/helpers/helpers-store';
 import WithTooltip from '../../../HOC/WithTooltip';
 import TooltipComponent from '../../../Components/Component.Tooltip/TooltipComponent';
 import restrictionLengthText, { getOptionsListPhone } from "../../../helpers/helpers";
 import Input from '../../../View/Input/Input';
 import FormInputContainer from '../../../View/FormInput/FormInputContainer';
-import Icon from '../../../View/Icon/Icon';
-import WrapTwoColumnGrid from '../../../View/Blocks/WrapTwoColumnGrid';
-import WrapRowGrid from '../../../View/Blocks/WrapRowGrid';
 import { delay } from '../../../helpers/const';
-import ButtonMore from '../../../View/ButtonMore/ButtonMore';
-import CardOEM from '../../../View/Cards/CardOEM/CardOEM';
 import React from 'react';
-import ButtonHide from '../../../View/ButtonHide/ButtonHide';
-import PhoneContainer from '../../../View/PhoneContainer/PhoneContainer';
-import Phone from 'react-phone-number-input/input';
 import SearchSectionWithOfferContainer from '../../../Components/SearchSectionWithOffer/SearchSectionWithOfferContainer';
 
 const UnitSpareRequest = ({
   edit,
-  member,
   tooltip,
   dispatch,
   dataRequst,
-  listClasses,
-  isShowHide,
   valuesUnitSpare,
-  prepareProducts,
-  isAddMultiData,
   handlerChangeData,
   handlerShowTooltip,
   dataCurrentRequest = {},
   handlerChangeDataValues,
   listPhons,
-  
-  handlerMorePrepare = () => {},
   handlerDeleteImage = () => {},
-  handlerShowHide = () => {},
   onClickInside = () => {},
   onClickOutside = () => {},
-  handlerAddClasses = () => {},
-  deleteClasses = () => {},
   changeState = () => {},
 }) => {
   if (!edit && !dataRequst?.length) {
@@ -407,7 +387,7 @@ const UnitSpareRequest = ({
               <Offset mt={2} />
               <FormUploadImageV2
                 multiple
-                image={addFile}
+               src={addFile}
                 listImages={dataCurrentRequest?.images ?? values.image ?? []}
                 values={values}
                 setFieldValue={setFieldValue}

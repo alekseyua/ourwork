@@ -30,7 +30,7 @@ export default function CardReviewTop({
           {
             item.rating_number === 1 ?
               <Icon
-                image={starStrokeWhite}
+               src={starStrokeWhite}
               />
               : item.rating_number
           }

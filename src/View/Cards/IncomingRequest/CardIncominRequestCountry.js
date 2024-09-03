@@ -38,7 +38,7 @@ export default function CardIncominRequestCountry({
           {
             card?.image &&
             <Icon
-              image={card.image}
+             src={card.image}
               width={24}
               height={24}
             />
@@ -121,7 +121,7 @@ export default function CardIncominRequestCountry({
                     }}
                   >
                     <Icon
-                      image={arrowRightWhite}
+                     src={arrowRightWhite}
                       width={11}
                       height={11}
                     />

@@ -23,7 +23,7 @@ export default function ItemAccordionIcon({
       }}
     >
       <Icon
-        image={image}
+       src={image}
         width={20}
         height={20}
         style={{

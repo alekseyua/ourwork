@@ -1,10 +1,16 @@
 :root{
-  --bg-item: #C4C4C4;
+  --bg-color-common: #ececec;
+  --bg-item: #526168; // #C4C4C4;
   --bg-menu-bottom:#000000;
   --bg-menu-top:#000000;
-  --bg-block:#ed7014;
-  --text-color: #ed7014; 
+  --bg-block:#FEA465;
+  --text-color: #FEA465;//#ed7014; //
+  --text-color-w: #ffffff;
+  --text-color-blue: #19314a; // Nile blue
   --background-color-block: #C4C4C4;
+  --placeholder-color: #0b1f3599;
+  --placeholder-size: 12px;
+
   // --text-color: #0b1f35; 
 
 
@@ -13,7 +19,6 @@
   
 
   --background-color-block-disabled: rgb(201, 205, 211); // Ghost
-  --background-color-dark-Nile-blue: rgb(25, 49, 74); // Nile blue
   --background-color-Mirage-blue: rgb(11, 31, 53); // Mirage
   --background-color-menu-disable: rgb(225 217 217);
   --background-color-light-roze-border: rgb(251, 217, 216);
@@ -32,14 +37,12 @@
 
   --text-color-red: #DD4434;
   --text-color-rlight-blue: #2F80ED;
-  --text-color-opacity: rgba(11, 31, 53, 0.6);
+  --text-color-opacity: #0b1f3599;
   --text-color-white: #ffffff;
   --background-info-bage: #ffffff;
   
   --background-box-shadow: rgba(0, 0, 0, 0.25);
   --border-select-color: rgb(140 150 175); //DFE2EA
-  --placeholder-color: var(--text-color-opacity);
-  --placeholder-size: 12px;
   --hight-scrollbar: 0px; //14px;
   --gridTemplateColtumnSearchFavorie:  85% 15%; //77% 15%
   --z-index-root-container: 0px;
@@ -116,12 +119,12 @@ h1,h2,h3,h4,h5,h6,p {
 }
 
 body {
+  background-color: var(--bg-color-common);
   margin: 0;
   font-family: 'HelveticaNeue';
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--background-color);
   &::-webkit-scrollbar{
     display: none;
   }
@@ -175,6 +178,7 @@ select {
 }
 
 .main-context{
+  background-color: var(--bg-color-common);
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -182,7 +186,6 @@ select {
   // overflow-x: hidden;
   position: relative;
   transition: top .8s ease-out 0s;
-  background-color: var(--background-color);
   margin-top: var(--main-margin-top);
   margin-bottom: var(--margin-bottom-isselect);
   -ms-overflow-style: none;  /* Internet Explorer 10+ */

@@ -9,6 +9,7 @@ import BlockTitle from "../../Blocks/BlockTitle";
 import MenuItemIconContainer from "../../Menu/Detali/MenuItemIconContainer";
 import { arrowRightWhite, settingWhite } from "../../../images";
 import TooltipComponent from "../../../Components/Component.Tooltip/TooltipComponent";
+import IconSvg from "../../Icon/IconSvg";
 
 export default function CardFilterUnitSpare({
   card,
@@ -35,7 +36,7 @@ export default function CardFilterUnitSpare({
             gridTemplateColumns: card?.image ? `10% 90%` : "100%",
           }}
         >
-          {card?.image && <Icon image={card.image} width={24} height={24} />}
+          {card?.image && <Icon src={card.image} width={24} height={24} />}
           <BlockTitle
             style={{
               top: 2,
@@ -172,25 +173,29 @@ export default function CardFilterUnitSpare({
                 }}
               >
                 <MenuItemIconContainer
-                  width={21}
+                  width={31}
                   height={21}
+                  active = {card.status_child_spare || card.status_child_unit}
                   style={{
                     borderRadius: 5,
                     top: 0,
-                    backgroundColor:
-                      card.status_child_spare || card.status_child_unit
-                        ? "var(--background-color-dark-Nile-blue)"
-                        : "var(--background-color-icon-red)",
+                    // backgroundColor:
+                    //   card.status_child_spare || card.status_child_unit
+                    //     ? "var(--text-color-blue)"
+                    //     : "var(--background-color-icon-red)",
                   }}
                 >
-                  <Icon
-                    image={
+                  <IconSvg
+                   src={
                       card.status_child_spare || card.status_child_unit
                         ? settingWhite
                         : arrowRightWhite
                     }
-                    width={11}
-                    height={11}
+                    width={13}
+                    height={13}
+                    style={{
+                      zIndex: 3
+                    }}
                   />
                 </MenuItemIconContainer>
               </Button>

@@ -11,7 +11,7 @@ const BackgroundPreloader = ({ children, style }) => {
     >
       <Icon
         addClass={"icon__rotation"}
-        image={settingRed}
+       src={settingRed}
         width={40}
         height={40}
       />

@@ -223,7 +223,7 @@ export default function EditProfile({
                 >
                 </Phone>
                 <Icon
-                  image={penGrey}
+                 src={penGrey}
                   width={14}
                   height={14}
                   style={{

@@ -46,7 +46,7 @@ class NotiiceComponent extends React.Component {
             }}
           >Внимание</BlockTitle>
           <Icon
-            image={cross}
+           src={cross}
             width={14}
             height={14}
             onClick={() => {

@@ -7,7 +7,7 @@ import stylesAddClass from './styles/icon-addclass.module.scss';
 const Icon = ({
     value,
     style,
-    image,
+    src,
     width = 20,
     height = 20,
     mr = 0,
@@ -58,7 +58,7 @@ const Icon = ({
                 className={styleImage}
                 onClick={onClick}
                 style={{
-                    backgroundImage: `url(${image})`,
+                    backgroundImage: `url(${src})`,
                     width: `${width}px`,
                     minWidth: `${width}px`,
                     height: `${height}px`,

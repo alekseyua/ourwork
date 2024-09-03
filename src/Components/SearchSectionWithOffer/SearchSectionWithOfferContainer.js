@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import SearchComponent from "../SearchSection/SearchComponent";
-import { ACTION_RESET_TEXT_SEARCH_INTERACTIVE, ACTION_SET_TEXT_SEARCH_INTERACTIVE } from "../../store/marketplace/marketplace";
 import { connectStoreon } from "storeon/react";
 import { checkCurrentCityInListCitys } from "../../helpers/helpers";
-import { ACTION_CHANGE_DATA_OPTIONS_MARKET_INTO_STORE } from "../../store/marketplace/createCardMarketPlace/createCardMarketPlace";
+import { ACTION_SET_TEXT_SEARCH_INTERACTIVE } from "../../store/helpers/helpers-store";
 
 class SearchSectionWithOfferContainer extends Component {
   state = {
@@ -12,9 +11,6 @@ class SearchSectionWithOfferContainer extends Component {
     idCurrentSearch: null,
   };
 
-  componentWillUnmount() {
-    this.props.dispatch(ACTION_RESET_TEXT_SEARCH_INTERACTIVE);
-  }
   handlerTextSearch = (text, e, callback) => {
     if (!!!text.length && !e?.target?.id) {
       callback();
@@ -97,10 +93,6 @@ class SearchSectionWithOfferContainer extends Component {
             ...state,
             helpText: this.props?.textToolTip ?? "",
           }));
-          this.props.dispatch(ACTION_CHANGE_DATA_OPTIONS_MARKET_INTO_STORE, {
-            key: "city_id",
-            value: "",
-          });
 
           this.props.onChange(" ");
         } else {
@@ -111,10 +103,6 @@ class SearchSectionWithOfferContainer extends Component {
             ...state,
             helpText: "",
           }));
-          this.props.dispatch(ACTION_CHANGE_DATA_OPTIONS_MARKET_INTO_STORE, {
-            key: "city_id",
-            value: resCheck.id,
-          });
           this.props.onChange(resCheck.id, null);
         }
       }else{

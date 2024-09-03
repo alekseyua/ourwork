@@ -61,7 +61,7 @@ export default function OwnProfileReview({
               addClass={"icon__bg-roze-38"}
               width={14}
               height={14}
-              image={subscribe}
+             src={subscribe}
             />
           </WrapIconBlock>
           <WrapRowGrid>

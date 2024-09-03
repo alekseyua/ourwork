@@ -43,7 +43,7 @@ export default function InfoAboutHosterCArdMarket({
             addClass={'icon__bg-roze-38'}
             width={14}
             height={14}
-            image={subscribe}
+           src={subscribe}
           />
         </WrapIconBlock>
         <WrapRowGrid>
@@ -122,7 +122,7 @@ export default function InfoAboutHosterCArdMarket({
         </Button>
 
         <Button
-          addClass={'button__controll--roze'}
+          addClass={'button__orange-white'}
           // iconLeft={penRed}
           // styleIconsLeft={{
           //   width: 12,

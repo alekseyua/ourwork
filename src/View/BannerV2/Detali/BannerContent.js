@@ -25,7 +25,7 @@ export default function BannerContent({
         />
       </BannerControllerContainer>
       <Icon
-        image={basketShop}
+       src={basketShop}
         width={150}
         height={150}
         style={{

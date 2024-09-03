@@ -61,7 +61,7 @@ const ImageGalaryMP = ({
           onClick={() => { hendlerFavorite({ status: item.is_favorite, id_card: item.id })}}
         >
           <Icon
-            image={!item?.is_favorite ? heardRedBorder : fullRedHart}
+           src={!item?.is_favorite ? heardRedBorder : fullRedHart}
             width= {12}
             height={12}
           />

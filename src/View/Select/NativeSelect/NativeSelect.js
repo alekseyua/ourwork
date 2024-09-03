@@ -90,7 +90,7 @@ const NativeSelect = ({
                     borderRadius: 8,
                     fontWeight: 500,
                     fontFamily: 'HelveticaNeue',
-                    color: `var(--text-color)`,
+                    color: `var(--text-color-blue)`,
                     fontSize: 12,
                     letterSpacing: letterSpacing,
                     pointerEvents: enabled? 'all' : 'none',

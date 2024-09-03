@@ -69,7 +69,7 @@ export default function ShowPreviewImages({
                 {
                   el?.id && <Icon
                     className={styles['upload-image__form-image-icon--delete']}
-                    image={iconDel ?? stop}
+                   src={iconDel ?? stop}
                     width={20}
                     height={20}
                   />
@@ -84,7 +84,7 @@ export default function ShowPreviewImages({
                     }}
                   >
                     <Icon
-                      image={settingRedRotation}
+                     src={settingRedRotation}
                       width={20}
                       height={20}
                     />

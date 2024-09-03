@@ -11,8 +11,21 @@ export const ACTION_SET_BUTTON_HEADER_ACTION = "setButtonHeaderAction";
 export const ACTION_SET_BUTTON_HEADER_ACTION_NULL = "setButtonHeaderActionNull";
 export const ACTION_SET_BLOCK_SCROLL = "setBlockScroll";
 export const ACTION_SET_BLUR = "setBlur";
+export const ACTION_RESET_TEXT_SEARCH_INTERACTIVE = "setTextInputSearchInteractiveNull";
+export const ACTION_SET_TEXT_SEARCH_INTERACTIVE = "setTextInputSearchInteractive";
 
 export const helpers = (store) => {
+
+
+  store.on(_INIT, () => ({ textInpputInteractive: "" }));
+  store.on(ACTION_RESET_TEXT_SEARCH_INTERACTIVE, (_, data) => ({
+    textInputInteractive: ""
+  }));
+  store.on(ACTION_SET_TEXT_SEARCH_INTERACTIVE, ({ _ }, data, { dispatch }) => {
+    return { textInputInteractive: data.q };
+  });
+
+
   store.on(_INIT, () => ({ isBlur: false }));
   store.on(ACTION_SET_BLUR, (_, data) => ({ isBlur: data }));
 

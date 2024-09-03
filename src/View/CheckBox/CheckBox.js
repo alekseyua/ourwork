@@ -143,7 +143,7 @@ const CheckBox = ({
               paddingLeft: 27,
               left: -10,
               pointerEvents: disabled ? 'none' : 'all',
-              color: `var(--text-color)`,
+              color: `var(--text-color-blue)`,
               position: 'relative',
               fontSize: 12,
               fontWeight: 500,

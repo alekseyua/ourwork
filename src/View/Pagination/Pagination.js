@@ -40,7 +40,7 @@ function Pagination({
         data-item={'prev'}
         onClick={even => changePagination(even)}
       >
-        <Icon width={11} height={11} image={arrowLeftWhite} style={{ pointerEvents: 'none' }} />
+        <Icon width={11} height={11}src={arrowLeftWhite} style={{ pointerEvents: 'none' }} />
       </Button>
 
       <PaginationContainerItems
@@ -86,7 +86,7 @@ function Pagination({
         data-item={'next'}
         onClick={even => changePagination(even)}
       >
-        <Icon width={15} height={15} image={arrowRightWhite} style={{ pointerEvents: 'none' }} />
+        <Icon width={15} height={15}src={arrowRightWhite} style={{ pointerEvents: 'none' }} />
       </Button>
     </ContainerPagination>
  )

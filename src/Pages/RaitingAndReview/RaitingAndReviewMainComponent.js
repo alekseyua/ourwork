@@ -42,7 +42,7 @@ class RaitingAndReviewMainComponent extends Component {
           iconLeft: cloud,
           styleIconsLeft: { height: 12 },
           title: 'Оставить отзыв',
-          className: 'button__controll--red'
+          className: 'button__orange-white'
         },
       ]
     })
@@ -66,7 +66,6 @@ class RaitingAndReviewMainComponent extends Component {
   
   timer = null;
   handlerTextSearch = (text, callback) => {
-    console.log({callback})
     this.setState({
       isLoadingList: true
     })

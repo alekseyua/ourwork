@@ -68,7 +68,7 @@ const CarSell = ({ dispatch, handlerChangeDataValues }) => {
               <Offset mt={18} />
               <FormUploadImageV2
                 multiple
-                image={addFile}
+               src={addFile}
                 values={values}
                 setFieldValue={setFieldValue}
                 maxCountImage={8}
@@ -121,7 +121,7 @@ export default WithWrapContainer(CarSell);
         //     }}
         //   >
         //     {/* <Icon
-        //       image={cell_car}
+        //      src={cell_car}
         //       width={15}
         //       height={15}
         //       mr={5}

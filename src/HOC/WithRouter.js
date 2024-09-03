@@ -4,15 +4,10 @@ import { useStoreon } from "storeon/react";
 import { LASTURL, MARKETPLACE_DETAILY_CARD, PREVURL } from "../helpers/config";
 import {
   changeStateBackButton,
-  openOnlyURl,
-  openURl,
   smoothTop,
 } from "../helpers/helpers";
 import {
-  funcDelay,
-  getMarkPage,
   initButtomApply,
-  linkRedirectEmirate,
   saveLastPast,
 } from "../helpers/const";
 import {
@@ -21,10 +16,7 @@ import {
   ACTION_SET_TEXT_HEADER,
 } from "../store/helpers/helpers-store";
 import { ACTION_GET_ACCESSES } from "../store/access/access";
-import { getLocaleStore, getSessionStore, setLocaleStore } from "../helpers/utils";
-import { ACTION_RESET_FILTER_INTO_MARKET } from "../store/marketplace/filtermarketplace/filtermarketplace";
-import { setLocale } from "yup";
-import { ACTION_RESET_LIST_PREPARE_PRODUCTS, ACTION_SET_VALUE_UNIT_SPARE_NULL } from "../store/requests/requests";
+import { getLocaleStore } from "../helpers/utils";
 
 let statusResetFilters = false;
 export default function WithRouter(Component) {

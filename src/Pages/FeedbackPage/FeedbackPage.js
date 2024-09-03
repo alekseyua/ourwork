@@ -31,7 +31,7 @@ export default class MainFeedbackComponent extends Component {
                 }}
               >
                 <Icon
-                  image={link.icon}
+                 src={link.icon}
                   width={15}
                   height={15}
                   mr={5}

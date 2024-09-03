@@ -33,7 +33,7 @@ class IncomingRequestTruckComponent extends Component {
           iconLeft: help,
           styleIconsLeft: { height: 12 },
           title: "Как настроить?",
-          className: "button__controll--roze",
+          className: "button__orange-white",
         },
       ],
     });

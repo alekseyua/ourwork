@@ -62,7 +62,7 @@ const ButtonApplyStatic = ({
                   {
                     isFetch ?
                       <Icon
-                        image={settingRedRotation}
+                       src={settingRedRotation}
                         width={20}
                         height={20}
                         style={{

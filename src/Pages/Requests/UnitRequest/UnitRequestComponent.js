@@ -42,7 +42,7 @@ class UnitRequestComponent extends Component {
           iconLeft: myRequest,
           styleIconsLeft: { height: 12 },
           title: "Мои запросы",
-          className: "button__controll--roze",
+          className: "button__orange-white",
         },
       ],
     });

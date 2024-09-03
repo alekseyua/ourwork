@@ -82,7 +82,7 @@ const Raiting = ({
                             >
                                 <Icon
                                     value={i + 1}
-                                    image={+i < +ActiveStar ? starRaitingFillRed : starRaiting}
+                                   src={+i < +ActiveStar ? starRaitingFillRed : starRaiting}
                                     // invert={i < ActiveStar ? '0%' : '45%'}
                                     // opacity={i < ActiveStar ? '100%' : '20%'}
                                     // brightness={i < ActiveStar ? '100%' : '150%'}

@@ -46,7 +46,7 @@ const Spinner = ({
                             addClass={'icon__rotation'}
                             width={50}
                             height={50}
-                            image={settingRed}
+                           src={settingRed}
                         />
                     </div>
             }

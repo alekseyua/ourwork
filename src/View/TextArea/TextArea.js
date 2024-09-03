@@ -137,7 +137,7 @@ const TextArea = ({
           style={{
             height: height ? `${height}px` : "none",
             backgroundColor: "transparent",
-            color: `var(--text-color)`,
+            color: `var(--text-color-blue)`,
           }}
         />
       </div>

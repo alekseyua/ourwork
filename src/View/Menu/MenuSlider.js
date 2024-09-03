@@ -1,74 +1,60 @@
 import React from 'react'
-
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/scss';
-import 'swiper/scss/pagination';
-
-
-
-import '../../styles/swiper-user-style.scss'
+import MenuContainer from './Detali/MenuContainer'
 import MenuItemContainer from './Detali/MenuItemContainer';
 import MenuItemTitle from './Detali/MenuItemTitle';
-import MenuItemIconContainer from './Detali/MenuItemIconContainer';
 import Icon from '../Icon/Icon';
-import MenuItemContainerIcons from './Detali/MenuItemContainerIcons';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 
 
 
 function MenuSlider({
   list,
+  menuRef,
+  setMenuRef,
   handlerChangeScreen,
 }) {
+
+
   return (
-    
-    <div
-      style={{ 
-        marginTop: 14, 
-        with: '100%',
+    <MenuContainer
+      setMenuRef={setMenuRef}
+      style={{
+        filter: `blur(var(--filter-blur))`,
+        gap: '15px'
       }}
     >
-      <Swiper
-        slidesPerView={2}
-        spaceBetween={5}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Pagination]}
-        style={{ 
-          with: '100%'
-        }}
-      >
-        {
-          !!list.length &&
-          list.filter(el => el.id !== 999)
-            .map((item, index) => {
-              return (<SwiperSlide
-                key={index}
+      {
+        !!list.length &&
+        list
+          .filter(el => el.id !== 999)
+          .filter(el => !el.isFooter)
+          .map((item, index) => {
+            return (
+
+              <MenuItemContainer
+                addClass={item?.isActive? 'main-menu__item-container' : 'main-menu__item-container--disabled'}
                 style={{
-                  width: 150,
-                  minWidth: 150,
-                  display: 'block',
-                  height: '100%',
-                  objectFit: 'cover',
+                  opacity: item?.isActive?  1 : .5,
                 }}
+                key={index}
+                onClick={() => handlerChangeScreen({path: item.slug}) }
               >
-                <MenuItemContainer
-                  onClick={() => handlerChangeScreen({path: item.slug}) }
-                >
-                  <MenuItemTitle style={{ top: 14, left: 16 }}>{item.name}</MenuItemTitle>
-                  <MenuItemContainerIcons>
-                    <MenuItemIconContainer>
-                      <Icon
-                        image={item.image}
-                      />
-                    </MenuItemIconContainer>
-                  </MenuItemContainerIcons>
-                </MenuItemContainer>
-              </SwiperSlide>)
-            })}
-      </Swiper>
-    </div>
+                <MenuItemTitle style={{ top: 35, left: 16, fontSize: 20 }}>{item.name}</MenuItemTitle>
+                <Icon
+                 src={item.image}                     
+                  style={{
+                    position: 'absolute',
+                    width: '50%',
+                    height: '50%',
+                    left: '44%',
+                    top: '50%',
+                    transform: 'transition(-50%,-50%)'
+                  }}
+                />
+              </MenuItemContainer>
+            )
+          })
+      }
+    </MenuContainer>
   )
 }
 

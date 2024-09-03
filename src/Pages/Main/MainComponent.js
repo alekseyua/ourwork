@@ -4,7 +4,7 @@ import { connectStoreon } from 'storeon/react';
 import { plus, userWhite, arrowRight, plusDarkBlue } from '../../images';
 import WithRouter from '../../HOC/WithRouter';
 import Button from '../../View/Button/Button';
-import { MAKE_REQUEST_MENU, MARKETPLACE_MAIN, PROFILE_MENU, menuTop } from '../../helpers/config';
+import { MAKE_REQUEST_MENU, MARKETPLACE_MAIN, PROFILE_MENU, mainMenuInit } from '../../helpers/config';
 import { openOnlyURl } from '../../helpers/helpers';
 import { ACTION_SET_BUTTON_HEADER_ACTION } from '../../store/helpers/helpers-store';
 import { checkAccess } from '../../helpers/utils';
@@ -52,7 +52,7 @@ class MainComponent extends React.PureComponent {
   render() {
     return (
       <Main
-        mainMenu={checkAccess(menuTop, this.props.access)}
+        mainMenu={checkAccess(mainMenuInit, this.props.access)}
 
         listFAQ={this.state.listFAQ}
         headerTitleFAQ={this.state.headerTitleFAQ}

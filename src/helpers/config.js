@@ -45,29 +45,6 @@ export const API_CHECK_DELETE_IMAGE_REQUEST = "/telegram/api_check_request_image
 export const API_CREATE_REVIEW = '/telegram/api_create_review/';
 export const API_DELETE_IMAGE_FROM_REQUEST = "/telegram/api_check_request_images/"; // delete
 
-// marketplace 
-export const API_ENGINES_MARKET_GET_STATUS = '/api_engines/engines/get_status_upload/';
-export const API_ENGINES_MARKET_DELETE_LINK = '/api_engines/engines/delete_url/';
-export const API_ENGINES_MARKET_DELETE_FILE = '/api_engines/engines/delete_file/';
-export const API_ENGINES_MARKET_REDIRECT = '/api_engines/';
-export const API_ENGINES_DELETE_IMAGE_FROM_CARD_MARKET = '/api_engines/engines/delete_image/';
-export const DELETE_MY_CARDS_MARKETPLACE = '/api_engines/engines/delete_one_card/';
-export const API_ENGINES_ADD_FAVORITE = '/api_engines/add_favorite/';
-export const API_GET_LIST_MY_CARDS_MARKETPLACE = "/api_engines/engines/get_my_ads/"; 
-
-
-export const API_ENGINES_MARKET = '/api_engines/engines/';
-export const API_ENGINES_CHANGE_ONE_CARD_MARKET = '/api_engines/engines/change_one_card/';
-export const API_ENGINES_GET_ONE_CARD_MP = '/api_engines/engines/get_one_card/';
-
-export const API_ENGINES_ADD_FILE_CARDS_MP = '/api_engines/upload_file/';
-export const API_GET_CATEGORY = `/api_engines/get_categories/`;
-export const API_ENGINES_ADD_URL_CARDS_MP = '/api_engines/upload_url/';
-
-export const API_ENGINE_SEARCH_DROP_OPTION = '/api_engines/search_citys/';
-export const API_OPTIONS_LIST_ENGINES = '/api_engines/get_';
-
-
 // review
 export const API_GET_ALL_GARANT_MEMBERS = '/rating/feedbacks/get_user_feedbacks/';
 export const API_GET_LIST_CITIES_WARRANT_MEMBER = '/telegram/api_get_garant_members/';
@@ -88,10 +65,6 @@ export const API_CHANGE_PROFILE = '/telegram/api_edit_profile/';
 export const API_UNSUBSCRIBE_AUTO_PAYMENT = '/telegram/api_cancel_user_auto_payment/';
 // sale car  
 export const CREATE_CAR_SALE = '/telegram/api_create_sale/'; // old request sell auto
-
-// chain motors
-export const API_GET_CARDS_MOTORS = '/api_engines/cards/';
-export const API_GET_ONE_CARD_MOTOR = "/api_engines/cards/get_one_card/";
 
 export const rateRestriction = 50000000; // ограничения файлва ссылки по загрузке 50mb
 export const marginSides = 10;
@@ -171,7 +144,7 @@ export const ONE_CARD_CHAIN_MOTOR = '/card-china-motors'
 
 // menu
 
-export const menuTop = [
+export const mainMenuInit = [
   {
     name: "Фильтра",
     slug: INCOMING_REQUEST_UNIT_SPARE,
@@ -184,10 +157,10 @@ export const menuTop = [
     isFooter: false,
   },
   {
-    name: "Ищу (создать запрос)",
+    name: "Создать запрос",
     slug: MAKE_REQUEST_MENU,
     id: 2,
-    text: "Ищу (создать запрос)",
+    text: "Создать запрос",
     image: createRequestDefault,
     type: "page_make_requests",
     url: null,
@@ -242,10 +215,10 @@ export const menuFooter = [
     isFooter: true,
   },
   {
-    "name": "Ищу (создать запрос)",
+    "name": "Создать",
     "slug": MAKE_REQUEST_MENU,
     "id": 2,
-    "text": "Ищу (создать запрос)",
+    "text": "Создать",
     "image": createRequestWhite,
     "type": "page_make_requests",
     "url": null,
