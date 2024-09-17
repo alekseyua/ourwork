@@ -1,7 +1,6 @@
 import React from "react";
 import classNames from "classnames";
 import styles from './styles/header.module.scss';
-import { Image } from "react-native-web";
 import Button from "../Button/Button";
 import WrapContainer from "../WrapContainer/WrapContainer";
 

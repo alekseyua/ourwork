@@ -1,8 +1,13 @@
 .footer{
     // footer__menu-bottom-title
     &__menu-bottom-title{
-        color: var(--text-color);
+        color: var(--text-color-bottom);
         font-size: 12px;
+        
+        //footer__menu-bottom-title--active
+        &--active{
+            color: var(--text-color);
+        }
     }
 
     // footer__list-container{}

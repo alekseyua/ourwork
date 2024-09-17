@@ -110,7 +110,6 @@ export const funcDelay = (func, time) => {
 };
 
 export async function saveLastPast(pathname) {
-  if( (pathname === "/emirate_join" || pathname === "/emirate_join/")) return;
   await delay(300);
   setLocaleStore(
     PREVURL,
