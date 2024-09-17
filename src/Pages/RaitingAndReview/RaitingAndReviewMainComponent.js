@@ -87,7 +87,7 @@ class RaitingAndReviewMainComponent extends Component {
   }
 
   render() {
-    // return <BackgroundPreloader />;
+    return <BackgroundPreloader />;
     return (
       <RaitingAndReviewMain
         handlerTextSearch={this.handlerTextSearch}
