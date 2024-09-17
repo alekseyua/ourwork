@@ -3,6 +3,7 @@ import MenuContainer from './Detali/MenuContainer'
 import MenuItemContainer from './Detali/MenuItemContainer';
 import MenuItemTitle from './Detali/MenuItemTitle';
 import Icon from '../Icon/Icon';
+import { useTranslation } from 'react-i18next';
 
 
 
@@ -13,7 +14,8 @@ function MenuSlider({
   handlerChangeScreen,
 }) {
 
-
+  const {t, i18n} = useTranslation()
+console.log({t: t('s')})
   return (
     <MenuContainer
       setMenuRef={setMenuRef}
@@ -38,7 +40,7 @@ function MenuSlider({
                 key={index}
                 onClick={() => handlerChangeScreen({path: item.slug}) }
               >
-                <MenuItemTitle style={{ top: 35, left: 16, fontSize: 20 }}>{item.name}</MenuItemTitle>
+                <MenuItemTitle style={{ top: 35, left: 16, fontSize: 20 }}>{t(item.name)}</MenuItemTitle>
                 <Icon
                  src={item.image}                     
                   style={{

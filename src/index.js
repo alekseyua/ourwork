@@ -10,6 +10,7 @@ import { store } from './store';
 import ErrorHandler from "./Pages/ErrorHandler/ErrorHandler";
 import { setSessionStore } from "./helpers/utils";
 import { funcDelay } from "./helpers/const";
+import i18n from "./lang/i18n";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 

@@ -1,4 +1,5 @@
 import { API_POST_CHANGE_LANG } from "../../helpers/config";
+import i18n from "../../lang/i18n";
 import { _INIT, ACTION_POST } from "../api-store/getpage";
 
 export const ACTION_SET_CURRENT_LANG = 'set_current_lang';
@@ -26,6 +27,7 @@ export const langStore = store => {
     store.on(ACTION_SET_CURRENT_LANG, (_, data, {dispatch}) => { 
         if (!data?.initLang)
           dispatch(ACTION_CHANGE_LANG, { language_code: data.language_code });
+        i18n.changeLanguage(data.language_code);
         dispatch(ACTION_SET_LIST_LANG, {language_code: data.language_code});
         return { currentLang: data.language_code };
     });

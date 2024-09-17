@@ -155,7 +155,7 @@ export const ONE_CARD_CHAIN_MOTOR = '/card-china-motors'
 
 export const mainMenuInit = [
   {
-    name: "Фильтра",
+    name: "filters",
     slug: INCOMING_REQUEST_UNIT_SPARE,
     id: 8,
     text: "Фильтра",
@@ -166,7 +166,7 @@ export const mainMenuInit = [
     isFooter: false,
   },
   {
-    name: "Создать запрос",
+    name: "create_request",
     slug: MAKE_REQUEST_MENU,
     id: 2,
     text: "Создать запрос",
@@ -188,13 +188,13 @@ export const mainMenuInit = [
     isFooter: false,
   },
   {
-    "name": "Продать",
-    "slug": CAR_SALE_MENU,
-    "id": 10,
-    "text": "Продать",
-    "image": sellCar,
-    "type": "page_sell",
-    "url": null,
+    name: "Продать",
+    slug: CAR_SALE_MENU,
+    id: 10,
+    text: "Продать",
+    image: sellCar,
+    type: "page_sell",
+    url: null,
     isActive: true,
     isFooter: false,
   },
