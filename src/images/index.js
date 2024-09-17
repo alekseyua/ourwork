@@ -45,7 +45,6 @@ import imageBanner from './baner/new-banner.jpg'
 
 // const settingRedRotation = "https://garsing.shop/media/market/setting-red-rotation.svg";
 
-
 const help = 'https://garsing.shop/media/market/help.svg';
 const chat = 'https://garsing.shop/media/market/chat.svg';
 const user = 'https://garsing.shop/media/market/user.svg';
@@ -73,7 +72,6 @@ const editMarket = 'https://garsing.shop/media/market/edit-market.svg';
 const basketShop = 'https://garsing.shop/media/market/basket-shop.png';
 const fileSuccess = 'https://garsing.shop/media/market/file-success.svg';
 const fullRedHart = 'https://garsing.shop/media/market/fullRedHart.svg';
-const background = 'https://garsing.shop/media/market/background.png';
 const rowVertical = 'https://garsing.shop/media/market/row-vertical.svg';
 const contentCopy = 'https://garsing.shop/media/market/content_copy.svg';
 const actionSquer = 'https://garsing.shop/media/market/action-squer.svg';
@@ -159,7 +157,6 @@ export {
     heardBlack,
     editMarket,
     basketShop,
-    background,
     fileSuccess,
     fullRedHart,
     starRaiting,

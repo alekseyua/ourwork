@@ -5,12 +5,18 @@ import WithRouter from '../../HOC/WithRouter';
 import { mainMenuInit } from '../../helpers/config';
 import { openOnlyURl } from '../../helpers/helpers';
 import { checkAccess } from '../../helpers/utils';
+import { ACTION_SET_BUTTON_HEADER_LANG } from "../../store/helpers/helpers-store";
+import LangContainer from '../../Components/Lang/LangContainer';
 
 class MainComponent extends React.PureComponent {
 
   componentDidMount() {
     this.props.controllerHeaderBand({
       currentTextHandlerBand: 'Главное меню',
+    });
+    this.props.dispatch(ACTION_SET_BUTTON_HEADER_LANG, {
+      isVisible: true,
+      Element: LangContainer,
     });
     window.performance.mark('mark_fully_loaded');
   }

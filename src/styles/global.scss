@@ -195,7 +195,7 @@ select {
   margin-top: 0;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  overflow: hidden;
+  overflow: var(--header-overflow);
   margin-bottom: -25px;
   width: 100%;
   position: fixed;

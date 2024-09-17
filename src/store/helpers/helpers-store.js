@@ -1,14 +1,17 @@
 import { _INIT } from "../api-store/getpage";
 
+export const ACTION_SET_BUTTON_HEADER_ACTION = "setButtonHeaderAction";
+export const ACTION_SET_BUTTON_HEADER_ACTION_NULL = "setButtonHeaderActionNull";
+export const ACTION_SET_BUTTON_HEADER_LANG = "setButtonLangAction";
+export const ACTION_SET_BUTTON_HEADER_LANG_NULL = "setButtonHeaderLangNull";
 export const ACTION_OPEN_MODAL = "openModal";
 export const ACTION_CLOSE_MODAL = "closeModal";
+
 export const ACTION_CHECK_VALIDATE = "setCheckValidate";
 export const ACTION_CHECK_VALIDATE_NULL = "setCheckValidateNull";
 export const ACTION_SET_CONTROLL_BUTTON = "setControllButton";
 export const ACTION_SET_CONTROLL_BUTTON_NULL = "setControllButtonHide";
 export const ACTION_SET_TEXT_HEADER = "setTextHeader";
-export const ACTION_SET_BUTTON_HEADER_ACTION = "setButtonHeaderAction";
-export const ACTION_SET_BUTTON_HEADER_ACTION_NULL = "setButtonHeaderActionNull";
 export const ACTION_SET_BLOCK_SCROLL = "setBlockScroll";
 export const ACTION_SET_BLUR = "setBlur";
 export const ACTION_RESET_TEXT_SEARCH_INTERACTIVE = "setTextInputSearchInteractiveNull";
@@ -75,7 +78,7 @@ export const helpers = (store) => {
   store.on(ACTION_SET_TEXT_HEADER, ({ _ }, obj) => ({ textHeader: obj }));
   const initButtonHeaderAction = {
     isVisible: false,
-    buttons: [],
+    Element: () => '<></>',
   };
   store.on(_INIT, () => ({ buttonHeaderAction: initButtonHeaderAction }));
   store.on(ACTION_SET_BUTTON_HEADER_ACTION_NULL, () => ({
@@ -84,6 +87,19 @@ export const helpers = (store) => {
   store.on(ACTION_SET_BUTTON_HEADER_ACTION, ({ buttonHeaderAction }, obj) => {
     return { buttonHeaderAction: { ...buttonHeaderAction, ...obj } };
   });
+ 
+  const initLang = {
+    isVisible: false,
+    buttons: [],
+  };
+  store.on(_INIT, () => ({ headerLang: initLang }));
+  store.on(ACTION_SET_BUTTON_HEADER_LANG_NULL, () => ({
+    headerLang: initLang,
+  }));
+  store.on(ACTION_SET_BUTTON_HEADER_LANG, ({ headerLang }, obj) => {
+    return { headerLang: { ...headerLang, ...obj } };
+  });
+ 
   store.on(_INIT, () => ({
     modal: {
       show: false,

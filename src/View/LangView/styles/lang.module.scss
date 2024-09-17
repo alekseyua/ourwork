@@ -1,0 +1,32 @@
+.lang{
+    // lang__lang-container
+&__lang-container{
+    padding: 0;
+}
+
+// lang__control-lang
+&__control-lang {
+    position: relative;
+
+    &>div:last-child {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+
+        &>div {
+            opacity: 0;
+        }
+    }
+
+    /*stylelint-disable*/
+    &+div {
+        background: transparent;
+        box-shadow: none;
+
+        &>div>div {
+            border-radius: 7px;
+        }
+    }
+}
+}

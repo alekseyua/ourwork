@@ -19,10 +19,11 @@ class HeaderComponent extends Component {
         isFocus={this.props.isFocus}
         isBlur={this.props.isBlur}
         textHeader={this.props.textHeader}
+        headerLang={this.props.headerLang}
         buttonHeaderAction={this.props.buttonHeaderAction}
         handlerChangeScreen={this.props.handlerChangeScreen}
       />
-    )
+    );
   }
 }
 
@@ -30,6 +31,7 @@ export default connectStoreon(
   'tg',
   'isFocus',
   'textHeader',
+  'headerLang',
   'buttonHeaderAction',
   WithRouter(HeaderComponent)
 )

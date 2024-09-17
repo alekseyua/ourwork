@@ -13,7 +13,7 @@ import WithRouter from "../../HOC/WithRouter";
 import { menuFooter} from "../../helpers/config";
 import Offset from "../../View/Offset";
 import HeaderComponent from "../../Components/Component.Header/HeaderComponent";
-import { background, attentionError, done } from "../../images";
+import { attentionError, done } from "../../images";
 import ButtonApplyContainer from "../../Components/ButtonApplySection/ButtonApplyContainer";
 import { ACTION_CLOSE_MODAL } from "../../store/helpers/helpers-store";
 import WrapModalContext from "../../View/WrapContainer/WrapModalContext";
@@ -251,19 +251,7 @@ const Layout = ({
             />
           )}
           <main className={!isAuth() ? "main-context" : ""}>
-            <div
-              className="background"
-              style={{
-                backgroundImage: `url(${background})`,
-                backgroundSize: `100% 100%`,
-                backgroundRepeat: "no-repeat",
-                backgroundColor: isBlur ? "#0000008c" : "transparent",
-                filter: isBlur ? "blur(5px)" : "blur(0px)",
-                width: isBlur ? "100vw" : 0,
-                height: isBlur ? "100%" : 0,
-                position: "absolute",
-              }}
-            ></div>
+ 
             <span className="goto"></span>
             <React.Suspense fallback="loading...">
               <Outlet />

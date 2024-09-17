@@ -2,6 +2,7 @@ import { API_DISMISS, GET_DATA_ACCESS } from "../../helpers/config";
 import { handlerAccessResponse} from "../../helpers/helpers";
 import { setLocaleStore } from "../../helpers/utils";
 import { ACTION_GET, ACTION_POST, _INIT } from "../api-store/getpage"
+import { ACTION_SET_CURRENT_LANG } from "../lang/langStore";
 
 export const ACTION_SET_DATA_ACCESS = 'setDataAccess';
 export const ACTION_GET_ACCESSES = 'getDataAccess';
@@ -31,6 +32,7 @@ export const access = store => {
         if (isWarning) return;
         // handlerSharePhone(res, dispatch);
         setLocaleStore('user_id',res.id)
+        dispatch(ACTION_SET_CURRENT_LANG, {language_code: res.language_code, initLang: true});
         dispatch(ACTION_SET_DATA_ACCESS, res)
       }
     }

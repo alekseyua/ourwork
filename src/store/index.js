@@ -10,6 +10,7 @@ import { raitingReview } from './raiting-review/raiting-review';
 import { feedback } from './feedback/feedback';
 import { access } from './access/access';
 import { carSale } from './car-sale/carSale';
+import { langStore } from './lang/langStore';
 
 
 export const store = createStoreon([
@@ -19,6 +20,7 @@ export const store = createStoreon([
     carSale,
     requests,
     feedback,
+    langStore,
     raitingReview, 
     filtersIncominRequest,
     
