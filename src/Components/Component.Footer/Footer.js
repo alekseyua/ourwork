@@ -17,8 +17,6 @@ const Footer = ({
     <footer
       style={{
         display: "block",
-        // position: "fixed",
-        bottom: 0,
         zIndex: 999,
       }}
     >
@@ -26,7 +24,6 @@ const Footer = ({
         className={styles["footer__menu-wrap--bottom"]}
         style={{
           ...style,
-          padding: 0,
           filter: isBlur ? "blur(5px)" : "blur(0px)",
         }}
       >
