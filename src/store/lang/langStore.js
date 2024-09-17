@@ -11,12 +11,12 @@ export const langStore = store => {
     const listLang = [
       {
         value: "ua",
-        label: `🇺🇦`,
+        label: `🟦🟨`, // `🇺🇦`,
         isActive: false,
       },
       {
         value: "ru",
-        label: `🇷🇺`,
+        label:  `⬜️🟦⬜️`, // `🇷🇺`,
         isActive: false,
       },
     ]

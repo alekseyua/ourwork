@@ -1,16 +1,11 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
+import resources_ru from './lang-resource-ru.json';
 
 i18n.use(initReactI18next).init({
   lng: "ua",
   resources: {
-    ru: {
-      translation: {
-        filters: "Фильтра",
-        create_request: "Создать запрос",
-        // translations for Russian
-      },
-    },
+    ru: resources_ru,
     ua: {
       translation: {
         filters: "Фільтра",
