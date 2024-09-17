@@ -13,7 +13,7 @@ import WithRouter from "../../HOC/WithRouter";
 import { menuFooter} from "../../helpers/config";
 import Offset from "../../View/Offset";
 import HeaderComponent from "../../Components/Component.Header/HeaderComponent";
-import { background, crossRed, done } from "../../images";
+import { background, attentionError, done } from "../../images";
 import ButtonApplyContainer from "../../Components/ButtonApplySection/ButtonApplyContainer";
 import { ACTION_CLOSE_MODAL } from "../../store/helpers/helpers-store";
 import WrapModalContext from "../../View/WrapContainer/WrapModalContext";
@@ -94,7 +94,7 @@ const Layout = ({
         maxHeight: 48,
         border: `1px solid var(--border-color)`,
         borderRadius: 12,
-        backgroundColor: `var(--background-color-Mirage-blue)`,
+        backgroundColor: `var(--background-color-mirage-blue)`,
       },
       buttonCloseCancel: {
         border: `1px solid var(--red-color)`,
@@ -105,7 +105,7 @@ const Layout = ({
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        fontFamily: "HelveticaNeue",
+        fontFamily: "var(--font-family-default)",
         fontSize: 12,
         fontStyle: "normal",
         fontWeight: 700,
@@ -117,7 +117,7 @@ const Layout = ({
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        fontFamily: "HelveticaNeue",
+        fontFamily: "var(--font-family-default)",
         fontSize: 12,
         fontStyle: "normal",
         fontWeight: 700,
@@ -125,7 +125,7 @@ const Layout = ({
       },
 
       modalText: {
-        fontFamily: "HelveticaNeue",
+        fontFamily: "var(--font-family-default)",
         fontWeight: 500,
         width: "100%",
         fontSize: 17,
@@ -177,7 +177,7 @@ const Layout = ({
                         modal?.icon
                           ? modal?.icon
                           : modal?.error
-                          ? crossRed
+                          ? attentionError
                           : done
                       }
                       width={35}

@@ -1,22 +1,24 @@
-@import '../../../styles/variables.scss';
-@import '../../../styles/fonts/index.scss';
+@import '../../../styles/variables';
+@import '../../../styles/fonts/index';
 
 .input {
   --gx-input-border-color: var(--gx-color-lightpink);
   --icon-width: 16px;
-    border-color: $dg;
-    border-style: solid;
-    border-width: 2px;
-    border-radius: 6px;
-    height: 56px;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    padding: 0 7px;
-    &:focus-within {
-      border-radius: 8px;
-      border-color: $dg2;
-    }
+
+  border-color: $dg;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 6px;
+  height: 56px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding: 0 7px;
+
+  &:focus-within {
+    border-radius: 8px;
+    border-color: $dg2;
+  }
 
   &::part(label) {
     color: var(--gx-color-primary);
@@ -24,10 +26,12 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 140%;
-    letter-spacing: 0px;
+    letter-spacing: 0;
   }
+
   &::part(input) {
     @extend %font;
+
     font-size: 14px;
     height: 54px;
 
@@ -37,14 +41,19 @@
     }
   }
 }
-.input-mt_20 {
-  margin-bottom: 20px;
+
+.input-mt {
+  &_20 {
+    margin-bottom: 20px;
+  }
 }
+
 .error {
   &::part(base) {
-    border: 2px solid rgba(233, 60, 60, 0.75);
+    border: 2px solid rgb(233 60 60 / 75%);
     box-sizing: border-box;
     border-radius: 6px;
+
     &:focus-within {
       border-radius: 4px;
       border-color: $dg2;

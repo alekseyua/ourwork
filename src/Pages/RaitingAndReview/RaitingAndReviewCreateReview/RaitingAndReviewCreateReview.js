@@ -22,105 +22,117 @@ export default function RaitingAndReviewCreateReview({
       <Formik
         validationSchema={reviewSchema(messageErrorValidation)}
         initialValues={{
-          text: '',
+          text: "",
           rating: 0,
-          username: getLocaleStore(USERNAME) ?? '',
+          recipient_id: getLocaleStore("recipient_id") ?? "",
+          username: getLocaleStore(USERNAME) ?? "",
         }}
       >
-        {({ values, errors, handleSubmit, touched, handleBlur, setFieldValue }) => {
+        {({
+          values,
+          errors,
+          handleSubmit,
+          touched,
+          handleBlur,
+          setFieldValue,
+        }) => {
           dispatch(ACTION_SET_CONTROLL_BUTTON, { buttonForm: handleSubmit });
-          const handlerChangeReviewStar = data => {
-            const amountStar = data.target.getAttribute('value');
-            setFieldValue('rating', amountStar);
-            handlerChangeDataValues({ 'rating': amountStar });
-            !!values?.username && handlerChangeDataValues({ [USERNAME]: values.username });
-          }
+          const handlerChangeReviewStar = (data) => {
+            const amountStar = data.target.getAttribute("value");
+            setFieldValue("rating", amountStar);
+            handlerChangeDataValues({ rating: amountStar });
+            !!values?.username &&
+              handlerChangeDataValues({ [USERNAME]: values.username });
+          };
+          console.log({values})
           return (
-            <Form >
+            <Form>
               <Offset mt={15} />
               <Label style={{ fontWeight: 700 }}>Продавец</Label>
               <Offset mt={4} />
-              <div
-              
-              >
-
+              <div>
                 <Input
                   value={values.username}
                   height={48}
                   disabled={getLocaleStore(USERNAME)}
-                  placeholder={'Введите имя пользователя'}
+                  placeholder={"Введите имя пользователя"}
                   distationtop={10}
                   style={{
-                    border: touched?.username && errors?.username ? '1px solid #ff0000' : '',
+                    border:
+                      touched?.username && errors?.username
+                        ? "1px solid #ff0000"
+                        : "",
                     paddingLeft: 8,
-                    top: 4
+                    top: 4,
                   }}
                   name={USERNAME}
                   onBlur={handleBlur}
                   helptext={touched?.username && errors?.username}
                   stylehelptext={{
-                    color: 'var(--text-color-red)'
+                    color: "var(--text-color-red)",
                   }}
-                  onChange={e => {
+                  onChange={(e) => {
                     const value = e.target.value;
                     setFieldValue(USERNAME, value);
-                    handlerChangeDataValues({ [USERNAME]: value })
+                    handlerChangeDataValues({ [USERNAME]: value });
                   }}
                 />
               </div>
               <Offset mt={27} />
-              <Label style={{ fontWeight: 700, letterSpacing: '0px' }}>Ваша оценка</Label>
+              <Label style={{ fontWeight: 700, letterSpacing: "0px" }}>
+                Ваша оценка
+              </Label>
               <Offset mt={3} />
 
               <RaitingContainer
                 max={5}
                 value={values.rating}
-                onChange={e => handlerChangeReviewStar(e, values)}
+                onChange={(e) => handlerChangeReviewStar(e, values)}
                 sizeStarHeight={24}
                 sizeStarWidth={24}
                 isBorderDigital
-
                 onBlur={handleBlur}
                 helptext={touched?.rating && errors?.rating}
                 stylehelptext={{
-                  color: 'var(--text-color-red)'
+                  color: "var(--text-color-red)",
                 }}
               />
               <Offset mt={16} />
-              <Label style={{ fontWeight: 700, letterSpacing: '0px' }}>Напишите отзыв</Label>
+              <Label style={{ fontWeight: 700, letterSpacing: "0px" }}>
+                Напишите отзыв
+              </Label>
               <Offset mt={7} />
               <div>
-
                 <TextArea
-                  className={'textarea-application'}
+                  className={"textarea-application"}
                   value={values.text}
-                  name={'text'}
+                  name={"text"}
                   placeholder={`Опишите ваше впечатление о продавце. Выделите плюсы или минусы работы`}
                   height={90}
                   id={`textarea-1`}
                   style={{
-                    border: touched?.text && errors?.text ? '1px solid #ff0000' : '',
+                    border:
+                      touched?.text && errors?.text ? "1px solid #ff0000" : "",
                   }}
                   onBlur={handleBlur}
                   helptext={touched?.text && errors?.text}
                   stylehelptext={{
-                    color: 'var(--text-color-red)'
+                    color: "var(--text-color-red)",
                   }}
                   onChange={(e) => {
                     const value = e.target.value;
-                    setFieldValue('text', value);
-                    handlerChangeDataValues({ 'text': value })
-                    !!values?.username && handlerChangeDataValues({ [USERNAME]: values.username });
-
+                    setFieldValue("text", value);
+                    handlerChangeDataValues({ text: value });
+                    !!values?.username &&
+                      handlerChangeDataValues({ [USERNAME]: values.username });
                   }}
                 />
               </div>
               <Offset mt={37} />
             </Form>
-          )
-        }
-        }
+          );
+        }}
       </Formik>
     </WrapContainer>
-  )
+  );
 }

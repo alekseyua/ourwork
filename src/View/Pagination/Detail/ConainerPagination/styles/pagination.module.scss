@@ -1,22 +1,24 @@
-.pagination{
-  &__container{
-    //.pagination__container-wrap{}
-    &-wrap{
+.pagination {
+  &__container {
+    // pagination__container-wrap{}
+    &-wrap {
       padding: 0;
       width: 100%;
       display: flex;
       justify-content: space-between;
     }
-    //.pagination__container-items{}
-    &-items{
+
+    // pagination__container-items{}
+    &-items {
       display: grid;
       overflow: hidden;
       grid-auto-flow: column;
       gap: 4px;
     }
   }
-  //.pagination__item{}
-  &__item{
+
+  // pagination__item{}
+  &__item {
     width: 32px;
     height: 32px;
     min-width: 32px;
@@ -27,9 +29,10 @@
     justify-content: center;
     color: var(--text-color);
     font-weight: 500;
-    font-family: 'HelveticaNeue';
+    font-family: var(--font-family-default);
     font-size: 10px;
-    &:hover{
+
+    &:hover {
       cursor: pointer;
     }
 

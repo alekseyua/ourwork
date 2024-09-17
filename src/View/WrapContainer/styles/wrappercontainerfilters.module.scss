@@ -1,12 +1,13 @@
 .wrapper{
-  //.wrapper__container{}
+  // wrapper__container{}
   &__container{    
     display: flex;
     align-items: center;
     justify-content: space-between;
     z-index: 10;
   }
-  //.wrapper__container-body{}
+
+  // wrapper__container-body{}
   &__container-body{
     // &::after{
     //   width: 1000vw;

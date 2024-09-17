@@ -82,19 +82,15 @@ export const initDataParamsPost = (params) => {
     "current_tab",
     "optionsCities",
     "activeCity",
-    "urlMarket",
     "sub_type",
     "edit",
   ];
   for (let key in params) {
-    if (key === "urlMarket") {
-      fd.append(`url`, params[key]);
-    } else if (key === "file") {
+    if (key === "file") {
       for (const file in params[key]) {
         fd.append(`${key}`, params[key][file]);
       }
     } else if (key === "image") {
-      // || key === 'image_urls' - уточнить нужно ли
       for (const file in params[key]) {
         fd.append(`${key}`, params[key][file].url);
       }
@@ -103,7 +99,6 @@ export const initDataParamsPost = (params) => {
       Array.isArray(params[key]) &&
       !listExcept.includes(key)
     ) {
-      // || key === 'image_urls' - уточнить нужно ли
       for (let id of params[key]) {
         if(typeof id === 'object' && Object.keys(id).length){
           delete id['model_name']
@@ -259,7 +254,7 @@ export const removeFocusFormInput = (
   document.querySelector("body").style.setProperty("overflow", "auto");
   document.documentElement.style.setProperty("--pointer-events", `all`);
   document.documentElement.style.setProperty(
-    "--gridTemplateColtumnSearchFavorie",
+    "--grid-template-coltumn-search-favorie",
     `85% 15%`
   );
   if (
@@ -487,13 +482,7 @@ export const initDataParamsPostOrGet = (params) => {
 };
 
 export const exceptionActions = () => {
-  if (
-    window.location.href.split("/").pop() === "information_pm" ||
-    window.location.href.split("/").pop() === "button_create_rating"
-  ) {
-  } else {
-    setLocaleStore("user_id", "");
-  }
+
 };
 
 export function setLocaleStoreObj(data) {

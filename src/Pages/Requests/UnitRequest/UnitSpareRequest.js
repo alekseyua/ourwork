@@ -38,7 +38,7 @@ const UnitSpareRequest = ({
   onClickOutside = () => {},
   changeState = () => {},
 }) => {
-  if (!edit && !dataRequst?.length) {
+  if ((!edit && !dataRequst?.length)) {
     return (
       <WrapContainerPreloader>
         Загрузка ... <Preloader /> <Offset mb={30} />{" "}

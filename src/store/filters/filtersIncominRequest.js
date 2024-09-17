@@ -550,7 +550,7 @@ export const filtersIncominRequest = (store) => {
       };
 
       if (data?.list === "models") {
-        params = { ...params, brand_id: getLocaleStore("brands") }; //brands', 'models', 'generations
+        params = { ...params, brand_id: getLocaleStore("brands") }; // brands', 'models', 'generations
       }
       if (data?.list === "generations") {
         params = { ...params, model_id: getLocaleStore("models") };

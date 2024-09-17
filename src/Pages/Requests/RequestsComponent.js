@@ -10,29 +10,6 @@ import { isAndroid, isIos } from '../../helpers/utils';
 
 class RequestsComponent extends Component {
 
-  state = {
-    menu: [],
-    headerTitleCatalog: ['Поиск по объявлениям',
-      <Button
-        iconRight={arrowRight}
-        styleIconsRight={{ width: 13, height: 13, top: 4, left: -4 }}
-        addClass={'button__main-menu-show-all'}
-        onClick={() => this.props.navigate(MARKETPLACE_MAIN)}
-      >{'Все'}</Button>
-    ],
-    hardColorBlockById: [
-      {
-        id: 0,
-        colorBackground: 'var(--background-color-Mirage-blue)',
-        color: 'var(--text-color-white)',
-      },
-      {
-        id: 1,
-        colorBackground: 'var(--background-color-Mirage-blue)',
-        color: 'var(--text-color-white)'
-      },
-    ]
-  }
 
   componentDidMount() {
     
@@ -68,8 +45,6 @@ class RequestsComponent extends Component {
     return (
       <Requests
         listMenu={menuRequests}
-        hardColorBlockById={this.state.hardColorBlockById}
-        headerTitleCatalog={this.state.headerTitleCatalog}
         handlerChangeScreen={this.handlerChangeScreen}
       />
     )

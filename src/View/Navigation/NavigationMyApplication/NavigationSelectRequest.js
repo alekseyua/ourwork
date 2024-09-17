@@ -109,7 +109,7 @@ export default function NavigationSelectRequest({
             <Button
               style={{
                 gridArea: `${section.type}`,
-                backgroundColor: !section.active?  'var(--background-color-block)' : 'var(--background-color-Mirage-blue)',
+                backgroundColor: !section.active?  'var(--background-color-block)' : 'var(--background-color-mirage-blue)',
                 color: !section.active?  'var(--text-color)' : 'var(--text-color-white)'
               }}
               key={section.id}

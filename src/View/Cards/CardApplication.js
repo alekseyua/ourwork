@@ -9,19 +9,15 @@ import CardItemDescription from './Detail/CardItemDescription'
 import Offset from '../Offset'
 import CardContainerControlCard from './Detail/CardContainerControlCard'
 import Button from '../Button/Button'
-import { bascketRed, copyDoc, editMarket, penGrey, penRed } from '../../images'
+import { bascketRed, copyDoc, penGrey } from '../../images'
 import Icon from '../Icon/Icon'
 import CardPreloadImageContainer from './Detail/CardPreloadImageContainer'
 import CardPreloadImageItem from './Detail/CardPreloadImageItem'
-import PaginationComponent from '../../Components/Component.PaginationCatalog/PaginationComponent'
 import { ACTION_DELETE } from '../../store/api-store/getpage'
 
 
 export default function CardApplication({
   list,
-  countMyApplication,
-  changePaginationPage,
-  currentPageMyApplication,
   handlerActionMyApplication
 }) {
   console.log({list})
@@ -113,8 +109,6 @@ export default function CardApplication({
                             key={image.id}
                             onClick={(e) => {
                               console.log("click");
-                              // e.stopPropagation();
-                              // item.images.length && openModalImage([{ id: image.id, url: image.url }, ...el.images.filter(el => el.id !== image.id)], dispatch)
                             }}
                           >
                             <Icon
@@ -219,11 +213,6 @@ export default function CardApplication({
         }
       </WrapGrid>
       <Offset mb={24} />
-      {/* <PaginationComponent
-        totalCount={countMyApplication}
-        currentPage={currentPageMyApplication}
-        onChangePagination={changePaginationPage}
-      /> */}
     </WrapContainer>
   )
 }

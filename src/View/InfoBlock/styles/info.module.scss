@@ -1,26 +1,30 @@
 .info{
-    //.info__container--border{}
+    // info__container--border{}
     &__container--border{
         display: flex;
         padding: 9px 12px;
         border-radius: 10px;
         border: 1px solid var(--border-color);
     }
-    //.info__container{}
+
+    // info__container{}
     &__container{
         display: flex;
     }
+
     &__block{
-        //.info__block-text{}
+        // info__block-text{}
         &-text{
-            font-family: 'HelveticaNeue';
+            font-family: var(--font-family-default);
+
             // line-height: 5px;
             font-weight: 400;
             font-size: 12px;
             color: var(--text-color);
             line-height: 120%;
         }
-        //.info__block-icon{}
+
+        // info__block-icon{}
         &-icon{
             padding: 0;
             display: flex;

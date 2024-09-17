@@ -8,7 +8,7 @@ import 'swiper/scss/autoplay';
 import { Image, StyleSheet } from 'react-native-web';
 import { isElectron } from "../../helpers/utils";
 import { widthDesktop, widthMobile } from "../../helpers/config";
-import ImageGalaryMP from "../Cards/Detail/ImageGalaryMP";
+import ImageGalaryMP from "./ImageGalary";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const ViewsImage = ({

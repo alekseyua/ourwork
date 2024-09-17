@@ -1,15 +1,16 @@
 .tool-tip{
-  //.tool-tip__container{}
+  // tool-tip__container{}
   &__container{
     position: absolute;
     background-color: var(--background-color-block);
     padding: 5px;
     line-height: 120%;
     font-size: 10px;
-    font-family: 'HelveticaNeue';
+    font-family: var(--font-family-default);
     font-weight: 400;
     color: var(--text-color);
     box-shadow: 1px 1px 3px var( --border-select-color), -1px -1px 3px var( --border-select-color), -1px 1px 3px var( --border-select-color), 1px -1px 3px var( --border-select-color);
+
     // transition: visibility .4  s ease-in;
     z-index: 999;
     max-width: 150px;

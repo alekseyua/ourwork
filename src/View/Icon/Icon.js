@@ -36,18 +36,6 @@ const Icon = ({
         if (invert !== undefined && invert !== null) {
             value = `invert(${invert})`
         }
-        // if(brightness !== undefined || brightness !== null ){
-        //     value = `invert(${invert})` 
-        // }
-
-        //  `${
-        //     invert && 
-        //         && brightness? 
-        //             brightness
-        //             : (invert && brightness)? 
-        //                 `${invert, brightness}`    
-        //                 : 
-        //                 filter}`
         return value;
     }
     return (

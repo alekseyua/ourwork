@@ -1,11 +1,6 @@
-import { openURl, smoothTop } from "./helpers";
+import { openURl } from "./helpers";
 import { getLocaleStore, setLocaleStore, setSessionStore } from "./utils";
 import {
-  MARKETPLACE_ADD_CARDS_FROM_FILE,
-  MARKETPLACE_CREATE_CARD,
-  MARKETPLACE_DETAILY_CARD,
-  MARKETPLACE_EDIT_OWN_CARD,
-  LAST_PATH_CREATE_ADV,
   LAST_PATH_FEEDBACK,
   LASTURL,
   MAKE_REQUEST_MENU,
@@ -15,14 +10,6 @@ import {
   MAKE_REQUEST_TRANSPORT,
   MAKE_REQUEST_TRUCK,
   MAKE_REQUEST_UNIT,
-  MARKETPLACE_MAIN,
-  MARKETPLACE_FAVORITE,
-  MARKETPLACE_FILTER,
-  MARKETPLACE_OWN_CARDS,
-  PROFILE_EDIT,
-  PROFILE_MENU,
-  PROFILE_MY_REVIEW,
-  PROFILE_SUBSCRIBE,
   REITING_CREATE,
   REITING_FULL_INFO,
   REITING_MENU,
@@ -40,11 +27,10 @@ import {
   INCOMING_REQUEST_TRUCK,
   LAST_PATH_OWN_REQUEST,
   LAST_PATH_FULL_INFO,
-  MARKET_PAGE_CATALOG,
   FEEDBACK_GET_MANY_FOR_IDEA,
   FEEDBACK,
   PREVURL,
-  LAST_PATH_FILTER_MARKET,
+
   CURRENT_PATH_TO_FULL_INFO,
   CAR_SALE,
   MAKE_REQUEST_OWN_EDIT_REQUEST,
@@ -149,161 +135,74 @@ export const getMarkPage = ({ pathname }) => {
     case ROOT:
       setLocaleStore("itemMenu", 1);
       setLocaleStore(LAST_PATH_FEEDBACK, pathname);
-      setLocaleStore(LAST_PATH_MY_FAVORITE_CARDS, pathname);
-      setLocaleStore(LAST_PATH_FILTER_MARKET, pathname);
-      if (getLocaleStore(PREVURL) !== "/marketplace/info-card")
-        setLocaleStore(MARKET_PAGE_CATALOG, "");
-      setLocaleStore(LAST_PATH_DETAIL_CARD, pathname);
-
       break;
-
-    // case ROOT: setLocaleStore(LAST_PATH_FULL_INFO, pathname); break;
     // {/* **********************ФИЛЬТРЫ -> Входящие заявки ****************** */}
     case INCOMING_REQUEST_MENU:
       setLocaleStore(LAST_PATH_HOW_TO_SETUP, pathname);
       setLocaleStore(LAST_PATH_FEEDBACK, pathname);
-      setLocaleStore(MARKET_PAGE_CATALOG, "");
       break;
     case INCOMING_REQUEST_UNIT_SPARE:
       setLocaleStore(LAST_PATH_HOW_TO_SETUP, pathname);
-      setLocaleStore(MARKET_PAGE_CATALOG, "");
       break;
     case INCOMING_REQUEST_TRANSPORT:
       setLocaleStore(LAST_PATH_HOW_TO_SETUP, pathname);
-      setLocaleStore(MARKET_PAGE_CATALOG, "");
       break;
     case INCOMING_REQUEST_RESPAIR:
       setLocaleStore(LAST_PATH_HOW_TO_SETUP, pathname);
-      setLocaleStore(MARKET_PAGE_CATALOG, "");
       break;
     case INCOMING_REQUEST_TRUCK:
       setLocaleStore(LAST_PATH_HOW_TO_SETUP, pathname);
-      setLocaleStore(MARKET_PAGE_CATALOG, "");
-      break;
-    // {/* ******************Профиль и Информация********************** */}
-    case PROFILE_MENU:
-      setLocaleStore("itemMenu", 4);
-      setLocaleStore(LAST_PATH_FEEDBACK, pathname);
-      setLocaleStore(MARKET_PAGE_CATALOG, "");
-      break;
-    case PROFILE_EDIT:
-      setLocaleStore("itemMenu", 4);
-      setLocaleStore(MARKET_PAGE_CATALOG, "");
-      break;
-    case PROFILE_SUBSCRIBE:
-      setLocaleStore("itemMenu", 4);
-      setLocaleStore(MARKET_PAGE_CATALOG, "");
-      break;
-    case PROFILE_MY_REVIEW:
-      setLocaleStore("itemMenu", 4);
-      setLocaleStore(MARKET_PAGE_CATALOG, "");
       break;
     // {/* *****************РЕЙТИНГ И ОТЗЫВЫ*********************** */}
     case REITING_MENU:
       setLocaleStore("itemMenu", 9);
       setLocaleStore(LAST_PATH_SEND_REVIEW, pathname);
       setLocaleStore(LAST_PATH_FULL_INFO, pathname);
-      setLocaleStore(MARKET_PAGE_CATALOG, "");
       break;
     case REITING_CREATE:
       setLocaleStore("itemMenu", 9);
-      setLocaleStore(MARKET_PAGE_CATALOG, "");
       break;
     case REITING_WARRANT_ADMIN:
       setLocaleStore("itemMenu", 9);
       setLocaleStore(LAST_PATH_FEEDBACK, pathname);
-      setLocaleStore(MARKET_PAGE_CATALOG, "");
       break;
     case REITING_WARRANT_MEMBER:
       setLocaleStore("itemMenu", 9);
       setLocaleStore(LAST_PATH_SEND_REVIEW, pathname);
-      setLocaleStore(MARKET_PAGE_CATALOG, "");
       setLocaleStore(LAST_PATH_FULL_INFO, pathname);
       break;
     // {/* *****************СОЗДАТЬ ЗАПРОС*********************** */}
     case MAKE_REQUEST_MENU:
       setLocaleStore("itemMenu", 2);
-      // setLocaleStore(MARKET_PAGE_CATALOG, '');
       setLocaleStore(LAST_PATH_FEEDBACK, pathname);
       setLocaleStore(LAST_PATH_MY_FAVORITE_CARDS, pathname);
       setLocaleStore(LAST_PATH_OWN_REQUEST, pathname);
-      setLocaleStore(LAST_PATH_FILTER_MARKET, pathname);
       setLocaleStore(LAST_PATH_DETAIL_CARD, pathname);
       break;
     case MAKE_REQUEST_UNIT:
-      setLocaleStore(MARKET_PAGE_CATALOG, "");
       setLocaleStore("itemMenu", 2);
       setLocaleStore(LAST_PATH_OWN_REQUEST, pathname);
       break;
     case MAKE_REQUEST_SPARE:
-      setLocaleStore(MARKET_PAGE_CATALOG, "");
       setLocaleStore("itemMenu", 2);
       setLocaleStore(LAST_PATH_OWN_REQUEST, pathname);
       break;
     case MAKE_REQUEST_RESPAIR:
       setLocaleStore("itemMenu", 2);
-      setLocaleStore(MARKET_PAGE_CATALOG, "");
       setLocaleStore(LAST_PATH_OWN_REQUEST, pathname);
       break;
     case MAKE_REQUEST_TRANSPORT:
       setLocaleStore("itemMenu", 2);
-      setLocaleStore(MARKET_PAGE_CATALOG, "");
       setLocaleStore(LAST_PATH_OWN_REQUEST, pathname);
       break;
     case MAKE_REQUEST_TRUCK:
       setLocaleStore("itemMenu", 2);
-      setLocaleStore(MARKET_PAGE_CATALOG, "");
       setLocaleStore(LAST_PATH_OWN_REQUEST, pathname);
       break;
     case MAKE_REQUEST_OWN_REQUEST:
       setLocaleStore("itemMenu", 2);
-      setLocaleStore(MARKET_PAGE_CATALOG, "");
       break;
-    // {/* ******************"Маркет"********************** */}
-    case MARKETPLACE_MAIN:
-      setLocaleStore("itemMenu", 3);
-      setLocaleStore(LAST_PATH_FEEDBACK, pathname);
-      setLocaleStore(LAST_PATH_CREATE_ADV, pathname);
-      setLocaleStore(LAST_PATH_DETAIL_CARD, pathname);
-      setLocaleStore(LAST_PATH_MY_FAVORITE_CARDS, pathname);
-      setLocaleStore(LAST_PATH_FILTER_MARKET, pathname);
-      break;
-    case MARKETPLACE_FAVORITE:
-      setLocaleStore("itemMenu", 3);
-      setLocaleStore(LAST_PATH_FEEDBACK, pathname);
-      setLocaleStore(LAST_PATH_CREATE_ADV, pathname);
-      setLocaleStore(LAST_PATH_DETAIL_CARD, pathname);
-      break;
-    case MARKETPLACE_CREATE_CARD:
-      setLocaleStore("itemMenu", 3);
-      break;
-    case MARKETPLACE_EDIT_OWN_CARD:
-      setLocaleStore("itemMenu", 3);
-      break;
-    case MARKETPLACE_FILTER:
-      setLocaleStore("itemMenu", 3);
-      break;
-    case MARKETPLACE_DETAILY_CARD:
-      setLocaleStore("itemMenu", 3);
-      setLocaleStore(LAST_PATH_FEEDBACK, pathname);
-      setLocaleStore(LAST_PATH_CREATE_ADV, pathname);
-      setLocaleStore(LAST_PATH_FULL_INFO, pathname);
-      setLocaleStore("isDetali", true);
-      setSessionStore("savePlaceLastLocationOpenCardMarket", true);
-
-      smoothTop(700);
-      break;
-    case MARKETPLACE_ADD_CARDS_FROM_FILE:
-      setLocaleStore("itemMenu", 3);
-      break;
-    case CHAIN_MOTORS:
-      setLocaleStore("catalogChainMotors", pathname);
-      break;
-    case MARKETPLACE_OWN_CARDS:
-      setLocaleStore("itemMenu", 3);
-      setLocaleStore(LAST_PATH_CREATE_ADV, pathname);
-      setLocaleStore(LAST_PATH_DETAIL_CARD, pathname);
-      break;
+    // {/* ******************"Отзывы"********************** */}
 
     default:
       if (pathname.includes(REITING_FULL_INFO)) {
@@ -311,10 +210,8 @@ export const getMarkPage = ({ pathname }) => {
         setLocaleStore(CURRENT_PATH_TO_FULL_INFO, pathname);
 
         setLocaleStore(LAST_PATH_SEND_REVIEW, pathname); // ???
-        // setLocaleStore(MARKET_PAGE_CATALOG, ''); /// ????
         break;
       }
-      if (pathname.includes(`${MARKETPLACE_EDIT_OWN_CARD}/`))
         return setLocaleStore("itemMenu", 3);
       break;
   }
@@ -365,17 +262,6 @@ export const initButtomApply = ({ action, dispatch, pathname, tg }) => {
         show: true,
         addClass: "button__apply--full-red",
         title: "Применить",
-      });
-      break;
-    // {/* ******************Профиль и Информация********************** */}
-    case PROFILE_EDIT:
-      dispatch(action, {
-        isActive: false,
-        isFetch: false,
-        typeButton: "static",
-        show: true,
-        addClass: "button__apply--full-red",
-        title: "Применить изменения",
       });
       break;
     // {/* *****************РЕЙТИНГ И ОТЗЫВЫ*********************** */}
@@ -471,28 +357,7 @@ export const initButtomApply = ({ action, dispatch, pathname, tg }) => {
         title: "Редактировать запрос",
       });
       break;
-    // {/* ******************"Маркет"********************** */}
-    case MARKETPLACE_CREATE_CARD:
-      dispatch(action, {
-        isActive: false,
-        isFetch: false,
-        typeButton: "static",
-        addClass: "button__apply--dark-blue",
-        show: true,
-        title: "Опубликовать объявление",
-      });
-      break;
-    case MARKETPLACE_ADD_CARDS_FROM_FILE:
-      dispatch(action, {
-        isActive: false,
-        isFetch: false,
-        typeButton: "static",
-        addClass: "button__apply--dark-blue",
-        show: true,
-        title: "Опубликовать",
-      });
-      break;
-      {
+       {
         /* *****************продажа авто*********************** */
       }
     case CAR_SALE:
@@ -506,16 +371,7 @@ export const initButtomApply = ({ action, dispatch, pathname, tg }) => {
       });
       break;
 
-    default:
-      if (pathname.includes(MARKETPLACE_EDIT_OWN_CARD + "/"))
-        dispatch(action, {
-          isActive: false,
-          isFetch: false,
-          typeButton: "static",
-          addClass: "button__apply--full-red",
-          show: true,
-          title: "Применить изменения",
-        });
+    default:     
       break;
   }
 };
@@ -651,46 +507,8 @@ export const redirectPages = async ({ url, navigate, dispatch }) => {
   const pathname = newUrl.pathname;
   
   switch (pathname) {
-    // case '/information_pm/':
-    //     await delay(200);
-    //     navigate('/information_pm');
-    //     return
-    case "/emirate/":
-      await delay(200);
-      openURl("https://t.me/zap_emirates", "Перейти в группу?", dispatch);
-      await delay(200);
-      navigate("/");
-      return;
-    case "/emirate":
-      await delay(200);
-      openURl("https://t.me/zap_emirates", "Перейти в группу?", dispatch);
-      await delay(200);
-      navigate("/");
-      return;
-    case "/china-motors":
-      await delay(200);
-      navigate(CHAIN_MOTORS);
-      return;
-    case "/china-motors/":
-      await delay(200);
-      navigate(CHAIN_MOTORS);
-      return;
-    case "task=oplata":
-      await delay(200);
-      navigate(PROFILE_MENU);
-      return;
-    case "/anketa-bot-app/":
-      await delay(200);
-      navigate(PROFILE_MENU);
-      return;
-    case "/anketa-bot-app":
-      await delay(200);
-      navigate(PROFILE_MENU);
-      return;
-    case MARKETPLACE_FILTER:
-      await delay(200);
-      navigate(getLocaleStore(PREVURL));
-      return;
+    case "":
+    break
     default:
       const timer = setTimeout(() => {
         navigate(getLocaleStore(LASTURL));
@@ -699,27 +517,27 @@ export const redirectPages = async ({ url, navigate, dispatch }) => {
   }
 };
 
-// https://bot-auto-razbor.vercel.app/?fake=false&task=anketa&id=1797304609
+// https:// bot-auto-razbor.vercel.app/?fake=false&task=anketa&id=1797304609
 
 //https://t.me/js_js_js_js_bot/app_anket?startapp=YOnZboIphDajzATNFLtRUyXcqgeCsd&startApp=YOnZboIphDajzATNFLtRUyXcqgeCsd
 
 // https://t.me/zaprosovbot/blogger?startapp=YOnZboIphDajzATNFLtRUyXcqgeCsd&startApp=YOnZboIphDajzATNFLtRUyXcqgeCsd
 {
   /**
-   * https://front.botrazbor.ru/emirate/
-   * https://bot-auto-razbor.vercel.app/emirate/
+   * https:// front.botrazbor.ru/emirate/
+   * https:// bot-auto-razbor.vercel.app/emirate/
    */
 }
 {
   /**
-   * https://front.botrazbor.ru/anketa-bot-app/
-   * https://bot-auto-razbor.vercel.app/anketa-bot-app/
+   * https:// front.botrazbor.ru/anketa-bot-app/
+   * https:// bot-auto-razbor.vercel.app/anketa-bot-app/
    */
   // local  /anketa-bot-app/#tgWebAppData=user%3D%257B%2522id%2522%253A1797304609%252C%2522first_name%2522%253A%2522Tt%2522%252C%2522last_name%2522%253A%2522%2522%252C%2522username%2522%253A%2522al_dnp%2522%252C%2522language_code%2522%253A%2522en%2522%252C%2522allows_write_to_pm%2522%253Atrue%257D%26chat_instance%3D-7823084550996953719%26chat_type%3Dprivate%26auth_date%3D1700572909%26hash%3Def480f66587fce823fdabf45e0a5eba844a813c87db20acb31d67666b8dd445b&tgWebAppVersion=6.10&tgWebAppPlatform=android&tgWebAppBotInline=1&tgWebAppThemeParams=%7B%22bg_color%22%3A%22%23ffffff%22%2C%22section_bg_color%22%3A%22%23ffffff%22%2C%22secondary_bg_color%22%3A%22%23f0f0f0%22%2C%22text_color%22%3A%22%23222222%22%2C%22hint_color%22%3A%22%23a8a8a8%22%2C%22link_color%22%3A%22%232678b6%22%2C%22button_color%22%3A%22%2350a8eb%22%2C%22button_text_color%22%3A%22%23ffffff%22%2C%22header_bg_color%22%3A%22%23527da3%22%2C%22accent_text_color%22%3A%22%231c93e3%22%2C%22section_header_text_color%22%3A%22%233a95d5%22%2C%22subtitle_text_color%22%3A%22%2382868a%22%2C%22destructive_text_color%22%3A%22%23cc2929%22%7D
-  //https://front.botrazbor.ru/#tgWebAppData=query_id%3DAAEhsSBrAAAAACGxIGti2rNg%26user%3D%7B%22id%22%3A1797304609%2C%22first_name%22%3A%22Tt%22%2C%22last_name%22%3A%22%22%2C%22username%22%3A%22al_dnp%22%2C%22language_code%22%3A%22en%22%2C%22allows_write_to_pm%22%3Atrue%7D%26auth_date%3D1703157559%26hash%3Dc10a564d944e5130eb3d613f52eeb4b72650e26f7bb90525d2564071814d452e&tgWebAppVersion=6.10&tgWebAppPlatform=android&tgWebAppBotInline=1&tgWebAppThemeParams={"bg_color"%3A"%23ffffff"%2C"section_bg_color"%3A"%23ffffff"%2C"secondary_bg_color"%3A"%23f0f0f0"%2C"text_color"%3A"%23222222"%2C"hint_color"%3A"%23a8a8a8"%2C"link_color"%3A"%232678b6"%2C"button_color"%3A"%2350a8eb"%2C"button_text_color"%3A"%23ffffff"%2C"header_bg_color"%3A"%23527da3"%2C"accent_text_color"%3A"%231c93e3"%2C"section_header_text_color"%3A"%233a95d5"%2C"subtitle_text_color"%3A"%2382868a"%2C"destructive_text_color"%3A"%23cc2929"}
-  //https://front.botrazbor.ru/anketa-bot-app#tgWebAppData=user%3D%7B%22id%22%3A1797304609%2C%22first_name%22%3A%22Tt%22%2C%22last_name%22%3A%22%22%2C%22username%22%3A%22al_dnp%22%2C%22language_code%22%3A%22en%22%2C%22allows_write_to_pm%22%3Atrue%7D%26chat_instance%3D5541659838154187720%26chat_type%3Dsender%26auth_date%3D1703158901%26hash%3Ddc59987166f863e76d77045a6df19c4907959e45ae1b67eb32924e36673fd750&tgWebAppVersion=6.10&tgWebAppPlatform=android&tgWebAppThemeParams={"bg_color"%3A"%23ffffff"%2C"section_bg_color"%3A"%23ffffff"%2C"secondary_bg_color"%3A"%23f0f0f0"%2C"text_color"%3A"%23222222"%2C"hint_color"%3A"%23a8a8a8"%2C"link_color"%3A"%232678b6"%2C"button_color"%3A"%2350a8eb"%2C"button_text_color"%3A"%23ffffff"%2C"header_bg_color"%3A"%23527da3"%2C"accent_text_color"%3A"%231c93e3"%2C"section_header_text_color"%3A"%233a95d5"%2C"subtitle_text_color"%3A"%2382868a"%2C"destructive_text_color"%3A"%23cc2929"}
+  //https:// front.botrazbor.ru/#tgWebAppData=query_id%3DAAEhsSBrAAAAACGxIGti2rNg%26user%3D%7B%22id%22%3A1797304609%2C%22first_name%22%3A%22Tt%22%2C%22last_name%22%3A%22%22%2C%22username%22%3A%22al_dnp%22%2C%22language_code%22%3A%22en%22%2C%22allows_write_to_pm%22%3Atrue%7D%26auth_date%3D1703157559%26hash%3Dc10a564d944e5130eb3d613f52eeb4b72650e26f7bb90525d2564071814d452e&tgWebAppVersion=6.10&tgWebAppPlatform=android&tgWebAppBotInline=1&tgWebAppThemeParams={"bg_color"%3A"%23ffffff"%2C"section_bg_color"%3A"%23ffffff"%2C"secondary_bg_color"%3A"%23f0f0f0"%2C"text_color"%3A"%23222222"%2C"hint_color"%3A"%23a8a8a8"%2C"link_color"%3A"%232678b6"%2C"button_color"%3A"%2350a8eb"%2C"button_text_color"%3A"%23ffffff"%2C"header_bg_color"%3A"%23527da3"%2C"accent_text_color"%3A"%231c93e3"%2C"section_header_text_color"%3A"%233a95d5"%2C"subtitle_text_color"%3A"%2382868a"%2C"destructive_text_color"%3A"%23cc2929"}
+  //https:// front.botrazbor.ru/anketa-bot-app#tgWebAppData=user%3D%7B%22id%22%3A1797304609%2C%22first_name%22%3A%22Tt%22%2C%22last_name%22%3A%22%22%2C%22username%22%3A%22al_dnp%22%2C%22language_code%22%3A%22en%22%2C%22allows_write_to_pm%22%3Atrue%7D%26chat_instance%3D5541659838154187720%26chat_type%3Dsender%26auth_date%3D1703158901%26hash%3Ddc59987166f863e76d77045a6df19c4907959e45ae1b67eb32924e36673fd750&tgWebAppVersion=6.10&tgWebAppPlatform=android&tgWebAppThemeParams={"bg_color"%3A"%23ffffff"%2C"section_bg_color"%3A"%23ffffff"%2C"secondary_bg_color"%3A"%23f0f0f0"%2C"text_color"%3A"%23222222"%2C"hint_color"%3A"%23a8a8a8"%2C"link_color"%3A"%232678b6"%2C"button_color"%3A"%2350a8eb"%2C"button_text_color"%3A"%23ffffff"%2C"header_bg_color"%3A"%23527da3"%2C"accent_text_color"%3A"%231c93e3"%2C"section_header_text_color"%3A"%233a95d5"%2C"subtitle_text_color"%3A"%2382868a"%2C"destructive_text_color"%3A"%23cc2929"}
 }
-//front.botrazbor.ru/zap_emirates/#tgWebAppData=query_id%3DAAEhsSBrAAAAACGxIGti2rNg%26user%3D%7B%22id%22%3A1797304609%2C%22first_name%22%3A%22Tt%22%2C%22last_name%22%3A%22%22%2C%22username%22%3A%22al_dnp%22%2C%22language_code%22%3A%22en%22%2C%22allows_write_to_pm%22%3Atrue%7D%26auth_date%3D1703157559%26hash%3Dc10a564d944e5130eb3d613f52eeb4b72650e26f7bb90525d2564071814d452e&tgWebAppVersion=6.10&tgWebAppPlatform=android&tgWebAppBotInline=1&tgWebAppThemeParams={"bg_color"%3A"%23ffffff"%2C"section_bg_color"%3A"%23ffffff"%2C"secondary_bg_color"%3A"%23f0f0f0"%2C"text_color"%3A"%23222222"%2C"hint_color"%3A"%23a8a8a8"%2C"link_color"%3A"%232678b6"%2C"button_color"%3A"%2350a8eb"%2C"button_text_color"%3A"%23ffffff"%2C"header_bg_color"%3A"%23527da3"%2C"accent_text_color"%3A"%231c93e3"%2C"section_header_text_color"%3A"%233a95d5"%2C"subtitle_text_color"%3A"%2382868a"%2C"destructive_text_color"%3A"%23cc2929"}
+// front.botrazbor.ru/zap_emirates/#tgWebAppData=query_id%3DAAEhsSBrAAAAACGxIGti2rNg%26user%3D%7B%22id%22%3A1797304609%2C%22first_name%22%3A%22Tt%22%2C%22last_name%22%3A%22%22%2C%22username%22%3A%22al_dnp%22%2C%22language_code%22%3A%22en%22%2C%22allows_write_to_pm%22%3Atrue%7D%26auth_date%3D1703157559%26hash%3Dc10a564d944e5130eb3d613f52eeb4b72650e26f7bb90525d2564071814d452e&tgWebAppVersion=6.10&tgWebAppPlatform=android&tgWebAppBotInline=1&tgWebAppThemeParams={"bg_color"%3A"%23ffffff"%2C"section_bg_color"%3A"%23ffffff"%2C"secondary_bg_color"%3A"%23f0f0f0"%2C"text_color"%3A"%23222222"%2C"hint_color"%3A"%23a8a8a8"%2C"link_color"%3A"%232678b6"%2C"button_color"%3A"%2350a8eb"%2C"button_text_color"%3A"%23ffffff"%2C"header_bg_color"%3A"%23527da3"%2C"accent_text_color"%3A"%231c93e3"%2C"section_header_text_color"%3A"%233a95d5"%2C"subtitle_text_color"%3A"%2382868a"%2C"destructive_text_color"%3A"%23cc2929"}
 https: {
   /**
     при создании ссылки нужно указать url
@@ -728,8 +546,8 @@ https: {
     3) Краткое описание 
     4) изображение ссылки в размере 640px
     5) ссылка на бота
-    для тестового   https://bot-auto-razbor.vercel.app/information_pm/
-    для продакшен   https://front.botrazbor.ru/information_pm/
+    для тестового   https:// bot-auto-razbor.vercel.app/information_pm/
+    для продакшен   https:// front.botrazbor.ru/information_pm/
     
     последовательность важна
     1 -  user_id as Number
@@ -757,8 +575,8 @@ https: {
     3) Краткое описание 
     4) изображение ссылки в размере 640px
     5) ссылка на бота
-    для тестового   https://bot-auto-razbor.vercel.app/emirate/
-    для продакшен   https://front.botrazbor.ru/emirate/
+    для тестового   https:// bot-auto-razbor.vercel.app/emirate/
+    для продакшен   https:// front.botrazbor.ru/emirate/
 
     последовательность важна
     1 -  bloger_id as Number
@@ -775,14 +593,14 @@ https: {
 
 // {
 //     bloger code
-//     https://bot-auto-razbor.vercel.app/anketa-bot-app/?tgWebAppStartParam=YOnZboIphDajzATNFLtRUyXcqgeCsd#tgWebAppData=user%3D%7B%22id%22%3A1797304609%2C%22first_name%22%3A%22Tt%22%2C%22last_name%22%3A%22%22%2C%22username%22%3A%22al_dnp%22%2C%22language_code%22%3A%22en%22%2C%22allows_write_to_pm%22%3Atrue%7D%26chat_instance%3D3092470628042781161%26chat_type%3Dchannel%26start_param%3DYOnZboIphDajzATNFLtRUyXcqgeCsd%26auth_date%3D1703156557%26hash%3D20c1aa92598abf3563825c54c6e18c0eabd53289327c9b97a21a96fdedf89e66&tgWebAppVersion=6.10&tgWebAppPlatform=android&tgWebAppBotInline=1&tgWebAppThemeParams={"bg_color"%3A"%23ffffff"%2C"section_bg_color"%3A"%23ffffff"%2C"secondary_bg_color"%3A"%23f0f0f0"%2C"text_color"%3A"%23222222"%2C"hint_color"%3A"%23a8a8a8"%2C"link_color"%3A"%232678b6"%2C"button_color"%3A"%2350a8eb"%2C"button_text_color"%3A"%23ffffff"%2C"header_bg_color"%3A"%23527da3"%2C"accent_text_color"%3A"%231c93e3"%2C"section_header_text_color"%3A"%233a95d5"%2C"subtitle_text_color"%3A"%2382868a"%2C"destructive_text_color"%3A"%23cc2929"}
+//     https:// bot-auto-razbor.vercel.app/anketa-bot-app/?tgWebAppStartParam=YOnZboIphDajzATNFLtRUyXcqgeCsd#tgWebAppData=user%3D%7B%22id%22%3A1797304609%2C%22first_name%22%3A%22Tt%22%2C%22last_name%22%3A%22%22%2C%22username%22%3A%22al_dnp%22%2C%22language_code%22%3A%22en%22%2C%22allows_write_to_pm%22%3Atrue%7D%26chat_instance%3D3092470628042781161%26chat_type%3Dchannel%26start_param%3DYOnZboIphDajzATNFLtRUyXcqgeCsd%26auth_date%3D1703156557%26hash%3D20c1aa92598abf3563825c54c6e18c0eabd53289327c9b97a21a96fdedf89e66&tgWebAppVersion=6.10&tgWebAppPlatform=android&tgWebAppBotInline=1&tgWebAppThemeParams={"bg_color"%3A"%23ffffff"%2C"section_bg_color"%3A"%23ffffff"%2C"secondary_bg_color"%3A"%23f0f0f0"%2C"text_color"%3A"%23222222"%2C"hint_color"%3A"%23a8a8a8"%2C"link_color"%3A"%232678b6"%2C"button_color"%3A"%2350a8eb"%2C"button_text_color"%3A"%23ffffff"%2C"header_bg_color"%3A"%23527da3"%2C"accent_text_color"%3A"%231c93e3"%2C"section_header_text_color"%3A"%233a95d5"%2C"subtitle_text_color"%3A"%2382868a"%2C"destructive_text_color"%3A"%23cc2929"}
 // }
 
 //?startapp=461670529_20909&startApp=461670529_20909
-//https://bot-auto-razbor.vercel.app/information_pm/?tgWebAppStartParam=461670529_20909#tgWebAppData=user%3D%7B%22id%22%3A1797304609%2C%22first_name%22%3A%22Tt%22%2C%22last_name%22%3A%22%22%2C%22username%22%3A%22al_dnp%22%2C%22language_code%22%3A%22en%22%2C%22allows_write_to_pm%22%3Atrue%7D%26chat_instance%3D-802254495446828911%26chat_type%3Dsender%26start_param%3D1033806475%26auth_date%3D1693496003%26hash%3D27fedfcde0e10394a7185a592c2eedf54e994f92473020a925b5693f119fd909&tgWebAppVersion=6.7&tgWebAppPlatform=android&tgWebAppBotInline=1&tgWebAppThemeParams={"bg_color"%3A"%23ffffff"%2C"secondary_bg_color"%3A"%23f0f0f0"%2C"text_color"%3A"%23222222"%2C"hint_color"%3A"%23a8a8a8"%2C"link_color"%3A"%232678b6"%2C"button_color"%3A"%2350a8eb"%2C"button_text_color"%3A"%23ffffff"}
+//https:// bot-auto-razbor.vercel.app/information_pm/?tgWebAppStartParam=461670529_20909#tgWebAppData=user%3D%7B%22id%22%3A1797304609%2C%22first_name%22%3A%22Tt%22%2C%22last_name%22%3A%22%22%2C%22username%22%3A%22al_dnp%22%2C%22language_code%22%3A%22en%22%2C%22allows_write_to_pm%22%3Atrue%7D%26chat_instance%3D-802254495446828911%26chat_type%3Dsender%26start_param%3D1033806475%26auth_date%3D1693496003%26hash%3D27fedfcde0e10394a7185a592c2eedf54e994f92473020a925b5693f119fd909&tgWebAppVersion=6.7&tgWebAppPlatform=android&tgWebAppBotInline=1&tgWebAppThemeParams={"bg_color"%3A"%23ffffff"%2C"secondary_bg_color"%3A"%23f0f0f0"%2C"text_color"%3A"%23222222"%2C"hint_color"%3A"%23a8a8a8"%2C"link_color"%3A"%232678b6"%2C"button_color"%3A"%2350a8eb"%2C"button_text_color"%3A"%23ffffff"}
 
 // /information_pm/?tgWebAppStartParam=1033806475,user#tgWebAppData=user%3D%7B%22id%22%3A1797304609%2C%22first_name%22%3A%22Tt%22%2C%22last_name%22%3A%22%22%2C%22username%22%3A%22al_dnp%22%2C%22language_code%22%3A%22en%22%2C%22allows_write_to_pm%22%3Atrue%7D%26chat_instance%3D-802254495446828911%26chat_type%3Dsender%26start_param%3D1033806475%26auth_date%3D1693496003%26hash%3D27fedfcde0e10394a7185a592c2eedf54e994f92473020a925b5693f119fd909&tgWebAppVersion=6.7&tgWebAppPlatform=android&tgWebAppBotInline=1&tgWebAppThemeParams={"bg_color"%3A"%23ffffff"%2C"secondary_bg_color"%3A"%23f0f0f0"%2C"text_color"%3A"%23222222"%2C"hint_color"%3A"%23a8a8a8"%2C"link_color"%3A"%232678b6"%2C"button_color"%3A"%2350a8eb"%2C"button_text_color"%3A"%23ffffff"}
 
-// https://bot-auto-razbor.vercel.app/information_pm/?tgWebAppStartParam=1033806475_1111111111#tgWebAppData=user%3D%7B%22id%22%3A1797304609%2C%22first_name%22%3A%22Tt%22%2C%22last_name%22%3A%22%22%2C%22username%22%3A%22al_dnp%22%2C%22language_code%22%3A%22en%22%2C%22allows_write_to_pm%22%3Atrue%7D%26chat_instance%3D-802254495446828911%26chat_type%3Dsender%26start_param%3D1033806475_1111111111%26auth_date%3D1693569702%26hash%3Df25898c12eecf3e6c8a070772ebafe69ae68a942fce6a0c6ff386d19205f2770&tgWebAppVersion=6.7&tgWebAppPlatform=android&tgWebAppBotInline=1&tgWebAppThemeParams={"bg_color"%3A"%23ffffff"%2C"secondary_bg_color"%3A"%23f0f0f0"%2C"text_color"%3A"%23222222"%2C"hint_color"%3A"%23a8a8a8"%2C"link_color"%3A"%232678b6"%2C"button_color"%3A"%2350a8eb"%2C"button_text_color"%3A"%23ffffff"}
+// https:// bot-auto-razbor.vercel.app/information_pm/?tgWebAppStartParam=1033806475_1111111111#tgWebAppData=user%3D%7B%22id%22%3A1797304609%2C%22first_name%22%3A%22Tt%22%2C%22last_name%22%3A%22%22%2C%22username%22%3A%22al_dnp%22%2C%22language_code%22%3A%22en%22%2C%22allows_write_to_pm%22%3Atrue%7D%26chat_instance%3D-802254495446828911%26chat_type%3Dsender%26start_param%3D1033806475_1111111111%26auth_date%3D1693569702%26hash%3Df25898c12eecf3e6c8a070772ebafe69ae68a942fce6a0c6ff386d19205f2770&tgWebAppVersion=6.7&tgWebAppPlatform=android&tgWebAppBotInline=1&tgWebAppThemeParams={"bg_color"%3A"%23ffffff"%2C"secondary_bg_color"%3A"%23f0f0f0"%2C"text_color"%3A"%23222222"%2C"hint_color"%3A"%23a8a8a8"%2C"link_color"%3A"%232678b6"%2C"button_color"%3A"%2350a8eb"%2C"button_text_color"%3A"%23ffffff"}
 
-// https://bot-auto-razbor.vercel.app/information_pm/?tgWebAppStartParam=461670529_20909#tgWebAppData=user%3D%7B%22id%22%3A1797304609%2C%22first_name%22%3A%22Tt%22%2C%22last_name%22%3A%22%22%2C%22username%22%3A%22al_dnp%22%2C%22language_code%22%3A%22en%22%2C%22allows_write_to_pm%22%3Atrue%7D%26chat_instance%3D6490283048394398704%26chat_type%3Dprivate%26start_param%3D461670529_20909%26auth_date%3D1694959628%26hash%3D5d0e3d7a4bc92c28dcb98569f67cf423b8ea689d614a005911a0519e61ab3038&tgWebAppVersion=6.9&tgWebAppPlatform=android&tgWebAppBotInline=1&tgWebAppThemeParams={"bg_color"%3A"%23ffffff"%2C"secondary_bg_color"%3A"%23f0f0f0"%2C"text_color"%3A"%23222222"%2C"hint_color"%3A"%23a8a8a8"%2C"link_color"%3A"%232678b6"%2C"button_color"%3A"%2350a8eb"%2C"button_text_color"%3A"%23ffffff"}
+// https:// bot-auto-razbor.vercel.app/information_pm/?tgWebAppStartParam=461670529_20909#tgWebAppData=user%3D%7B%22id%22%3A1797304609%2C%22first_name%22%3A%22Tt%22%2C%22last_name%22%3A%22%22%2C%22username%22%3A%22al_dnp%22%2C%22language_code%22%3A%22en%22%2C%22allows_write_to_pm%22%3Atrue%7D%26chat_instance%3D6490283048394398704%26chat_type%3Dprivate%26start_param%3D461670529_20909%26auth_date%3D1694959628%26hash%3D5d0e3d7a4bc92c28dcb98569f67cf423b8ea689d614a005911a0519e61ab3038&tgWebAppVersion=6.9&tgWebAppPlatform=android&tgWebAppBotInline=1&tgWebAppThemeParams={"bg_color"%3A"%23ffffff"%2C"secondary_bg_color"%3A"%23f0f0f0"%2C"text_color"%3A"%23222222"%2C"hint_color"%3A"%23a8a8a8"%2C"link_color"%3A"%232678b6"%2C"button_color"%3A"%2350a8eb"%2C"button_text_color"%3A"%23ffffff"}

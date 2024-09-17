@@ -1,96 +1,106 @@
-.input{
-    //.input__wrapper{}
-    &__wrapper{
+.input {
+    // input__wrapper{}
+    &__wrapper {
         width: 100%;
         display: flex;
-        justify-content: space-between;        
+        justify-content: space-between;
         position: relative;
         min-height: 20px;
         background-color: var(--background-color-block);
         border: 1px solid var(--border-color);
-        box-shadow: 0px 4px 14px var(--box-shadow);
+        box-shadow: 0 4px 14px var(--box-shadow);
         border-radius: 8px;
         align-items: center;
     }
-    //.input__input{}
-    &__input{
+
+    // input__input{}
+    &__input {
         pointer-events: all;
+
         // pointer-events: var(--pointer-events);
         color: var(--text-color-blue);
         font-size: 14px;
         width: 100%;
-        letter-spacing: 0px;
+        letter-spacing: 0;
         background-color: transparent;
         border-radius: 8px;
-        font-family: 'HelveticaNeue';
+        font-family: var(--font-family-default);
         font-weight: 400;
-        position: relative;
         padding: 0 40px 0 7px;
         vertical-align: middle;
-
         top: 50%;
-        left: 50%;        
+        left: 50%;
         position: absolute;
-        &::placeholder{
-            font-family: 'HelveticaNeue';
+
+        &::placeholder {
+            font-family: var(--font-family-default);
             position: relative;
             color: var(--placeholder-color);
             font-size: var(--placeholder-size);
-            letter-spacing: 0px;
+            letter-spacing: 0;
             font-style: normal;
             font-weight: 500;
+
             // vertical-align: text-bottom;
             min-height: 100%;
             height: 100%;
             top: 2px;
             filter: unset;
         }
-    
+
     }
-    //input__input-phone
-    &__input-phone{
+
+    // input__input-phone
+    &__input-phone {
         width: 100%;
     }
-    //.input__label{}
-    &__label{
+
+    // input__label{}
+    &__label {
         font-size: 12px;
-        color:  var(--text-color);
+        color: var(--text-color);
         margin: 0 0 0 10px;
         position: relative;
         bottom: 4px;
     }
-    //.input__error{}
-    &__error{
+
+    // input__error{}
+    &__error {
         position: relative;
-        &>input{
-            color: #ff0000;
+
+        &>input {
+            color: #f00;
         }
     }
 }
 
 
-[name=input-search]{
+[name="input-search"] {
     width: 320px;
     background: transparent;
     margin: 5px;
     padding: 0 12px 0 8px;
-    &::-webkit-input-placeholder {
+
+    /* stylelint-disable */
+    &::input-placeholder {
         /* Edge */
-        color:  #08080871;
+        color: #08080871;
         font-size: 14px;
 
     }
-    &:-ms-input-placeholder {
+
+    &:input-placeholder {
         /* Internet Explorer 10-11 */
-        color:  #08080871;
+        color: #08080871;
         font-size: 14px;
     }
+
     &::placeholder {
-        color:  #08080871;
+        color: #08080871;
         font-size: 14px;
     }
 }
 
-.error-user{
+.error-user {
     border: 1px solid var(--red-color) !important;
 }

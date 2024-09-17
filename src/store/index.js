@@ -5,7 +5,6 @@ import { storeonLogger } from 'storeon/devtools';
 import { getPage } from './api-store/getpage';
 import { helpers } from './helpers/helpers-store';
 import { filtersIncominRequest } from './filters/filtersIncominRequest';
-import { profile } from './profile/profile';
 import { requests } from './requests/requests';
 import { raitingReview } from './raiting-review/raiting-review';
 import { feedback } from './feedback/feedback';
@@ -17,7 +16,6 @@ export const store = createStoreon([
     access,
     getPage,
     helpers,
-    profile,
     carSale,
     requests,
     feedback,

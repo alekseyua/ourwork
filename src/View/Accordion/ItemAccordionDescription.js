@@ -12,7 +12,7 @@ export default function ItemAccordionDescription({children, style={}, isOpen}) {
         marginTop: isOpen? 10 : 0,
         transition: 'all .15s ease-in-out',
         color: 'var(--text-color-opacity)',
-        'font-family': 'HelveticaNeue',
+        'font-family': 'var(--font-family-default)',
         'font-weight': '400',
         'font-size': '12px',
         'pointer-events': 'none',

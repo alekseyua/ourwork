@@ -10,14 +10,11 @@ import Preloader from '../../../View/Preloaders/Preloader'
 
 export default function RaitingAndReviewInfoAboutUser({
   infoUser,
-  headerTitle,
-  listSection,
-  reviews,
-  changePagination,
-  handlerChangeSection,
   handlerChangeScreen,
+
 }) {
-  if (!infoUser?.id) return (<WrapContainerPreloader>Загрузка ... <Preloader /></WrapContainerPreloader>);
+  console.log({infoUser})
+  if (!infoUser?.id) return (<></>);
   return (
     <WrapContainer>
       <Offset mb={15} />
@@ -26,24 +23,13 @@ export default function RaitingAndReviewInfoAboutUser({
         handlerChangeScreen={handlerChangeScreen}
       />
       <Offset mb={25} />
-      <HeaderTitleActionComponent list={headerTitle} />
-      <Offset mb={13} />
-      <NavigationReview
-        listSection={listSection}
-        handlerChangeSection={handlerChangeSection}
-        style={{
-          gridTemplateAreas: `'good bad'`,
-        }}
-      />
-      <Offset mb={20} />
-
-      <WrapContainerCardReviewList
-        list={reviews.results}
-        count={reviews.count}
+      {/* <WrapContainerCardReviewList
+        list={infoUser.feedbacks}
+        count={infoUser.feedbacks.length}
         currentPage={reviews.current_page}
         changePagination={changePagination}
         handlerChangeScreen={handlerChangeScreen}
-      />
+      /> */}
     </WrapContainer>
   );
 }

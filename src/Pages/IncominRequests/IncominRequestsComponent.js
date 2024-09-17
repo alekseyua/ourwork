@@ -11,12 +11,12 @@ class IncominRequestsComponent extends Component {
         hardColorBlockById: [
             {
                 id: 0,
-                colorBackground: 'var(--background-color-Mirage-blue)',
+                colorBackground: 'var(--background-color-mirage-blue)',
                 color: 'var(--text-color-white)',
             },
             {
                 id: 1,
-                colorBackground: 'var(--background-color-Mirage-blue)',
+                colorBackground: 'var(--background-color-mirage-blue)',
                 color: 'var(--text-color-white)'
             },
         ],

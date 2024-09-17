@@ -8,13 +8,6 @@ function WithTooltip(Component) {
   class WithTooltipComponent extends React.Component { 
     state = {
       tooltip: {
-        create_edit_mp: {
-          input_option_city: {
-            isShow: false,
-            id: null,
-            message: 'Не указана страна',
-          },          
-        },
         subscribe: {
           bank: {
             isShow: false,
@@ -50,18 +43,6 @@ function WithTooltip(Component) {
             id: null,
             message: 'Нужно указать страну',
           }
-        },
-        market_add: {
-          link: {
-            isShow: false,
-            id: null,
-            message: 'Что бы добавить новый файл или ссылку, необходимо удалить предыдущий добавленный файл или ссылку',
-          },
-          file: {
-            isShow: false,
-            id: null,
-            message: 'Что бы добавить новую ссылку или файл, необходимо удалить предыдущий добавленный файл или ссылку',
-          },
         },
         template_key: {
           template_action: {

@@ -1,7 +1,6 @@
 import { Dimensions } from "react-native-web";
-import { arrowRightWhite, carSell, carSpareSell, chat, createRequestDefault, createRequestWhite, editMarket, engine, fileAdditionOne, filter, filterWhite, fix_bugs, help, home, homeFooterActive, homeFooterDefault, incomingSetting, 
-  marketFooterActive, marketFooterDefault, piston, play, plusDarkBlue, profileFooterActive, profileFooterDefault, rowVertical, securityUser, sellCar, sellCarWhite, shieldTick, shoppingCart, 
-  starFooterActive, starFooterDefault, starStrokeWhite, starmenu, starmenuWhite, unitTurbo } from "../images";
+import { arrowRightWhite, carSell, carSpareSell, chat, createRequestDefault, createRequestWhite, editMarket, engine, fileAdditionOne, filter, filterWhite, fix_bugs, help, home,
+  piston, play, plusDarkBlue, rowVertical, securityUser, sellCar, sellCarWhite, shieldTick, starStrokeWhite, starmenu, starmenuWhite, unitTurbo } from "../images";
 
 const width = Dimensions.get('window').width;
 //  hosting
@@ -29,10 +28,11 @@ export const API_CREATE_REQUEST_V2 = '/request/requests/';
 export const API_GET_REQUEST_BY_TYPE = '/????/';
 
 
+export const API_GET_USER_RAITING = "/rating/feedbacks/get_user_feedbacks/";
+
 export const API_GET_COUNTRIES = '/telegram/api_get_countrys/';
 export const API_DUBLICATE_REQUEST = '/telegram/api_dublicate_request/';
 export const API_DELETE_REQUEST = '/telegram/api_delete_request/';
-export const API_GET_USER_RAITING = '/telegram/api_get_users_rating/';
 export const API_GET_USER_FEEDBACK = '/telegram/api_get_user_feedbacks_V2/';
 export const API_GET_USER_FEEDBACK_RECIEVE = "/telegram/api_get_user_feedbacks_added/";
 export const API_DELETE_USER_FEEDBACK_LEFT = "/telegram/api_delete_feedback/";
@@ -47,15 +47,20 @@ export const API_DELETE_IMAGE_FROM_REQUEST = "/telegram/api_check_request_images
 
 // review
 export const API_GET_ALL_GARANT_MEMBERS = '/rating/feedbacks/get_user_feedbacks/';
+export const API_CREATE_RAITING = "/rating/feedbacks/";
+
+
+
+
 export const API_GET_LIST_CITIES_WARRANT_MEMBER = '/telegram/api_get_garant_members/';
 
 export const API_GET_ALL_RAITINGS = '/rating/feedbacks/'//"/api_get_all_ratings/" //
 export const API_TOP_RAITING = '/rating/feedbacks/';
 
-export const API_CREATE_RAITING = '/telegram/api_create_rating/';
+
 export const API_CREATE_UPDATE_REPLY_RAITING ="/telegram/api_create_update_reply/";
 export const API_GET_CITY_MEMBERS = '/telegram/api_get_city_members_v2/';//'/api_get_city_members/';
-// https://botrazbor.ru/telegram/api_get_all_users_list/
+// https:// botrazbor.ru/telegram/api_get_all_users_list/
 export const API_GET_RATINGS = "/telegram/api_get_ratings/"
 // profile
 export const API_GET_CONTEXT_PROFILE = '/telegram/api_get_context_profile/'; // page_id: 31
@@ -64,7 +69,7 @@ export const API_GET_PAYMENT_URL = '/telegram/api_get_pay_url/';
 export const API_CHANGE_PROFILE = '/telegram/api_edit_profile/';
 export const API_UNSUBSCRIBE_AUTO_PAYMENT = '/telegram/api_cancel_user_auto_payment/';
 // sale car  
-export const CREATE_CAR_SALE = '/telegram/api_create_sale/'; // old request sell auto
+export const CREATE_CAR_SALE = "/parsing/sale/"; // old request sell auto
 
 export const rateRestriction = 50000000; // ограничения файлва ссылки по загрузке 50mb
 export const marginSides = 10;
@@ -361,64 +366,6 @@ export const menuIncomingRequest = [
     isActive: true,
   },
 ];
-
-export const menuProfile = [
-  {
-    "name": "Мои отзывы",
-    "image": starStrokeWhite,
-    "slug": PROFILE_MY_REVIEW,
-    isSlider: true,
-    isActive: true,
-  },
-  {
-    "name": "Мои объявления",
-    "image": rowVertical,
-    "slug": MARKETPLACE_OWN_CARDS,
-    isSlider: true,
-    isActive: true,
-  },
-
-]
-export const menuMarketCreateCard = [
-  {
-    id: 2,
-    "name": "Создать объявление вручную",
-    "image": null,
-    "images": [editMarket],
-    "slug": MARKETPLACE_CREATE_CARD,
-    oneBigSlide: true,
-    isSlider: false,
-    isActive: true,
-    height: 128,
-    tab: 'hand',
-  },
-  {
-    id: 1,
-    "name": "Загрузить",
-    "images": [fileAdditionOne],
-    "slug": MARKETPLACE_ADD_CARDS_FROM_FILE,
-    tab: 'file',
-    oneBigSlide: true,
-    height: 128,
-    isSlider: false,
-    isActive: true,
-  },
-]
-
-export const menuMarketInnerCreateCard = [
-  {
-    id: 2,
-    "name": "Создать вручную",
-    "image": null,
-    "images": [editMarket],
-    "slug": MARKETPLACE_CREATE_CARD,
-    isSlider: false ,
-    oneBigSlide: true,
-    tab: 'hand',
-    isDisable: false,
-    isActive: true,
-  },
-]
 // link feedback
 export const linksFeedback = [
   {
@@ -479,252 +426,18 @@ export const linksFeedbackWarantAdmin = [
 
   },
 ]
-// list elementov for create market card
-export const listItemsCreateMarketCardNew = {
-  'common-info': [{
-    title: 'Общая информация',
-    id: 0,
-    icon: plusDarkBlue,
-    type: 'country',
-    section: [
-      {
-        key: 'title',
-        type: 'country',
-        title: 'Название',
-        placeholder: 'Заголовок для объявления',
-        distationtop: [90]
-      },
-      {
-        key: 'country_id',
-        type: 'country',
-        title: 'Страна',
-        placeholder: 'Все',
-      },
-      {
-        key: 'city_id',
-        type: 'country',
-        title: 'Город',
-        placeholder: 'Все',
-      },
-    ]
-  }],
-  'aggrigate': [{
-    title: 'Применимость',
-    id: 1,
-    icon: plusDarkBlue,
-    type: 'aggrigate',
-    section: [
-      {
-        title: 'Марка',
-        placeholder: 'Любая',
-        key: 'brand_id'
-      },
-      {
-        title: 'Модель',
-        placeholder: 'Любая',
-        key: 'model_id'
-      },
-      {
-        title: 'Поколение',
-        placeholder: 'Любое',
-        key: 'generation_id'
-      },
-      {
-        title: 'Категория',
-        placeholder: 'Любое',
-        key: 'category_id'
-      },
-
-
-      
-      {
-        title: 'Цена',
-        placeholder: 'Любое',
-        key: 'price'
-      },
-      {
-        title: 'Номер каталога(OEM)',
-        placeholder: 'Любое',
-        key: 'oem',
-      },
-      {
-        title: 'Состояние',
-        placeholder: 'Любое',
-        key: 'condition',
-      },
-      {
-        title: 'Количество',
-        placeholder: 'Любое',
-        key: 'count',
-      },
-      {
-        title: 'Описание товара',
-        placeholder: 'Напишите немного о товаре',
-        key: 'description',
-      },
-    ]
-
-  }],
-  'own-info': [{
-    title: 'Личная информация',
-    id: 2,
-    icon: plusDarkBlue,
-    type: 'self-info',
-    section: [
-      {
-        title: 'Телефон',
-        placeholder: '+7 (000) 000-00-00',
-        key: 'phone'
-      },
-      {
-        title: 'Адрес',
-        placeholder: 'Например, Ленина 23/а',
-        key: 'address'
-      },
-    ]
-  }],
-  'add-files': [{
-    title: 'Добавьте фотографии',
-    id: 3,
-    icon: plusDarkBlue,
-    type: 'add-photo',
-    section: [
-      {
-        title: 'Url изображения (необязательно)',
-        placeholder: 'Ссылка',
-        key: 'link'
-      },
-    ]
-  }],
-
-}
-
-export const listItemsCreateMarketCard = [
-  {
-    title: 'Общая информация',
-    id: 0,
-    icon: plusDarkBlue,
-    type: 'country',
-    section: [
-      {
-        title: 'Название',
-        placeholder: 'Заголовок для объявления',
-        key: 'title'
-      },
-      {
-        title: 'Страна',
-        placeholder: 'Все',
-        key: 'country_id'
-      },
-      {
-        title: 'Город',
-        placeholder: 'Все',
-        key: 'city_id'
-      },
-    ]
-  },
-  {
-    title: 'Применимость',
-    id: 1,
-    icon: plusDarkBlue,
-    type: 'aggrigate',
-    section: [
-      {
-        title: 'Марка',
-        placeholder: 'Любая',
-        key: 'brand_id'
-      },
-      {
-        title: 'Модель',
-        placeholder: 'Любая',
-        key: 'model_id'
-      },
-      {
-        title: 'Поколение',
-        placeholder: 'Любое',
-        key: 'generation_id'
-      },
-      {
-        title: 'Категория',
-        placeholder: 'Любое',
-        key: 'category_id'
-      },
-      {
-        title: 'Цена',
-        placeholder: 'Любое',
-        key: 'price'
-      },
-      {
-        title: 'Номер каталога(OEM)',
-        placeholder: 'Любое',
-        key: 'oem',
-      },
-      {
-        title: 'Состояние',
-        placeholder: 'Любое',
-        key: 'condition',
-      },
-      {
-        title: 'Количество',
-        placeholder: 'Любое',
-        key: 'count',
-      },
-      {
-        title: 'Описание товара',
-        placeholder: 'Напишите немного о товаре',
-        key: 'description',
-      },
-    ]
-
-  },
-  {
-    title: 'Личная информация',
-    id: 2,
-    icon: plusDarkBlue,
-    type: 'self-info',
-    section: [
-      {
-        title: 'Телефон',
-        placeholder: '+7 (000) 000-00-00',
-        key: 'phone'
-      },
-      {
-        title: 'Адрес',
-        placeholder: 'Например, Ленина 23/а',
-        key: 'address'
-      },
-    ]
-  },
-  {
-    title: 'Добавьте фотографии',
-    id: 3,
-    icon: plusDarkBlue,
-    type: 'add-photo',
-    section: [
-      {
-        title: 'Url изображения (необязательно)',
-        placeholder: 'Ссылка',
-        key: 'link'
-      },
-    ]
-  },
-
-]
 
 // const localStorage
 // save last url
 export const LAST_PATH_FEEDBACK = 'lastPathFeedback';
 export const LAST_PATH_CREATE_ADV = 'lastPathCreateAdv';
 export const LAST_PATH_DETAIL_CARD = 'lastPathDetailCard';
-export const LAST_PATH_FILTER_MARKET = 'lastPathFilterMarket';
 export const LAST_PATH_MY_FAVORITE_CARDS = 'lastPathMyFavoriteCards';
 export const LAST_PATH_SEND_REVIEW = 'lastPathSendReview';
 export const LAST_PATH_OWN_REQUEST = 'lastPathOwnRequest';
 export const LAST_PATH_HOW_TO_SETUP = 'lastPathHowToSetup';
 export const LAST_PATH_FULL_INFO = 'lastPathFullInfo';
-export const MARKET_CURRENT_TAB_ADD_CARDS = 'marketCurrentTabsAddCards';
 export const CITY_ID_FOR_WARANTLY_MEMBER = 'city-id-warantly-mamber';
-export const MARKET_PAGE_CATALOG = 'market-page-catalog';
 export const INCOMING_CURRENT_TAB_SERVICE = 'incoming-cur-service';
 export const USERNAME = 'username';
 export const PREVURL = 'prevUrl';

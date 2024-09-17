@@ -1,0 +1,51 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2761
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 var(--font-family-default);}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c0\c1\c1;\cssrgb\c100000\c100000\c99985;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs26 \cf2 \cb3 java.lang.UnsatisfiedLinkError: couldn't find DSO to load: libhermes.so\
+ SoSource 0: com.facebook.soloader.DirectorySoSource[root = /data/app/expert.iwa.assistant.support-Gwn7On4tVN3bGL4TVzaykQ==/lib/arm64 flags = 0]\
+ SoSource 1: com.facebook.soloader.DirectApkSoSource[root = (/data/app/expert.iwa.assistant.support-Gwn7On4tVN3bGL4TVzaykQ==/split_config.arm64_v8a.apk!/lib/arm64-v8a, /data/app/expert.iwa.assistant.support-Gwn7On4tVN3bGL4TVzaykQ==/split_config.xxhdpi.apk!/lib/arm64-v8a, /data/app/expert.iwa.assistant.support-Gwn7On4tVN3bGL4TVzaykQ==/split_config.ru.apk!/lib/arm64-v8a, /data/app/expert.iwa.assistant.support-Gwn7On4tVN3bGL4TVzaykQ==/base.apk!/lib/arm64-v8a, /data/app/expert.iwa.assistant.support-Gwn7On4tVN3bGL4TVzaykQ==/split_config.uk.apk!/lib/arm64-v8a, )]\
+ SoSource 2: com.facebook.soloader.DirectApkSoSource[root = (/data/app/expert.iwa.assistant.support-Gwn7On4tVN3bGL4TVzaykQ==/split_config.xxhdpi.apk!/lib/arm64-v8a, )]\
+ SoSource 3: com.facebook.soloader.DirectApkSoSource[root = (/data/app/expert.iwa.assistant.support-Gwn7On4tVN3bGL4TVzaykQ==/split_config.uk.apk!/lib/arm64-v8a, )]\
+ SoSource 4: com.facebook.soloader.DirectApkSoSource[root = (/data/app/expert.iwa.assistant.support-Gwn7On4tVN3bGL4TVzaykQ==/split_config.ru.apk!/lib/arm64-v8a, )]\
+ SoSource 5: com.facebook.soloader.DirectApkSoSource[root = (/data/app/expert.iwa.assistant.support-Gwn7On4tVN3bGL4TVzaykQ==/split_config.arm64_v8a.apk!/lib/arm64-v8a, )]\
+ SoSource 6: com.facebook.soloader.DirectorySoSource[root = /system/lib64 flags = 2]\
+ SoSource 7: com.facebook.soloader.DirectorySoSource[root = /vendor/lib64 flags = 2]\
+ Native lib dir: /data/app/expert.iwa.assistant.support-Gwn7On4tVN3bGL4TVzaykQ==/lib/arm64\
+ result: 0\
+ at com.facebook.soloader.SoLoader.doLoadLibraryBySoName(SoLoader.java:1127)\
+ at com.facebook.soloader.SoLoader.loadLibraryBySoNameImpl(SoLoader.java:943)\
+ at com.facebook.soloader.SoLoader.loadLibraryBySoName(SoLoader.java:855)\
+ at com.facebook.soloader.SoLoader.loadLibrary(SoLoader.java:802)\
+ at com.facebook.soloader.SoLoader.loadLibrary(SoLoader.java:772)\
+ at com.facebook.hermes.reactexecutor.HermesExecutor.loadLibrary(HermesExecutor.java:25)\
+ at com.facebook.hermes.reactexecutor.HermesExecutor.<clinit>(HermesExecutor.java:19)\
+ at com.facebook.hermes.reactexecutor.HermesExecutor.loadLibrary(HermesExecutor.java:23)\
+ at com.facebook.react.ReactInstanceManagerBuilder.getDefaultJSExecutorFactory(ReactInstanceManagerBuilder.java:369)\
+ at com.facebook.react.ReactInstanceManagerBuilder.build(ReactInstanceManagerBuilder.java:316)\
+ at com.facebook.react.ReactNativeHost.createReactInstanceManager(ReactNativeHost.java:94)\
+ at com.facebook.react.ReactNativeHost.getReactInstanceManager(ReactNativeHost.java:41)\
+ at com.facebook.react.ReactDelegate.loadApp(ReactDelegate.java:104)\
+ at com.facebook.react.ReactActivityDelegate.loadApp(ReactActivityDelegate.java:111)\
+ at com.facebook.react.ReactActivityDelegate.onCreate(ReactActivityDelegate.java:106)\
+ at com.facebook.react.ReactActivity.onCreate(ReactActivity.java:46)\
+ at expert.iwa.assistant.support.MainActivity.onCreate(MainActivity.java:12)\
+ at android.app.Activity.performCreate(Activity.java:7893)\
+ at android.app.Activity.performCreate(Activity.java:7880)\
+ at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1307)\
+ at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:3283)\
+ at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:3457)\
+ at android.app.servertransaction.LaunchActivityItem.execute(LaunchActivityItem.java:83)\
+ at android.app.servertransaction.TransactionExecutor.executeCallbacks(TransactionExecutor.java:135)\
+ at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:95)\
+ at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2044)\
+\
+at android.os.Handler.dispatchMessage(Handler.java:107)\
+ at android.os.Looper.loop(Looper.java:224)\
+ at android.app.ActivityThread.main(ActivityThread.java:7562)\
+ at java.lang.reflect.Method.invoke(Native Method)\
+ at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:539)\
+ at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:950)}

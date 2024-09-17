@@ -15,7 +15,9 @@ class RaitingAndReviewCreateReviewComponent extends Component {
   }
 
   componentWillUnmount() {
-    setLocaleStore('username', '');
+    setLocaleStore("recipient_id", null);
+    setLocaleStore("username", '');
+
     this.props.dispatch(ACTION_SET_VALUES_REVIEW_NULL)
   }
 

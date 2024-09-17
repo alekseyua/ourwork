@@ -1,7 +1,6 @@
-
-.textarea{
-    //.textarea__container{}
-    &__container{
+.textarea {
+    // textarea__container{}
+    &__container {
         background-color: var(--background-color-block);
         padding: 0;
         min-height: 96px;
@@ -16,8 +15,9 @@
         border-radius: 8px;
         overflow: hidden;
     }
-    //.textarea__label{}
-    &__label{
+
+    // textarea__label{}
+    &__label {
         padding: 0;
         position: absolute;
         top: -15px;
@@ -25,34 +25,36 @@
         left: 10px;
         color: var(--text-color);
     }
-    //.textarea__textarea{}
-    &__textarea{
-        padding: 14px 14px;        
+
+    // textarea__textarea{}
+    &__textarea {
+        padding: 14px;
         position: relative;
         font-size: 14px;
-        letter-spacing: 0px;
+        letter-spacing: 0;
         width: calc(100% - 0px);
-        margin: 0 auto;  
+        margin: 0 auto;
         color: var(--text-color);
         font-feature-settings: 'case' on;
-        font-family: "HelveticaNeue";
+        font-family: var(--font-family-default);
         font-style: normal;
         font-weight: 400;
-        line-height: 18px; 
+        line-height: 18px;
 
-        &::placeholder{
+        &::placeholder {
             color: var(--placeholder-color);
             font-size: 12px;
-            letter-spacing: 0px;
-            font-family: "HelveticaNeue";
+            letter-spacing: 0;
+            font-family: var(--font-family-default);
             font-style: normal;
             font-weight: 400;
             line-height: 18px;
 
         }
     }
-    //.textarea__help-text{}
-    &__help-text{
+
+    // textarea__help-text{}
+    &__help-text {
         padding: 0;
         position: absolute;
         top: 91%;
@@ -60,14 +62,16 @@
         background: var(--background-color-block);
         color: var(--red-color);
     }
-    //.textarea-application-background{}
-    &-application-background{
+
+    // textarea-application-background{}
+    &-application-background {
         background-color: var(--background-color-block);
     }
-    //.textarea-application{}
-    &-application{        
-        //.textarea-application--anketa{}
-        &--anketa{
+
+    // textarea-application{}
+    &-application {
+        // textarea-application--anketa{}
+        &--anketa {
             overflow: hidden;
             margin-top: 0;
             border-radius: 8px;
@@ -75,6 +79,9 @@
     }
 }
 
-.feedback__textarea{
-    height: 88px;
+.feedback{
+    // feedback__textarea
+    &__textarea {
+        height: 88px;
+    }
 }

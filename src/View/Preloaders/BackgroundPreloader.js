@@ -1,7 +1,7 @@
 import React from "react";
 import styles from './styles/preloader.module.scss'
-import Icon from "../Icon/Icon";
-import { settingRed } from "../../images";
+import { loaderRotate } from "../../images";
+import IconSvg from "../Icon/IconSvg";
 const BackgroundPreloader = ({ children, style }) => {
 
   return (
@@ -9,11 +9,9 @@ const BackgroundPreloader = ({ children, style }) => {
       className={styles["preloader__container-background-preload"]}
       style={style}
     >
-      <Icon
-        addClass={"icon__rotation"}
-       src={settingRed}
-        width={40}
-        height={40}
+      <IconSvg
+        className={"icon__rotation"}
+        src={loaderRotate}
       />
     </div>
   );

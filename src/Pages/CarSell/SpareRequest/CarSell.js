@@ -68,7 +68,7 @@ const CarSell = ({ dispatch, handlerChangeDataValues }) => {
               <Offset mt={18} />
               <FormUploadImageV2
                 multiple
-               src={addFile}
+                src={addFile}
                 values={values}
                 setFieldValue={setFieldValue}
                 maxCountImage={8}

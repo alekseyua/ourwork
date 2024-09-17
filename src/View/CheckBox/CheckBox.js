@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import styles from './Default.module.scss';
-import addClassStyle from './add-class-checkbox.module.scss';
 import classNames from 'classnames';
 
 const variantEnum = {
@@ -87,7 +86,7 @@ const CheckBox = ({
       className={classNames({
         [styles['checkbox__container']]: true,
         [className]: !!className,
-        [addClassStyle[addClass]]: !!addClass
+        [styles[addClass]]: !!addClass
       })
       }
       style={style}
@@ -148,7 +147,7 @@ const CheckBox = ({
               fontSize: 12,
               fontWeight: 500,
               lineHeight: '18px',
-              fontFamily: 'HelveticaNeue',
+              fontFamily: 'var(--font-family-default)',
               ...helpTextStyle
             }}>{helptext}</span>
           : null

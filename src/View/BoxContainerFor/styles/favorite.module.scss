@@ -1,5 +1,5 @@
 .favorite{
-  //.favorite__wrap-conrainer{}
+  // favorite__wrap-conrainer{}
   &__wrap-conrainer{
     width: 46px;
     height: 46px;
@@ -11,10 +11,11 @@
     justify-content: center;
     position: relative;
   }
-  //.favorite__badge-favorite{}
+
+  // favorite__badge-favorite{}
   &__badge-favorite{
     width: 12px;
-    font-family: 'HelveticaNeue';
+    font-family: var(--font-family-default);
     font-weight: 500;
     height: 12px;
     background-color: var(--background-color-button-red);

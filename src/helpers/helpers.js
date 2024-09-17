@@ -2,7 +2,6 @@ import React from "react";
 import { color, compare, delay, funcDelay } from "./const";
 import { checkEmptyDataObject, isAndroid, isIos } from "./utils";
 import { ACTION_CLOSE_MODAL, ACTION_OPEN_MODAL } from "../store/helpers/helpers-store";
-import { MARKETPLACE_MAIN } from "./config";
 import { ACTION_DISMISS_PHONE_NUMBER } from "../store/access/access";
 const tg = window.Telegram.WebApp;
 
@@ -648,8 +647,8 @@ export const getTitleFilters = (id, options) => {
 export const exclusion = (path) => {
 
   switch (path) {
-    case MARKETPLACE_MAIN:
-    return false;
+    case '':
+    return ;
     default:
       return true
   }

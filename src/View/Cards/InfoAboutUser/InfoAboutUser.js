@@ -19,18 +19,13 @@ export default function InfoAboutUser({
       <CardInfoBlock>
         <Offset mt={9} />
         <CardInfoBlock
-          onClick={() => handlerChangeScreen({ url: infoUser.user_link })}
+          // onClick={() => handlerChangeScreen({ url: infoUser?.user_link })}
         >
           <CardInfoBlockWrapDesc>
             <CardTitleDescBlock>Пользователь:</CardTitleDescBlock>
             <CardInfo>{infoUser.first_name}</CardInfo>
           </CardInfoBlockWrapDesc>
           <Offset mt={21} />
-          <CardInfoBlockWrapDesc>
-            <CardTitleDescBlock>Компания:</CardTitleDescBlock>
-            <CardInfo>{infoUser.seller_organization}</CardInfo>
-          </CardInfoBlockWrapDesc>
-          <Offset mt={20} />
           <CardInfoBlockWrapDesc
             style={{
               justifyContain: "space-between",
@@ -44,11 +39,6 @@ export default function InfoAboutUser({
               Рейтинг продавца:
             </CardTitleDescBlock>
             <CardInfo
-              //  style={{
-              //   display: 'flex',
-              //   justifyContent: 'flex-end'
-              // }}
-
               style={{
                 display: "flex",
                 justifyContent: "flex-end",
@@ -58,7 +48,7 @@ export default function InfoAboutUser({
             >
               <RaitingContainer
                 max={5}
-                value={infoUser?.rating_int}
+                value={infoUser?.seller_rating}
                 sizeStarHeight={13}
                 sizeStarWidth={13}
                 gap={3.5}
@@ -70,76 +60,9 @@ export default function InfoAboutUser({
               />
             </CardInfo>
           </CardInfoBlockWrapDesc>
-
-          <Offset mt={21} />
-          <CardInfoBlockWrapDesc>
-            <CardTitleDescBlock>Кол-во дней в сервисе:</CardTitleDescBlock>
-            <CardInfo>{infoUser?.user_data?.days_in_service}</CardInfo>
-          </CardInfoBlockWrapDesc>
         </CardInfoBlock>
-
-        <Offset mt={18} />
         <Line />
         <Offset mt={25} />
-        <CardInfoBlockWrapDesc
-          style={{
-            whiteSpace: "nowrap",
-            flexDirection: "column",
-            alignItems: "flex-start",
-          }}
-        >
-          <CardTitleDescBlock>Преимущество продавца:</CardTitleDescBlock>
-          <Offset mt={5} />
-          <CardInfo
-            style={{
-              textAlign: "start",
-              marginTop: 3,
-              whiteSpace: "normal",
-            }}
-          >
-            {/* {infoUser.seller_comment} */}
-            {
-              <span
-                dangerouslySetInnerHTML={{ __html: infoUser.seller_comment }}
-              ></span>
-            }
-          </CardInfo>
-        </CardInfoBlockWrapDesc>
-        <Offset mt={21} />
-        <CardInfoBlockWrapDesc
-          style={{
-            flexDirection: "column",
-            alignItems: "flex-start",
-          }}
-        >
-          <CardTitleDescBlock>Адрес доставки:</CardTitleDescBlock>
-          <CardInfo
-            style={{
-              textAlign: "start",
-              marginTop: 3,
-              whiteSpace: "normal",
-            }}
-          >
-            {getDataInfoUserFromArray(infoUser.seller_address)}
-          </CardInfo>
-        </CardInfoBlockWrapDesc>
-        <Offset mt={23} />
-        <CardInfoBlockWrapDesc
-          style={{
-            flexDirection: "column",
-            alignItems: "flex-start",
-          }}
-        >
-          <CardTitleDescBlock>Гаранты города:</CardTitleDescBlock>
-          <CardInfo
-            style={{
-              textAlign: "start",
-              marginTop: 3,
-            }}
-          >
-            {getDataInfoUserFromArray(infoUser.garant_citys)}
-          </CardInfo>
-        </CardInfoBlockWrapDesc>
       </CardInfoBlock>
     </WrapContainerBlockBorder>
   );

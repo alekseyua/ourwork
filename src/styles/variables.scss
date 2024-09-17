@@ -1,0 +1,54 @@
+:root {
+    --bg-color-common: #ececec;
+    --bg-item: #526168; // #C4C4C4;
+    --bg-menu-bottom: #000;
+    --bg-menu-top: #000;
+    --bg-block: #FEA465;
+    --text-color: #FEA465; // #ed7014; //
+    --text-color-theme: #fea465;
+    --text-color-w: #fff;
+    --text-color-blue: #19314a; // Nile blue
+    --background-color-block: #C4C4C4;
+    --placeholder-color: #0b1f3599;
+    --placeholder-size: 12px;
+    --font-family-default: 'var(--font-family-default)';
+    
+// -------------------------------------------------------
+    --background-color-block-disabled: rgb(201 205 211); // Ghost
+    --background-color-mirage-blue: rgb(11 31 53); // Mirage
+    --background-color-menu-disable: rgb(225 217 217);
+    --background-color-light-roze-border: rgb(251 217 216);
+    --border-color: rgb(223 226 234);
+    --border-color-line: rgb(201 201 201 / 36%);
+    --background-color-fone-roze: rgb(253 233 233);
+    --background-color-button-red: #dd4434;
+    --background-color-icon-red: rgb(229 76 60);
+    --background-color-button-red-opacity: rgb(229 76 60 / 10%);
+    --background-color: rgb(249 249 251);
+    --background-color-opacity-50: hsl(0deg 0% 100% / 50.9%);
+    --background-color-blur: rgb(0 0 0 / 30%);
+    --background-color-light-roze: rgb(253 233 233);
+    --text-color-red: #DD4434;
+    --text-color-rlight-blue: #2F80ED;
+    --text-color-opacity: #0b1f3599;
+    --text-color-white: #fff;
+    --background-info-bage: #fff;
+    --background-box-shadow: rgb(0 0 0 / 25%);
+    --border-select-color: rgb(140 150 175); // DFE2EA
+    --hight-scrollbar: 0px; // 14px;
+    --grid-template-coltumn-search-favorie: 85% 15%; // 77% 15%
+    --z-index-root-container: 0px;
+    --z-index-element-link: 99px;
+    --padding-container: 0;
+    --filter-blur: unset;
+    --pointer-events: all;
+    --main-margin-top: 57px;
+    --max-width: 500px;
+    --min-width: 360px;
+    --bgc-burger-menu: #F5F1D4; // #132B45;
+    --text-menu: #1C3440;
+    --bgc-white: #fff;
+    --color-text: #000;
+    --height-info: 0px;
+    --margin-bottom-isselect: 30px
+}

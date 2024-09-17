@@ -1,5 +1,5 @@
 .widget{
-  //.widget__container{}
+  // widget__container{}
   &__container{
     padding: 0;
     position: absolute;
@@ -13,6 +13,7 @@
     align-items: center;
     justify-content: center;
     z-index: 1;
+
     &::after{
       content: '';
       position: absolute; 

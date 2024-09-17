@@ -11,13 +11,6 @@ import hide_eye from './hide-eye.svg'
 import show_eye from './show-eye.svg'
 import fix_bugs from "./bug-fixing-svgrepo-com.svg";
 import listRemove from "./list-remove.svg";
-import aggrigate from './baner/aggrigate.svg'
-import aggrigateJpg from './baner/aggrigate.jpg'
-import aggrigatePng from "./baner/aggrigate-Photoroom.png";
-import fone from './baner/fone_1.svg'
-import foneGradient from './baner/fone_2.svg'
-import fog from './baner/fog.svg'
-import test from './baner/test.jpg'
 import play from './play_icon.svg';
 import createRequestDefault from './icon/create-request.svg';
 import createRequestWhite from './icon/create-request-white.svg';
@@ -39,15 +32,23 @@ import starRaiting from './icon/star.svg'
 import settingRed from './icon/compilerexplorer.svg'
 import settingWhite from './icon/compilerexplorer.svg'
 import arrowRightWhite from './icon/arrow-right.svg'
+import attentionError from './icon/error-905.svg';
+import done from './icon/done.svg'
+
+import docSuccess from './icon/doc-success.svg'
+
+import loaderRotate from './icon/loader-rotate.svg'
+import settingRedRotation from "./icon/loader-rotate.svg";
 
 
-const settingRedRotation = "https://garsing.shop/media/market/setting-red-rotation.svg";
+import imageBanner from './baner/new-banner.jpg'
+
+// const settingRedRotation = "https://garsing.shop/media/market/setting-red-rotation.svg";
 
 
 const help = 'https://garsing.shop/media/market/help.svg';
 const chat = 'https://garsing.shop/media/market/chat.svg';
 const user = 'https://garsing.shop/media/market/user.svg';
-const done = 'https://garsing.shop/media/market/done.svg';
 const stop = 'https://garsing.shop/media/market/stop.svg';
 const plus = 'https://garsing.shop/media/market/plus.svg';
 const cross = 'https://garsing.shop/media/market/cross.svg';
@@ -57,7 +58,6 @@ const checked = 'https://garsing.shop/media/market/checked.svg';
 const penGrey = 'https://garsing.shop/media/market/pen-grey.svg';
 const copyDoc = 'https://garsing.shop/media/market/copy-doc.svg';
 const addFile = 'https://garsing.shop/media/market/add-file.svg';
-const crossRed = 'https://garsing.shop/media/market/cross-red.svg';
 const twoCloud = 'https://garsing.shop/media/market/two-cloud.svg';
 const location = 'https://garsing.shop/media/market/location.svg';
 const userWhite = 'https://garsing.shop/media/market/user-white.svg';
@@ -69,7 +69,6 @@ const chatCheck = 'https://garsing.shop/media/market/chat-check.svg';
 const bascketRed = 'https://garsing.shop/media/market/bascket-red.svg';
 const arrowRight = 'https://garsing.shop/media/market/arrowRight.svg';
 const heardBlack = 'https://garsing.shop/media/market/heard-black.svg';
-const docSuccess = 'https://garsing.shop/media/market/doc-success.svg';
 const editMarket = 'https://garsing.shop/media/market/edit-market.svg';
 const basketShop = 'https://garsing.shop/media/market/basket-shop.png';
 const fileSuccess = 'https://garsing.shop/media/market/file-success.svg';
@@ -103,6 +102,7 @@ const profileFooterDefault = 'https://garsing.shop/media/market/profile-footer.s
 
 
 export {
+  loaderRotate,
   filter,
   filterWhite,
   home,
@@ -115,15 +115,13 @@ export {
   carSpareSell,
   shieldTick,
   securityUser,
+  attentionError,
+  docSuccess,
+  imageBanner,
 
 
-    aggrigate,
-    aggrigateJpg,
-    aggrigatePng,
-    fone,
-    foneGradient,
-    fog,
-    test,
+
+
     fix_bugs,
     play,
     cell_car,
@@ -146,7 +144,6 @@ export {
     penGrey,
     copyDoc,
     addFile,
-    crossRed,
     twoCloud,
     location,
     userWhite,
@@ -160,7 +157,6 @@ export {
     bascketRed,
     arrowRight,
     heardBlack,
-    docSuccess,
     editMarket,
     basketShop,
     background,

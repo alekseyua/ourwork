@@ -137,6 +137,7 @@ const FormUploadImageV2 = ({
                   className={styles["upload-image__form-icon"]}
                   style
                 />
+                {title}
               </label>
             )}
 

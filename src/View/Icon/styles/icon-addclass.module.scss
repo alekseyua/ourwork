@@ -1,11 +1,13 @@
 .icon{
-  //.icon__rotation{}
+  // icon__rotation{}
   &__rotation {
     animation: cercl-rotate 2s linear infinite;
   }
-  //.icon__bg-roze-38{}
+
+  // icon__bg-roze-38{}
   &__bg-roze-38{
     position: relative;
+
     &::after{
       content: '';
       position: absolute;
@@ -15,6 +17,7 @@
       align-items: center;
       justify-content: center;
       background-color: rgb(229 76 60 / 10%);
+
       // background-color: var(--bg-item);
       // translate: -10px -10px;
       // top: -12px;
@@ -24,9 +27,11 @@
     }
 
   }
-  //.icon__bg-roze-38-checked{}
+
+  // icon__bg-roze-38-checked{}
   &__bg-roze-38-checked{
     position: relative;
+
     &::after{
       content: '';
       position: absolute;
@@ -36,6 +41,7 @@
       align-items: center;
       justify-content: center;
       background-color: rgb(229 76 60 / 10%);
+
       // background-color: var(--bg-item);
       // translate: -12px -12px;
       // top: -10px;
@@ -44,9 +50,11 @@
       border-radius: 10px;
     }
   }
-  //.icon__bg-roze-38-checked-footer{}
+
+  // icon__bg-roze-38-checked-footer{}
   &__bg-roze-38-checked-footer{
     position: relative;
+
     &::after{
       content: '';
       position: absolute;
@@ -61,9 +69,10 @@
     }
   }
 
-  //.icon__bg-dark-blue{}
+  // icon__bg-dark-blue{}
   &__bg-dark-blue{
     position: relative;
+
     &::after{
       content: '';
       position: absolute;
@@ -75,16 +84,20 @@
       background-color: var(--text-color-blue);
       border-radius: 50%;
       z-index: -1;
+
       // top: -10px;
       // left: -10px;
       transform: translate(-11px,-9px);
+
       // translate: -12px -12px;
     }
 
   }
-  //.icon__bg-dark-red{}
+
+  // icon__bg-dark-red{}
   &__bg-dark-red{
     position: relative;
+
     &::after{
       content: '';
       position: absolute;
@@ -96,6 +109,7 @@
       background-color: var(--background-color-button-red);
       border-radius: 50%;
       z-index: -1;
+
       // top: -10px;
       // left: -10px;
       transform: translate(-11px,-9px);

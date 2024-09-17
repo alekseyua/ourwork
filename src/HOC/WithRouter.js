@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useStoreon } from "storeon/react";
-import { LASTURL, MARKETPLACE_DETAILY_CARD, PREVURL } from "../helpers/config";
 import {
   changeStateBackButton,
   smoothTop,
@@ -16,9 +15,6 @@ import {
   ACTION_SET_TEXT_HEADER,
 } from "../store/helpers/helpers-store";
 import { ACTION_GET_ACCESSES } from "../store/access/access";
-import { getLocaleStore } from "../helpers/utils";
-
-let statusResetFilters = false;
 export default function WithRouter(Component) {
   let propsData;
   return (props) => {
@@ -59,13 +55,9 @@ export default function WithRouter(Component) {
         pathname,
         tg,
       });
-      if (getLocaleStore(PREVURL) === MARKETPLACE_DETAILY_CARD) {
-        // исключаем авто подъем на верх
-      } else {
-        smoothTop();
-      }
+      
+      smoothTop();
       return () => {
-        statusResetFilters = false;
         // Anything in here is fired on component unmount.
         backButton.offClick(funBackButton);
       };

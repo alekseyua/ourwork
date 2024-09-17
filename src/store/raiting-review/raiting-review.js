@@ -172,6 +172,8 @@ export const raitingReview = (store) => {
   store.on(ACTION_SET_VALUES_REVIEW, ({ valuesReview }, data, { dispatch }) => {
     const newValuesStore = {
       ...valuesReview,
+      username: getLocaleStore(USERNAME),
+      recipient_id: getLocaleStore('recipient_id'),
       ...data,
     };
     const isActiveButton = activeButtonBootomForConfirm(
@@ -245,29 +247,11 @@ export const raitingReview = (store) => {
     listRaitingAndReview: { ...data },
   }));
 
-  store.on(ACTION_GET_TOP_REVIEW, (_, data, { dispatch }) => {
-    const paramsList = {
-      url: API_TOP_RAITING,
-      page: data?.page ?? 1,
-      page_size: DEFAULT_PAGE_SIZE,
-      dataRequst: (res) => {
-        const isWarning = handlerWarningInfoMessageResponse(res, dispatch);
-        if (isWarning) return;
-        if (typeof data?.callbackSearch === "function") data.callbackSearch();
-        if (typeof data?.callback === "function") data.callback();
-        dispatch(ACTION_SET_RAITING_AND_REVIEW, {
-          topReview: true,
-          ...res,
-        });
-      },
-    };
-    dispatch(ACTION_GET, paramsList);
-  });
-
   store.on(_INIT, () => ({ textSearchReview: "" }));
   store.on(ACTION_SET_SEARCH_TEXT_FILTER, (_, data, { dispatch }) => {
     if (data.q === "") {
-      dispatch(ACTION_GET_TOP_REVIEW);
+      dispatch(ACTION_SET_RAITING_AND_REVIEW_NULL);
+      return { textSearchReview: data.q };
     }
     return { textSearchReview: data.q };
   });
@@ -288,7 +272,7 @@ export const raitingReview = (store) => {
         page: data?.page ?? 1,
         page_size: DEFAULT_PAGE_SIZE,
         url: API_GET_USER_RAITING,
-        value: textSearchReview,
+        username: textSearchReview,
         abortController: controllerSearch,
         dataRequst: (res) => {
           if (typeof callbackSearch === "function") callbackSearch();
@@ -299,7 +283,8 @@ export const raitingReview = (store) => {
             resCopy,
             dispatch
           );
-          if (textSearchReview.length && !res.count) {
+
+          if (textSearchReview.length && res?.info?.message) {
             dispatch(ACTION_SET_MESSAGE_ERROR, res?.info?.message ?? "");
             return dispatch(ACTION_SET_RAITING_AND_REVIEW_NULL);
           } else {
@@ -308,7 +293,13 @@ export const raitingReview = (store) => {
           if (isWarning) {
           }
           console.log({ res });
-          return dispatch(ACTION_SET_RAITING_AND_REVIEW, res);
+          if(res.id){
+            setLocaleStore("recipient_id", res.id);
+            setLocaleStore("username", res.username);
+          }
+          console.log({data})
+          if (data?.callback && typeof data?.callback === "function") data.callback();
+          return dispatch(ACTION_SET_INFO_ABOUT_REIVEW, res);
         },
         ...data,
       };
@@ -324,7 +315,7 @@ export const raitingReview = (store) => {
     infoAboutUserListReview: { ...data },
   }));
 
-  store.on(_INIT, () => ({ infoAboutUserReview: {} }));
+  store.on(_INIT, () => ({ infoAboutUserReview: {id: null} }));
   store.on(ACTION_SET_INFO_ABOUT_REIVEW, (_, data) => ({
     infoAboutUserReview: { ...data },
   }));

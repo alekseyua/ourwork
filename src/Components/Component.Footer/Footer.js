@@ -14,7 +14,6 @@ const Footer = ({
   statusLoadingData,
   handlerChangeScreen,
 }) => {
-  console.log({listMenuFooter})
   return (
     <footer
       style={{

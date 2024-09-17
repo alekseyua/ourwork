@@ -1,6 +1,45 @@
 .preloader {
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  width: 70%;
+  position: relative;
 
-  //.preloader__container-background-preload{}
+  // preloader-container
+  &-container {
+    height: 100%;
+    margin: 0;
+    background: transparent;
+    color: #666;
+    font-family: var(--font-family-default);
+    padding: 0;
+    position: relative;
+    cursor: default;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  // preloader-dots
+  &-dots {
+    width: 50px;
+
+    .dot {
+      display: inline-block;
+      background: var(--text-color-theme);
+      height: 4px;
+      width: 4px;
+      margin-right: 3px;
+      border-radius: 50%;
+      animation: moveit 1.8s infinite;
+    }
+  }
+
+
+  // preloader__container-background-preload{}
   &__container-background-preload {
     position: fixed;
     width: 100vw;
@@ -16,73 +55,25 @@
 }
 
 
-.preload__wrap-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  line-height: 200%;
-  position: relative;
-  width: 100%;
-  flex-direction: column;
-  margin-top: 50px;
+.preload {
+  &__wrap-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 200%;
+    position: relative;
+    width: 100%;
+    flex-direction: column;
+    margin-top: 50px;
+  }
 }
 
 
 .body-container-preload {
   display: flex;
+  color: var(--font-family-default)
 }
 
-
-.preloader-container {
-  height: 100%;
-  margin: 0;
-  background: transparent;
-  color: #666;
-  font-family: open sans;
-  padding: 0;
-  position: relative;
-}
-
-/* Containers */
-
-
-
-.preloader {
-  background: transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50%;
-  width: 70%;
-  // margin: 5%;
-  // border: 1px solid #ddd;
-  position: relative;
-}
-
-
-.preloader-container {
-  cursor: default;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-
-.preloader-dots {
-  width: 50px;
-}
-
-.preloader-dots .dot {
-  display: inline-block;
-  background: #ff0000;
-  height: 4px;
-  width: 4px;
-  // opacity: 0.3;
-  margin-right: 3px;
-  border-radius: 50%;
-  animation: moveit 1.8s infinite;
-}
 
 .dot:nth-child(2) {
   animation-delay: .15s;
@@ -103,11 +94,11 @@
 @keyframes moveit {
   0% {
     opacity: 0;
-    transform: translateY(0px);
+    transform: translateY(0);
   }
 
   35% {
-    transform: translateY(0px);
+    transform: translateY(0);
     opacity: 0.3;
   }
 

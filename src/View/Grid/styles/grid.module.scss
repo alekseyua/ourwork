@@ -1,15 +1,17 @@
 .grid{
-  //.grid__column{}
+  // grid__column{}
   &__column{
     padding: 0;
     display: grid;
   }
-  //.grid__row{}
+
+  // grid__row{}
   &__row{
     padding: 0;
     display: grid;
   }
-  //.grid__container{}
+
+  // grid__container{}
   &__container{
     display: grid;
   }

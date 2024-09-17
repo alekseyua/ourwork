@@ -1,4 +1,5 @@
 :root {
+	/*stylelint-disable*/
 	--PhoneInput-color--focus: #03b2cb;
 	--PhoneInputInternationalIconPhone-opacity: 0.8;
 	--PhoneInputInternationalIconGlobe-opacity: 0.65;
@@ -7,15 +8,15 @@
 	--PhoneInputCountrySelectArrow-marginLeft: var(--PhoneInputCountrySelect-marginRight);
 	--PhoneInputCountrySelectArrow-borderWidth: 1px;
 	--PhoneInputCountrySelectArrow-opacity: 0.45;
-	--PhoneInputCountrySelectArrow-color: currentColor;
+	--PhoneInputCountrySelectArrow-color: currentcolor;
 	--PhoneInputCountrySelectArrow-color--focus: var(--PhoneInput-color--focus);
 	--PhoneInputCountrySelectArrow-transform: rotate(45deg);
 	--PhoneInputCountryFlag-aspectRatio: 1.5;
 	--PhoneInputCountryFlag-height: 1em;
 	--PhoneInputCountryFlag-borderWidth: 1px;
-	--PhoneInputCountryFlag-borderColor: rgba(0,0,0,0.5);
+	--PhoneInputCountryFlag-borderColor: rgb(0 0 0 / 50%);
 	--PhoneInputCountryFlag-borderColor--focus: var(--PhoneInput-color--focus);
-	--PhoneInputCountryFlag-backgroundColor--loading: rgba(0,0,0,0.1);
+	--PhoneInputCountryFlag-backgroundColor--loading: rgb(0 0 0 / 10%);
 }
 
 .PhoneInput {
@@ -27,13 +28,13 @@
 .PhoneInputInput {
 	/* The phone number input stretches to fill all empty space */
 	flex: 1;
+
 	/* The phone number input should shrink
 	   to make room for the extension input */
 	min-width: 0;
 }
 
 .PhoneInputCountryIcon {
-
 	width: calc(var(--PhoneInputCountryFlag-height) * var(--PhoneInputCountryFlag-aspectRatio));
 	height: var(--PhoneInputCountryFlag-height);
 }
@@ -45,10 +46,13 @@
 .PhoneInputCountryIcon--border {
 	/* Removed `background-color` because when an `<img/>` was still loading
 	   it would show a dark gray rectangle. */
+
 	/* For some reason the `<img/>` is not stretched to 100% width and height
 	   and sometime there can be seen white pixels of the background at top and bottom. */
 	background-color: var(--PhoneInputCountryFlag-backgroundColor--loading);
+
 	/* Border is added via `box-shadow` because `border` interferes with `width`/`height`. */
+
 	/* For some reason the `<img/>` is not stretched to 100% width and height
 	   and sometime there can be seen white pixels of the background at top and bottom,
 	   so an additional "inset" border is added. */
@@ -58,8 +62,10 @@
 
 .PhoneInputCountryIconImg {
 	/* Fixes weird vertical space above the flag icon. */
+
 	/* https://gitlab.com/catamphetamine/react-phone-number-input/-/issues/7#note_348586559 */
 	display: block;
+
 	/* 3rd party <SVG/> flag icons won't stretch if they have `width` and `height`.
 	   Also, if an <SVG/> icon's aspect ratio was different, it wouldn't fit too. */
 	width: 100%;
@@ -109,10 +115,7 @@
 	margin-left: var(--PhoneInputCountrySelectArrow-marginLeft);
 	border-style: solid;
 	border-color: var(--PhoneInputCountrySelectArrow-color);
-	border-top-width: 0;
-	border-bottom-width: var(--PhoneInputCountrySelectArrow-borderWidth);
-	border-left-width: 0;
-	border-right-width: var(--PhoneInputCountrySelectArrow-borderWidth);
+	border-width: 0 var(--PhoneInputCountrySelectArrow-borderWidth) var(--PhoneInputCountrySelectArrow-borderWidth) 0;
 	transform: var(--PhoneInputCountrySelectArrow-transform);
 	opacity: var(--PhoneInputCountrySelectArrow-opacity);
 }
@@ -134,6 +137,7 @@
 
 .form-input-number-phone{
 	position: relative;
+
 	// max-width: 320px;
 	background-color: transparent;
 	border: 1px solid var(--border-color);
@@ -142,7 +146,7 @@
 	border-radius: 8px;
 	color: var(--text-color);
 	padding-left: 10px;
-	font-family: "HelveticaNeue";
+	font-family: var(--font-family-default);
 	font-style: normal;
 	font-weight: 400;
 	font-size: 15px;
@@ -151,10 +155,11 @@
 	&::placeholder{
 		color: #787878;
 		font-size: 16px;
-		letter-spacing: 0px;
+		letter-spacing: 0;
 		line-height: 140%;
 		padding-left: 10px;
 	}
+
 	&>input{
 		flex: none;
 		min-width: 100%;
@@ -166,48 +171,7 @@
 		width: 100%;
 		height: 1px;
 		background-color: #c3c3c3;
-		bottom: 0px;
+		bottom: 0;
     	position: absolute;
 	}
 }
-.form-input-number-phone-marketplace{
-	position: relative;
-	// max-width: 320px;
-	background-color: var(--background-color-block);
-	// border: 1px solid var(--border-color);
-	// min-width: 320px;
-	height: 48px;
-	border-radius: 8px;
-	color: var(--text-color);
-	padding-left: 10px;
-	font-family: "HelveticaNeue";
-	font-style: normal;
-	font-weight: 400;
-	font-size: 15px;
-	line-height: 22px;
-
-	&::placeholder{
-		color: var(--placeholder-color);
-		font-size: 12px;
-		letter-spacing: 0px;
-		line-height: 140%;
-		padding-left: 0px;
-	}
-	&>input{
-		flex: none;
-		// min-width: 100%;
-		color: var(--text-color);
-		background-color: transparent;
-	}
-
-	// &::after{
-	// 	content: '';
-	// 	width: 100%;
-	// 	height: 1px;
-	// 	background-color: #c3c3c3;
-	// 	bottom: 0px;
-  //   	position: absolute;
-	// }
-}
-
-

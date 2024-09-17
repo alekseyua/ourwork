@@ -1,58 +1,69 @@
-input[role="switch"]:checked{
+input[role="switch"]:checked {
   &~span>span>span {
-      left: 20px;
-      border-color: var(--bg-block);
-      background: var(--bg-block);
-      opacity: 1;
+    left: 20px;
+    border-color: var(--bg-block);
+    background: var(--bg-block);
+    opacity: 1;
   }
 }
+
 .checkbox {
-  //checkbox__container-trigger
-  &__container-trigger{
+  // checkbox__container-trigger
+  &__container-trigger {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
     width: 100%;
   }
-  //.checkbox__auto-payment{}
-  &__auto-payment{
+
+  // checkbox__auto-payment{}
+  &__auto-payment {
     padding: 0;
-    & + label{
+
+    &+label {
       transform: scale(0.75) translate(-2px, -4px);
     }
   }
-  //.checkbox__container{}
+
+  // checkbox__container{}
   &__container {
     // width: 100%;
     display: flex;
     align-items: center;
     pointer-events: none;
     gap: 5px;
-    > label {  //??? нужно просмотреть чтобы ни чего не сломалось в других местах сделал для каталога
-        color: #000;
-        // pointer-events: all;
+
+    >label {
+      // ??? нужно просмотреть чтобы ни чего не сломалось в других местах сделал для каталога
+      color: #000;
+
+      // pointer-events: all;
     }
   }
 
-  //.checkbox__label{}
+  // checkbox__label{}
   &__label {
     font-size: 16px;
-    // margin-left: 10px;
-    display: inline-block; // to make it easier to click
+
+    // margin-left: 10px; // to make it easier to click
     // color: #a32a2a;
     cursor: pointer;
     position: relative; // important    
     display: flex;
     align-items: center;
 
-    // Now we'll create the checkbox object    
-    span:last-child {
-      position: relative;
-      left: 10px;
-      border: none !important;
-      color: #000;
+    // Now we'll create the checkbox object
+    /*stylelint-disable*/
+    span {
+      &:last-child {
+        position: relative;
+        left: 10px;
+        border: none !important;
+        color: #000;
+      }
     }
+
     span:not(:last-child) {
       top: 1px;
       display: inline-block;
@@ -64,16 +75,18 @@ input[role="switch"]:checked{
       transform-origin: center;
       border: 1px solid var(--background-color-button-red);
       border-radius: 5px;
+
       // border-radius: 50%; // делает круглый 
       vertical-align: -6px;
+
       // margin-right: 10px;
       transition: background-color 150ms 200ms, transform 350ms cubic-bezier(.78, -1.22, .17, 1.89); // custom ease effect for bouncy animation
 
       // Now we'll create the "tick" using pseudo elements - those will be basically two lines that will be rotated to form the "tick"
 
-      &:before {
+      &::before {
         content: "";
-        width: 0px;
+        width: 0;
         height: 1px;
         border-radius: 2px; // so that the tick has nice rounded look
         background: var(--bg-item);
@@ -85,7 +98,7 @@ input[role="switch"]:checked{
         transform-origin: 0% 0%;
       }
 
-      &:after {
+      &::after {
         content: "";
         width: 0;
         height: 1px;
@@ -102,45 +115,46 @@ input[role="switch"]:checked{
   }
 
   // &[role=switch] {
-        // checkbox__switch-state
-        &__switch-state {
-          position: relative;
-          top: 0px;
-          left: 12px;
-          pointer-events: none;    
-          display: inline-block;
-          user-select: none;
-      }
-      // // checkbox__switch-container
-      &__switch-container {
-  
-          position: relative;
-          top: 2px;
-          display: inline-block;
-          border: 2px solid black;
-          width: 40px;
-          height: 20px;
-          border-radius: 11px;
-      }
-      // checkbox__switch-position
-      &__switch-position {
-          position: relative;
-          top: 1px;
-          left: 2px;
-          display: inline-block;
-          border: 2px solid black;
-          border-radius: 9px;
-          width: 14px;
-          height: 14px;
-          background: black;
-          opacity: 0.6;
-      }
+  // checkbox__switch-state
+  &__switch-state {
+    position: relative;
+    top: 0;
+    left: 12px;
+    pointer-events: none;
+    display: inline-block;
+    user-select: none;
+  }
+
+  // // checkbox__switch-container
+  &__switch-container {
+    position: relative;
+    top: 2px;
+    display: inline-block;
+    border: 2px solid black;
+    width: 40px;
+    height: 20px;
+    border-radius: 11px;
+  }
+
+  // checkbox__switch-position
+  &__switch-position {
+    position: relative;
+    top: 1px;
+    left: 2px;
+    display: inline-block;
+    border: 2px solid black;
+    border-radius: 9px;
+    width: 14px;
+    height: 14px;
+    background: black;
+    opacity: 0.6;
+  }
 }
 
 
 // input[type="checkbox"] {
-  //.type-checkbox{}
-.type-checkbox{
+// type-checkbox{}
+.type-checkbox {
   display: none; // hide the system checkbox
 
   // Let's add some effects after the checkbox is checked
@@ -149,16 +163,18 @@ input[role="switch"]:checked{
     +label {
       span:not(:last-child) {
         background-color: var(--bg-item);
+
         // transform: scale(1.25); // enlarge the box
         border: 1px solid var(--text-color-red);
         min-width: 16px;
-        &:after {
+
+        &::after {
           width: 13px;
           background: var(--text-color-red);
           transition: width 150ms ease 100ms; // enlarge the tick
         }
 
-        &:before {
+        &::before {
           width: 8px;
           background: var(--text-color-red);
           transition: width 150ms ease 100ms; // enlarge the tick
@@ -170,16 +186,17 @@ input[role="switch"]:checked{
         // copy the states for onMouseOver to avoid flickering
         span:not(:last-child) {
           background-color: var(--bg-item);
+
           // transform: scale(1.25); // enlarge the box
 
-          &:after {
+          &::after {
             width: 13px;
             background: var(--text-color-red);
             transition: width 150ms ease 100ms; // enlarge the tick
           }
 
-          &:before {
-            width: 8px; 
+          &::before {
+            width: 8px;
             background: var(--text-color-red);
             transition: width 150ms ease 100ms; // enlarge the tick
           }
@@ -190,12 +207,13 @@ input[role="switch"]:checked{
 }
 
 .color-field {
-//.color-field__icon{}
+
+  // color-field__icon{}
   &__icon {
     width: 16px;
     height: 16px;
     border-radius: 100%;
-    border: 1px solid #333333;
+    border: 1px solid #333;
     margin-right: 6px;
     display: block;
   }

@@ -1,5 +1,6 @@
 import Api from "../../api";
-import { debounceRequest, initDataParamsPost, initDataParamsPostOrGet, tgProgressShowOrHide } from "../../helpers/utils";
+import { delay } from "../../helpers/const";
+import { debounceRequest, getLocaleStore, initDataParamsPost, initDataParamsPostOrGet, tgProgressShowOrHide } from "../../helpers/utils";
 import { ACTION_OPEN_MODAL, ACTION_SET_CONTROLL_BUTTON } from "../helpers/helpers-store";
 
 
@@ -47,7 +48,16 @@ export const requestPost = async (url, params = {}) => {
   }
 };
 
+let counter = 0;
+
 export const getDataPage = async (url, params = {}, dispatch, controller = null) => {
+  if((!getLocaleStore('user_id') || getLocaleStore('user_id') === undefined) && !url.includes('/get_user/')){
+    console.log({url})
+    await delay(100);
+    console.log('getLocaleStore(user_id)', counter++)
+    return getDataPage(url, params, dispatch, controller)
+  }
+  counter = 0
   tgProgressShowOrHide();
   const copyParams = initDataParamsPostOrGet(params);
   const res = await Api.get(url, copyParams, controller);

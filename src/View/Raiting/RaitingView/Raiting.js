@@ -45,81 +45,76 @@ const Raiting = ({
 
 
     return (
+      <div
+        className={stylesCommon}
+        onBlur={onBlur}
+        style={{
+          flexDirection: reverse ? "row-reverse" : "row",
+        }}
+      >
+        {!!label || !!countRaiting ? (
+          <div className={styles["raiting-star__label"]}>
+            {label} {!!countRaiting ? countRaiting : 0}
+          </div>
+        ) : null}
         <div
-            className={stylesCommon}
-            onBlur={onBlur}
-            style={{
-                flexDirection: reverse ? 'row-reverse' : 'row',
-            }}
+          className={styles["raiting-star__background-raiting"]}
+          style={{
+            backgroundColor: backgroundFone
+              ? "var(--background-color-block)"
+              : "transparent",
+            gap: gap,
+          }}
         >
-            {
-                !!label || !!countRaiting ?
-                    <div
-                        className={styles['raiting-star__label']}
-                    >
-                        {label}  {' '}   {!!countRaiting ? countRaiting : 0}
-                    </div>
-                    : null
-            }
-            <div
-                className={styles['raiting-star__background-raiting']}
+          {stars.map((el, i) => {
+            return (
+              <div
                 style={{
-                    backgroundColor: backgroundFone ? 'var(--background-color-light-roze)' : 'transparent',
-                    gap: gap
+                  ...styleStar,
                 }}
-            >
-                {
-                    stars.map((el, i) => {
-                        return (
-                            <div
-                                style={{
-                                    ...styleStar
-                                }}
-                                key={`raiting-${i}`}
-                                value={i}
-                                onClick={onChange}
-                                className={styles['raiting-star__star']}
-                            >
-                                <Icon
-                                    value={i + 1}
-                                   src={+i < +ActiveStar ? starRaitingFillRed : starRaiting}
-                                    // invert={i < ActiveStar ? '0%' : '45%'}
-                                    // opacity={i < ActiveStar ? '100%' : '20%'}
-                                    // brightness={i < ActiveStar ? '100%' : '150%'}
-                                    width={sizeStarWidth}
-                                    height={sizeStarHeight}
-                                />
-                            </div>
-                        )
-                    })
-                }
-
-
-            </div>
-
-            <div
-                className={styles['raiting-star__digital-raiting']}
-                style={{
-                    width: sizeStarWidth,
-                    height: sizeStarHeight,
-                    border: isBorderDigital ? '1px solid var(--border-color)' : 'none',
-                    
-                }}
-            >{(+ActiveStar).toFixed(1)}</div>
-             {
-                    helptext ?
-                        <span
-                            style={{
-                                position: 'absolute',
-                                bottom: -18,
-                                left: 0,
-                                ...stylehelptext
-                            }}
-                        >{helptext}</span>
-                        : null
-                }
+                key={`raiting-${i}`}
+                value={i}
+                onClick={onChange}
+                className={styles["raiting-star__star"]}
+              >
+                <Icon
+                  value={i + 1}
+                  src={+i < +ActiveStar ? starRaitingFillRed : starRaiting}
+                  // invert={i < ActiveStar ? '0%' : '45%'}
+                  // opacity={i < ActiveStar ? '100%' : '20%'}
+                  // brightness={i < ActiveStar ? '100%' : '150%'}
+                  width={sizeStarWidth}
+                  height={sizeStarHeight}
+                />
+              </div>
+            );
+          })}
         </div>
-    )
+
+        <div
+          className={styles["raiting-star__digital-raiting"]}
+          style={{
+            width: sizeStarWidth,
+            height: sizeStarHeight,
+            border: isBorderDigital ? "1px solid var(--border-color)" : "none",
+          }}
+        >
+          {(+ActiveStar).toFixed(1)}
+        </div>
+        {helptext ? (
+          <span
+            style={{
+              position: "absolute",
+              bottom: -18,
+              left: 0,
+              ...stylehelptext,
+            }}
+          >
+            {helptext}
+          </span>
+        ) : null}
+      </div>
+    );
 }
 
 export default Raiting;

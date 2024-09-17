@@ -28,6 +28,7 @@ function WithSearch(Component) {
         const timer = setTimeout(() => {
           this.setState({
             message: "",
+            isLoading: false,
           });
           this.props.dispatch(ACTION_SET_MESSAGE_ERROR_NULL);
           return clearTimeout(timer);
@@ -74,6 +75,7 @@ function WithSearch(Component) {
 
     setTextSearch = (text, e) => {
       const newText = unicalTextForSearch(text);
+      
       if (this.props.isInteractive) {
         this.props.dispatch(this.props.actionDisptchGetSearch, { q: newText });
         this.props.getResultSearch(newText, e, this.callback);

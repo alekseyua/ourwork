@@ -15,6 +15,7 @@ export default function WrapContainerCardRaitingAndReviewList({
   handlerClick,
   handlerChangePagination
 }) {
+  
   return (
     <WrapRootContainer
       style={{

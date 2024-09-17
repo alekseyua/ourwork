@@ -1,15 +1,17 @@
-//label__conrainer{}
-.label__conrainer{
-    padding: 0;
-    display: flex;
-    width: 100%;
-    font-family: "HelveticaNeue";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 22px;
-    font-feature-settings: 'case' on;
-    color: var(--text-color);
-    margin-top: 12px;
-    letter-spacing: 0px;
+.label {
+    &__conrainer {
+        // label__conrainer{}
+        padding: 0;
+        display: flex;
+        width: 100%;
+        font-family: var(--font-family-default);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 22px;
+        font-feature-settings: 'case' on;
+        color: var(--text-color);
+        margin-top: 12px;
+        letter-spacing: 0;
+    }
 }

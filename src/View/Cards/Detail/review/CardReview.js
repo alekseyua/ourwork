@@ -71,7 +71,7 @@ export default function CardReview({
               <RaitingContainer
                 max={5}
                 gap={3}
-                value={item?.rating_int}
+                value={item?.rating}
                 sizeStarHeight={15}
                 sizeStarWidth={15}
                 backgroundFone

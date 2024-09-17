@@ -5,6 +5,7 @@ import { search, settingRedRotation } from "../../images";
 import WithSearch from "../../HOC/WithSearch";
 import { v4 } from 'uuid';
 import Icon from "../../View/Icon/Icon";
+import IconSvg from "../../View/Icon/IconSvg";
 
 const SearchComponent = ({
     name,
@@ -67,7 +68,7 @@ const SearchComponent = ({
             right: 5,
           }}
           id={`search-` + v4()}
-          icon={isIconLeft? search: null}
+          icon={isIconLeft ? search : null}
           eventInput={eventInput}
           onChange={(e) => {
             const value = e.target.value;
@@ -82,10 +83,9 @@ const SearchComponent = ({
           handlerClickOptions={handlerClickOptions}
         />
         {isLoading ? (
-          <Icon
-           src={settingRedRotation}
-            width={20}
-            height={20}
+          <IconSvg
+            src={settingRedRotation}
+            className="loading__rotation"
             style={{
               position: "absolute",
               right: 10,

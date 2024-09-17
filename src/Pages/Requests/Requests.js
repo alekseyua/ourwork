@@ -8,9 +8,6 @@ import MenuSlider from '../../View/Menu/MenuSlider'
 
 export default function Requests({
   listMenu = [],
-  accessRedirect,
-  headerTitleCatalog,
-  hardColorBlockById,
   handlerChangeScreen = () => { },
 
 }) {

@@ -6,13 +6,13 @@ import { ROOT } from '../../../helpers/config';
 import { SET_DATA_CAR_SALE } from '../../../store/car-sale/carSale';
 
 class CarSellComponent extends Component {
-
   componentDidMount() {
     this.props.controllerHeaderBand({
       currentTextHandlerBand: 'Разместить авто на продажу',
       pathBackButton: () => this.handlerChangeScreen({ path: ROOT })
     });
   }
+
   handlerChangeScreen = ({ path }) => {
     this.props.navigate(path)
   }
@@ -22,9 +22,9 @@ class CarSellComponent extends Component {
   render() {
     return (
       <CarSell
-      dispatch={this.props.dispatch}
-      handlerChangeDataValues={this.handlerChangeDataValues}
-    /> 
+        dispatch={this.props.dispatch}
+        handlerChangeDataValues={this.handlerChangeDataValues}
+      />
     )
   }
 }

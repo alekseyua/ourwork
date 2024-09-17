@@ -12,34 +12,19 @@ import { ACTION_SET_SEARCH_TEXT_FILTER } from '../../store/raiting-review/raitin
 import WrapRootContainer from '../../View/WrapContainer/WrapRootContainer';
 import FormInputContainer from '../../View/FormInput/FormInputContainer';
 import MenuSlider from '../../View/Menu/MenuSlider';
+import RaitingAndReviewInfoAboutUserComponent from './RaitingAndReviewInfoAboutUser/RaitingAndReviewInfoAboutUserComponent';
 
 export default function RaitingAndReviewMain({
-  listMenu,
-  listSection,
   handlerClick,
   isLoadingList,
   textSearchReview,
   handlerTextSearch,
-  handlerChangeScreen,
-  handlerChangeSection,
-  listRaitingAndReview,
-  handlerChangePagination,
+  infoAboutUserReview,
 }) {
   return (
     <WrapRootContainer>
-
-        <Offset mt={17} />
-
-        <MenuSlider
-          list={listMenu} 
-          handlerChangeScreen={handlerChangeScreen} 
-        />
       <Offset mt={17} />
-      {/* <NavigationIncominRequests
-        handlerChangeSection={handlerChangeSection}
-        listSection={listSection}
-      />
-      <Offset mt={15} /> */}
+
       <div style={{ width: "100vw" }}>
         <SearchComponent
           placeholder={"Введите имя пользователя"}
@@ -55,32 +40,11 @@ export default function RaitingAndReviewMain({
         />
       </div>
       <Offset mb={20} />
-      {!isLoadingList ? (
-        textSearchReview &&
-        listRaitingAndReview.results.length &&
-        !listRaitingAndReview.results[0]?.rating_number ? ( // только для 100% совпадения и толко для одного
-          <WrapContainerCardRaitingAndReviewList
-            list={listRaitingAndReview.results}
-            totalCount={listRaitingAndReview.count}
-            currentPage={listRaitingAndReview.current_page}
-            handlerClick={handlerClick}
-            handlerChangePagination={handlerChangePagination}
-          />
-        ) : !textSearchReview ? (
-          <WrapContainerCardTopList
-            list={listRaitingAndReview.results}
-            count={listRaitingAndReview?.count}
-            totalCount={listRaitingAndReview?.count_all}
-            currentPage={listRaitingAndReview.current_page}
-            handlerClick={handlerClick}
-            handlerChangePagination={handlerChangePagination}
-          />
-        ) : null
-      ) : (
-        <WrapContainerPreloader>
-          Загрузка ... <Preloader />
-        </WrapContainerPreloader>
-      )}
+      {Object.keys(infoAboutUserReview).length ? (
+        <RaitingAndReviewInfoAboutUserComponent
+          infoAboutUserReview={infoAboutUserReview}
+        />
+      ) : null}
     </WrapRootContainer>
   );
 }
