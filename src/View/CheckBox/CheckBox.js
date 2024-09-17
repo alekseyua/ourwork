@@ -84,77 +84,71 @@ const CheckBox = ({
   return (
     <div
       className={classNames({
-        [styles['checkbox__container']]: true,
+        [styles["checkbox__container"]]: true,
         [className]: !!className,
-        [styles[addClass]]: !!addClass
-      })
-      }
+        [styles[addClass]]: !!addClass,
+      })}
       style={style}
       onClick={handlerOnChange}
     >
-      {
-        colorField ? (
-          <span style={{ backgroundColor: colorField }} className={styles['color-field__icon']}></span>
-        ) : null
-      }
-      <div className={styles['checkbox__container-trigger']}>
-      <input
-        key={name}
-        onChange={() => { }} //чтобы не ругался реакт
-        ref={refCheck}
-        type={'checkbox'}
-        className={classNameCustom}
-        disabled={disabled}
-        checked={checked}
-        label={label}
-        role={role}
-        name={name}//iAgreeDataProcessing   ----- name="check" 
-        id={id}
-        style={{
-          pointerEvents: disabled ? 'none' : 'all',
-        }}
-        value={value}
-        {...props}
-      />
-      {
-        role?
-        <span className={styles['checkbox__switch-state']}>
-        <span className={styles['checkbox__switch-container']}>
-          <span className={styles['checkbox__switch-position']}> </span>
-        </span>        
-      </span>
-      :
-      <label
-        htmlFor={id}
-        className={classNameLabelCheckBox}
-      >
-        <span></span>
-        <span>
-          {label}
-        </span>
-      </label>
-      }
+      {colorField ? (
+        <span
+          style={{ backgroundColor: colorField }}
+          className={styles["color-field__icon"]}
+        ></span>
+      ) : null}
+      <div className={styles["checkbox__container-trigger"]}>
+        <input
+          key={name}
+          onChange={() => {}} //чтобы не ругался реакт
+          ref={refCheck}
+          type={"checkbox"}
+          className={classNameCustom}
+          disabled={disabled}
+          checked={checked}
+          label={label}
+          role={role}
+          name={name} //iAgreeDataProcessing   ----- name="check"
+          id={id}
+          style={{
+            pointerEvents: disabled ? "none" : "all",
+          }}
+          value={value}
+          {...props}
+        />
+        {role ? (
+          <span className={styles["checkbox__switch-state"]}>
+            <span className={styles["checkbox__switch-container"]}>
+              <span className={styles["checkbox__switch-position"]}> </span>
+            </span>
+          </span>
+        ) : (
+          <label htmlFor={id} className={classNameLabelCheckBox}>
+            <span></span>
+            <span>{label}</span>
+          </label>
+        )}
 
-      {
-        helptext ?
+        {helptext ? (
           <span
             style={{
               paddingLeft: 27,
               left: -10,
-              pointerEvents: disabled ? 'none' : 'all',
-              color: `var(--text-color-blue)`,
-              position: 'relative',
+              pointerEvents: disabled ? "none" : "all",
+              color: `var(--text-color)`,
+              position: "relative",
               fontSize: 12,
               fontWeight: 500,
-              lineHeight: '18px',
-              fontFamily: 'var(--font-family-default)',
-              ...helpTextStyle
-            }}>{helptext}</span>
-          : null
-      }
+              lineHeight: "18px",
+              fontFamily: "var(--font-family-default)",
+              ...helpTextStyle,
+            }}
+          >
+            {helptext}
+          </span>
+        ) : null}
       </div>
       {children}
-
     </div>
   );
 };

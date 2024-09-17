@@ -59,7 +59,8 @@
       background-color: var(--bg-item);
       position: relative;
       margin: 0 auto;
-      box-shadow: 0 5px 5px var(--bg-menu-bottom), 5px 5px 5px var(--bg-menu-bottom);
+      border: 1px solid var(--border-color);
+      box-shadow: 0 5px 5px var(--border-color), 5px 5px 5px var(--border-color);
 
       // main-menu__item-container--disabled{}
       &--disabled{

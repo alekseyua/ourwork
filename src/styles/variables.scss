@@ -1,10 +1,13 @@
 :root {
-    --bg-color-common: #ececec;
-    --bg-item: #526168; // #C4C4C4;
-    --bg-menu-bottom: #000;
-    --bg-menu-top: #000;
+    --bg-color-common: #fff;
+    --bg-item: #fff; // #C4C4C4;
+    --bg-menu-bottom: #fff;
+    --bg-menu-top: #fff;
     --bg-block: #FEA465;
-    --text-color: #FEA465; // #ed7014; //
+    --border-color: rgb(223 226 234);
+
+    // --text-color: #377380; // #027992; // #FEA465; // #ed7014;
+    --text-color: #027992; // #FEA465; // #ed7014; //
     --text-color-theme: #fea465;
     --text-color-w: #fff;
     --text-color-blue: #19314a; // Nile blue
@@ -14,12 +17,14 @@
     --font-family-default: 'var(--font-family-default)';
     --header-overflow: hidden;
 
+    // #377380
+    // #027992
+
 // -------------------------------------------------------
     --background-color-block-disabled: rgb(201 205 211); // Ghost
     --background-color-mirage-blue: rgb(11 31 53); // Mirage
     --background-color-menu-disable: rgb(225 217 217);
     --background-color-light-roze-border: rgb(251 217 216);
-    --border-color: rgb(223 226 234);
     --border-color-line: rgb(201 201 201 / 36%);
     --background-color-fone-roze: rgb(253 233 233);
     --background-color-button-red: #dd4434;

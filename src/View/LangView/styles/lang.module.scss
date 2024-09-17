@@ -8,6 +8,12 @@
 &__control-lang {
     position: relative;
 
+    &>div:first-child {
+        &>div>input{
+            visibility: hidden;
+        }
+    }
+    
     &>div:last-child {
         position: absolute;
         top: 0;
