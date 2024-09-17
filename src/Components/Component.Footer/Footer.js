@@ -17,7 +17,7 @@ const Footer = ({
     <footer
       style={{
         display: "block",
-        position: "fixed",
+        // position: "fixed",
         bottom: 0,
         zIndex: 999,
       }}
