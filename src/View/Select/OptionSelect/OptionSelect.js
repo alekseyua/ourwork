@@ -24,19 +24,16 @@ const OptionSelect = ({
   stylehelptext = {},
   clearValue,
 }) => {
-  let [newData, setNewData] = useState([]);
+  let [offsetTop, setOffsetTop] = useState(false);
   const selectRef = useRef(null)
-  
-  useEffect(() => {
-    setNewData([
-      {
-        title: placeholder ?? "сделайте выбор",
-        value: 0,
-      },
-      ...data,
-    ]);
-  }, [data, placeholder]);
 
+  const handlerIsOpenMenu = (status) => {
+    if (status) {
+     return setOffsetTop(true)
+    }
+    setOffsetTop(false)
+  }
+  
   useEffect(() => {
     if (clearValue) {
       selectRef.current.setValue({label: placeholder})
@@ -46,7 +43,11 @@ const OptionSelect = ({
   return (
     <div
       // style={styles.container}
-      className={styles["option-select__container"]}
+      className={
+        offsetTop
+          ? styles["option-select__container--offset-top"]
+          : styles["option-select__container"]
+      }
     >
       <ReactSelect
         classNamePrefix="react-select"
@@ -60,14 +61,9 @@ const OptionSelect = ({
         onChange={onChange}
         maxMenuHeight={400}
         ref={selectRef}
-        styles={{
-          // className={styles['option-select__list']}
-          option: (styles) => ({
-            ...styles,
-            backgroundColor: "white",
-            zIndex: 99999,
-          }),
-        }}
+        onMenuOpen={(e) => handlerIsOpenMenu(true)}
+        onMenuClose={(e) => handlerIsOpenMenu(false)}
+
         // unstyled={true}
         // menuShouldBlockScroll={true}
       />
