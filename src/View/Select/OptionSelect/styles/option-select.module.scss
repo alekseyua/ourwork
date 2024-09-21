@@ -1,0 +1,23 @@
+.option-select{
+    // option-select__container
+    &__container{
+        padding: 0;
+
+        // &>div{            
+        //     &>div{
+        //         border-color: red;
+        //         z-index: 999;
+        //     }
+        // }
+    }
+
+    // option-select__list
+    &__list{
+        padding: 0;
+        z-index: 9999;
+
+        &>div:last-child {
+            border-color: red;
+        }
+    }
+}

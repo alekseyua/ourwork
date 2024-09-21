@@ -22,11 +22,10 @@ class UnitRequestComponent extends Component {
     type: "unit",
     sub_type: "unit_spare",
     isShowHide: true,
-    isAddMultiData:getLocaleStore('isAddMultiData') ?? true,
   };
 
   componentDidMount() {
-    this.props.dispatch(ACTION_GET_LIST_BRANDS);
+    this.props.dispatch(ACTION_GET_LIST_BRANDS, {page_size:99999});
     this.props.controllerHeaderBand({
       currentTextHandlerBand: "Запрос на агрегат",
       pathBackButton: () =>
@@ -95,37 +94,7 @@ class UnitRequestComponent extends Component {
         this.props.dispatch(ACTION_SET_CONTROLL_BUTTON, { show: true });
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (
-      prevProps?.valuesUnitSpare?.classes?.length !==
-        this.props?.valuesUnitSpare?.classes?.length &&
-        this.props?.valuesUnitSpare?.classes?.length !== 0
-      ) {
-      setLocaleStore("isAddMultiData", false);
-      this.setState((state) => ({
-        ...state,
-        isAddMultiData: false,
-      }));
-    }
-  }
 
-  handlerAddClasses = (setFieldValue) => {
-    setFieldValue("model_id", "");
-    setFieldValue("generation_id", "");
-    setLocaleStore("isAddMultiData", true);
-    
-    this.setState((state) => ({
-      ...state,
-      isAddMultiData: true,
-    }));
-  };
-  changeState = () => {
-    setLocaleStore("isAddMultiData", true);
-    this.setState((state) => ({
-      ...state,
-      isAddMultiData: true,
-    }));
-  };
   render() {
     console.log(this.props.listBrands)
     return (
@@ -143,9 +112,6 @@ class UnitRequestComponent extends Component {
         handlerMorePrepare={this.handlerMorePrepare}
         prepareProducts={this.props.listPrepare}
         onClickInside={this.onClickInside}
-        isAddMultiData={this.state.isAddMultiData}
-        handlerAddClasses={this.handlerAddClasses}
-        deleteClasses={this.deleteClasses}
         changeState={this.changeState}
       />
     );

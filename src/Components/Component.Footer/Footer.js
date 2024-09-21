@@ -32,9 +32,6 @@ const Footer = ({
             {listMenuFooter
               ?.filter((item) => item.isFooter)
               .map((el, index) => {
-  console.log(window.location.href.includes(el.slug), );
-    console.log(window.location.pathname, ' === ', el.slug);
-
                 return (
                   <WrapItemFooterMenu
                     key={`footer-${index}`}

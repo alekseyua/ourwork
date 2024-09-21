@@ -21,6 +21,7 @@ import FormInputContainer from '../../../View/FormInput/FormInputContainer';
 import { delay } from '../../../helpers/const';
 import React from 'react';
 import SearchSectionWithOfferContainer from '../../../Components/SearchSectionWithOffer/SearchSectionWithOfferContainer';
+import OptionSelect from '../../../View/Select/OptionSelect/OptionSelect';
 
 const UnitSpareRequest = ({
   edit,
@@ -66,9 +67,6 @@ const UnitSpareRequest = ({
           brand_id: valuesUnitSpare?.brand_id ?? "",
           model_id: valuesUnitSpare?.model_id ?? "",
           generation_id: valuesUnitSpare?.generation_id ?? "",
-          // classes:
-          //   // listClasses={this.props.valuesUnitSpare?.classes ?? []}
-          //   dataCurrentRequest?.classes ?? valuesUnitSpare?.classes ?? [], //
           text: dataCurrentRequest?.text ?? valuesUnitSpare?.text ?? "",
           image: dataCurrentRequest?.image ?? valuesUnitSpare?.image ?? null,
           oem: dataCurrentRequest?.oem ?? valuesUnitSpare?.oem ?? "",
@@ -87,6 +85,7 @@ const UnitSpareRequest = ({
           setFieldValue,
           setErrors,
         }) => {
+          console.log({values})
           dispatch(ACTION_SET_CONTROLL_BUTTON, {
             buttonForm: !edit ? handleSubmit : () => {},
           });
@@ -185,32 +184,24 @@ const UnitSpareRequest = ({
                   />
                 </FormInputContainer>
               </div>
-              <Offset mt={10} />           
+              <Offset mt={10} />
               <Label style={{ fontWeight: 700 }}>Марка авто</Label>
               <Offset mt={10} />
-              <NativeSelect
+              <OptionSelect
                 data={values.optionsBrand}
+                placeholder={"Выберите марку авто"}
                 enabled={true}
-                selectedValue={values.brand_id}
-                placeholder={dataCurrentRequest?.brand ?? "Выберите марку авто"}
-                onBlur={handleBlur}
                 name={"brand_id"}
-                styleWrap={{
-                  border:
-                    touched?.brand_id && errors?.brand_id
-                      ? "1px solid #ff0000"
-                      : "1px solid var(--border-select-color)",
-                }}
+                onBlur={handleBlur}
                 helptext={touched?.brand_id && errors?.brand_id}
                 stylehelptext={{
                   color: "var(--text-color-red)",
                 }}
-                onChange={(value) => {
+                onChange={({ value }) => {
                   const type = "model";
                   setFieldValue("brand_id", value);
                   setFieldValue("generation_id", "");
                   setFieldValue("model_id", "");
-                  // setFieldValue("classes", []);
                   changeState();
                   handlerChangeData({
                     type,
@@ -224,132 +215,110 @@ const UnitSpareRequest = ({
                       });
                     },
                   });
-                  // handlerChangeDataValues({
-                  //   brand_id: value,
-                  //   classes: [],
-                  // });
                 }}
               />
-                <React.Fragment>
-                  <Offset mt={16} />
-                  <Label style={{ fontWeight: 700 }}>Модель авто</Label>
-                  <Offset mt={8} />
-                  <TooltipComponent
-                    onClick={(e) =>
-                      !values.brand_id &&
-                      handlerShowTooltip({
-                        key: "request",
-                        action: "model",
-                        e,
-                      })
-                    }
-                    // id={useId()}
-                    style={{ bottom: -10, left: -10 }}
-                    message={tooltip?.request?.model?.message}
-                    isShow={
-                      tooltip?.request?.model && tooltip?.request?.model?.isShow
-                    }
-                  >
-                    <NativeSelect
-                      data={values.optionsModel}
-                      enabled={!!values.brand_id}
-                      placeholder={
-                        dataCurrentRequest?.model ?? "Выберите модель авто"
-                      }
-                      selectedValue={values.model_id}
-                      onBlur={handleBlur}
-                      name={"model_id"}
-                      helptext={touched?.model_id && errors?.model_id}
-                      styleWrap={{
-                        border:
-                          touched?.model_id && errors?.model_id
-                            ? "1px solid #ff0000"
-                            : "1px solid var(--border-select-color)",
-                      }}
-                      stylehelptext={{
-                        color: "var(--text-color-red)",
-                      }}
-                      onChange={(value) => {
-                        const type = "generation";
-                        setFieldValue("model_id", value);
-                        setFieldValue("generation_id", "");
-                        handlerChangeData({
-                          type,
-                          model_id: value,
-                          brand_id: values.brand_id,
-                          handlerChangeDataRequest: (res) => {
-                            const copyData = res.slice();
-                            handlerChangeDataRequest({
-                              setFieldValue,
-                              results: copyData,
-                              type: type,
-                            });
-                          },
-                        });
-                        handlerChangeDataValues({
-                          model_id: value,
-                          brand_id: values.brand_id,
-                        });
-                      }}
-                    />
-                  </TooltipComponent>
-                </React.Fragment>
+              <React.Fragment>
+                <Offset mt={16} />
+                <Label style={{ fontWeight: 700 }}>Модель авто</Label>
+                <Offset mt={8} />
+                <TooltipComponent
+                  onClick={(e) =>
+                    !values.brand_id &&
+                    handlerShowTooltip({
+                      key: "request",
+                      action: "model",
+                      e,
+                    })
+                  }
+                  // id={useId()}
+                  style={{ bottom: -10, left: -10 }}
+                  message={tooltip?.request?.model?.message}
+                  isShow={
+                    tooltip?.request?.model && tooltip?.request?.model?.isShow
+                  }
+                >
+                  <OptionSelect
+                    data={values.optionsModel}
+                    enabled={!!values.brand_id}
+                    placeholder={"Выберите модель авто"}
+                    name={"model_id"}
+                    helptext={touched?.model_id && errors?.model_id}
+                    // clearValue={setTimeout(()=>true,1000)}
+                    clearValue={!values.model_id}
+                    stylehelptext={{
+                      color: "var(--text-color-red)",
+                    }}
+                    onChange={({ value }) => {
+                      const type = "generation";
+                      setFieldValue("model_id", value);
+                      setFieldValue("generation_id", "");
+                      handlerChangeData({
+                        type,
+                        model_id: value,
+                        brand_id: values.brand_id,
+                        handlerChangeDataRequest: (res) => {
+                          const copyData = res.slice();
+                          handlerChangeDataRequest({
+                            setFieldValue,
+                            results: copyData,
+                            type: type,
+                          });
+                        },
+                      });
+                      handlerChangeDataValues({
+                        model_id: value,
+                        brand_id: values.brand_id,
+                      });
+                    }}
+                  />
+                </TooltipComponent>
+              </React.Fragment>
 
-                <React.Fragment>
-                  <Offset mt={18} />
+              <React.Fragment>
+                <Offset mt={18} />
 
-                  <Label style={{ fontWeight: 700 }}>Год выпуска авто</Label>
-                  <Offset mt={8} />
-                  <TooltipComponent
-                    onClick={(e) =>
-                      !values.model_id &&
-                      handlerShowTooltip({
-                        key: "request",
-                        action: "generation",
-                        e,
-                      })
-                    }
-                    // id={useId()}
-                    style={{ bottom: -10, left: -10 }}
-                    message={tooltip?.request?.generation?.message}
-                    isShow={
-                      tooltip?.request?.generation &&
-                      tooltip?.request?.generation?.isShow
-                    }
-                  >
-                    <NativeSelect
-                      data={values.optionsGeneration}
-                      enabled={!!values.model_id}
-                      selectedValue={values.generation_id}
-                      placeholder={
-                        dataCurrentRequest?.generation ??
-                        "Выберите год выпуска авто"
-                      }
-                      onBlur={handleBlur}
-                      name={"generation_id"}
-                      helptext={touched?.generation_id && errors?.generation_id}
-                      styleWrap={{
-                        border:
-                          touched?.generation_id && errors?.generation_id
-                            ? "1px solid #ff0000"
-                            : "1px solid var(--border-select-color)",
-                      }}
-                      stylehelptext={{
-                        color: "var(--text-color-red)",
-                      }}
-                      onChange={async (value) => {
-                        setFieldValue("generation_id", value);
-                        handlerChangeDataValues({
-                          brand_id: values.brand_id,
-                          model_id: values.model_id,
-                          generation_id: value,
-                        });
-                        await delay(500);
-                        setErrors({ ...errors, generation_id: "" });
-                      }}
-                    />
-                  </TooltipComponent>
-                </React.Fragment>
+                <Label style={{ fontWeight: 700 }}>Год выпуска авто</Label>
+                <Offset mt={8} />
+                <TooltipComponent
+                  onClick={(e) =>
+                    !values.model_id &&
+                    handlerShowTooltip({
+                      key: "request",
+                      action: "generation",
+                      e,
+                    })
+                  }
+                  // id={useId()}
+                  style={{ bottom: -10, left: -10 }}
+                  message={tooltip?.request?.generation?.message}
+                  isShow={
+                    tooltip?.request?.generation &&
+                    tooltip?.request?.generation?.isShow
+                  }
+                >
+                  <OptionSelect
+                    data={values.optionsGeneration}
+                    enabled={!!values.model_id}
+                    clearValue={!values.generation_id}
+                    placeholder={"Выберите год выпуска авто"}
+                    name={"generation_id"}
+                    helptext={touched?.generation_id && errors?.generation_id}
+                    stylehelptext={{
+                      color: "var(--text-color-red)",
+                    }}
+                    onChange={async ({ value }) => {
+                      setFieldValue("generation_id", value);
+                      handlerChangeDataValues({
+                        brand_id: values.brand_id,
+                        model_id: values.model_id,
+                        generation_id: value,
+                      });
+                      await delay(500);
+                      setErrors({ ...errors, generation_id: "" });
+                    }}
+                  />
+                </TooltipComponent>
+              </React.Fragment>
 
               <Offset mt={15} />
               <Label style={{ fontWeight: 700 }}>Телефон</Label>
@@ -387,7 +356,7 @@ const UnitSpareRequest = ({
               <Offset mt={2} />
               <FormUploadImageV2
                 multiple
-               src={addFile}
+                src={addFile}
                 listImages={dataCurrentRequest?.images ?? values.image ?? []}
                 values={values}
                 setFieldValue={setFieldValue}

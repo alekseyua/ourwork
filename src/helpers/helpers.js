@@ -925,3 +925,20 @@ export function unicIteemsJoinArrays(arr1,arr2){
       return acc;
     }, []);
 }
+
+
+
+export const getListOption = (data) => {
+  console.log({data})
+  if (!Array.isArray(data)) return [{
+    value: '',
+    label: '',
+    image: '',
+  }];
+  const newData = data.map((el) => ({
+    value: el.value,
+    label: el.title,
+    image: el.image,
+  }));
+  return newData;
+}

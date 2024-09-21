@@ -80,6 +80,7 @@ id,
     let params = {
       type: data.type,
       dataRequst: data.handlerChangeDataRequest,
+      page_size:99999,
       url, 
     };
     if (data.brand_id) {
@@ -99,8 +100,8 @@ id,
 
   const initValuesAggrigateUnitsSpare = {
 
-    model_id: [],
-    generation_id: [],
+    model_id: "",
+    generation_id: "",
   };
 
   store.on(_INIT, () => ({ valuesUnitSpare: initValuesAggrigateUnitsSpare }));

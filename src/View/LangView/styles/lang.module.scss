@@ -19,8 +19,10 @@
         top: 0;
         left: 0;
         opacity: 0;
+        width: 100%;
 
         &>div {
+            width: 100%;
             opacity: 0;
         }
     }
@@ -29,10 +31,14 @@
     &+div {
         background: transparent;
         box-shadow: none;
-
-        &>div>div {
+display: flex;
+    justify-content: flex-end;
+        &>div{
+            max-width: 55px;
+            &>div {
             border-radius: 7px;
         }
+    }
     }
 }
 }
