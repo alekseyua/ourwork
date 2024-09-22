@@ -21,6 +21,29 @@ if(!window.Telegram.WebApp.isExpanded){
 
 window.Telegram.WebApp.disableVerticalSwipes();
 
+function preventCollapse(last_known_scroll_position) {
+  console.log("stgart", last_known_scroll_position);
+  console.log("height", document.documentElement.scrollHeight);
+  if (document.documentElement.scrollHeight - last_known_scroll_position >= document.body.offsetHeight) {
+    window.scrollTo(0, last_known_scroll_position - 50);
+  }
+}
+
+let last_known_scroll_position = 0;
+let ticking = false;
+window.addEventListener("scroll", function (e) {
+  last_known_scroll_position = window.scrollY;
+
+  if (!ticking) {
+    window.requestAnimationFrame(function () {
+      preventCollapse(last_known_scroll_position);
+      ticking = false;
+    });
+
+    ticking = true;
+  }
+});
+
 window.onerror = (message, source, lineno, colno) => {
   // console.log({message})
   if( typeof message === 'string'){
