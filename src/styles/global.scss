@@ -215,6 +215,7 @@ select {
   position: fixed;
   z-index: 9999;
   flex: 1;
+  min-height: 55px;
 
   &::-webkit-scrollbar {
     display: none;
