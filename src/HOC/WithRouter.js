@@ -15,6 +15,7 @@ import {
   ACTION_SET_TEXT_HEADER,
 } from "../store/helpers/helpers-store";
 import { ACTION_GET_ACCESSES } from "../store/access/access";
+
 export default function WithRouter(Component) {
   let propsData;
   return (props) => {

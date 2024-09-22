@@ -11,6 +11,7 @@ import ErrorHandler from "./Pages/ErrorHandler/ErrorHandler";
 import { setSessionStore } from "./helpers/utils";
 import { funcDelay } from "./helpers/const";
 import i18n from "./lang/i18n";
+import Scroll from "./HOC/Scroll/Scroll";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -21,32 +22,7 @@ if(!window.Telegram.WebApp.isExpanded){
 
 window.Telegram.WebApp.disableVerticalSwipes();
 
-function preventCollapse(last_known_scroll_position) {
-  const bottomPosition = document.documentElement.scrollHeight;
-   const scrollPosition = window.scrollY + window.innerHeight;
-  console.log("scrollPosition", scrollPosition);
-  console.log("height", bottomPosition);
-// document.body.offsetHeight;
-  if (scrollPosition >= bottomPosition) {
-    // window.scrollTo(0, last_known_scroll_position + 10);
-    return window.scrollBy(0, -10);
-  }
-}
 
-let last_known_scroll_position = 0;
-let ticking = false;
-window.addEventListener("scroll", function (e) {
-  last_known_scroll_position = window.scrollY;
-
-  if (!ticking) {
-    window.requestAnimationFrame(function () {
-      preventCollapse(last_known_scroll_position);
-      ticking = false;
-    });
-
-    ticking = true;
-  }
-});
 
 window.onerror = (message, source, lineno, colno) => {
   // console.log({message})
@@ -58,10 +34,12 @@ window.onerror = (message, source, lineno, colno) => {
 }
 root.render(
   <ErrorHandler>
-    <StoreContext.Provider value={store} > 
+    <StoreContext.Provider value={store} >
+      <Scroll>
         <RouterProvider 
           router={router} 
-        />
+          />
+      </Scroll>
     </StoreContext.Provider>
   </ErrorHandler>
 );
