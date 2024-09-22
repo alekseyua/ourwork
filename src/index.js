@@ -18,20 +18,9 @@ if(!window.Telegram.WebApp.isExpanded){
   window.Telegram.WebApp.expand();
   funcDelay( () => setSessionStore('viewportStableHeight', window.Telegram.WebApp.viewportStableHeight), 1000)
 }
-const onTouchStart = (e) => {
-  window.Telegram.WebApp.enableClosingConfirmation()
-  // setTimeout(()=>{
-  //   // document.querySelector('.goto').click()
-  // },1000)
-}
 
-const onTouchMove = e => {
-  if(!window.Telegram.WebApp.isExpanded){
-    window.Telegram.WebApp.expand();
-  }
-}
-document.documentElement.addEventListener('touchstart', onTouchStart, { passive: false })
-document.documentElement.addEventListener('touchmove', onTouchMove, { passive: false })
+window.Telegram.WebApp.disableVerticalSwipes();
+
 window.onerror = (message, source, lineno, colno) => {
   // console.log({message})
   if( typeof message === 'string'){
