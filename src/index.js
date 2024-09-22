@@ -22,10 +22,14 @@ if(!window.Telegram.WebApp.isExpanded){
 window.Telegram.WebApp.disableVerticalSwipes();
 
 function preventCollapse(last_known_scroll_position) {
-  console.log("stgart", last_known_scroll_position);
-  console.log("height", document.documentElement.scrollHeight);
-  if (document.documentElement.scrollHeight - last_known_scroll_position >= document.body.offsetHeight) {
-    window.scrollTo(0, last_known_scroll_position - 50);
+  const bottomPosition = document.documentElement.scrollHeight;
+   const scrollPosition = window.scrollY + window.innerHeight;
+  console.log("scrollPosition", scrollPosition);
+  console.log("height", bottomPosition);
+// document.body.offsetHeight;
+  if (scrollPosition >= bottomPosition) {
+    // window.scrollTo(0, last_known_scroll_position + 10);
+    return window.scrollBy(0, -10);
   }
 }
 
