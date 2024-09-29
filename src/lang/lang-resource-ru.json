@@ -1,6 +1,11 @@
 {
   "translation": {
     "filters": "Фильтра",
-    "create_request": "Создать запрос"
+    "create_request": "Создать запрос",
+    "create": "Создать",
+    "raiting": "Рейтинг",
+    "sell": "Продать",
+    "main_menu": "Главное меню",
+    "main": "Главная"
   }
 }

@@ -44,7 +44,7 @@ const NativeSelect = ({
             fontWeight: 500,
             fontFamily: 'var(--font-family-default)',
             border: '1px solid var(--border-color)',
-            backgroundColor: 'var(--background-color-block)',
+            backgroundColor: 'var(--bg-block)',
             filter: `blur(var(--filter-blur))`,
             ...styleWrap
         },

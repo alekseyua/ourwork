@@ -1,7 +1,7 @@
 .textarea {
     // textarea__container{}
     &__container {
-        background-color: var(--background-color-block);
+        background-color: var(--bg-block);
         padding: 0;
         min-height: 96px;
         display: flex;
@@ -59,13 +59,13 @@
         position: absolute;
         top: 91%;
         right: 16px;
-        background: var(--background-color-block);
+        background: var(--bg-block);
         color: var(--red-color);
     }
 
     // textarea-application-background{}
     &-application-background {
-        background-color: var(--background-color-block);
+        background-color: var(--bg-block);
     }
 
     // textarea-application{}

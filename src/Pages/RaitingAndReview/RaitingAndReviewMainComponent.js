@@ -21,18 +21,18 @@ class RaitingAndReviewMainComponent extends Component {
       pathBackButton: ROOT,
     });
 
-    this.props.dispatch(ACTION_SET_BUTTON_HEADER_ACTION, {
-      isVisible: true,
-      buttons: [
-        {
-          action: () => this.handlerChangeScreen({ path: REITING_CREATE }),
-          iconLeft: cloud,
-          styleIconsLeft: { height: 12 },
-          title: `Оставить отзыв`,
-          className: "button__orange-white--disable",
-        },
-      ],
-    });
+    // this.props.dispatch(ACTION_SET_BUTTON_HEADER_ACTION, {
+    //   isVisible: true,
+    //   buttons: [
+    //     {
+    //       action: () => this.handlerChangeScreen({ path: REITING_CREATE }),
+    //       iconLeft: cloud,
+    //       styleIconsLeft: { height: 12 },
+    //       title: `Оставить отзыв`,
+    //       className: "button__orange-white--disable",
+    //     },
+    //   ],
+    // });
   }
 
   componentWillUnmount() {
@@ -42,20 +42,20 @@ class RaitingAndReviewMainComponent extends Component {
 
   componentDidUpdate(prevProps, prevState){
     console.log({prevProps})
-    if(Object.keys(this.props.infoAboutUserReview).length && this.props.infoAboutUserReview?.id !== prevProps.infoAboutUserReview?.id){
-      this.props.dispatch(ACTION_SET_BUTTON_HEADER_ACTION, {
-        isVisible: true,
-        buttons: [
-          {
-            action: () => this.handlerChangeScreen({ path: REITING_CREATE }),
-            iconLeft: cloud,
-            styleIconsLeft: { height: 12 },
-            title: `Оставить отзыв ${this.props.infoAboutUserReview.username}`,
-            className: "button__orange-white",
-          },
-        ],
-      });
-    }
+    // if(Object.keys(this.props.infoAboutUserReview).length && this.props.infoAboutUserReview?.id !== prevProps.infoAboutUserReview?.id){
+    //   this.props.dispatch(ACTION_SET_BUTTON_HEADER_ACTION, {
+    //     isVisible: true,
+    //     buttons: [
+    //       {
+    //         action: () => this.handlerChangeScreen({ path: REITING_CREATE }),
+    //         iconLeft: cloud,
+    //         styleIconsLeft: { height: 12 },
+    //         title: `Оставить отзыв ${this.props.infoAboutUserReview.username}`,
+    //         className: "button__orange-white",
+    //       },
+    //     ],
+    //   });
+    // }
   }
   
   handlerChangeScreen = ({ path }) => {

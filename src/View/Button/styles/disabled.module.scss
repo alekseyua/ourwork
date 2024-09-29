@@ -2,7 +2,7 @@
   // button--disabled
   &--disabled {
     pointer-events: none;
-    background-color: var(--background-color-block-disabled) !important;
+    background-color: var(--bg-block-disabled) !important;
 
     &:hover {
       cursor: not-allowed;

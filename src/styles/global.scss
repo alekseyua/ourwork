@@ -64,6 +64,17 @@ body {
   &__menu{
     z-index: 9999 !important;
   }
+
+  // react-select__input
+  &__input{
+    &::placeholder {
+      color: var(--placeholder-color);
+      font-size: var(--placeholder-color);
+      letter-spacing: 0;
+      font-weight: 400;
+      font-family: var(--font-family-default);
+    }
+  }
 }
 
 .loading {

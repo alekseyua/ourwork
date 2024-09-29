@@ -61,7 +61,7 @@ const Raiting = ({
           className={styles["raiting-star__background-raiting"]}
           style={{
             backgroundColor: backgroundFone
-              ? "var(--background-color-block)"
+              ? "var(--bg-block)"
               : "transparent",
             gap: gap,
           }}

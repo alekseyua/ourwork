@@ -20,18 +20,18 @@ class RequestsComponent extends Component {
       pathBackButton: () => this.handlerChangeScreen({ path: ROOT })//ROOT,       
     });
 
-    this.props.dispatch(ACTION_SET_BUTTON_HEADER_ACTION, {
-      isVisible: true,
-      buttons: [
-        {
-          action: () => this.handlerChangeScreen({ path: MAKE_REQUEST_OWN_REQUEST }),
-          iconLeft: myRequest,
-          styleIconsLeft: { height: 12 },
-          title: 'Мои запросы',
-          className: 'button__orange-white'
-        },
-      ]
-    })
+    // this.props.dispatch(ACTION_SET_BUTTON_HEADER_ACTION, {
+    //   isVisible: true,
+    //   buttons: [
+    //     {
+    //       action: () => this.handlerChangeScreen({ path: MAKE_REQUEST_OWN_REQUEST }),
+    //       iconLeft: myRequest,
+    //       styleIconsLeft: { height: 12 },
+    //       title: 'Мои запросы',
+    //       className: 'button__orange-white'
+    //     },
+    //   ]
+    // })
   }
 
 

@@ -7,12 +7,13 @@ import { openOnlyURl } from '../../helpers/helpers';
 import { checkAccess } from '../../helpers/utils';
 import { ACTION_SET_BUTTON_HEADER_LANG } from "../../store/helpers/helpers-store";
 import LangContainer from '../../Components/Lang/LangContainer';
+import i18n from '../../lang/i18n';
 
 class MainComponent extends React.PureComponent {
 
   componentDidMount() {
     this.props.controllerHeaderBand({
-      currentTextHandlerBand: 'Главное меню',
+      currentTextHandlerBand: i18n.t("main_menu"),
     });
     this.props.dispatch(ACTION_SET_BUTTON_HEADER_LANG, {
       isVisible: true,

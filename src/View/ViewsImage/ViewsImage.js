@@ -63,7 +63,7 @@ const ViewsImage = ({
                     onSlideChange={() => setRotate(0)}
                     className={styless['preview-image__slider-image']}
                     style={{
-                        "--swiper-pagination-color": "var(--background-color-block)",
+                        "--swiper-pagination-color": "var(--bg-block)",
                         "--swiper-pagination-bullet-inactive-color": "var(--background-color-opacity-50)",
                         "--swiper-pagination-bullet-inactive-opacity": "1",
                         "--swiper-pagination-bullet-size": "4px",

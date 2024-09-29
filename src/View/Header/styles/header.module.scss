@@ -71,7 +71,7 @@
 
     // header__menu-wrap--top{}
     &__menu-wrap--top{        
-        background-color: var(--background-color-block);
+        background-color: var(--bg-block);
         display: flex;
         align-items: center;
         position: fixed;
@@ -95,7 +95,7 @@
             content: "";
             width: 100vw;
             height: 100%;            
-            background-color: var(--background-color-block);
+            background-color: var(--bg-block);
             display: block;
             position: absolute;
             top: -1px;
@@ -134,7 +134,7 @@
         font-weight: 700;
         font-style: normal;
         font-size: 16px;
-        color: var(--text-color);
+        color: var(--color-header-title);
         line-height: 22px;
         text-align: left;
         display:-webkit-box;
@@ -208,7 +208,7 @@
         bottom: 0;
         width: 100%;
         z-index: 9998;
-        background-color: var(--background-color-block);
+        background-color: var(--bg-block);
         padding: 0 15px;
         box-shadow: 1px 1px 10px #000000a1;
 

@@ -1,5 +1,5 @@
 .swiper-pagination-bullet-active {
-  background-color: var(--background-color-block) !important;
+  background-color: var(--bg-block) !important;
   width: 8px !important;
   border-radius: 12px !important;
 }
@@ -7,13 +7,13 @@
 .image-one-card {
   // image-one-card__swiper-pagination-bullet
   &__swiper-pagination-bullet {
-    background-color: var(--background-color-block) !important;
+    background-color: var(--bg-block) !important;
     width: 4px !important;
     border-radius: 50% !important;
 
     // image-one-card__swiper-pagination-bullet-active
     &-active {
-      background-color: var(--background-color-block) !important;
+      background-color: var(--bg-block) !important;
       width: 8px !important;
       border-radius: 12px !important;
     }

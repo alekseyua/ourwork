@@ -16,7 +16,7 @@ export default function NavigationMyApplication({
             <Button
               style={{
                 gridArea: `${section.type}`,
-                backgroundColor: !section.active?  'var(--background-color-block)' : 'var(--background-color-mirage-blue)',
+                backgroundColor: !section.active?  'var(--bg-block)' : 'var(--background-color-mirage-blue)',
                 color: !section.active?  'var(--text-color)' : 'var(--text-color-white)'
               }}
               key={section.id}

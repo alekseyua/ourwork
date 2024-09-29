@@ -29,18 +29,18 @@ class IncominRequestsComponent extends Component {
             pathBackButton: ROOT,       
         });
 
-        this.props.dispatch(ACTION_SET_BUTTON_HEADER_ACTION, {
-            isVisible: true,
-            buttons: [
-                {
-                    action: () => this.handlerChangeScreen({path: INCOMING_REQUEST_INFO_SETTING}),
-                    iconLeft: help,
-                    styleIconsLeft: { height: 12 },
-                    title: 'Как настроить?',
-                    className: 'button__orange-white'
-                },
-            ]
-        })
+        // this.props.dispatch(ACTION_SET_BUTTON_HEADER_ACTION, {
+        //     isVisible: true,
+        //     buttons: [
+        //         {
+        //             action: () => this.handlerChangeScreen({path: INCOMING_REQUEST_INFO_SETTING}),
+        //             iconLeft: help,
+        //             styleIconsLeft: { height: 12 },
+        //             title: 'Как настроить?',
+        //             className: 'button__orange-white'
+        //         },
+        //     ]
+        // })
     }
 
     handlerChangeScreen = ({path}) => this.props.navigate(path);

@@ -1,28 +1,40 @@
 :root {
     --bg-color-common: #fff;
-    --bg-item: #fff; // #C4C4C4;
-    --bg-menu-bottom: #fff;
-    --bg-menu-top: #fff;
-    --bg-block: #FEA465;
+    --bg-item: #E9EDF8; // #C4C4C4;
+    --bg-block: #E9EDF8;
+    --bg-block-active: #3B6BF1;
     --border-color: rgb(223 226 234);
+    --border-color-active: #1B3065;
     --text-color-bottom: #000;
-
+    
     // --text-color: #377380; // #027992; // #FEA465; // #ed7014;
-    --text-color: #027992; // #FEA465; // #ed7014; //
+    --text-color: #000; // #FEA465; // #ed7014; //
     --text-color-theme: #fea465;
     --text-color-w: #fff;
     --text-color-blue: #19314a; // Nile blue
-    --background-color-block: #C4C4C4;
-    --placeholder-color: #0b1f3599;
+    --placeholder-color: #D7D9DA;
     --placeholder-size: 12px;
-    --font-family-default: 'var(--font-family-default)';
     --header-overflow: hidden;
+    
+    // Font Family
+    --font-family-default: 'SFProDisplay';
+
+    // Colors background bottom menu
+    --bg-menu-bottom: #fff;
+    --bg-menu-top: #1b3065;
+
+    // color header title
+    --color-header-title: #fff;
+
+    // Colors icon bottom menu
+    --color-icon-bottom-active: #3B6BF1;
+    --color-icon-bottom: #BABFDB;
 
     // #377380
     // #027992
 
 // -------------------------------------------------------
-    --background-color-block-disabled: rgb(201 205 211); // Ghost
+    --bg-block-disabled: rgb(201 205 211); // Ghost
     --background-color-mirage-blue: rgb(11 31 53); // Mirage
     --background-color-menu-disable: rgb(225 217 217);
     --background-color-light-roze-border: rgb(251 217 216);

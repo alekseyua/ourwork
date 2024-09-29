@@ -26,19 +26,19 @@ class SpareRequestComponent extends Component {
         this.handlerChangeScreen({ path: MAKE_REQUEST_MENU }),
     });
 
-    this.props.dispatch(ACTION_SET_BUTTON_HEADER_ACTION, {
-      isVisible: true,
-      buttons: [
-        {
-          action: () =>
-            this.handlerChangeScreen({ path: MAKE_REQUEST_OWN_REQUEST }),
-          iconLeft: myRequest,
-          styleIconsLeft: { height: 12 },
-          title: "Мои запросы",
-          className: "button__orange-white",
-        },
-      ],
-    });
+    // this.props.dispatch(ACTION_SET_BUTTON_HEADER_ACTION, {
+    //   isVisible: true,
+    //   buttons: [
+    //     {
+    //       action: () =>
+    //         this.handlerChangeScreen({ path: MAKE_REQUEST_OWN_REQUEST }),
+    //       iconLeft: myRequest,
+    //       styleIconsLeft: { height: 12 },
+    //       title: "Мои запросы",
+    //       className: "button__orange-white",
+    //     },
+    //   ],
+    // });
   }
   handlerChangeScreen = ({ path }) => {
     this.props.navigate(path);

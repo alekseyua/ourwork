@@ -38,7 +38,7 @@ const LinkGoTo = ({
                 marginBottom: `${mb}px`,
                 cursor: 'pointer',
                 border: `1px solid var(--border-color)`,
-                backgroundColor: 'var(--background-color-block)',
+                backgroundColor: 'var(--bg-block)',
                 borderRadius: 7,
                 fontSize: `${fontSize}px`,
                 padding: '4px 12px 0px',

@@ -66,7 +66,7 @@ const Layout = ({
         minWidth: 300,
         minHeight: 216,
         opacity: 1,
-        backgroundColor: `var(--background-color-block)`,
+        backgroundColor: `var(--bg-block)`,
         margin: 20,
         borderRadius: 20,
         alignItems: "center",

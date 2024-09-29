@@ -3,6 +3,7 @@ import styles from './styles/footer.module.scss';
 import Icon from "../../View/Icon/Icon";
 import WrapContainerFooterMenu from "../../View/Footer/WrapContainerFooterMenu";
 import WrapItemFooterMenu from "../../View/Footer/WrapItemFooterMenu";
+import i18n from "../../lang/i18n";
 
 const Footer = ({
   style = {},
@@ -41,7 +42,11 @@ const Footer = ({
                     isFavorite={isFavorite}
                     onClick={() => handlerChangeScreen({ path: el.slug })}
                   >
-                    <Icon src={el.image} height={20} width={20} />
+                    <Icon
+                      src={el.image[window.location.pathname === el.slug? 'active': 'common']}
+                      height={20}
+                      width={20}
+                    />
                     <span
                       className={
                         window.location.pathname === el.slug
@@ -49,7 +54,7 @@ const Footer = ({
                           : styles["footer__menu-bottom-title"]
                       }
                     >
-                      {el.text}
+                      {i18n.t(el.text)}
                     </span>
                   </WrapItemFooterMenu>
                 );

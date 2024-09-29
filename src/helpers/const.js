@@ -123,96 +123,36 @@ export async function saveLastPast(pathname) {
 export const getMarkPage = ({ pathname }) => {
   document.querySelector("body").style.setProperty("overflow", "auto");
   document.documentElement.style.setProperty("--filter-blur", `unset`);
-  document.documentElement.style.setProperty(
-    "--margin-bottom-isselect",
-    `35px`
-  );
-
-  setSessionStore("isOpenKeyboard");
+  document.documentElement.style.setProperty("--margin-bottom-isselect",`35px`);
 
   switch (pathname) {
     case ROOT:
-      setLocaleStore("itemMenu", 1);
-      setLocaleStore(LAST_PATH_FEEDBACK, pathname);
       break;
     // {/* **********************ФИЛЬТРЫ -> Входящие заявки ****************** */}
-    case INCOMING_REQUEST_MENU:
-      setLocaleStore(LAST_PATH_HOW_TO_SETUP, pathname);
-      setLocaleStore(LAST_PATH_FEEDBACK, pathname);
-      break;
     case INCOMING_REQUEST_UNIT_SPARE:
-      setLocaleStore(LAST_PATH_HOW_TO_SETUP, pathname);
-      break;
-    case INCOMING_REQUEST_TRANSPORT:
-      setLocaleStore(LAST_PATH_HOW_TO_SETUP, pathname);
-      break;
-    case INCOMING_REQUEST_RESPAIR:
-      setLocaleStore(LAST_PATH_HOW_TO_SETUP, pathname);
-      break;
-    case INCOMING_REQUEST_TRUCK:
-      setLocaleStore(LAST_PATH_HOW_TO_SETUP, pathname);
       break;
     // {/* *****************РЕЙТИНГ И ОТЗЫВЫ*********************** */}
     case REITING_MENU:
       setLocaleStore("itemMenu", 9);
-      setLocaleStore(LAST_PATH_SEND_REVIEW, pathname);
-      setLocaleStore(LAST_PATH_FULL_INFO, pathname);
       break;
     case REITING_CREATE:
       setLocaleStore("itemMenu", 9);
       break;
-    case REITING_WARRANT_ADMIN:
-      setLocaleStore("itemMenu", 9);
-      setLocaleStore(LAST_PATH_FEEDBACK, pathname);
-      break;
-    case REITING_WARRANT_MEMBER:
-      setLocaleStore("itemMenu", 9);
-      setLocaleStore(LAST_PATH_SEND_REVIEW, pathname);
-      setLocaleStore(LAST_PATH_FULL_INFO, pathname);
-      break;
     // {/* *****************СОЗДАТЬ ЗАПРОС*********************** */}
     case MAKE_REQUEST_MENU:
       setLocaleStore("itemMenu", 2);
-      setLocaleStore(LAST_PATH_FEEDBACK, pathname);
-      setLocaleStore(LAST_PATH_MY_FAVORITE_CARDS, pathname);
-      setLocaleStore(LAST_PATH_OWN_REQUEST, pathname);
-      setLocaleStore(LAST_PATH_DETAIL_CARD, pathname);
       break;
     case MAKE_REQUEST_UNIT:
       setLocaleStore("itemMenu", 2);
-      setLocaleStore(LAST_PATH_OWN_REQUEST, pathname);
       break;
     case MAKE_REQUEST_SPARE:
       setLocaleStore("itemMenu", 2);
-      setLocaleStore(LAST_PATH_OWN_REQUEST, pathname);
       break;
-    case MAKE_REQUEST_RESPAIR:
-      setLocaleStore("itemMenu", 2);
-      setLocaleStore(LAST_PATH_OWN_REQUEST, pathname);
-      break;
-    case MAKE_REQUEST_TRANSPORT:
-      setLocaleStore("itemMenu", 2);
-      setLocaleStore(LAST_PATH_OWN_REQUEST, pathname);
-      break;
-    case MAKE_REQUEST_TRUCK:
-      setLocaleStore("itemMenu", 2);
-      setLocaleStore(LAST_PATH_OWN_REQUEST, pathname);
-      break;
-    case MAKE_REQUEST_OWN_REQUEST:
+    case CAR_SALE:
       setLocaleStore("itemMenu", 2);
       break;
-    // {/* ******************"Отзывы"********************** */}
 
     default:
-      if (pathname.includes(REITING_FULL_INFO)) {
-        setLocaleStore("itemMenu", 9);
-        setLocaleStore(CURRENT_PATH_TO_FULL_INFO, pathname);
-
-        setLocaleStore(LAST_PATH_SEND_REVIEW, pathname); // ???
-        break;
-      }
-        return setLocaleStore("itemMenu", 3);
-      break;
   }
 };
 
@@ -232,37 +172,7 @@ export const initButtomApply = ({ action, dispatch, pathname, tg }) => {
         addClass: "button__apply--full-red",
         title: "Применить",
       });
-      break;
-    case INCOMING_REQUEST_TRANSPORT:
-      dispatch(action, {
-        isActive: false,
-        isFetch: false,
-        typeButton: "fixed",
-        show: true,
-        addClass: "button__apply--full-red",
-        title: "Применить",
-      });
-      break;
-    case INCOMING_REQUEST_RESPAIR:
-      dispatch(action, {
-        isActive: false,
-        isFetch: false,
-        typeButton: "fixed",
-        show: true,
-        addClass: "button__apply--full-red",
-        title: "Применить",
-      });
-      break;
-    case INCOMING_REQUEST_TRUCK:
-      dispatch(action, {
-        isActive: false,
-        isFetch: false,
-        typeButton: "fixed",
-        show: true,
-        addClass: "button__apply--full-red",
-        title: "Применить",
-      });
-      break;
+      break;    
     // {/* *****************РЕЙТИНГ И ОТЗЫВЫ*********************** */}
     case REITING_CREATE:
       dispatch(action, {
@@ -273,28 +183,7 @@ export const initButtomApply = ({ action, dispatch, pathname, tg }) => {
         show: true,
         title: "Оставить отзыв",
       });
-      break;
-
-    case FEEDBACK:
-      dispatch(action, {
-        isActive: false,
-        isFetch: false,
-        typeButton: "static",
-        addClass: "button__apply--full-red",
-        show: true,
-        title: "Опубликовать",
-      });
-      break;
-    case FEEDBACK_GET_MANY_FOR_IDEA:
-      dispatch(action, {
-        isActive: false,
-        isFetch: false,
-        typeButton: "static",
-        addClass: "button__apply--full-red",
-        show: true,
-        title: "Предложить",
-      });
-      break;
+      break;    
     // {/* *****************СОЗДАТЬ ЗАПРОС*********************** */}
     case MAKE_REQUEST_UNIT:
       dispatch(action, {
@@ -316,49 +205,17 @@ export const initButtomApply = ({ action, dispatch, pathname, tg }) => {
         title: "Опубликовать запрос",
       });
       break;
-    case MAKE_REQUEST_RESPAIR:
-      dispatch(action, {
-        isActive: false,
-        isFetch: false,
-        typeButton: "static",
-        addClass: "button__apply--dark-blue",
-        show: true,
-        title: "Опубликовать запрос",
-      });
-      break;
-    case MAKE_REQUEST_TRANSPORT:
-      dispatch(action, {
-        isActive: false,
-        isFetch: false,
-        typeButton: "static",
-        addClass: "button__apply--dark-blue",
-        show: true,
-        title: "Опубликовать запрос",
-      });
-      break;
-    case MAKE_REQUEST_TRUCK:
-      dispatch(action, {
-        isActive: false,
-        isFetch: false,
-        typeButton: "static",
-        addClass: "button__apply--dark-blue",
-        show: true,
-        title: "Опубликовать запрос",
-      });
-      break;
-    case MAKE_REQUEST_OWN_EDIT_REQUEST:
-      dispatch(action, {
-        isActive: false,
-        isFetch: false,
-        typeButton: "static",
-        addClass: "button__apply--dark-blue",
-        show: true,
-        title: "Редактировать запрос",
-      });
-      break;
-       {
+    // case MAKE_REQUEST_OWN_EDIT_REQUEST:
+    //   dispatch(action, {
+    //     isActive: false,
+    //     isFetch: false,
+    //     typeButton: "static",
+    //     addClass: "button__apply--dark-blue",
+    //     show: true,
+    //     title: "Редактировать запрос",
+    //   });
+    //   break;
         /* *****************продажа авто*********************** */
-      }
     case CAR_SALE:
       dispatch(action, {
         isActive: false,

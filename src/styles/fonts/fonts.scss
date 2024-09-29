@@ -42,33 +42,58 @@
 //                                                                                     //     font-style: normal;
 //                                                                                     //     font-weight: 700;
 //                                                                                     // }
+// -------------------------------------------------------------------
+// @font-face {
+    //     font-family: HelveticaNeue;
+//     src: local('Helvetica Neue Roman'), local('Helvetica-Neue-Roman'),
+//         url('./1/HelveticaNeueCyr-Roman.woff2') format('woff2'),
+//         url('./1/HelveticaNeueCyr-Roman.woff') format('woff'),
+//         url('./1/HelveticaNeueCyr-Roman.ttf') format('truetype');
+//     font-weight: 400;
+//     font-style: normal;
+// }
 
+// @font-face {
+    //     font-family: HelveticaNeue;
+    //     src: local('Helvetica Neue Medium'), local('Helvetica-Neue-Medium'),
+    //         url('./1/HelveticaNeueCyr-Medium.woff2') format('woff2'),
+//         url('./1/HelveticaNeueCyr-Medium.woff') format('woff'),
+//         url('./1/HelveticaNeueCyr-Medium.ttf') format('truetype');
+//     font-weight: 500;
+//     font-style: normal;
+// }
+
+// @font-face {
+    //     font-family: HelveticaNeue;
+    //     src: local('Helvetica Neue Bold'), local('Helvetica-Neue-Bold'),
+    //         url('./1/HelveticaNeueCyr-Bold.woff2') format('woff2'),
+    //         url('./1/HelveticaNeueCyr-Bold.woff') format('woff'),
+    //         url('./1/HelveticaNeueCyr-Bold.ttf') format('truetype');
+    //     font-weight: 700;
+    //     font-style: normal;
+// }
+// -------------------------------------------------------------------
+    
 @font-face {
-    font-family: HelveticaNeue;
-    src: local('Helvetica Neue Roman'), local('Helvetica-Neue-Roman'),
-        url('./1/HelveticaNeueCyr-Roman.woff2') format('woff2'),
-        url('./1/HelveticaNeueCyr-Roman.woff') format('woff'),
-        url('./1/HelveticaNeueCyr-Roman.ttf') format('truetype');
+    font-family: SFProDisplay;
+    src: local('SFProDisplay'), local('San Francisco Pro Regular'),
+        url('./SFProDisplay-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
-    font-family: HelveticaNeue;
-    src: local('Helvetica Neue Medium'), local('Helvetica-Neue-Medium'),
-        url('./1/HelveticaNeueCyr-Medium.woff2') format('woff2'),
-        url('./1/HelveticaNeueCyr-Medium.woff') format('woff'),
-        url('./1/HelveticaNeueCyr-Medium.ttf') format('truetype');
+    font-family: SFProDisplay;
+    src: local('SFProDisplay'), local('San Francisco Pro Medium'),
+        url('./SFProDisplay-Medium.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
-    font-family: HelveticaNeue;
-    src: local('Helvetica Neue Bold'), local('Helvetica-Neue-Bold'),
-        url('./1/HelveticaNeueCyr-Bold.woff2') format('woff2'),
-        url('./1/HelveticaNeueCyr-Bold.woff') format('woff'),
-        url('./1/HelveticaNeueCyr-Bold.ttf') format('truetype');
+    font-family: SFProDisplay;
+    src: local('SFProDisplay'), local('HSan Francisco Pro Bold'),
+        url('./SFProDisplay-Bold.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
 }

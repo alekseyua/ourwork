@@ -1,8 +1,8 @@
 input[role="switch"]:checked {
   &~span>span>span {
     left: 20px;
-    border-color: var(--bg-block);
-    background: var(--bg-block);
+    border-color: var(--border-color-active);
+    background: var(--bg-block-active);
     opacity: 1;
   }
 }

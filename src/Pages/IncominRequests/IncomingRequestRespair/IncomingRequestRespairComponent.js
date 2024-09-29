@@ -33,18 +33,18 @@ class IncomingRequestRespairComponent extends Component {
       pathBackButton: () => this.handlerChangeScreen({ action: -1, type: 'citys' }),
     });
 
-    this.props.dispatch(ACTION_SET_BUTTON_HEADER_ACTION, {
-      isVisible: true,
-      buttons: [
-        {
-          action: () => this.handlerChangeScreen({ path: INCOMING_REQUEST_INFO_SETTING }),
-          iconLeft: help,
-          styleIconsLeft: { height: 12 },
-          title: 'Как настроить?',
-          className: 'button__orange-white'
-        },
-      ]
-    });
+    // this.props.dispatch(ACTION_SET_BUTTON_HEADER_ACTION, {
+    //   isVisible: true,
+    //   buttons: [
+    //     {
+    //       action: () => this.handlerChangeScreen({ path: INCOMING_REQUEST_INFO_SETTING }),
+    //       iconLeft: help,
+    //       styleIconsLeft: { height: 12 },
+    //       title: 'Как настроить?',
+    //       className: 'button__orange-white'
+    //     },
+    //   ]
+    // });
 
     this.props.dispatch(ACTION_GET_LIST_FILTERS_BY_TYPE, { type: this.state.type, list: this.state.listTabs[getLocaleStore(INCOMING_CURRENT_TAB_SERVICE) ?? 0], callback: this.callback });
   }
