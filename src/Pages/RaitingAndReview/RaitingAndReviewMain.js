@@ -1,33 +1,27 @@
-import React from 'react'
-import WrapContainerPreloader from '../../View/Preloaders/WrapContainerPreloader';
-import Preloader from '../../View/Preloaders/Preloader';
-import WrapContainer from '../../View/WrapContainer/WrapContainer';
-import Offset from '../../View/Offset';
-import Menu from '../../View/Menu/Menu';
-import WrapContainerCardTopList from '../../View/Cards/RaitingAndReview/WrapContainerCardTopList';
-import NavigationIncominRequests from '../../View/Navigation/NavigationMyApplication/NavigationIncominRequests';
-import WrapContainerCardRaitingAndReviewList from '../../View/Cards/RaitingAndReview/WrapContainerCardRaitingAndReviewList';
-import SearchComponent from '../../Components/SearchSection/SearchComponent';
-import { ACTION_SET_SEARCH_TEXT_FILTER } from '../../store/raiting-review/raiting-review';
-import WrapRootContainer from '../../View/WrapContainer/WrapRootContainer';
-import FormInputContainer from '../../View/FormInput/FormInputContainer';
-import MenuSlider from '../../View/Menu/MenuSlider';
-import RaitingAndReviewInfoAboutUserComponent from './RaitingAndReviewInfoAboutUser/RaitingAndReviewInfoAboutUserComponent';
+import React from "react";
+import Offset from "../../View/Offset";
+import SearchComponent from "../../Components/SearchSection/SearchComponent";
+import { ACTION_SET_SEARCH_TEXT_FILTER } from "../../store/raiting-review/raiting-review";
+import WrapRootContainer from "../../View/WrapContainer/WrapRootContainer";
+import RaitingAndReviewInfoAboutUserComponent from "./RaitingAndReviewInfoAboutUser/RaitingAndReviewInfoAboutUserComponent";
+import Button from "../../View/Button/Button";
+import { REITING_CREATE } from "../../helpers/config";
 
 export default function RaitingAndReviewMain({
+  t,
   handlerClick,
-  isLoadingList,
   textSearchReview,
   handlerTextSearch,
   infoAboutUserReview,
 }) {
+
   return (
     <WrapRootContainer>
       <Offset mt={17} />
 
       <div style={{ width: "100vw" }}>
         <SearchComponent
-          placeholder={"Введите имя пользователя"}
+          placeholder={t("input_name_user")}
           isUpblock={true}
           style={{
             paddingLeft: 1,
@@ -41,10 +35,22 @@ export default function RaitingAndReviewMain({
       </div>
       <Offset mb={20} />
       {Object.keys(infoAboutUserReview).length ? (
-        <RaitingAndReviewInfoAboutUserComponent
-          infoAboutUserReview={infoAboutUserReview}
-        />
+          <RaitingAndReviewInfoAboutUserComponent
+            infoAboutUserReview={infoAboutUserReview}
+          />
       ) : null}
+      {
+      infoAboutUserReview?.username?
+      <Button
+        full
+        onClick={() => handlerClick(infoAboutUserReview.username)}
+        href={REITING_CREATE}
+        addClass={"button__apply--dark-blue"}
+      >
+        {t("create-review")}
+      </Button>
+      :null
+      }
     </WrapRootContainer>
   );
 }

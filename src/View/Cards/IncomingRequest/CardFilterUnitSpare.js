@@ -22,6 +22,7 @@ export default function CardFilterUnitSpare({
   statusLoadingData,
 }) {
   if (!card) return;
+  console.log({ card });
   return (
     <>
       <WrapContainerBlockBorder
@@ -86,7 +87,7 @@ export default function CardFilterUnitSpare({
                 });
               }}
               name={""}
-              helptext={"Агрегаты"}
+              helptext={"unit"}
               helpTextStyle={{
                 top: 2,
               }}
@@ -132,7 +133,7 @@ export default function CardFilterUnitSpare({
                 }); //'spare'
               }}
               name={""}
-              helptext={"Запчасти"}
+              helptext={"spare"}
               helpTextStyle={{
                 top: 2,
               }}
@@ -141,7 +142,7 @@ export default function CardFilterUnitSpare({
               id={`check-${card.id}`}
             />
           </TooltipComponent>
-          {+card.id !== 0 && type !== "generations" ? (
+          {/* {+card.id !== 0 && type !== "generations" ? (
             <TooltipComponent
               onClick={() =>
                 !card?.can_click &&
@@ -200,7 +201,7 @@ export default function CardFilterUnitSpare({
                 </MenuItemIconContainer>
               </Button>
             </TooltipComponent>
-          ) : null}
+          ) : null} */}
         </WrapTwoColumnGrid>
       </WrapContainerBlockBorder>
       <Offset mb={15} />

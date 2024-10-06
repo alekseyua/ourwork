@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import styles from './Default.module.scss';
 import classNames from 'classnames';
+import { useTranslation } from 'react-i18next';
 
 const variantEnum = {
   default: 'default',
@@ -59,7 +60,7 @@ const CheckBox = ({
 }) => {
   //todo: чтоб не светился ошибками сделаю мега костыль не бейте пж
   const refCheck = useRef(null);
-
+  const { t } = useTranslation();
   const handlerOnChange = (e) => {
     e.stopPropagation()
     e.preventDefault()
@@ -144,7 +145,7 @@ const CheckBox = ({
               ...helpTextStyle,
             }}
           >
-            {helptext}
+            {t(helptext)}
           </span>
         ) : null}
       </div>
@@ -153,4 +154,4 @@ const CheckBox = ({
   );
 };
 
-export default React.memo(CheckBox);
+export default (CheckBox);

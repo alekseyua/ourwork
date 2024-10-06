@@ -9,27 +9,18 @@ import WrapContainerPreloader from '../../../View/Preloaders/WrapContainerPreloa
 import Preloader from '../../../View/Preloaders/Preloader'
 
 export default function RaitingAndReviewInfoAboutUser({
+  t,
   infoUser,
-  handlerChangeScreen,
-
 }) {
-  console.log({infoUser})
   if (!infoUser?.id) return (<></>);
   return (
     <WrapContainer>
       <Offset mb={15} />
       <InfoAboutUser
+        t={t}
         infoUser={infoUser}
-        handlerChangeScreen={handlerChangeScreen}
       />
-      <Offset mb={25} />
-      {/* <WrapContainerCardReviewList
-        list={infoUser.feedbacks}
-        count={infoUser.feedbacks.length}
-        currentPage={reviews.current_page}
-        changePagination={changePagination}
-        handlerChangeScreen={handlerChangeScreen}
-      /> */}
+      <Offset mb={25} />     
     </WrapContainer>
   );
 }

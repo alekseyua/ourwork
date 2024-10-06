@@ -8,6 +8,7 @@ import WithTooltip from "../../HOC/WithTooltip";
 import { isAndroid, isIos } from "../../helpers/utils";
 
 const ButtonApplyFixed = ({
+  t,
   id,
   icon,
   show,
@@ -41,7 +42,7 @@ const ButtonApplyFixed = ({
           addClass={addClass}
           onClick={onClick}
         >
-          {title}
+          {t(title)}
           {
             isFetch ?
               <Icon

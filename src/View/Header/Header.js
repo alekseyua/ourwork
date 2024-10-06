@@ -3,6 +3,7 @@ import classNames from "classnames";
 import styles from './styles/header.module.scss';
 import Button from "../Button/Button";
 import WrapContainer from "../WrapContainer/WrapContainer";
+import i18n from "../../lang/i18n";
 
 const Header = ({
   isBlur,
@@ -33,8 +34,8 @@ const Header = ({
           <div className={styles["header__wrap-container-heaider"]}>
             <p className={styles["header__title"]}>
               {!!textHeader &&
-                textHeader[0].toUpperCase() +
-                  textHeader?.slice(1).toLowerCase()}
+                i18n.t(textHeader)[0].toUpperCase() +
+                  i18n.t(textHeader)?.slice(1).toLowerCase()}
             </p>
             {buttonHeaderAction.isVisible && (
               <div className={styles["header__action"]}>

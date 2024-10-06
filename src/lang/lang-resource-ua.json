@@ -1,11 +1,40 @@
 {
   "translation": {
     "filters": "Фільтра",
+    "user": "Користувач",
+    "find_dot": "Пошук...",
+    "find_exc": "Знайдено",
+    "find_brand": "Знайдено моделей",
+    "find_generation": "Знайдено поколінь",
+    "select_brand": "Виберіть марку авто",
+    "select_model": "Виберіть модель",
+    "select_generation": "Виберіть покоління",
+    "reiting_seller": "Рейтинг продавця",
+    "reiting_status": "Ваша оценка",
+    "public_request": "Опублікувати запит",
+    "apply": "Застосувати",
+    "spare": "Запчастина",
+    "unit": "Агрегати",
+    "reiting_placeholder": "Опишіть ваше враження про продавця. Виділіть плюси чи мінуси роботи",
+    "write_review": "Напишіть відгук",
     "create_request": "Створити запит",
+    "request_for_unit": "Запит на агрегат",
+    "request_for_spare": "Запит на запчастину",
     "create": "Створити",
     "raiting": "Рейтинг",
+    "raiting_and_review": "Рейтинг та відгуки",    
     "sell": "Продати",
+    "input_name_user": "Введіть ім'я користувача",
     "main_menu": "Головне меню",
-    "main": "Головна"
+    "units_and_spare_parts": "Агрегати та запчастини",
+    "main": "Головна",
+    "adv": "Оголошення",
+    "seller": "Продавець",
+    "create-review": "Залишити відгук",
+    "sell_car": "Продати авто",
+    "sell_spars_part": "Продати в розборі",
+    "sell_chenal_car": "Канал продажу авто",
+    "sell_chenal_spare": "Каналу розбору авто"
+
   }
 }

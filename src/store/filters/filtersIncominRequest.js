@@ -1,9 +1,7 @@
 import {
-  gotoPointScroll,
   handlerWarningInfoMessageResponse,
   serialaizersFilters,
   serialaizersFullFilters,
-  setDataButtonBottonTrigger,
   unicArrayFilters,
 } from "../../helpers/helpers";
 import {
@@ -17,7 +15,6 @@ import {
   getListPagination,
   getLocaleStore,
   getSessionStore,
-  setSessionStore,
 } from "../../helpers/utils";
 import { ACTION_GET, _INIT, ACTION_POST } from "../api-store/getpage";
 import {

@@ -6,12 +6,11 @@ import CardTitleDescBlock from '../Detail/review/CardTitleDescBlock'
 import CardInfo from '../Detail/review/CardInfo'
 import Offset from '../../Offset'
 import Line from '../../Line/Line'
-import { getDataInfoUserFromArray } from '../../../helpers/helpers'
 import RaitingContainer from '../../Raiting/RaitingContainer'
 
 export default function InfoAboutUser({
+t,
   infoUser,
-  handlerChangeScreen
 }) {
   // console.log({infoUser})
   return (
@@ -19,10 +18,10 @@ export default function InfoAboutUser({
       <CardInfoBlock>
         <Offset mt={9} />
         <CardInfoBlock
-          // onClick={() => handlerChangeScreen({ url: infoUser?.user_link })}
+        // onClick={() => handlerChangeScreen({ url: infoUser?.user_link })}
         >
           <CardInfoBlockWrapDesc>
-            <CardTitleDescBlock>Пользователь:</CardTitleDescBlock>
+            <CardTitleDescBlock>{t("user")}:</CardTitleDescBlock>
             <CardInfo>{infoUser.first_name}</CardInfo>
           </CardInfoBlockWrapDesc>
           <Offset mt={21} />
@@ -36,7 +35,7 @@ export default function InfoAboutUser({
                 whiteSpace: "nowrap",
               }}
             >
-              Рейтинг продавца:
+              {t("reiting_seller")}:
             </CardTitleDescBlock>
             <CardInfo
               style={{

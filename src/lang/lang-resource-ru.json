@@ -1,11 +1,40 @@
 {
   "translation": {
     "filters": "Фильтра",
+    "user": "Пользователь",
+    "find_dot": "Поиск...",
+    "find_exc": "Найдено ",
+    "find_brand": "Найдено моделей",
+    "find_generation": "Найдено поколений",
+    "select_brand": "Выберите марку авто",
+    "select_model": "Выберите модель",
+    "select_generation": "Выберите поколение",
+    "reiting_seller": "Рейтинг продавца",
+    "reiting_status": "Ваша оценка",
+    "write_review": "Напишите отзыв",
+    "reiting_placeholder": "Опишите ваше впечатление о продавце. Выделите плюсы или минусы работы",
+    "public_request": "Опубликовать запрос",
+    "apply": "Применить",
+    "spare": "Запчасти",
+    "unit": "Агрегаты",
+
     "create_request": "Создать запрос",
+    "request_for_unit": "Запрос на агрегат",
+    "request_for_spare": "Запрос на запчасть",
     "create": "Создать",
     "raiting": "Рейтинг",
+    "raiting_and_review": "Рейтинг и отзывы",
     "sell": "Продать",
+    "input_name_user": "Введите имя пользователя",
     "main_menu": "Главное меню",
-    "main": "Главная"
+    "units_and_spare_parts": "Агрегаты и запчасти",
+    "main": "Главная",
+    "adv": "Объявления",
+    "seller": "Продавец",
+    "create-review": "Оставить отзыв",
+    "sell_car": "Продать авто",
+    "sell_spars_part": "Продать в разборе",
+    "sell_chenal_car": "Канал продаж авто",
+    "sell_chenal_spare": "Канал разбора авто"
   }
 }

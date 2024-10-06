@@ -117,17 +117,17 @@ id,
     if (isActiveButton) {
       dispatch(ACTION_SET_CONTROLL_BUTTON, {
         isActive: true,
-        name: 'Опубликовать запрос',
+        name: "public_request",
         action: () => {
-          if(data?.edit){
+          if (data?.edit) {
             dispatch(ACTION_APPLY_UPDATE_REQUEST, { ...newValuesUnitSpare });
-          }else{
+          } else {
             dispatch(ACTION_APPLY_AGGREGATE_REQUEST, { ...newValuesUnitSpare });
           }
-          dispatch(ACTION_SET_VALUE_UNIT_SPARE_NULL)
-          return dispatch(ACTION_SET_CONTROLL_BUTTON_NULL)
-        }
-      })
+          dispatch(ACTION_SET_VALUE_UNIT_SPARE_NULL);
+          return dispatch(ACTION_SET_CONTROLL_BUTTON_NULL);
+        },
+      });
     }else{
       dispatch(ACTION_SET_CONTROLL_BUTTON, {
         isActive: false,

@@ -10,15 +10,16 @@ import { useTranslation } from 'react-i18next';
 function MenuSlider({
   list,
   menuRef,
+  foreItem,
   setMenuRef,
   handlerChangeScreen,
 }) {
 
   const {t, i18n} = useTranslation()
-console.log({t: t('s')})
   return (
     <MenuContainer
       setMenuRef={setMenuRef}
+      addClass={foreItem? 'main-menu__fore-items' : ''}
       style={{
         filter: `blur(var(--filter-blur))`,
         gap: '15px'

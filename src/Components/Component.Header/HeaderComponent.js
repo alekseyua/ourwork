@@ -2,14 +2,20 @@ import React, { Component } from 'react'
 import Header from '../../View/Header/Header'
 import WithRouter from '../../HOC/WithRouter'
 import { connectStoreon } from 'storeon/react'
+import LangContainer from '../Lang/LangContainer';
+import { ACTION_SET_BUTTON_HEADER_LANG } from '../../store/helpers/helpers-store';
 
 class HeaderComponent extends Component {
 
   componentDidMount() {
-    this.props.tg.onEvent('viewportChanged', (event) => {
+    this.props.tg.onEvent("viewportChanged", (event) => {
       if (!event.isStateStable) {
-        this.props.tg.expand()
+        this.props.tg.expand();
       }
+    });
+    this.props.dispatch(ACTION_SET_BUTTON_HEADER_LANG, {
+      isVisible: true,
+      Element: LangContainer,
     });
   }
 

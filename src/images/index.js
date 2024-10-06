@@ -8,8 +8,8 @@ import reviewCommon from './icon/review-like-white.svg';
 import reviewActive from "./icon/review-like-active.svg";
 import sellCarCommon from './icon/sell-car-white.svg';
 import sellCarActive from "./icon/sell-car-active.svg";
-
-
+import sellCarsChenal from "./icon/sale-cars-chenal.svg";
+import sellpartsChenal from './icon/maintenance-car.svg'
 
 
 
@@ -119,6 +119,8 @@ export {
   reviewActive,
   sellCarCommon,
   sellCarActive,
+  sellCarsChenal,
+  sellpartsChenal,
 
   loaderRotate,
   filter,

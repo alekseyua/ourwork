@@ -12,8 +12,10 @@ import { USERNAME } from '../../../helpers/config';
 import { reviewSchema } from '../../../helpers/schemaValidations/schemaValidate';
 import { messageErrorValidation } from '../../../helpers/schemaValidations/messgeSchemaValidations';
 import { ACTION_SET_CONTROLL_BUTTON } from '../../../store/helpers/helpers-store';
+import i18n from '../../../lang/i18n';
 
 export default function RaitingAndReviewCreateReview({
+  t,
   dispatch,
   handlerChangeDataValues,
 }) {
@@ -44,18 +46,17 @@ export default function RaitingAndReviewCreateReview({
             !!values?.username &&
               handlerChangeDataValues({ [USERNAME]: values.username });
           };
-          console.log({values})
           return (
             <Form>
               <Offset mt={15} />
-              <Label style={{ fontWeight: 700 }}>Продавец</Label>
+              <Label style={{ fontWeight: 700 }}>{t("seller")}</Label>
               <Offset mt={4} />
               <div>
                 <Input
                   value={values.username}
                   height={48}
                   disabled={getLocaleStore(USERNAME)}
-                  placeholder={"Введите имя пользователя"}
+                  placeholder={t("input_name_user")}
                   distationtop={10}
                   style={{
                     border:
@@ -80,7 +81,7 @@ export default function RaitingAndReviewCreateReview({
               </div>
               <Offset mt={27} />
               <Label style={{ fontWeight: 700, letterSpacing: "0px" }}>
-                Ваша оценка
+                {t("reiting_status")}
               </Label>
               <Offset mt={3} />
 
@@ -99,7 +100,7 @@ export default function RaitingAndReviewCreateReview({
               />
               <Offset mt={16} />
               <Label style={{ fontWeight: 700, letterSpacing: "0px" }}>
-                Напишите отзыв
+                {t("write_review")}
               </Label>
               <Offset mt={7} />
               <div>
@@ -107,7 +108,7 @@ export default function RaitingAndReviewCreateReview({
                   className={"textarea-application"}
                   value={values.text}
                   name={"text"}
-                  placeholder={`Опишите ваше впечатление о продавце. Выделите плюсы или минусы работы`}
+                  placeholder={t("reiting_placeholder")}
                   height={90}
                   id={`textarea-1`}
                   style={{

@@ -8,7 +8,7 @@ import WithTooltip from "../../HOC/WithTooltip";
 
 
 const ButtonApplyStatic = ({
-  icon,
+  t,
   show,
   type,
   title,
@@ -58,7 +58,7 @@ const ButtonApplyStatic = ({
                   onClick={onClick}
                   form={formId}
                 >
-                  {title}
+                  {t(title)}
                   {
                     isFetch ?
                       <Icon

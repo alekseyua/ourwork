@@ -18,6 +18,7 @@ export default function CarSellMenu({
       <MenuSliderContainer>
         <MenuSlider
           list={listMenu} 
+          foreItem
           handlerChangeScreen={handlerChangeScreen} 
         />
       </MenuSliderContainer>

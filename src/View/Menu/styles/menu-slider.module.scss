@@ -1,4 +1,11 @@
 .main-menu{
+  // main-menu__fore-items
+  &__fore-items{
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 415px !important;
+  }
+
   // main-menu__container-wrap{}
   &__container-wrap{
     display: grid;

@@ -31,6 +31,8 @@ import {
   createRequestActive,
   reviewActive,
   sellCarActive,
+  sellCarsChenal,
+  sellpartsChenal,
 } from "../images";
 
 const width = Dimensions.get('window').width;
@@ -51,9 +53,9 @@ export const API_GET_CARS_BRANDS = '/parsing/brands/';
 export const API_GET_CARS_MODELS = '/parsing/models/';
 export const API_GET_CARS_GENEGATIONS = '/parsing/generations/';
 // incomin filters
+export const API_SEARCH_FILTER = '/telegram/api_search_filters_v2/';
 
 export const API_SET_FILTER = '/subscription/filters/';
-export const API_SEARCH_FILTER = '/telegram/api_search_filters_v2/';
 export const API_SEARCH_FILTERS = '/telegram/api_search_filters/';
 export const API_GET_FILTER_BRANDS = '/subscription/filters/get_filters_brands/';
 export const API_GET_FILTER_MODELS = '/subscription/filters/get_filters_models/';
@@ -292,7 +294,7 @@ export const menuFooter = [
     name: "Продать",
     slug: CAR_SALE_MENU,
     id: 10,
-    text: "sell",
+    text: "adv",
     image: {
       active: sellCarActive,
       common: sellCarCommon,
@@ -306,52 +308,74 @@ export const menuFooter = [
 
 export const menuRequests = [
   {
-    "name": "Запрос на агрегат",
-    "slug": MAKE_REQUEST_UNIT,
-    "id": 8,
-    "text": "Запрос \n на агрегат",
-    "image": engine,
-    "type": "Запрос",
-    "url": "",
+    name: "request_for_unit",
+    slug: MAKE_REQUEST_UNIT,
+    id: 8,
+    text: "Запрос \n на агрегат",
+    image: engine,
+    type: "Запрос",
+    url: "",
     isActive: true,
-    isSlider: false
+    isSlider: false,
   },
   {
-    "name": "Запрос на запчасть",
-    "slug": MAKE_REQUEST_SPARE,
-    "id": 9,
-    "text": "Запрос на запчасть",
-    "image": piston,
-    "type": "Запрос",
-    "url": "",
+    name: "request_for_spare",
+    slug: MAKE_REQUEST_SPARE,
+    id: 9,
+    text: "Запрос на запчасть",
+    image: piston,
+    type: "Запрос",
+    url: "",
     isActive: true,
-    isSlider: false
-  }, 
-]
+    isSlider: false,
+  },
+];
 export const menuCarSell = [
   {
-    "name": "Авто в разборе",
-    "slug": CAR_SALE,
-    "id": 8,
-    "text": "Авто \n в разборе",
-    "image": carSpareSell,
-    "type": "sell-spare",
-    "url": "",
+    name: "sell_car",
+    slug: CAR_SALE,
+    id: 8,
+    text: "Авто \n в разборе",
+    image: carSell,
+    type: "sell-spare",
+    url: "",
     isActive: true,
-    isSlider: false
+    isSlider: false,
   },
   {
-    "name": "Продам авто",
-    "slug": 'https://t.me/sell_autoua',
-    "id": 9,
-    "text": "Продам авто",
-    "image": carSell,
-    "type": "sell",
-    "url": "",
+    name: "sell_spars_part",
+    slug: "",
+    id: 11,
+    text: "Авто \n в разборе",
+    image: carSpareSell,
+    type: "sell-spare",
+    url: "",
     isActive: true,
-    isSlider: false
-  }, 
-]
+    isSlider: false,
+  },
+  {
+    name: "sell_chenal_car",
+    slug: "https://t.me/sell_autoua",
+    id: 9,
+    text: "Продам авто",
+    image: sellCarsChenal,
+    type: "sell",
+    url: "",
+    isActive: true,
+    isSlider: false,
+  },
+  {
+    name: "sell_chenal_spare",
+    slug: "https://t.me/sell_razborua",
+    id: 10,
+    text: "Разбор авто",
+    image: sellpartsChenal,
+    type: "sell",
+    url: "",
+    isActive: true,
+    isSlider: false,
+  },
+];
 
 export const menuRaitingAndReview = [
   {

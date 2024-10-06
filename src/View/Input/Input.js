@@ -11,6 +11,7 @@ import useClickOutside from '../../HOC/useClickOutside';
 import Label from '../Label/Label';
 import Offset from '../Offset';
 import PhoneInput from 'react-phone-number-input/input';
+import { useTranslation } from 'react-i18next';
 
 const Input = ({
   id,
@@ -58,7 +59,7 @@ const Input = ({
   ...props
 }) => {
   const [isFocuse, setIsFocuse] = useState(false);
-  
+  const { t } = useTranslation();
   const clickRef = React.useRef();
   useClickInside(clickRef, (e) => {
     onClickInside(e);
@@ -99,7 +100,7 @@ const Input = ({
             ...styleLabel,
           }}
         >
-          {label}
+          {t(label)}
         </Label>
       )}
       {label && <Offset mb={7} />}
@@ -177,8 +178,8 @@ const Input = ({
             }}
             // onBlur={onBlur}
             className={styles["input__input"]}
-            value={value}
-            placeholder={placeholder}
+            value={t(value)}
+            placeholder={t(placeholder)}
             onChange={(e) => {
               try {
                 onChange(e);
@@ -199,7 +200,7 @@ const Input = ({
               data-type={"input"}
               distationtop={distationtop}
               autoFocus={null}
-              placeholder={placeholder ?? "+7 (000) 000-00-00"}
+              placeholder={t(placeholder) ?? "+7 (000) 000-00-00"}
               value={value}
               className={styles["input__input-phone"]}
               onClick={(e) => onClick(e)}
@@ -251,7 +252,7 @@ const Input = ({
               ...stylehelptext,
             }}
           >
-            {helptext}
+            {t(helptext)}
           </div>
         ) : null}
         {isInteractive && listResultInteractiveSearch.length ? (

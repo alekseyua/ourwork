@@ -1,5 +1,5 @@
 import React from "react";
-import { color, compare, delay, funcDelay } from "./const";
+import { compare, delay, funcDelay } from "./const";
 import { checkEmptyDataObject, isAndroid, isIos } from "./utils";
 import { ACTION_CLOSE_MODAL, ACTION_OPEN_MODAL } from "../store/helpers/helpers-store";
 import { ACTION_DISMISS_PHONE_NUMBER } from "../store/access/access";
@@ -95,55 +95,6 @@ export const getWidthScreen = (width) => {
     return width
   }
 }
-
-export const setDataButtonBottonTrigger = ({
-  status = true,
-  text = "RUUUM", // текст кнопки
-  colorText = color.bgc__red, // цвет текста кнопки
-}) => {
-  // const eventHandler = () => {
-  //   document.querySelector(".btn-click").click();
-  //   return () => tg.MainButton.offClick(eventHandler);
-  // };
-
-  // if (status) {
-  //   tg && tg.MainButton.hide();
-  //   tg.MainButton.onClick(eventHandler);
-  //   tg && tg.MainButton.setParams({
-  //     color: color.bgc__black,
-  //     text_color: colorText,
-  //     text: text,
-  //     is_active: false,
-  //     is_visible: false,
-  //   });
-  //   const timerShow = setTimeout(() => {
-  //     tg && tg.MainButton.setParams({
-  //       color: tg.themeParams.button_color,
-  //       text_color: colorText,
-  //       text: text,
-  //       is_active: true,
-  //       is_visible: true,
-  //     });
-  //     return () => clearTimeout(timerShow)
-  //   }, 500)
-  //   return true
-  // } else {
-  //   // if (tg.MainButton ) return;
-  //   const timerShow = setTimeout(() => {
-  //     tg && tg.MainButton.hideProgress();
-  //     tg && tg.MainButton.setParams({
-  //       color: color.bgc__black,
-  //       text_color: colorText,
-  //       text: text,
-  //       is_active: false,
-  //       is_visible: false,
-  //     });
-  //     tg && tg.MainButton.offClick(eventHandler);
-  //     return () => clearTimeout(timerShow)
-  //   }, 500)
-  //   return false
-  // }
-};
 
 
 /**

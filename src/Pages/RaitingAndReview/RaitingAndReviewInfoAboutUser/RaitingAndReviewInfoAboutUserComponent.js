@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
 import RaitingAndReviewInfoAboutUser from './RaitingAndReviewInfoAboutUser'
 import WithRouter from '../../../HOC/WithRouter'
-import { connectStoreon } from 'storeon/react';
-import { cloud } from '../../../images';
-import { getLocaleStore, setLocaleStore } from '../../../helpers/utils';
-import { ID_TELEGRAM_USER, ID_USER_FOR_REVIEW, LAST_PATH_FULL_INFO, REITING_CREATE, REITING_FULL_INFO, USERNAME } from '../../../helpers/config';
-import { ACTION_GET_FULL_INFO_USER, ACTION_GET_REVIEWS_FOR_FULL_INFO_USER } from '../../../store/raiting-review/raiting-review';
-import { ACTION_SET_BUTTON_HEADER_ACTION } from '../../../store/helpers/helpers-store';
+import { ID_TELEGRAM_USER, REITING_FULL_INFO, USERNAME } from '../../../helpers/config';
 import { openOnlyURl } from '../../../helpers/helpers';
+import withTranslationCostom from '../../../HOC/withTranslationCostom';
+import { setLocaleStore } from '../../../helpers/utils';
 
 class RaitingAndReviewInfoAboutUserComponent extends Component {
 
@@ -34,10 +31,13 @@ class RaitingAndReviewInfoAboutUserComponent extends Component {
       <RaitingAndReviewInfoAboutUser
         infoUser={this.props.infoAboutUserReview}
         handlerChangeScreen={this.handlerChangeScreen}
+        t={this.props.t}
       />
     )
   }
 }
 
 
-export default WithRouter(RaitingAndReviewInfoAboutUserComponent)
+export default WithRouter(
+  withTranslationCostom(RaitingAndReviewInfoAboutUserComponent)
+);

@@ -5,12 +5,13 @@ import { connectStoreon } from 'storeon/react';
 import { getLocaleStore, setLocaleStore } from '../../../helpers/utils';
 import { LAST_PATH_SEND_REVIEW, REITING_MENU } from '../../../helpers/config';
 import { ACTION_SET_VALUES_REVIEW, ACTION_SET_VALUES_REVIEW_NULL } from '../../../store/raiting-review/raiting-review';
+import withTranslationCostom from '../../../HOC/withTranslationCostom';
 
 class RaitingAndReviewCreateReviewComponent extends Component {
   componentDidMount() {
     this.props.controllerHeaderBand({
-      currentTextHandlerBand: 'Оставить отзыв',
-      pathBackButton: REITING_MENU//
+      currentTextHandlerBand: "create-review",
+      pathBackButton: REITING_MENU, //
     });
   }
 
@@ -26,6 +27,7 @@ class RaitingAndReviewCreateReviewComponent extends Component {
   render() {
     return (
       <RaitingAndReviewCreateReview
+        t={this.props.t}
         dispatch={this.props.dispatch}
         handlerChangeDataValues={this.handlerChangeDataValues}
       />
@@ -34,6 +36,5 @@ class RaitingAndReviewCreateReviewComponent extends Component {
 }
 
 export default connectStoreon(
-
-  WithRouter(RaitingAndReviewCreateReviewComponent)
-)
+  WithRouter(withTranslationCostom(RaitingAndReviewCreateReviewComponent))
+);

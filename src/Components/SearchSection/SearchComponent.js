@@ -4,34 +4,33 @@ import Input from '../../View/Input/Input';
 import { search, settingRedRotation } from "../../images";
 import WithSearch from "../../HOC/WithSearch";
 import { v4 } from 'uuid';
-import Icon from "../../View/Icon/Icon";
 import IconSvg from "../../View/Icon/IconSvg";
 
 const SearchComponent = ({
-    name,
-    mode,
-    style = {},
-    value,
-    onBlur,
-    onFocus,
-    message,
-    disabled,
-    helptext,
-    styleWrap,
-    isUpblock,
-    isLoading,
-    eventInput,
-    isIconLeft,
-    enteredText = "",
-    placeholder = "Поиск...",
-    setTextSearch,
-    stylehelptext,
-    onClickInside,
-    onClickOutside,
-    isUpblockDesktop,
-    handlerClickOptions=()=>{},
-    styleHelpTextSearch = {},
-    listResultInteractiveSearch = [],
+  name,
+  mode,
+  style = {},
+  value,
+  onBlur,
+  onFocus,
+  message,
+  disabled,
+  helptext,
+  styleWrap,
+  isUpblock,
+  isLoading,
+  eventInput,
+  isIconLeft,
+  enteredText = "",
+  placeholder = "find_dot",
+  setTextSearch,
+  stylehelptext,
+  onClickInside,
+  onClickOutside,
+  isUpblockDesktop,
+  handlerClickOptions = () => {},
+  styleHelpTextSearch = {},
+  listResultInteractiveSearch = [],
 }) => {
   // console.log({ value, enteredText });
   return (

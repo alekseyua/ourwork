@@ -5,6 +5,7 @@ import WithRouter from '../../../HOC/WithRouter';
 import { isAndroid, isIos } from '../../../helpers/utils';
 import { menuCarSell, ROOT } from '../../../helpers/config';
 import { openOnlyURl, openURl } from '../../../helpers/helpers';
+import i18n from '../../../lang/i18n';
 
 class CarSellMenuComponent extends Component {
 
@@ -13,8 +14,8 @@ class CarSellMenuComponent extends Component {
     if(!isAndroid() && !isIos()) document.documentElement.style.setProperty('--hight-scrollbar', '10px')
 
     this.props.controllerHeaderBand({
-      currentTextHandlerBand: 'Продать авто',
-      pathBackButton: () => this.handlerChangeScreen({ path: ROOT })//ROOT,       
+      currentTextHandlerBand: "adv",
+      pathBackButton: () => this.handlerChangeScreen({ path: ROOT }), //ROOT,
     });
   }
 

@@ -1,4 +1,4 @@
-import { getOptions, setDataButtonBottonTrigger } from "./helpers";
+import { getOptions } from "./helpers";
 import { SELF_ID_TELEGRAM, USERNAME } from "./config";
 import { delay, funcDelay, testId } from "./const";
 import { ACTION_SET_CONTROLL_BUTTON } from "../store/helpers/helpers-store";
@@ -42,7 +42,7 @@ export const tgProgressShowOrHide = () => {
     return;
   }
   tg.MainButton.hideProgress();
-  setDataButtonBottonTrigger({ status: false });
+
   return;
 };
 

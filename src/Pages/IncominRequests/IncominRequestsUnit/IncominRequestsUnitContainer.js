@@ -28,8 +28,8 @@ import {
   SET_SEARCH_INTO_INCOMING_FILTERS_NULL,
   ACTION_SET_TOGGLE_CURRENT_TAB_LIST,
 } from "../../../store/filters/filtersIncominRequest";
-import { ACTION_SET_BUTTON_HEADER_ACTION } from "../../../store/helpers/helpers-store";
 import { gotoPointScroll } from "../../../helpers/helpers";
+import withTranslationCostom from "../../../HOC/withTranslationCostom";
 let abortControllerFilter;
 
 class IncominRequestsUnitContainer extends PureComponent {
@@ -41,12 +41,8 @@ class IncominRequestsUnitContainer extends PureComponent {
       "Чтобы выбрать поколение: нажмите на пустое поле модели авто. Заявки от покупателей будут отображаться на главном экране.",
       "Выберите поколение. Выберите категории заявок. Заявки от покупателей будут отображаться на главном экране.",
     ],
-    massagesSelectCard: ["Найдено ", "Найдено моделей", "Найдено поколений"],
-    textSearchFilterTab: [
-      "Выберите марку авто",
-      "Выберите модель",
-      "Выберите поколение",
-    ],
+    massagesSelectCard: ["find_dot", "find_exc", "find_brand"],
+    textSearchFilterTab: ["select_brand", "select_model", "select_generation"],
     toolTipAction: {
       isShow: false,
       id: null,
@@ -84,7 +80,7 @@ class IncominRequestsUnitContainer extends PureComponent {
       setSessionStore("position-2", 0);
     };
     this.props.controllerHeaderBand({
-      currentTextHandlerBand: "Агрегаты и запчасти",
+      currentTextHandlerBand: "units_and_spare_parts",
       pathBackButton: () => this.comebackPrevFilters(-1),
     });
 
@@ -124,7 +120,7 @@ class IncominRequestsUnitContainer extends PureComponent {
       ...state,
       loadCatalog: false,
     }));
-    console.log({position})
+    console.log({ position });
     if (position) return gotoPointScroll(position);
   };
   callbackBrand = (page) => {
@@ -303,7 +299,7 @@ class IncominRequestsUnitContainer extends PureComponent {
           params,
           dispatch: this.props.dispatch,
         });
-        this.callback(position)
+        this.callback(position);
       } else {
         this.props.dispatch(ACTION_GET_LIST_FILTERS_BY_TYPE, params);
       }
@@ -371,7 +367,7 @@ class IncominRequestsUnitContainer extends PureComponent {
       current_tab: this.props.toggleCurrentTabFilters,
     });
 
-  handlerTextSearch = (text, callback) => {
+  handlerTextSearch = (text, {}, callback) => {
     this.props.dispatch(
       ACTION_SET_TOGGLE_CURRENT_TAB_LIST,
       this.state.listTab[this.props.toggleCurrentTabFilters]
@@ -491,5 +487,8 @@ export default connectStoreon(
   "currentPageBrandFilter",
   "textSearchIncominFilter",
   "toggleCurrentTabFilters",
-  WithRouter(IncominRequestsUnitContainer)
+  WithRouter(
+    withTranslationCostom(
+    IncominRequestsUnitContainer
+  ))
 );

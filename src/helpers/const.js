@@ -161,6 +161,7 @@ export const initButtomApply = ({ action, dispatch, pathname, tg }) => {
   dispatch(action, { show: false, typeButton: "static" });
   switch (pathname) {
     case ROOT:
+       setTimeout(() => tg.BackButton.hide(),0);
       break;
     // {/* **********************ФИЛЬТРЫ -> Входящие заявки ****************** */}
     case INCOMING_REQUEST_UNIT_SPARE:
@@ -170,7 +171,7 @@ export const initButtomApply = ({ action, dispatch, pathname, tg }) => {
         typeButton: "fixed",
         show: true,
         addClass: "button__apply--full-red",
-        title: "Применить",
+        title: "apply",
       });
       break;    
     // {/* *****************РЕЙТИНГ И ОТЗЫВЫ*********************** */}
@@ -181,7 +182,7 @@ export const initButtomApply = ({ action, dispatch, pathname, tg }) => {
         typeButton: "static",
         addClass: "button__apply--dark-blue",
         show: true,
-        title: "Оставить отзыв",
+        title: 'create-review'// "Оставить отзыв",
       });
       break;    
     // {/* *****************СОЗДАТЬ ЗАПРОС*********************** */}
@@ -192,7 +193,7 @@ export const initButtomApply = ({ action, dispatch, pathname, tg }) => {
         typeButton: "static",
         addClass: "button__apply--dark-blue",
         show: true,
-        title: "Опубликовать запрос",
+        title: "public_request",
       });
       break;
     case MAKE_REQUEST_SPARE:
@@ -202,7 +203,7 @@ export const initButtomApply = ({ action, dispatch, pathname, tg }) => {
         typeButton: "static",
         addClass: "button__apply--dark-blue",
         show: true,
-        title: "Опубликовать запрос",
+        title: "public_request",
       });
       break;
     // case MAKE_REQUEST_OWN_EDIT_REQUEST:
@@ -223,7 +224,7 @@ export const initButtomApply = ({ action, dispatch, pathname, tg }) => {
         typeButton: "static",
         addClass: "button__apply--dark-blue",
         show: true,
-        title: "Создать",
+        title: "create",
       });
       break;
 
@@ -231,14 +232,6 @@ export const initButtomApply = ({ action, dispatch, pathname, tg }) => {
       break;
   }
 };
-
-export async function controllerHeaderBand({
-  currentTextHandlerBand,
-  pathBackButton,
-  dispatch,
-  navigate,
-  state = {},
-}) {}
 
 export const compare = (v, v2) => {
   const parts1 = String(v).split(".");
@@ -251,14 +244,6 @@ export const compare = (v, v2) => {
   }
 };
 
-export const color = {
-  bgc__blue: "#3b87fb", //- синий
-  bgc__red: "#ff0000", //- красный
-  bgc__green: "#38de57", //- зелёный
-  bgc__yellow: "#fcf96e", //- желтый
-  bgc__white: "#ffffff", //- белый
-  bgc__black: "#c3c3c3", //- белый
-};
 // ввод телефона показуем только с id
 export const statusAgreeShowPhone = 4;
 

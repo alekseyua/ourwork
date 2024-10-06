@@ -16,22 +16,9 @@ class RequestsComponent extends Component {
     if(!isAndroid() && !isIos()) document.documentElement.style.setProperty('--hight-scrollbar', '10px')
 
     this.props.controllerHeaderBand({
-      currentTextHandlerBand: 'СОЗДАТЬ ЗАПРОС',
-      pathBackButton: () => this.handlerChangeScreen({ path: ROOT })//ROOT,       
+      currentTextHandlerBand: "create_request",
+      pathBackButton: () => this.handlerChangeScreen({ path: ROOT }), //ROOT,
     });
-
-    // this.props.dispatch(ACTION_SET_BUTTON_HEADER_ACTION, {
-    //   isVisible: true,
-    //   buttons: [
-    //     {
-    //       action: () => this.handlerChangeScreen({ path: MAKE_REQUEST_OWN_REQUEST }),
-    //       iconLeft: myRequest,
-    //       styleIconsLeft: { height: 12 },
-    //       title: 'Мои запросы',
-    //       className: 'button__orange-white'
-    //     },
-    //   ]
-    // })
   }
 
 
