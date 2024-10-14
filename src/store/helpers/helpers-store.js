@@ -108,12 +108,12 @@ export const helpers = (store) => {
     },
   }));
   store.on(ACTION_OPEN_MODAL, (_, obj) => {
-    document.querySelector("body").setAttribute("style", "overflow:hidden");
+    // document.querySelector("body").setAttribute("style", "overflow:hidden");
     return { modal: { ...obj } };
   });
 
   store.on(ACTION_CLOSE_MODAL, (_, obj) => {
-    document.querySelector("body").setAttribute("style", "overflow:scroll");
+    // document.querySelector("body").setAttribute("style", "overflow:scroll");
     return {
       modal: {
         ...obj,

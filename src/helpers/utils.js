@@ -139,7 +139,7 @@ export const isChangeSizeHeight = (callback) => {
 };
 
 function funcIsUpBlock(elem, widthFormInput, topFormInput) {
-  document.querySelector("body").style.setProperty("overflow", "hidden");
+  // document.querySelector("body").style.setProperty("overflow", "hidden");
   document.querySelector("input").style.setProperty("pointer-events", `all`);
 
   document.documentElement.style.setProperty("--z-index-wrap", `-1`);
@@ -231,11 +231,11 @@ export const autoFocusFormInput = async (
     if (isUpblock) {
       funcIsUpBlock(elem, widthFormInput, topFormInput);
     } else {
-      funcDelay(
-        () =>
-          document.querySelector("body").style.setProperty("overflow", "auto"),
-        500
-      );
+      // funcDelay(
+      //   () =>
+      //     document.querySelector("body").style.setProperty("overflow", "auto"),
+      //   500
+      // );
     }
   } else {
     if (isUpblockDesktop) {
@@ -251,7 +251,7 @@ export const removeFocusFormInput = (
   isUpblockDesktop = false
 ) => {
   // console.log('remove focus form Input')
-  document.querySelector("body").style.setProperty("overflow", "auto");
+  // document.querySelector("body").style.setProperty("overflow", "auto");
   document.documentElement.style.setProperty("--pointer-events", `all`);
   document.documentElement.style.setProperty(
     "--grid-template-coltumn-search-favorie",

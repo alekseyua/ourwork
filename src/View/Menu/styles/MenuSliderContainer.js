@@ -17,11 +17,11 @@ export default class MenuSliderContainer extends Component {
   }
  
   handlerMouseMove = event => {
-    document.querySelector('body').style.setProperty('overflow', 'hidden')
+    // document.querySelector("body").style.setProperty('overflow', 'hidden')
   }
   handlerMouseOut = (event) => {
     event.stopPropagation()
-    document.querySelector('body').style.setProperty('overflow', 'auto')
+    // document.querySelector("body").style.setProperty('overflow', 'auto')
   }
   
   handlerScroll = (event) => {

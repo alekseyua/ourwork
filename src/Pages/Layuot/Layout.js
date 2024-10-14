@@ -8,7 +8,7 @@ import { useStoreon } from "storeon/react";
 import Icon from "../../View/Icon/Icon";
 
 import { funcDelay, redirectPages } from "../../helpers/const";
-import { checkAccess, getLocaleStore, isAuth, isElectron, isLinux } from "../../helpers/utils";
+import { checkAccess, getLocaleStore, isAuth, isElectron, isIos, isLinux } from "../../helpers/utils";
 import WithRouter from "../../HOC/WithRouter";
 import { menuFooter} from "../../helpers/config";
 import Offset from "../../View/Offset";
@@ -262,7 +262,7 @@ const Layout = ({
               idPage={idPage}
               listMenuFooter={checkAccess(menuFooter, access)}
               handlerChangeScreen={handlerChangeScreen}
-              // style={{ bottom: 0 }}
+              style={{ height: isIos()? 70 : 50, padding: isIos()? '0 15px 15px' : 0 }}
               isFavorite={!!favoriteMPCards?.count}
               statusLoadingData={controllButton.isFetch}
             />

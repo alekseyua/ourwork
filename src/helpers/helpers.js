@@ -782,10 +782,10 @@ export const openURl = (url, text, dispatch, hideIcon = false) => {
 
 export const goToUp = () => {
   
-  document.querySelector("body").style.setProperty("overflow", "hidden");
+  // document.querySelector("body").style.setProperty("overflow", "hidden");
   document.querySelector(".goto") &&
   document.querySelector(".goto")?.scrollIntoView({ block: "start", behavior: "smooth" });
-  funcDelay(()=>document.querySelector('body').style.setProperty('overflow', 'auto'),300)
+  // funcDelay(()=>document.querySelector("body").style.setProperty('overflow', 'auto'),300)
 }
 
 export const smoothTop = (ms = 350) =>funcDelay(goToUp(),ms);
