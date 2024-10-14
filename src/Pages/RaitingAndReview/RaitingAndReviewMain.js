@@ -6,6 +6,8 @@ import WrapRootContainer from "../../View/WrapContainer/WrapRootContainer";
 import RaitingAndReviewInfoAboutUserComponent from "./RaitingAndReviewInfoAboutUser/RaitingAndReviewInfoAboutUserComponent";
 import Button from "../../View/Button/Button";
 import { REITING_CREATE } from "../../helpers/config";
+import CardReviewOwn from "../../View/Cards/Detail/review/CardReviewOwn";
+import WrapContainer from "../../View/WrapContainer/WrapContainer";
 
 export default function RaitingAndReviewMain({
   t,
@@ -14,7 +16,7 @@ export default function RaitingAndReviewMain({
   handlerTextSearch,
   infoAboutUserReview,
 }) {
-
+  console.log({infoAboutUserReview})
   return (
     <WrapRootContainer>
       <Offset mt={17} />
@@ -35,22 +37,44 @@ export default function RaitingAndReviewMain({
       </div>
       <Offset mb={20} />
       {Object.keys(infoAboutUserReview).length ? (
-          <RaitingAndReviewInfoAboutUserComponent
-            infoAboutUserReview={infoAboutUserReview}
-          />
+        <RaitingAndReviewInfoAboutUserComponent
+          infoAboutUserReview={infoAboutUserReview}
+        />
       ) : null}
-      {
-      infoAboutUserReview?.username?
-      <Button
-        full
-        onClick={() => handlerClick(infoAboutUserReview.username)}
-        href={REITING_CREATE}
-        addClass={"button__apply--dark-blue"}
-      >
-        {t("create-review")}
-      </Button>
-      :null
-      }
+      {infoAboutUserReview?.username ? (
+        <Button
+          full
+          onClick={() => handlerClick(infoAboutUserReview.username)}
+          href={REITING_CREATE}
+          addClass={"button__apply--dark-blue"}
+        >
+          {t("create-review")}
+        </Button>
+      ) : null}
+      { infoAboutUserReview?.feedbacks?.length &&
+        infoAboutUserReview.feedbacks.map((f) => {
+          return <WrapContainer
+              style={{
+                marginBottom: 14,
+              }}
+              key={"Own-card-" + f.id}
+            >
+              <CardReviewOwn
+                // own={own}
+                item={f}
+                index={f.id}
+                // isLeftReview={isLeftReview}
+                // statusInputForm={statusInputForm}
+                // textMyFeedbackStore={textMyFeedbackStore}
+                // handlerChangeScreen={handlerChangeScreen}
+                // handlerDeleteReview={handlerDeleteReview}
+                // handlerChangeFeedback={handlerChangeFeedback}
+                // handlerChangeDataValues={handlerChangeDataValues}
+              />
+              {/* <FeedbackMyReview /> */}
+            </WrapContainer>
+          // <div key={f.id}>{f.text}</div>;
+        })}
     </WrapRootContainer>
   );
 }

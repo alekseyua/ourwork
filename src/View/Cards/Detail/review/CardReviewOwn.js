@@ -23,13 +23,13 @@ export default function CardReviewOwn({
 }) {
   return (
     <WrapContainerBlockBorder
-      onClick={() => handlerChangeScreen({ url: item?.author_link })}
+      onClick={() => handlerChangeScreen({ url: item?.author_url })}
     >
       <CardInfoBlock>
         <Offset mb={6} />
 
         <CardInfoBlockWrapDesc>
-          <CardInfo style={{ textAlign: "start" }}>{item.author}</CardInfo>
+          <CardInfo style={{ textAlign: "start" }}>{item.author_name}</CardInfo>
           {isLeftReview ? (
             // <Link to={item.user_data.user_url}>{
             <CardInfo style={{ textAlign: "start" }}>
@@ -51,7 +51,7 @@ export default function CardReviewOwn({
                 <RaitingContainer
                   max={5}
                   gap={4}
-                  value={item?.rating_int}
+                  value={item?.rating}
                   sizeStarHeight={15}
                   sizeStarWidth={15}
                   reverse
