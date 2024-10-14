@@ -35,11 +35,11 @@ window.onerror = (message, source, lineno, colno) => {
 root.render(
   <ErrorHandler>
     <StoreContext.Provider value={store} >
-      <Scroll>
+      {/* <Scroll> */}
         <RouterProvider 
           router={router} 
           />
-      </Scroll>
+      {/* </Scroll> */}
     </StoreContext.Provider>
   </ErrorHandler>
 );

@@ -244,13 +244,11 @@ const Layout = ({
               </View>
             </View>
           </Modal>
-          {!isAuth() && (
             <HeaderComponent
               isBlur={isBlur}
               handlerChangeScreen={handlerChangeScreen}
             />
-          )}
-          <main className={!isAuth() ? "main-context" : ""}>
+          <main className={"main-context"}>
  
             <span className="goto"></span>
             <React.Suspense fallback="loading...">
@@ -264,7 +262,7 @@ const Layout = ({
               idPage={idPage}
               listMenuFooter={checkAccess(menuFooter, access)}
               handlerChangeScreen={handlerChangeScreen}
-              style={{ bottom: `${isLinux() && isElectron() ? 0 : 0}px` }}
+              // style={{ bottom: 0 }}
               isFavorite={!!favoriteMPCards?.count}
               statusLoadingData={controllButton.isFetch}
             />

@@ -54,6 +54,12 @@ body {
 
 
 .react-select{
+  // react-select__control
+  &__control{
+    background-color: var(--bg-block) !important;
+    filter: blur(var(--filter-blur));
+  }
+
 // react-select__control--menu-is-open
   &__control--menu-is-open{
     border-color: var(--border-color) !important;

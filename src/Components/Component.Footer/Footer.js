@@ -25,7 +25,6 @@ const Footer = ({
         className={styles["footer__menu-wrap--bottom"]}
         style={{
           ...style,
-          filter: isBlur ? "blur(5px)" : "blur(0px)",
         }}
       >
         {listMenuFooter.length ? (
