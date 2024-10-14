@@ -6,7 +6,7 @@ import Offset from '../../../View/Offset';
 import TextArea from '../../../View/TextArea/TextArea';
 import WithWrapContainer from '../../../HOC/WithWrapContainer';
 import { addFile} from '../../../images';
-import FormUploadImageV2 from '../../../View/UploadImage/FormUploadImageV2';
+import FormUploadImage from '../../../View/UploadImage/FormUploadImage';
 import { messageErrorValidation } from '../../../helpers/schemaValidations/messgeSchemaValidations';
 import { aggrigateSchema } from '../../../helpers/schemaValidations/schemaValidate';
 import WrapContainerPreloader from '../../../View/Preloaders/WrapContainerPreloader';
@@ -354,7 +354,7 @@ const UnitSpareRequest = ({
                 />
               </div>
               <Offset mt={2} />
-              <FormUploadImageV2
+              <FormUploadImage
                 multiple
                 src={addFile}
                 listImages={dataCurrentRequest?.images ?? values.image ?? []}

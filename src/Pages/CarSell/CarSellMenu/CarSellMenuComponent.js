@@ -10,8 +10,6 @@ import i18n from '../../../lang/i18n';
 class CarSellMenuComponent extends Component {
 
   componentDidMount() {
-    
-    if(!isAndroid() && !isIos()) document.documentElement.style.setProperty('--hight-scrollbar', '10px')
 
     this.props.controllerHeaderBand({
       currentTextHandlerBand: "adv",

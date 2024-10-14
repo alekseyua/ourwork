@@ -9,13 +9,24 @@ import FormUploadImage from "../../../View/UploadImage/FormUploadImage";
 import { ACTION_SET_CONTROLL_BUTTON } from "../../../store/helpers/helpers-store";
 import restrictionLengthText from "../../../helpers/helpers";
 
-const CarSell = ({ dispatch, handlerChangeDataValues }) => {
+const SellCarForSpareRequest = ({
+  dispatch,
+  handlerChangeDataValues,
+  dataRequst,
+}) => {
   return (
     <WrapContainer>
       <Formik
         initialValues={{
+          optionsBrand: dataRequst,
+          optionsModel: [],
+          optionsGeneration: [],
+          brand_id: "",
+          model_id: "",
+          generation_id: "",
           text: "",
           image: null,
+          phone_number: null,
         }}
       >
         {({
@@ -83,59 +94,8 @@ const CarSell = ({ dispatch, handlerChangeDataValues }) => {
           );
         }}
       </Formik>
-        <Offset mt={15} />
+      <Offset mt={15} />
     </WrapContainer>
   );
 };
-export default WithWrapContainer(CarSell);
-
-        // <WrapContainerBlock
-        //   style={{
-        //     // backgroundColor: "#fde9e9",
-        //     fontWeight: 600,
-        //     padding: "20px 0 40px",
-        //     position: "absolute",
-        //     bottom: -150,
-        //   }}
-        // >
-        //   {/* <Label style={{ fontWeight: 700 }}>Посетить группу</Label> */}
-        //   <Offset mt={40} />
-        //   <LinkGoTo
-        //     position={"left"}
-        //     url={"https://t.me/avtobayer"}
-        //     fontSize={12}
-        //     // color={link.color}
-        //     style={{
-        //       alignItems: "center",
-        //       fontWeight: 600,
-        //       backgroundColor: "var(--background-color-button-red)",
-        //       color: "var(--text-color-white)",
-        //       zIndex: 11,
-        //       position: "relative",
-        //       width: "100%",
-        //       minHeight: 46,
-        //       justifyContent: "center",
-        //       borderRadius: 12
-        //     }}
-        //   >
-        //     {/* <Icon
-        //      src={cell_car}
-        //       width={15}
-        //       height={15}
-        //       mr={5}
-        //       style={{ top: -2 }}
-        //     /> */}
-        //     {"Посетить группу"}
-        //   </LinkGoTo>
-        //   {/* <div
-        //     style={{
-        //       backgroundColor: "#fde9e9",
-        //       position: "absolute",
-        //       width: "1000%",
-        //       height: "100%",
-        //       left: "-20%",
-        //       zIndex: -1,
-        //       top: 0,
-        //     }}
-        //   ></div> */}
-        // </WrapContainerBlock>
+export default WithWrapContainer(SellCarForSpareRequest);

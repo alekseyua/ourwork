@@ -9,7 +9,6 @@ import Label from "../Label/Label";
 import Offset from "../Offset";
 import useClickInside from "../../HOC/useClickInside";
 import useClickOutside from "../../HOC/useClickOutside";
-import { ACTION_SET_CONTROLL_BUTTON } from "../../store/helpers/helpers-store";
 
 /**
  * @param {placeholder,

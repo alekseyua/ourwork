@@ -12,12 +12,14 @@ import { REITING_FULL_INFO,MAKE_REQUEST_MENU, MAKE_REQUEST_OWN_REQUEST,
         CAR_SALE,
         MAKE_REQUEST_OWN_EDIT_REQUEST,
         CAR_SALE_MENU,
-        MAKE_REQUEST_SPARE} from "../helpers/config";
+        MAKE_REQUEST_SPARE,
+        CAR_SALE_SPARE} from "../helpers/config";
 import ErrorHandler from "../Pages/ErrorHandler/ErrorHandler";
 import CarSellComponent from "../Pages/CarSell/SpareRequest/CarSellComponent";
 import BackgroundPreloader from "../View/Preloaders/BackgroundPreloader";
 import OwnRequestEditComponent from "../Pages/Requests/OwnRequestEdit/OwnRequestEditComponent";
 import CarSellMenuComponent from "../Pages/CarSell/CarSellMenu/CarSellMenuComponent";
+import SellCarForSpareRequestComponent from "../Pages/CarSell/SellCarForSpareRequest/SellCarForSpareRequestComponent";
 
 const Layout = React.lazy(() => import("../Pages/Layuot/Layout"));
 const Main = React.lazy(() => import("../Pages/Main/MainComponent"));
@@ -52,6 +54,8 @@ export const router = createBrowserRouter(
                         {/* *****************продажа авто*********************** */}
                         <Route path={CAR_SALE_MENU} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><CarSellMenuComponent /></ErrorHandler></Suspense>} /> //продажа авто
                         <Route path={CAR_SALE} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><CarSellComponent /></ErrorHandler></Suspense>} /> //продажа авто
+                        <Route path={CAR_SALE_SPARE} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><SellCarForSpareRequestComponent /></ErrorHandler></Suspense>} /> //НАПИСАТЬ ОТЗЫВ  - нет ключа info +
+
                    
                         {/* *****************РЕЙТИНГ И ОТЗЫВЫ*********************** */}
                         <Route path={REITING_MENU} element={<Suspense fallback={<BackgroundPreloader />}><ErrorHandler><RaitingAndReviewMainComponent /></ErrorHandler></Suspense>} /> //РЕЙТИНГ И ОТЗЫВЫ  +

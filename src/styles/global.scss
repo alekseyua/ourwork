@@ -76,7 +76,7 @@ body {
   scrollbar-width: none;
   overflow-y: scroll;
   height: calc(100vh - 120px);
-  
+
   &::-webkit-scrollbar {
     display: none;
   }
@@ -120,14 +120,12 @@ body {
   margin-top: 0;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  // overflow: var(--header-overflow);
   margin-bottom: -25px;
   width: 100%;
   position: fixed;
   z-index: 9999;
   flex: 1;
   min-height: 55px;
-  overflow: hidden;
   height: 60px;
 
   &::-webkit-scrollbar {

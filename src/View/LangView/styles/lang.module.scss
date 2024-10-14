@@ -35,6 +35,7 @@ display: flex;
     justify-content: flex-end;
         &>div{
             max-width: 55px;
+            transform: rotate(90deg);
             &>div {
             border-radius: 7px;
         }

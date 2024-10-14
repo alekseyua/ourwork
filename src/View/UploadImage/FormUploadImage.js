@@ -21,7 +21,7 @@ import { isAndroid } from '../../helpers/utils';
  * *} param0 
  * @returns 
  */
-const FormUploadImageV2 = ({
+const FormUploadImage = ({
   type = "*",
   // type = ".png, .jpg, .jpeg",
   style = {},
@@ -105,7 +105,7 @@ const FormUploadImageV2 = ({
                 }}
               >
                 <Icon
-                 src={image}
+                  src={image}
                   width={18}
                   height={18}
                   style={{
@@ -127,16 +127,18 @@ const FormUploadImageV2 = ({
               </label>
             ) : (
               <label className={styles["upload-image__form-label"]}>
-                <Icon
-                 src={image}
-                  width={25}
-                  height={25}
-                  invert={0}
-                  ml={5}
-                  // className={styleIcon}
-                  className={styles["upload-image__form-icon"]}
-                  style
-                />
+                {image && 
+                  <Icon
+                    src={image}
+                    width={25}
+                    height={25}
+                    invert={0}
+                    ml={5}
+                    // className={styleIcon}
+                    className={styles["upload-image__form-icon"]}
+                    style
+                  />                
+                }
                 {title}
               </label>
             )}
@@ -156,16 +158,22 @@ const FormUploadImageV2 = ({
                 let newFiles = [];
                 if (files.length) {
                   for (const file of files) {
-                    console.log({file: file.size})
+                    console.log({ file: file.size });
                     if (maxSizeImage && file.size > maxSizeImage) {
                       // alert(
                       //     `Привышен лимит размера файла, в файле ${file.name} размер ${file.size}b, допустимый максимальный размер ${maxSizeImage}b`)
-                      console.log({maxSizeImage})
+                      console.log({ maxSizeImage });
                       tg.initDataUnsafe?.query_id &&
                         tg.showAlert(
-                          `Привышен лимит размера файла, в файле ${file.name} размер ${(file.size / 1024)?.toFixed(2)}kb, допустимый максимальный размер ${maxSizeImage / 1024}kb`
-                        );                      
-                    }else{
+                          `Привышен лимит размера файла, в файле ${
+                            file.name
+                          } размер ${(file.size / 1024)?.toFixed(
+                            2
+                          )}kb, допустимый максимальный размер ${
+                            maxSizeImage / 1024
+                          }kb`
+                        );
+                    } else {
                       newFiles = [
                         ...newFiles,
                         {
@@ -179,8 +187,7 @@ const FormUploadImageV2 = ({
                       ];
                     }
                   }
-                  function messageLimitAddFiles(maxCountImage){
-
+                  function messageLimitAddFiles(maxCountImage) {
                     tg.initDataUnsafe?.query_id &&
                       tg.showAlert(
                         `Привышен лимит добавления файлов, максимальное количество ${maxCountImage}`
@@ -189,17 +196,20 @@ const FormUploadImageV2 = ({
                   const maxCountFile = newFiles.length;
                   if (maxCountFile > maxCountImage - preview.length) {
                     messageLimitAddFiles(maxCountImage);
-                    newFiles = newFiles.slice(0, maxCountImage-preview.length);
+                    newFiles = newFiles.slice(
+                      0,
+                      maxCountImage - preview.length
+                    );
                   }
-                  
+
                   if (preview.length >= maxCountImage) {
                     messageLimitAddFiles(maxCountImage);
                     return;
                   }
-                    heandlerAddFilesToPreview({
-                      key: uploadTypeName,
-                      files: newFiles,
-                    });
+                  heandlerAddFilesToPreview({
+                    key: uploadTypeName,
+                    files: newFiles,
+                  });
                   setFieldValue(uploadTypeName, newFiles);
                   callback({
                     key: uploadTypeName,
@@ -228,4 +238,4 @@ const FormUploadImageV2 = ({
   );
 };
 
-export default WithPreviewImages(FormUploadImageV2);
+export default WithPreviewImages(FormUploadImage);

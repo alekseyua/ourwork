@@ -17,7 +17,7 @@
     "apply": "Применить",
     "spare": "Запчасти",
     "unit": "Агрегаты",
-
+    "sell_car_for_spare": "Разместить авто на запчасти",
     "create_request": "Создать запрос",
     "request_for_unit": "Запрос на агрегат",
     "request_for_spare": "Запрос на запчасть",

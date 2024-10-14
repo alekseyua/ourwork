@@ -9,7 +9,68 @@ export const SET_DATA_CAR_SALE = 'setDataCarSale';
 export const SET_DATA_CAR_SALE_NULL = 'setDataCarSaleNull';
 export const SEND_DATA_CAR_SALE = 'sendDataCarSale';
 
+export const SET_DATA_CAR_SALE_SPARE = 'setDataCarSaleSpare';
+export const SET_DATA_CAR_SALE_NULL_SPARE = 'setDataCarSaleNullSpare';
+export const SEND_DATA_CAR_SALE_SPARE = 'sendDataCarSaleSpare';
+
 export const carSale = store => {
+    const initDataCarSaleSpare = {
+      brand_id: "",
+      model_id: "",
+      generation_id: "",
+      text: "",
+      image: [],
+      phone_number: null,
+    };
+    store.on(_INIT, () => ({ dataCarSaleSpare: initDataCarSaleSpare }));
+    store.on(SET_DATA_CAR_SALE_NULL, (_, data) => ({dataCarSaleSpare: initDataCarSaleSpare}))
+    store.on(SET_DATA_CAR_SALE, ({ dataCarSaleSpare }, data, { dispatch }) => {
+      let newValues = {
+        ...dataCarSaleSpare,
+        ...data,
+      };
+      const isActiveButton = activeButtonBootomForConfirm(
+        { ...newValues },
+        "sell-car"
+      );
+      if (isActiveButton) {
+        dispatch(ACTION_SET_CONTROLL_BUTTON, {
+          isActive: true,
+          name: "Создать",
+          action: () => {
+            dispatch(SEND_DATA_CAR_SALE, { ...newValues });
+            dispatch(SET_DATA_CAR_SALE_NULL);
+            return dispatch(ACTION_SET_CONTROLL_BUTTON_NULL);
+          },
+        });
+      } else {
+        dispatch(ACTION_SET_CONTROLL_BUTTON, {
+          isActive: false,
+        });
+      }
+      return { dataCarSaleSpare: { ...newValues } };
+    });
+    store.on(SEND_DATA_CAR_SALE, ({ dataCarSaleSpare }, data, { dispatch }) => {
+      const params = {
+        url: CREATE_CAR_SALE,
+        dataRequst: (res) => {
+          const isWarning = handlerWarningInfoMessageResponse(res, dispatch);
+          if (isWarning) return;
+          if (typeof data?.callback === "function") data.callback();
+          dispatch(ACTION_OPEN_MODAL, {
+            show: res?.info?.status,
+            content: res?.info?.message,
+            contentBtn: "Ок",
+            error: !res?.info?.status,
+            path: ROOT,
+            icon: docSuccess,
+          });
+        },
+        ...dataCarSaleSpare,
+      };
+      return dispatch(ACTION_POST, params);
+    });
+    // ---------------------------------------------------------------------------------
     const initDataCarSale = {
         text: '',
         image: [],

@@ -115,6 +115,8 @@ export const activeButtonBootomForConfirm = (
     switch (action) {
       case "sell-car":
         return values.text && values.image.length;
+      case "sell-car-spare":
+        return values.text && values.image.length;
       case "edit-card":
         console.log({ values });
         return (

@@ -84,7 +84,7 @@ export default function IncominRequestsUnit({
 
       {/* ============================================== */}
       {/* <Offset mt={-4} /> */}
-      <div>
+      {/* <div>
         <SearchComponent
           placeholder={textSearchFilterTab[currentTab]}
           enteredText={textInputSearch} // текущий текст
@@ -92,7 +92,7 @@ export default function IncominRequestsUnit({
           actionDisptchGetSearch={SET_TEXT_SEARCH_INCOMING_FILTERS_TEXT} // где хроним текст
         />
       </div>
-      <Offset mt={10} />
+      <Offset mt={10} /> */}
 
       {
         listCardsFilter?.count ? (

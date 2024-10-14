@@ -178,6 +178,7 @@ export const PROFILE_INFO = '/info-work-bot';
 
 // sale car  
 export const CAR_SALE = '/create-car-sale';
+export const CAR_SALE_SPARE = '/create-car-sale-spare';
 export const CAR_SALE_MENU = '/create-car-sale-menu';
 
 // Chain motors
@@ -330,6 +331,7 @@ export const menuRequests = [
     isSlider: false,
   },
 ];
+
 export const menuCarSell = [
   {
     name: "sell_car",
@@ -344,7 +346,7 @@ export const menuCarSell = [
   },
   {
     name: "sell_spars_part",
-    slug: "",
+    slug: REITING_CREATE,
     id: 11,
     text: "Авто \n в разборе",
     image: carSpareSell,
