@@ -8,7 +8,6 @@ import Line from "../../../Line/Line";
 import Offset from "../../../Offset";
 import RaitingContainer from "../../../Raiting/RaitingContainer";
 import FeedbackMyReview from "./FeedbackMyReview";
-import { Link } from "react-router-dom";
 
 export default function CardReviewOwn({
   item,

@@ -249,6 +249,7 @@ const UnitSpareRequest = ({
                       color: "var(--text-color-red)",
                     }}
                     onChange={({ value }) => {
+                      if (!values.brand_id) return;
                       const type = "generation";
                       setFieldValue("model_id", value);
                       setFieldValue("generation_id", "");

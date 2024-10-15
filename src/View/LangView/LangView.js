@@ -11,7 +11,6 @@ const Control = ({ children, ...props }) => (
 
 
 const LangView = ({ langList, handlerLang }) => {
-console.log({...langList})
   return (
     <div className={styles["lang__lang-container"]}>
       { langList.filter((el) => el.isActive)[0] &&

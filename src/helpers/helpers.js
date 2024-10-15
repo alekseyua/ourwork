@@ -116,9 +116,13 @@ export const activeButtonBootomForConfirm = (
       case "sell-car":
         return values.text && values.image.length;
       case "sell-car-spare":
-        return values.text && values.image.length;
+        return !!(
+          values.text &&
+          values?.brand_id &&
+          values?.model_id &&
+          values?.generation_id 
+        );
       case "edit-card":
-        console.log({ values });
         return (
           !checkEmptyDataObject(values) &&
           typeof values.city_id === "number" &&
@@ -165,22 +169,8 @@ export const activeButtonBootomForConfirm = (
         return values.value;
       case "review":
         return !!(values.text && !!values.rating && values.username);
-      case "anketa-reg":
-        return (
-          values.name ||
-          values.add_info ||
-          values.organization ||
-          values.city ||
-          !!values.phone
-        );
-      case "anketa":
-        return values.name && values.city;
-      case "deleteApplication":
-        return !!values.length;
       case "search":
         return values.generation_id && values.brand_id && values.model_id;
-      case "payment":
-        return !!(values.access && values.bank && values.period);
       case "text":
         return !!values.text;
       case "unit_spare":
@@ -209,15 +199,6 @@ export const activeButtonBootomForConfirm = (
           values?.image?.length ||
           values?.delete_request_images?.length;
         return status_edit_spare;
-
-      case "edit_truck":
-        return (
-          !!values?.text?.length ||
-          values?.image?.length ||
-          values?.delete_request_images?.length
-        );
-      case "edit_transport":
-        return !!values?.text?.length;
       default:
         return false;
     }
@@ -882,7 +863,6 @@ export function unicIteemsJoinArrays(arr1,arr2){
 
 
 export const getListOption = (data) => {
-  console.log({data})
   if (!Array.isArray(data)) return [{
     value: '',
     label: '',

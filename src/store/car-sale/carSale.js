@@ -1,4 +1,4 @@
-import { CREATE_CAR_SALE, ROOT } from "../../helpers/config";
+import { CAR_SALE_MENU, CREATE_CAR_SALE, CREATE_CAR_SALE_SPARE, ROOT } from "../../helpers/config";
 import { activeButtonBootomForConfirm, handlerWarningInfoMessageResponse } from "../../helpers/helpers";
 import { docSuccess } from "../../images";
 import { ACTION_POST, _INIT } from "../api-store/getpage"
@@ -23,23 +23,23 @@ export const carSale = store => {
       phone_number: null,
     };
     store.on(_INIT, () => ({ dataCarSaleSpare: initDataCarSaleSpare }));
-    store.on(SET_DATA_CAR_SALE_NULL, (_, data) => ({dataCarSaleSpare: initDataCarSaleSpare}))
-    store.on(SET_DATA_CAR_SALE, ({ dataCarSaleSpare }, data, { dispatch }) => {
+    store.on(SET_DATA_CAR_SALE_NULL_SPARE, (_, data) => ({dataCarSaleSpare: initDataCarSaleSpare}))
+    store.on(SET_DATA_CAR_SALE_SPARE, ({ dataCarSaleSpare }, data, { dispatch }) => {
       let newValues = {
         ...dataCarSaleSpare,
         ...data,
       };
       const isActiveButton = activeButtonBootomForConfirm(
         { ...newValues },
-        "sell-car"
+        "sell-car-spare"
       );
       if (isActiveButton) {
         dispatch(ACTION_SET_CONTROLL_BUTTON, {
           isActive: true,
           name: "Создать",
           action: () => {
-            dispatch(SEND_DATA_CAR_SALE, { ...newValues });
-            dispatch(SET_DATA_CAR_SALE_NULL);
+            dispatch(SEND_DATA_CAR_SALE_SPARE, { ...newValues });
+            dispatch(SET_DATA_CAR_SALE_NULL_SPARE);
             return dispatch(ACTION_SET_CONTROLL_BUTTON_NULL);
           },
         });
@@ -50,9 +50,9 @@ export const carSale = store => {
       }
       return { dataCarSaleSpare: { ...newValues } };
     });
-    store.on(SEND_DATA_CAR_SALE, ({ dataCarSaleSpare }, data, { dispatch }) => {
+    store.on(SEND_DATA_CAR_SALE_SPARE, ({ dataCarSaleSpare }, data, { dispatch }) => {
       const params = {
-        url: CREATE_CAR_SALE,
+        url: CREATE_CAR_SALE_SPARE,
         dataRequst: (res) => {
           const isWarning = handlerWarningInfoMessageResponse(res, dispatch);
           if (isWarning) return;
@@ -62,7 +62,7 @@ export const carSale = store => {
             content: res?.info?.message,
             contentBtn: "Ок",
             error: !res?.info?.status,
-            path: ROOT,
+            path: CAR_SALE_MENU,
             icon: docSuccess,
           });
         },
@@ -111,11 +111,11 @@ export const carSale = store => {
                 dispatch(ACTION_OPEN_MODAL, {
                   show: res?.info?.status,
                   content: res?.info?.message,
-                  contentBtn: 'Ок',
+                  contentBtn: "Ок",
                   error: !res?.info?.status,
-                  path: ROOT,
-                  icon: docSuccess
-                })
+                  path: CAR_SALE_MENU,
+                  icon: docSuccess,
+                });
         
               },
             ...dataCarSale,

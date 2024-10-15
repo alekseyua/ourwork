@@ -35,6 +35,7 @@ import {
   CAR_SALE,
   MAKE_REQUEST_OWN_EDIT_REQUEST,
   CHAIN_MOTORS,
+  CAR_SALE_SPARE,
 } from "./config";
 import ViewsImage from "../View/ViewsImage";
 import { ACTION_OPEN_MODAL } from "../store/helpers/helpers-store";
@@ -161,7 +162,7 @@ export const initButtomApply = ({ action, dispatch, pathname, tg }) => {
   dispatch(action, { show: false, typeButton: "static" });
   switch (pathname) {
     case ROOT:
-       setTimeout(() => tg.BackButton.hide(),0);
+      setTimeout(() => tg.BackButton.hide(), 0);
       break;
     // {/* **********************ФИЛЬТРЫ -> Входящие заявки ****************** */}
     case INCOMING_REQUEST_UNIT_SPARE:
@@ -173,7 +174,7 @@ export const initButtomApply = ({ action, dispatch, pathname, tg }) => {
         addClass: "button__apply--full-red",
         title: "apply",
       });
-      break;    
+      break;
     // {/* *****************РЕЙТИНГ И ОТЗЫВЫ*********************** */}
     case REITING_CREATE:
       dispatch(action, {
@@ -182,9 +183,9 @@ export const initButtomApply = ({ action, dispatch, pathname, tg }) => {
         typeButton: "static",
         addClass: "button__apply--dark-blue",
         show: true,
-        title: 'create-review'// "Оставить отзыв",
+        title: "create-review", // "Оставить отзыв",
       });
-      break;    
+      break;
     // {/* *****************СОЗДАТЬ ЗАПРОС*********************** */}
     case MAKE_REQUEST_UNIT:
       dispatch(action, {
@@ -216,7 +217,7 @@ export const initButtomApply = ({ action, dispatch, pathname, tg }) => {
     //     title: "Редактировать запрос",
     //   });
     //   break;
-        /* *****************продажа авто*********************** */
+    /* *****************продажа авто*********************** */
     case CAR_SALE:
       dispatch(action, {
         isActive: false,
@@ -227,8 +228,18 @@ export const initButtomApply = ({ action, dispatch, pathname, tg }) => {
         title: "create",
       });
       break;
+    case CAR_SALE_SPARE:
+      dispatch(action, {
+        isActive: false,
+        isFetch: false,
+        typeButton: "static",
+        addClass: "button__apply--dark-blue",
+        show: true,
+        title: "create",
+      });
+      break;
 
-    default:     
+    default:
       break;
   }
 };

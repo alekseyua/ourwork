@@ -62,6 +62,7 @@ id,
   });
 
   store.on(ACTION_GET_NEW_LIST_DATA, (_, data, { dispatch }) => {
+    console.log('get list')
     let url = '';
     switch (data.type) {
       case 'brand':

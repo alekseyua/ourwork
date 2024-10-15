@@ -22,6 +22,8 @@ import {
   API_GET_USER_FEEDBACK_RECIEVE,
   API_GET_USER_FEEDBACK_LEFT,
   API_DELETE_USER_FEEDBACK_LEFT,
+  LASTURL,
+  PREVURL,
 } from "../../helpers/config";
 import {
   getLocaleStore,
@@ -186,7 +188,7 @@ export const raitingReview = (store) => {
         action: () => {
           dispatch(ACTION_CREATE_RAITING, {
             ...newValuesStore,
-            path: getLocaleStore(LAST_PATH_SEND_REVIEW),
+            path: getLocaleStore(PREVURL),
           });
         },
       });

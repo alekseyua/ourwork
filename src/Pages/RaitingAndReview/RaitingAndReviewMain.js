@@ -16,7 +16,6 @@ export default function RaitingAndReviewMain({
   handlerTextSearch,
   infoAboutUserReview,
 }) {
-  console.log({infoAboutUserReview})
   return (
     <WrapRootContainer>
       <Offset mt={17} />

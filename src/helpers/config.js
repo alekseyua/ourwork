@@ -106,7 +106,8 @@ export const API_GET_PAYMENT_URL = '/telegram/api_get_pay_url/';
 export const API_CHANGE_PROFILE = '/telegram/api_edit_profile/';
 export const API_UNSUBSCRIBE_AUTO_PAYMENT = '/telegram/api_cancel_user_auto_payment/';
 // sale car  
-export const CREATE_CAR_SALE = "/parsing/sale/"; // old request sell auto
+export const CREATE_CAR_SALE = "/parsing/sale/"; 
+export const CREATE_CAR_SALE_SPARE = "/parsing/parsing/"; 
 
 export const rateRestriction = 50000000; // ограничения файлва ссылки по загрузке 50mb
 export const marginSides = 10;
@@ -346,7 +347,7 @@ export const menuCarSell = [
   },
   {
     name: "sell_spars_part",
-    slug: REITING_CREATE,
+    slug: CAR_SALE_SPARE,
     id: 11,
     text: "Авто \n в разборе",
     image: carSpareSell,
