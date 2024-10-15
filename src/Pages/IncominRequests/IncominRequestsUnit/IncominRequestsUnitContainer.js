@@ -8,6 +8,7 @@ import {
   DEFAULT_PAGE_SIZE_INCOMING_REQUEST,
   INCOMING_REQUEST_INFO_SETTING,
   INCOMING_REQUEST_MENU,
+  ROOT,
 } from "../../../helpers/config";
 import {
   getListPagination,
@@ -232,7 +233,7 @@ class IncominRequestsUnitContainer extends PureComponent {
       this.props.dispatch(SET_SEARCH_INTO_INCOMING_FILTERS_NULL);
       // проверяем если текущая вкладка 1, то выходим в меню
       if (action === -1 && currentTab === 0) {
-        this.props.navigate(INCOMING_REQUEST_MENU);
+        this.props.navigate(ROOT);
         this.setState((state) => ({
           ...state,
           renderCount: state.renderCount + 1,
