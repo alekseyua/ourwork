@@ -1,13 +1,10 @@
 import React, { PureComponent } from "react";
 import { connectStoreon } from "storeon/react";
 import WithRouter from "../../../HOC/WithRouter";
-import { help } from "../../../images";
 import IncominRequestsUnit from "./IncominRequestsUnit";
 import {
   API_SEARCH_FILTER,
   DEFAULT_PAGE_SIZE_INCOMING_REQUEST,
-  INCOMING_REQUEST_INFO_SETTING,
-  INCOMING_REQUEST_MENU,
   ROOT,
 } from "../../../helpers/config";
 import {

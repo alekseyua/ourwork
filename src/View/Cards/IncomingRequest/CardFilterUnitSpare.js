@@ -31,6 +31,19 @@ export default function CardFilterUnitSpare({
           gridTemplate: "revert",
           padding: "12px 14px 14px",
         }}
+        onClick={() => {
+          console.log({type})
+          if (type === "generations") return;
+          const id = type === "respair" ? card.id_list : card.id;
+          let params = {
+            type,
+            id,
+            image_card: card?.image,
+            name_card: card.name,
+          };
+
+          handlerChangeScreen(params);
+        }}
       >
         <WrapTwoColumnGrid
           style={{
@@ -142,7 +155,7 @@ export default function CardFilterUnitSpare({
               id={`check-${card.id}`}
             />
           </TooltipComponent>
-          {+card.id !== 0 && type !== "generations" ? (
+          {/* {+card.id !== 0 && type !== "generations" ? (
             <TooltipComponent
               onClick={() =>
                 !card?.can_click &&
@@ -201,7 +214,7 @@ export default function CardFilterUnitSpare({
                 </MenuItemIconContainer>
               </Button>
             </TooltipComponent>
-          ) : null}
+          ) : null} */}
         </WrapTwoColumnGrid>
       </WrapContainerBlockBorder>
       <Offset mb={15} />
