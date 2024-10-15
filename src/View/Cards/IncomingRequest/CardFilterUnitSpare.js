@@ -22,7 +22,6 @@ export default function CardFilterUnitSpare({
   statusLoadingData,
 }) {
   if (!card) return;
-  console.log({ card });
   return (
     <>
       <WrapContainerBlockBorder
@@ -33,7 +32,10 @@ export default function CardFilterUnitSpare({
         }}
         onClick={() => {
           console.log({type})
+
           if (type === "generations") return;
+          if(!card?.can_click) return;
+          
           const id = type === "respair" ? card.id_list : card.id;
           let params = {
             type,
