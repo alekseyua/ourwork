@@ -3,10 +3,12 @@
     &__menu-bottom-title{
         color: var(--color-icon-bottom);
         font-size: 12px;
-
+        font-weight: 900;
+        
         // footer__menu-bottom-title--active
         &--active{
             color: var(--color-icon-bottom-active);
+            font-weight: 900;
         }
     }
 

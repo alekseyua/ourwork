@@ -20,6 +20,7 @@ export default function CardFilterUnitSpare({
   handlerSelectItemFilter,
   loadCatalog,
   statusLoadingData,
+  handlerModalCanClick,
 }) {
   if (!card) return;
   return (
@@ -31,11 +32,11 @@ export default function CardFilterUnitSpare({
           padding: "12px 14px 14px",
         }}
         onClick={() => {
-          console.log({type})
+          console.log({ type });
 
           if (type === "generations") return;
-          if(!card?.can_click) return;
-          
+          if (!card?.can_click) return handlerModalCanClick();
+
           const id = type === "respair" ? card.id_list : card.id;
           let params = {
             type,

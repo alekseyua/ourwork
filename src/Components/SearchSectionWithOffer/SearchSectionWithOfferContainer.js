@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import SearchComponent from "../SearchSection/SearchComponent";
 import { connectStoreon } from "storeon/react";
 import { checkCurrentCityInListCitys } from "../../helpers/helpers";
-import { ACTION_SET_TEXT_SEARCH_INTERACTIVE } from "../../store/helpers/helpers-store";
+import { ACTION_OPEN_MODAL, ACTION_SET_TEXT_SEARCH_INTERACTIVE } from "../../store/helpers/helpers-store";
 
 class SearchSectionWithOfferContainer extends Component {
   state = {
@@ -167,6 +167,7 @@ class SearchSectionWithOfferContainer extends Component {
       helpText: "",
     }));
   };
+
   render() {
     return (
       <div>

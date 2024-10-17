@@ -28,6 +28,7 @@ import {
 } from "../../../store/filters/filtersIncominRequest";
 import { gotoPointScroll } from "../../../helpers/helpers";
 import withTranslationCostom from "../../../HOC/withTranslationCostom";
+import { ACTION_OPEN_MODAL } from "../../../store/helpers/helpers-store";
 let abortControllerFilter;
 
 class IncominRequestsUnitContainer extends PureComponent {
@@ -70,7 +71,8 @@ class IncominRequestsUnitContainer extends PureComponent {
   };
 
   componentDidMount() {
-    window.addEventListener("scroll", this.downloadForscrolling);
+
+    document.querySelector('.main-context').addEventListener("scroll", this.downloadForscrolling);
 
     window.onbeforeunload = () => {
       setSessionStore("position-0", 0);
@@ -220,7 +222,9 @@ class IncominRequestsUnitContainer extends PureComponent {
     this.props.dispatch(ACTION_SET_CURRENT_PAGE_FILTER, 1);
     this.props.dispatch(ACTION_SET_PREV_PAGE_FILTER, 0);
     this.props.dispatch(ACTION_SET_VALUE_INTO_LIST_CARDS_SELECTS_FILTER_NULL);
-    window.removeEventListener("scroll", this.downloadForscrolling);
+    document
+      .querySelector(".main-context")
+      .removeEventListener("scroll", this.downloadForscrolling);
   }
 
   comebackPrevFilters = (action) => {
@@ -441,11 +445,21 @@ class IncominRequestsUnitContainer extends PureComponent {
     }, 15000);
   };
 
+
+  handlerModalCanClick = () => {
+    console.log('click')
+    this.props.dispatch(ACTION_OPEN_MODAL, {
+      show: true,
+      content: "Select all value",
+      contentBtn: "Ок",
+    });
+  } 
   render() {
     // console.log("this.props.controllButton = ", this.props.controllButton);
     return (
       <IncominRequestsUnit
-        message={this.state.massages}
+      message={this.state.massages}
+      handlerModalCanClick={this.handlerModalCanClick}
         listTab={this.state.listTab}
         currentTab={this.props.toggleCurrentTabFilters}
         listCardsFilter={

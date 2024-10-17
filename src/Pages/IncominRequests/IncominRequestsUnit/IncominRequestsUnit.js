@@ -5,6 +5,9 @@ import WrapContainerPreloader from "../../../View/Preloaders/WrapContainerPreloa
 import Preloader from "../../../View/Preloaders/Preloader";
 import CardFilterListContainer from "../../../Components/Component.IncominRequest/CardFilterList";
 import CardFilterSelect from "../../../View/Cards/IncomingRequest/CardFilterSelect";
+import { SET_TEXT_SEARCH_INCOMING_FILTERS_TEXT } from "../../../store/filters/filtersIncominRequest";
+// import SearchComponent from "../SearchSection/SearchComponent";
+import SearchComponent from '../../../Components/SearchSection/SearchComponent'
 
 export default function IncominRequestsUnit({
   message,
@@ -27,6 +30,7 @@ export default function IncominRequestsUnit({
   comebackPrevFilters,
   handlerChangeScreen,
   handlerSelectItemFilter,
+  handlerModalCanClick,
 }) {
   return (
     <WrapContainer>
@@ -89,23 +93,22 @@ export default function IncominRequestsUnit({
       </div>
       <Offset mt={10} /> */}
 
-      {
-        listCardsFilter?.count ? (
-          <CardFilterListContainer
-            type={listTab[currentTab]}
-            listCards={listCardsFilter?.results}
-            toolTipAction={toolTipAction}
-            loadCatalog={loadCatalog}
-            statusLoadingData={statusLoadingData}
-            // typePage={typePage}
-            selectFilters={selectFilters}
-            isLoadingItem={isLoadingItem}
-            handlerShowTooltip={handlerShowTooltip}
-            handlerSelectItemFilter={handlerSelectItemFilter}
-            handlerChangeScreen={handlerChangeScreen}
-          />
-        ) : null
-      }
+      {listCardsFilter?.count ? (
+        <CardFilterListContainer
+          handlerModalCanClick={handlerModalCanClick}
+          type={listTab[currentTab]}
+          listCards={listCardsFilter?.results}
+          toolTipAction={toolTipAction}
+          loadCatalog={loadCatalog}
+          statusLoadingData={statusLoadingData}
+          // typePage={typePage}
+          selectFilters={selectFilters}
+          isLoadingItem={isLoadingItem}
+          handlerShowTooltip={handlerShowTooltip}
+          handlerSelectItemFilter={handlerSelectItemFilter}
+          handlerChangeScreen={handlerChangeScreen}
+        />
+      ) : null}
       <Offset mb={20} />
       {loadCatalog && (
         <WrapContainerPreloader>
