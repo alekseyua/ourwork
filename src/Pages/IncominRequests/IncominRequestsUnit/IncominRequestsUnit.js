@@ -37,7 +37,7 @@ export default function IncominRequestsUnit({
       <Offset mt={15} />
       {/* <InfoBlockContainer message={message[currentTab]} />
       <Offset mt={9} /> */}
-      {resSelectCard[currentTab] && resSelectCard[currentTab]?.count ? (
+      {/* {resSelectCard[currentTab] && resSelectCard[currentTab]?.count ? (
         <>
           <CardFilterSelect
             massagesSelectCard={massagesSelectCard[currentTab]}
@@ -45,7 +45,7 @@ export default function IncominRequestsUnit({
           />
           <Offset mt={30} />
         </>
-      ) : null}
+      ) : null} */}
       {/* ============================================== */}
 
       {/* <WrapTwoColumnGrid

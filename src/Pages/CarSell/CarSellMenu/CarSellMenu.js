@@ -3,7 +3,7 @@ import WrapContainerPreloader from '../../../View/Preloaders/WrapContainerPreloa
 import Preloader from '../../../View/Preloaders/Preloader';
 import WrapContainer from '../../../View/WrapContainer/WrapContainer';
 import Offset from '../../../View/Offset';
-import MenuSliderContainer from '../../../View/Menu/styles/MenuSliderContainer';
+import MenuSliderContainer from '../../../View/Menu/MenuSliderContainer';
 import MenuSlider from '../../../View/Menu/MenuSlider';
 
 

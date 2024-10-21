@@ -31,29 +31,34 @@
     &:not(:last-child){
       gap: 12px;
     }    
-
-    &::-webkit-scrollbar {
-      // display: none;
-       display: block;
-
-      // height: var(--hight-scrollbar);
-      box-shadow: inset 0 0 6px rgb(0 0 0 / 30%);
-      border-radius: 10px;
-      width: 5px;
-      height: 3px;
-      background-color: #aaa; 
-    }
     
-    &::-webkit-scrollbar-button {
-        // background: var(--background-color-opacity-50);
+    &::-webkit-scrollbar {
+      display: none;
     }
 
-    &::-webkit-scrollbar-track-piece {
-        background-color: #fff;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background: var(--text-color); 
+    // main-menu__container--scroll
+    &--scroll{
+      &::-webkit-scrollbar {
+         display: block;
+        box-shadow: inset 0 0 6px rgb(0 0 0 / 30%);
+        border-radius: 10px;
+        width: 5px;
+        height: 7px;
+        background-color: #aaa; 
+      }
+      
+      &::-webkit-scrollbar-button {
+          // background: var(--background-color-opacity-50);
+      }
+  
+      &::-webkit-scrollbar-track-piece {
+          background-color: #fff;
+      }
+  
+      &::-webkit-scrollbar-thumb {
+          background: var(--text-color); 
+      }
+      
     }
   }
 

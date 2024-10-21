@@ -15,7 +15,7 @@ function MenuSlider({
   handlerChangeScreen,
 }) {
 
-  const {t, i18n} = useTranslation()
+  const {t} = useTranslation()
   return (
     <MenuContainer
       setMenuRef={setMenuRef}

@@ -2,7 +2,7 @@ import React from 'react';
 import WithWrapContainer from '../../HOC/WithWrapContainer';
 import Offset from '../../View/Offset';
 import Banner from '../../View/Banner/Banner.js';
-import MenuSliderContainer from '../../View/Menu/styles/MenuSliderContainer';
+import MenuSliderContainer from '../../View/Menu/MenuSliderContainer.js';
 import MenuSlider from '../../View/Menu/MenuSlider';
 import WrapRootContainer from '../../View/WrapContainer/WrapRootContainer';
 

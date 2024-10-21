@@ -1,5 +1,5 @@
 import React, { Component, createRef, useRef } from 'react'
-import { isAndroid, isIos } from '../../../helpers/utils';
+import { isAndroid, isIos } from '../../helpers/utils';
 
 export default class MenuSliderContainer extends Component {
   constructor(props){
@@ -17,11 +17,17 @@ export default class MenuSliderContainer extends Component {
   }
  
   handlerMouseMove = event => {
-    // document.querySelector("body").style.setProperty('overflow', 'hidden')
+    if (!isAndroid() && !isIos())
+      document
+        .querySelector(".main-context")
+        .style.setProperty("overflow", "hidden");
   }
   handlerMouseOut = (event) => {
     event.stopPropagation()
-    // document.querySelector("body").style.setProperty('overflow', 'auto')
+    if (!isAndroid() && !isIos())
+      document
+        .querySelector(".main-context")
+        .style.setProperty("overflow", "auto");
   }
   
   handlerScroll = (event) => {
