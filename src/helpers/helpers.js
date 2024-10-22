@@ -630,7 +630,7 @@ export const handlerSharePhone = (response, dispatch) => {
     dispatch(ACTION_OPEN_MODAL, {
       show: status_phone_popup?.show_phone_popup,
       content: status_phone_popup?.text_phone_popup,
-      contentBtn: "Подтвердить",
+      contentBtn: "apply_action",
       contentCancelBtn: "Больше не показывать",
       hideIcon: true,
       actionClickOk: () => {
@@ -682,12 +682,12 @@ export const goToNavigate = (url, text, dispatch, navigate) => {
   }
   dispatch(ACTION_OPEN_MODAL, {
     show: true,
-    content: text ?? 'Это важно',
-    contentBtn: 'Ок',
+    content: text ?? "Это важно",
+    contentBtn: "Ок",
     actionClickOk: (e) => callback(e, url),
-    contentCancelBtn: 'Отмена',
+    contentCancelBtn: "calncel",
     error: false,
-  })
+  });
 }
 
 export const openModalShareAuthData = (dispatch) => {
@@ -706,25 +706,14 @@ export const openModalShareAuthData = (dispatch) => {
             show: true,
             content: `На данный момент эта функция поддерживается с версии "6.9", у Вас ${tg.version}. Зайдите в ruuum бота(старая версия), нажмите /start и оставьте свой номер телефона`,
             contentBtn: "Оставить через бота",
-            actionClickOk: (e) => window.open("https://t.me/zaprosovbot"),
-            contentCancelBtn: "Отмена",
+            actionClickOk: (e) => alert('where redirect?'),
+            contentCancelBtn: "calncel",
             actionCancelOk: (e) => dispatch(ACTION_CLOSE_MODAL),
             error: false,
           });
           return () => clearTimeout(timer)
         }, 100)
       }
-    // }
-  // }
-  // message &&
-  // dispatch(ACTION_OPEN_MODAL, {
-  //   show: true,
-  //   content: message,
-  //   contentBtn: 'Ок',
-  //   actionClickOk: (e) => callback(e),
-  //   contentCancelBtn: 'Отмена',
-  //   error: false,
-  // })
 }
 
 export const openOnlyURl = (link, status = true, isClose = false, time = 500) => {
@@ -755,12 +744,12 @@ export const openURl = (url, text, dispatch, hideIcon = false) => {
   dispatch(ACTION_OPEN_MODAL, {
     show: true,
     content: text,
-    contentBtn: 'Ок',
+    contentBtn: "Ок",
     actionClickOk: (e) => callback(e, url),
-    contentCancelBtn: 'Отмена',
+    contentCancelBtn: "calncel",
     error: false,
-    hideIcon: hideIcon
-  })
+    hideIcon: hideIcon,
+  });
 }
 
 export const goToUp = () => {

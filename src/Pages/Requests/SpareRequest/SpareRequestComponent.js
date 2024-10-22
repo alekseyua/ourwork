@@ -21,7 +21,7 @@ class SpareRequestComponent extends Component {
     this.props.dispatch(ACTION_GET_LIST_BRANDS);
 
     this.props.controllerHeaderBand({
-      currentTextHandlerBand: "Запрос на запчасть",
+      currentTextHandlerBand: "request.request_spare",
       pathBackButton: () =>
         this.handlerChangeScreen({ path: MAKE_REQUEST_MENU }),
     });

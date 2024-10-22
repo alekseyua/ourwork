@@ -27,7 +27,7 @@ class UnitRequestComponent extends Component {
   componentDidMount() {
     this.props.dispatch(ACTION_GET_LIST_BRANDS, {page_size:99999});
     this.props.controllerHeaderBand({
-      currentTextHandlerBand: "Запрос на агрегат",
+      currentTextHandlerBand: "request.request_unit",
       pathBackButton: () =>
         this.handlerChangeScreen({ path: MAKE_REQUEST_MENU }),
     });

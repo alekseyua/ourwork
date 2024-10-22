@@ -50,11 +50,13 @@ const SellCarForSpareRequest = ({
             return (
               <Form>
                 <Offset mt={15} />
-                <Label style={{ fontWeight: 700 }}>Марка авто</Label>
+                <Label style={{ fontWeight: 700 }}>
+                  {"sell_car.label_brand_car"}
+                </Label>
                 <Offset mt={10} />
                 <OptionSelect
                   data={values.optionsBrand}
-                  placeholder={"Выберите марку авто"}
+                  placeholder={"sell_car.placeholder_brand_car"}
                   enabled={true}
                   name={"brand_id"}
                   onBlur={handleBlur}
@@ -84,7 +86,9 @@ const SellCarForSpareRequest = ({
                 />
                 <React.Fragment>
                   <Offset mt={16} />
-                  <Label style={{ fontWeight: 700 }}>Модель авто</Label>
+                  <Label style={{ fontWeight: 700 }}>
+                    {"sell_car.label_model_car"}
+                  </Label>
                   <Offset mt={8} />
                   <TooltipComponent
                     onClick={(e) =>
@@ -105,7 +109,7 @@ const SellCarForSpareRequest = ({
                     <OptionSelect
                       data={values.optionsModel}
                       enabled={!!values.brand_id}
-                      placeholder={"Выберите модель авто"}
+                      placeholder={"sell_car.placeholder_model_car"}
                       name={"model_id"}
                       helptext={touched?.model_id && errors?.model_id}
                       // clearValue={setTimeout(()=>true,1000)}
@@ -143,7 +147,9 @@ const SellCarForSpareRequest = ({
                 <React.Fragment>
                   <Offset mt={18} />
 
-                  <Label style={{ fontWeight: 700 }}>Год выпуска авто</Label>
+                  <Label style={{ fontWeight: 700 }}>
+                    {"sell_car.label_generation_car"}
+                  </Label>
                   <Offset mt={8} />
                   <TooltipComponent
                     onClick={(e) =>
@@ -166,7 +172,7 @@ const SellCarForSpareRequest = ({
                       data={values.optionsGeneration}
                       enabled={!!values.model_id}
                       clearValue={!values.generation_id}
-                      placeholder={"Выберите год выпуска авто"}
+                      placeholder={"sell_car.placeholder_generation_car"}
                       name={"generation_id"}
                       helptext={touched?.generation_id && errors?.generation_id}
                       stylehelptext={{
@@ -186,13 +192,15 @@ const SellCarForSpareRequest = ({
                   </TooltipComponent>
                 </React.Fragment>
                 <Offset mt={15} />
-                <Label style={{ fontWeight: 700 }}>Текст объявления</Label>
+                <Label style={{ fontWeight: 700 }}>
+                  {"sell_car.label_adv"}
+                </Label>
                 <Offset mt={10} />
                 <div>
                   <TextArea
                     className={"textarea-application"}
                     value={values.text}
-                    placeholder={`Опишите объявление`}
+                    placeholder={"sell_car.placeholder_adv"}
                     height={90}
                     distationtop={290}
                     id={`textarea-1`}

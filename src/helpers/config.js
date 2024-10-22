@@ -335,7 +335,7 @@ export const menuRequests = [
 
 export const menuCarSell = [
   {
-    name: "sell_car",
+    name: "sell_car.sell_car_title",
     slug: CAR_SALE,
     id: 8,
     text: "Авто \n в разборе",
@@ -346,7 +346,7 @@ export const menuCarSell = [
     isSlider: false,
   },
   {
-    name: "sell_spars_part",
+    name: "sell_car.sell_spars_part",
     slug: CAR_SALE_SPARE,
     id: 11,
     text: "Авто \n в разборе",
@@ -357,7 +357,7 @@ export const menuCarSell = [
     isSlider: false,
   },
   {
-    name: "sell_chenal_car",
+    name: "sell_car.sell_chenal_car",
     slug: "https://t.me/sell_autoua",
     id: 9,
     text: "Продам авто",
@@ -368,7 +368,7 @@ export const menuCarSell = [
     isSlider: false,
   },
   {
-    name: "sell_chenal_spare",
+    name: "sell_car.sell_chenal_spare",
     slug: "https://t.me/sell_razborua",
     id: 10,
     text: "Разбор авто",

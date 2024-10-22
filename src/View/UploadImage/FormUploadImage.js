@@ -9,6 +9,7 @@ import ShowPreviewImages from './Detail/ShowPreviewImages';
 import WithPreviewImages from '../../HOC/WithPreviewImages';
 import { v4 as uuidV4 } from 'uuid';
 import { isAndroid } from '../../helpers/utils';
+import { useTranslation } from 'react-i18next';
 
 /**
  * image - setFieldValue('image', files);
@@ -26,7 +27,7 @@ const FormUploadImage = ({
   // type = ".png, .jpg, .jpeg",
   style = {},
   label,
-  title = "Прикрепить изображение",
+  title = "upload_files.label_title",
   image,
   values,
   disabled,
@@ -52,8 +53,8 @@ const FormUploadImage = ({
   handlerShowTooltip,
   heandlerAddFilesToPreview,
 }) => {
-  const { tg, dispatch } = useStoreon("tg");
-
+  const { tg } = useStoreon("tg");
+  const { t } = useTranslation();
   return (
     <div
       className={classNames({
@@ -122,12 +123,12 @@ const FormUploadImage = ({
                     ...styleTitle,
                   }}
                 >
-                  {title}
+                  {t(title)}
                 </span>
               </label>
             ) : (
               <label className={styles["upload-image__form-label"]}>
-                {image && 
+                {image && (
                   <Icon
                     src={image}
                     width={25}
@@ -137,9 +138,9 @@ const FormUploadImage = ({
                     // className={styleIcon}
                     className={styles["upload-image__form-icon"]}
                     style
-                  />                
-                }
-                {title}
+                  />
+                )}
+                {t(title)}
               </label>
             )}
 
@@ -165,11 +166,9 @@ const FormUploadImage = ({
                       console.log({ maxSizeImage });
                       tg.initDataUnsafe?.query_id &&
                         tg.showAlert(
-                          `Привышен лимит размера файла, в файле ${
-                            file.name
-                          } размер ${(file.size / 1024)?.toFixed(
-                            2
-                          )}kb, допустимый максимальный размер ${
+                          `${t("upload_files.max_size")} ${file.name} ${t("upload_files.size")} ${(
+                            file.size / 1024
+                          )?.toFixed(2)}kb, ${t("upload_files.availiable_max_size")} ${
                             maxSizeImage / 1024
                           }kb`
                         );
@@ -190,8 +189,11 @@ const FormUploadImage = ({
                   function messageLimitAddFiles(maxCountImage) {
                     tg.initDataUnsafe?.query_id &&
                       tg.showAlert(
-                        `Привышен лимит добавления файлов, максимальное количество ${maxCountImage}`
+                        `${t("upload_files.max_limit_size")} ${maxCountImage}`
                       );
+                      // alert(
+                      //   `${t("upload_files.max_limit_size")} ${maxCountImage}`
+                      // );
                   }
                   const maxCountFile = newFiles.length;
                   if (maxCountFile > maxCountImage - preview.length) {

@@ -446,11 +446,18 @@ class IncominRequestsUnitContainer extends PureComponent {
   };
 
 
-  handlerModalCanClick = () => {
-    console.log('click')
+  handlerModalCanClick = (type) => {
+    console.log('click', type)
+    let text_message = ''
+    if(type === 'models'){
+      text_message = "modal_message.filters_select_model";
+    }
+    if(type === 'brands'){
+      text_message = "modal_message.filters_select_brand";
+    }
     this.props.dispatch(ACTION_OPEN_MODAL, {
       show: true,
-      content: "Select all value",
+      content: text_message,
       contentBtn: "Ок",
     });
   } 

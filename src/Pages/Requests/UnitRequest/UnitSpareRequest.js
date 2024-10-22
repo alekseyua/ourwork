@@ -1,7 +1,6 @@
 import { Form, Formik } from 'formik';
 import WrapContainer from '../../../View/WrapContainer/WrapContainer';
 import Label from '../../../View/Label/Label';
-import NativeSelect from '../../../View/Select/NativeSelect/NativeSelect';
 import Offset from '../../../View/Offset';
 import TextArea from '../../../View/TextArea/TextArea';
 import WithWrapContainer from '../../../HOC/WithWrapContainer';
@@ -96,7 +95,6 @@ const UnitSpareRequest = ({
           return (
             <Form data-type="wrap-input">
               <Offset mt={15} />
-              {/* <Label style={{ fontWeight: 700 }}>Что вы ищете</Label> */}
               <div
                 style={{
                   padding: 0,
@@ -108,9 +106,9 @@ const UnitSpareRequest = ({
                   <TextArea
                     className={"textarea-application"}
                     value={values.text}
-                    placeholder={`Опишите ваш запрос.\nВ тексте укажите город`}
+                    placeholder={"request.placeholder_discribe_request"}
                     height={90}
-                    label={"Что вы ищете"}
+                    label={"request.what_you_find"}
                     // isUpblockDesktop={true}
                     isUpblock={true}
                     topFormInput={73}
@@ -163,7 +161,7 @@ const UnitSpareRequest = ({
                     value={values.oem}
                     isUpblockDesktop={true}
                     isUpblock={true}
-                    placeholder={"Введите OEM или VIN"}
+                    placeholder={"request.placeholder_oem"}
                     name={"oem"}
                     height={50}
                     label={"OEM\\VIN"}
@@ -185,11 +183,11 @@ const UnitSpareRequest = ({
                 </FormInputContainer>
               </div>
               <Offset mt={10} />
-              <Label style={{ fontWeight: 700 }}>Марка авто</Label>
+              <Label style={{ fontWeight: 700 }}>{"Марка авто"}</Label>
               <Offset mt={10} />
               <OptionSelect
                 data={values.optionsBrand}
-                placeholder={"Выберите марку авто"}
+                placeholder={"request.placeholder_brand_car"}
                 enabled={true}
                 name={"brand_id"}
                 onBlur={handleBlur}
@@ -219,7 +217,7 @@ const UnitSpareRequest = ({
               />
               <React.Fragment>
                 <Offset mt={16} />
-                <Label style={{ fontWeight: 700 }}>Модель авто</Label>
+                <Label style={{ fontWeight: 700 }}>{"Модель авто"}</Label>
                 <Offset mt={8} />
                 <TooltipComponent
                   onClick={(e) =>
@@ -240,7 +238,7 @@ const UnitSpareRequest = ({
                   <OptionSelect
                     data={values.optionsModel}
                     enabled={!!values.brand_id}
-                    placeholder={"Выберите модель авто"}
+                    placeholder={"request.placeholder_model_car"}
                     name={"model_id"}
                     helptext={touched?.model_id && errors?.model_id}
                     // clearValue={setTimeout(()=>true,1000)}
@@ -278,7 +276,9 @@ const UnitSpareRequest = ({
               <React.Fragment>
                 <Offset mt={18} />
 
-                <Label style={{ fontWeight: 700 }}>Год выпуска авто</Label>
+                <Label style={{ fontWeight: 700 }}>
+                  {"request.label_generation_car"}
+                </Label>
                 <Offset mt={8} />
                 <TooltipComponent
                   onClick={(e) =>
@@ -301,7 +301,7 @@ const UnitSpareRequest = ({
                     data={values.optionsGeneration}
                     enabled={!!values.model_id}
                     clearValue={!values.generation_id}
-                    placeholder={"Выберите год выпуска авто"}
+                    placeholder={"request.placeholder_generation_car"}
                     name={"generation_id"}
                     helptext={touched?.generation_id && errors?.generation_id}
                     stylehelptext={{
@@ -322,7 +322,7 @@ const UnitSpareRequest = ({
               </React.Fragment>
 
               <Offset mt={15} />
-              <Label style={{ fontWeight: 700 }}>Телефон</Label>
+              <Label style={{ fontWeight: 700 }}>{"request.label_phone"}</Label>
               <div>
                 <SearchSectionWithOfferContainer
                   data={getOptionsListPhone(listPhons) ?? []}

@@ -1,5 +1,7 @@
 {
   "translation": {
+    "cancel": "Отмена",
+    "apply_action": "Подтвердить",
     "filters": "Фильтры",
     "user": "Пользователь",
     "find_dot": "Поиск...",
@@ -17,7 +19,6 @@
     "apply": "Применить",
     "spare": "Запчасти",
     "unit": "Агрегаты",
-    "sell_car_for_spare": "Разместить авто на запчасти",
     "create_request": "Создать запрос",
     "request_for_unit": "Запрос на агрегат",
     "request_for_spare": "Запрос на запчасть",
@@ -32,9 +33,46 @@
     "adv": "Объявления",
     "seller": "Продавец",
     "create-review": "Оставить отзыв",
-    "sell_car": "Продать авто",
-    "sell_spars_part": "Продать в разборе",
-    "sell_chenal_car": "Канал продаж авто",
-    "sell_chenal_spare": "Канал разбора авто"
+    "sell_car":{
+      "sell_car_title": "Продать авто",
+      "sell_spars_part": "Продать в разборе",
+      "sell_chenal_car": "Канал продаж авто",
+      "sell_chenal_spare": "Канал разбора авто",
+      "label_adv": "Текст объявления",
+      "placeholder_adv": "Опишите объявление",
+      "sell_car_for_spare": "Разместить авто на запчасти",
+      "sell_car_for_sell": "Разместить авто на продажу",
+      "label_brand_car": "Марка авто",
+      "label_model_car": "Модель авто",
+      "label_generation_car": "Год выпуска авто",
+      "placeholder_brand_car": "Выберите марку авто",
+      "placeholder_model_car": "Выберите модель авто",
+      "placeholder_generation_car": "Выберите год выпуска авто"
+    },
+    "request": {
+      "request_unit":"Запрос на агрегат",
+      "request_spare":"Запрос на запчасть",
+      "what_you_find": "Что вы ищете",
+      "label_brand_car": "Марка авто",
+      "label_model_car": "Модель авто",
+      "label_generation_car": "Год выпуска авто",
+      "label_phone": "Телефон",
+      "placeholder_discribe_request":"Опишите ваш запрос.\nВ тексте укажите город",
+      "placeholder_oem":"ведите OEM или VIN",
+      "placeholder_brand_car": "Выберите марку авто",
+      "placeholder_model_car": "Выберите модель авто",
+      "placeholder_generation_car": "Выберите год выпуска авто"
+    },
+    "upload_files":{
+      "label_title":"Прикрепить изображение",
+      "max_size":"Привышен лимит размера файла, в файле",
+      "size":"размер",
+      "availiable_max_size":"допустимый максимальный размер",
+      "max_limit_size":"Привышен лимит добавления файлов, максимальное количество"
+    },
+    "modal_message":{
+      "filters_select_model":"Вы не можете выбирать покаления, фильтр выставлен по моделям",
+      "filters_select_brand":"Вы не можете выбирать модели, фильтр выставлен по маркам"
+    }
   }
 }

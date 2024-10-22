@@ -35,7 +35,7 @@ export default function CardFilterUnitSpare({
           console.log({ type });
 
           if (type === "generations") return;
-          if (!card?.can_click) return handlerModalCanClick();
+          if (!card?.can_click) return handlerModalCanClick(type);
 
           const id = type === "respair" ? card.id_list : card.id;
           let params = {

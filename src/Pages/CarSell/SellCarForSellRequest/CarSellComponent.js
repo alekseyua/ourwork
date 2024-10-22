@@ -8,7 +8,7 @@ import { SET_DATA_CAR_SALE } from '../../../store/car-sale/carSale';
 class CarSellComponent extends Component {
   componentDidMount() {
     this.props.controllerHeaderBand({
-      currentTextHandlerBand: "Разместить авто на продажу",
+      currentTextHandlerBand: "sell_car.sell_car_for_sell",
       pathBackButton: () => this.handlerChangeScreen({ path: CAR_SALE_MENU }),
     });
   }

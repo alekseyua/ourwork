@@ -5,17 +5,17 @@ import {
 } from "react-router-dom";
 import React, { Suspense } from "react";
 
-import { REITING_FULL_INFO,MAKE_REQUEST_MENU, MAKE_REQUEST_OWN_REQUEST, 
+import { MAKE_REQUEST_MENU, MAKE_REQUEST_OWN_REQUEST, 
         MAKE_REQUEST_UNIT,
          INCOMING_REQUEST_UNIT_SPARE,REITING_MENU, 
-        REITING_CREATE, REITING_WARRANT_ADMIN, REITING_WARRANT_MEMBER,
+        REITING_CREATE,
         CAR_SALE,
         MAKE_REQUEST_OWN_EDIT_REQUEST,
         CAR_SALE_MENU,
         MAKE_REQUEST_SPARE,
         CAR_SALE_SPARE} from "../helpers/config";
 import ErrorHandler from "../Pages/ErrorHandler/ErrorHandler";
-import CarSellComponent from "../Pages/CarSell/SpareRequest/CarSellComponent";
+import CarSellComponent from "../Pages/CarSell/SellCarForSellRequest/CarSellComponent";
 import BackgroundPreloader from "../View/Preloaders/BackgroundPreloader";
 import OwnRequestEditComponent from "../Pages/Requests/OwnRequestEdit/OwnRequestEditComponent";
 import CarSellMenuComponent from "../Pages/CarSell/CarSellMenu/CarSellMenuComponent";

@@ -30,13 +30,13 @@ const CarSell = ({ dispatch, handlerChangeDataValues }) => {
           return (
             <Form>
               <Offset mt={15} />
-              <Label style={{ fontWeight: 700 }}>Текст объявления</Label>
+              <Label style={{ fontWeight: 700 }}>{"sell_car.label_adv"}</Label>
               <Offset mt={10} />
               <div>
                 <TextArea
                   className={"textarea-application"}
                   value={values.text}
-                  placeholder={`Опишите объявление`}
+                  placeholder={"sell_car.placeholder_adv"}
                   height={90}
                   distationtop={290}
                   id={`textarea-1`}

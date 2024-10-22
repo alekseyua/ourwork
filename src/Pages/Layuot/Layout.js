@@ -17,6 +17,7 @@ import { attentionError, done } from "../../images";
 import ButtonApplyContainer from "../../Components/ButtonApplySection/ButtonApplyContainer";
 import { ACTION_CLOSE_MODAL } from "../../store/helpers/helpers-store";
 import WrapModalContext from "../../View/WrapContainer/WrapModalContext";
+import { useTranslation } from "react-i18next";
 
 
 const Layout = ({
@@ -38,6 +39,7 @@ const Layout = ({
       "favoriteMPCards",
       "controllButton"
     );
+    const { t } = useTranslation();
     const [idPage, setIdPage] = useState(null)
     const closeModal = () => {
         dispatch(ACTION_CLOSE_MODAL)
@@ -197,7 +199,7 @@ const Layout = ({
                     },
                   ]}
                 >
-                  <WrapModalContext>{modal.content ?? ""}</WrapModalContext>
+                  <WrapModalContext>{t(modal.content) ?? ""}</WrapModalContext>
                 </Text>
                 {!modal?.hideControll ? (
                   <WrapModalContext>
@@ -219,7 +221,7 @@ const Layout = ({
                           }}
                         >
                           <Text style={styles.textStyleCancel}>
-                            {modal?.contentCancelBtn ?? "Отмена"}
+                            {t(modal?.contentCancelBtn) ?? t("calncel")}
                           </Text>
                         </Pressable>
                       ) : null}
@@ -235,7 +237,7 @@ const Layout = ({
                         }}
                       >
                         <Text style={styles.textStyle}>
-                          {modal?.contentBtn ?? "Ок"}
+                          {t(modal?.contentBtn) ?? "Ок"}
                         </Text>
                       </Pressable>
                     </View>

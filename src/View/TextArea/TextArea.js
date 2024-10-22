@@ -9,6 +9,7 @@ import Label from "../Label/Label";
 import Offset from "../Offset";
 import useClickInside from "../../HOC/useClickInside";
 import useClickOutside from "../../HOC/useClickOutside";
+import { useTranslation } from "react-i18next";
 
 /**
  * @param {placeholder,
@@ -50,6 +51,7 @@ const TextArea = ({
   onClickInside = () => {},
   onClickOutside = () => {},
 }) => {
+  const {t} = useTranslation()
   const { dispatch } = useStoreon();
   const [isFocuse, setIsFocuse] = useState(false);
   const clickRef = React.useRef();
@@ -91,7 +93,7 @@ const TextArea = ({
             ...styleLabel,
           }}
         >
-          {label}
+          {t(label)}
         </Label>
       )}
       {label && <Offset mb={10} />}
@@ -107,7 +109,7 @@ const TextArea = ({
         <textarea
           id={id ?? rundomId()}
           className={styles["textarea__textarea"]}
-          placeholder={placeholder}
+          placeholder={t(placeholder)}
           value={value}
           name={name}
           ref={clickRef}

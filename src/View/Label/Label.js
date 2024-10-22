@@ -1,5 +1,6 @@
 import React from "react";
 import styles from './styles/label.module.scss';
+import { useTranslation } from "react-i18next";
 
 const Label = ({
     children,
@@ -8,6 +9,7 @@ const Label = ({
     color,
     mt = 0
 }) =>{
+  const { t } = useTranslation()
     return (
       <label
         htmlFor={htmlFor}
@@ -19,7 +21,7 @@ const Label = ({
         }}
         className={styles["label__conrainer"]}
       >
-        {children}
+        {t(children)}
       </label>
     );
 }

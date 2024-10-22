@@ -1,5 +1,7 @@
 {
   "translation": {
+    "cancel": "Скасувати",
+    "apply_action": "Підтвердити",
     "filters": "Фільтри",
     "user": "Користувач",
     "find_dot": "Пошук...",
@@ -10,13 +12,12 @@
     "select_model": "Виберіть модель",
     "select_generation": "Виберіть покоління",
     "reiting_seller": "Рейтинг продавця",
-    "reiting_status": "Ваша оценка",
+    "reiting_status": "Ваша оцінка",
     "public_request": "Опублікувати запит",
     "apply": "Застосувати",
     "spare": "Запчастина",
     "unit": "Агрегати",
-    "sell_car_for_spare": "Розмістити авто на запчастини",
-
+    
     "reiting_placeholder": "Опишіть ваше враження про продавця. Виділіть плюси чи мінуси роботи",
     "write_review": "Напишіть відгук",
     "create_request": "Створити запит",
@@ -33,9 +34,46 @@
     "adv": "Оголошення",
     "seller": "Продавець",
     "create-review": "Залишити відгук",
-    "sell_car": "Продати авто",
-    "sell_spars_part": "Продати в розборі",
-    "sell_chenal_car": "Канал продажу авто",
-    "sell_chenal_spare": "Каналу розбору авто"
+    "sell_car": {
+      "sell_car_title": "Продати авто",
+      "sell_spars_part": "Продати в розборі",
+      "sell_chenal_car": "Канал продажу авто",
+      "sell_chenal_spare": "Каналу розбору авто",
+      "label_adv": "Текст оголошення",
+      "placeholder_adv": "Опишіть оголошення",
+      "sell_car_for_spare": "Розмістити авто на запчастини",
+      "sell_car_for_sell": "Розмістити авто на продаж",
+      "label_brand_car": "Марка авто",
+      "label_model_car": "Модель авто",
+      "label_generation_car": "Рік випуску авто",
+      "placeholder_brand_car": "Виберіть марку авто",
+      "placeholder_model_car": "Виберіть модель авто",
+      "placeholder_generation_car": "Виберіть рік випуску авто"
+    },
+    "request": {
+      "request_unit": "Запит на агрегат",
+      "request_spare": "Запит на запчастину",
+      "what_you_find": "Що ви шукаєте",
+      "label_brand_car": "Марка авто",
+      "label_model_car": "Модель авто",
+      "label_generation_car": "Рік випуску авто",
+      "label_phone": "Телефон",
+      "placeholder_discribe_request": "Опишіть ваш запит.\nУ тексті вкажіть місто",
+      "placeholder_oem": "ведіть OEM або VIN",
+      "placeholder_brand_car": "Виберіть марку авто",
+      "placeholder_model_car": "Виберіть модель авто",
+      "placeholder_generation_car": "Виберіть рік випуску авто"
+    },
+    "upload_files": {
+      "label_title": "Прикріпити зображення",
+      "max_size": "Підвищено ліміт розміру файлу, у файлі",
+      "size": "розмір",
+      "availiable_max_size": "допустимий максимальний розмір",
+      "max_limit_size": "Підвищено ліміт додавання файлів, максимальна кількість"
+    },
+    "modal_message": {
+      "filters_select_model": "Ви не можете вибирати покоління, фільтр виставлений за моделями",
+      "filters_select_brand": "Ви не можете вибирати моделі, фільтр виставлений за марками"
+    }
   }
 }

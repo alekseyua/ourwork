@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import ReactSelect from "react-select";
 import { getListOption } from "../../../helpers/helpers";
 import styles from './styles/option-select.module.scss';
+import { useTranslation } from "react-i18next";
 
 
 const OptionSelect = ({
@@ -24,6 +25,7 @@ const OptionSelect = ({
   stylehelptext = {},
   clearValue,
 }) => {
+  const { t } = useTranslation();
   let [offsetTop, setOffsetTop] = useState(false);
   const selectRef = useRef(null)
 
@@ -36,9 +38,9 @@ const OptionSelect = ({
   
   useEffect(() => {
     if (clearValue) {
-      selectRef.current.setValue({label: placeholder})
+      selectRef.current.setValue({label: t(placeholder)})
     }
-  }, [clearValue]);
+  }, [clearValue,t]);
 
   return (
     <div
@@ -56,7 +58,7 @@ const OptionSelect = ({
         isDisabled={!enabled}
         menuPlacement={"auto"}
         name={name}
-        placeholder={placeholder}
+        placeholder={t(placeholder)}
         id={id}
         onChange={onChange}
         maxMenuHeight={400}
