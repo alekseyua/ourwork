@@ -29,6 +29,7 @@ import {
 import { gotoPointScroll } from "../../../helpers/helpers";
 import withTranslationCostom from "../../../HOC/withTranslationCostom";
 import { ACTION_OPEN_MODAL } from "../../../store/helpers/helpers-store";
+import { delay } from "../../../helpers/const";
 let abortControllerFilter;
 
 class IncominRequestsUnitContainer extends PureComponent {
@@ -228,6 +229,7 @@ class IncominRequestsUnitContainer extends PureComponent {
   }
 
   comebackPrevFilters = (action) => {
+    console.log(action, this.props.toggleCurrentTabFilters);
     const currentTab = this.props.toggleCurrentTabFilters;
     const position = +getSessionStore("position-" + (currentTab - 1));
     if (!this.state.loadCatalog) {
@@ -306,6 +308,7 @@ class IncominRequestsUnitContainer extends PureComponent {
         this.props.dispatch(ACTION_GET_LIST_FILTERS_BY_TYPE, params);
       }
     }
+
   };
 
   handlerChangeScreen = ({
@@ -328,11 +331,8 @@ class IncominRequestsUnitContainer extends PureComponent {
         loadCatalog: true,
       }));
 
-      this.props.dispatch(
-        ACTION_SET_TOGGLE_CURRENT_TAB_FILTERS,
-        this.props.toggleCurrentTabFilters + 1
-      );
       setLocaleStore(type, id);
+      
       this.props.dispatch(ACTION_SET_RESULT_SELECT_FILTER_INTO_CARD, {
         ...this.props.resSelectCard,
         [this.props.toggleCurrentTabFilters + 1]: {
@@ -341,8 +341,12 @@ class IncominRequestsUnitContainer extends PureComponent {
           count: 0,
         },
       });
-      // setSessionStore("currentPageFilters", 1);
-      // setSessionStore(ACTION_SET_PREV_PAGE_FILTER, 0);
+
+      this.props.dispatch(
+        ACTION_SET_TOGGLE_CURRENT_TAB_FILTERS,
+        this.props.toggleCurrentTabFilters + 1
+      );
+
       this.props.dispatch(
         ACTION_SET_TOGGLE_CURRENT_TAB_LIST,
         this.state.listTab[this.props.toggleCurrentTabFilters + 1]
@@ -354,7 +358,17 @@ class IncominRequestsUnitContainer extends PureComponent {
         list: this.state.listTab[this.props.toggleCurrentTabFilters + 1],
         page_size: 99999,
         page: 1,
-        callback: this.callback,
+        callback: async (status) => {
+          // setSessionStore("currentPageFilters", 1);
+          // setSessionStore(ACTION_SET_PREV_PAGE_FILTER, 0);
+          this.callback();
+          
+        if(status === 'comeback') {
+          console.log({status})
+          await delay(500)
+          this.comebackPrevFilters(-1);
+        }
+        },
       });
     }
   };

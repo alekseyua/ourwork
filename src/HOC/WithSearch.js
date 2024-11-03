@@ -3,7 +3,6 @@ import { connectStoreon } from 'storeon/react'
 import { unicalTextForSearch } from '../helpers/helpers'
 import { ACTION_SET_MESSAGE_ERROR_NULL } from '../store/raiting-review/raiting-review'
 import { SET_SEARCH_INTO_INCOMING_FILTERS_NULL } from '../store/filters/filtersIncominRequest'
-import { funcDelay } from '../helpers/const'
 
 function WithSearch(Component) {
   // isActiveAmountInputLetter = количество символов с какого начинается поиск
@@ -21,6 +20,7 @@ function WithSearch(Component) {
     };
 
     componentDidUpdate(prevProps, prevState) {
+      console.log(this.props.textSearchError)
       if (this.props.textSearchError !== prevProps.textSearchError) {
         this.setState({
           message: this.props?.textSearchError,

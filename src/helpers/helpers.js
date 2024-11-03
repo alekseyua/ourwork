@@ -592,6 +592,7 @@ export const handlerWarningInfoMessageResponse = (dataResponse, dispatch) => {
   if (dataResponse?.error) {
     return false
   }
+  console.log({dataResponse})
   if ( 
     dataResponse?.info?.status !== undefined &&
     !dataResponse?.info?.status

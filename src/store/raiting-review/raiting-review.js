@@ -279,10 +279,11 @@ export const raitingReview = (store) => {
         dataRequst: (res) => {
           if (typeof callbackSearch === "function") callbackSearch();
           if (res === undefined) return;
-          // костыль обхода окна уведомления( согласовать с беком)
-          const resCopy = { ...res, info: { ...res.info, status: true } };
+          // // костыль обхода окна уведомления( согласовать с беком)
+          // const resCopy = { ...res, info: { ...res.info, status: true } };
           const isWarning = handlerWarningInfoMessageResponse(
-            resCopy,
+            res?.response?.data,
+            // resCopy,
             dispatch
           );
 

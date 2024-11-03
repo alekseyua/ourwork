@@ -23,6 +23,7 @@ import {
 } from "../helpers/helpers-store";
 import { ACTION_SET_MESSAGE_ERROR } from "../raiting-review/raiting-review";
 import { delay, funcDelay } from "../../helpers/const";
+import { t } from "i18next";
 
 export const SET_TEXT_SEARCH_INCOMING_FILTERS_TEXT =
   "setTextsearchIncominFilters";
@@ -498,13 +499,28 @@ export const filtersIncominRequest = (store) => {
               });
             }
             if (data.current_tab === 2) {
-              dispatch(ACTION_SET_RESULT_SELECT_FILTER_INTO_CARD, {
-                ...resSelectCard,
-                [data.current_tab]: {
-                  ...resSelectCard[data.current_tab],
-                  count: res.count,
-                },
-              });
+              console.log(newResults);
+              if (!newResults.count){
+                dispatch(ACTION_OPEN_MODAL, {
+                  show: true,
+                  content: t("modal_message.empty_list"),
+                  contentBtn: "Ок",
+                  actionClickOk: async () => {
+                    if (typeof data?.callback === "function") {
+                      data?.callback("comeback");
+                    }
+                  },
+                });
+
+                return
+              }
+                dispatch(ACTION_SET_RESULT_SELECT_FILTER_INTO_CARD, {
+                  ...resSelectCard,
+                  [data.current_tab]: {
+                    ...resSelectCard[data.current_tab],
+                    count: res.count,
+                  },
+                });
               dispatch(ACTION_SET_LIST_CARDS_BY_TYPE_FILTER, {
                 ...listCardsByType,
                 ...newResults,
@@ -512,34 +528,11 @@ export const filtersIncominRequest = (store) => {
                   ...listCardsByType[`${data.type}_${data.current_tab}`],
                   ...newResults,
                   results: unicArrayFilters([
-                    // ...listCardsByType[`${data.type}_${data.current_tab}`]
-                    //   .results,
                     ...newResults.results,
                   ]),
                 },
               });
             }
-          }
-          if (data.type === "truck") {
-            dispatch(ACTION_SET_LIST_CARDS_BY_TYPE_FILTER, res);
-          }
-          if (data.type === "transport") {
-            dispatch(ACTION_SET_LIST_CARDS_BY_TYPE_FILTER, res);
-          }
-          if (data.type === "respair") {
-            if (data.current_tab === 0) {
-            }
-            if (data.current_tab === 1) {
-              dispatch(ACTION_SET_RESULT_SELECT_FILTER_SERVICE_INTO_CARD, {
-                ...resSelectCardCountry,
-                [data.current_tab]: {
-                  ...resSelectCardCountry[data.current_tab],
-                  count: res.count,
-                },
-              });
-            }
-            dispatch(ACTION_SET_LIST_CARDS_BY_TYPE_SERVICE_FILTER, res);
-            dispatch(ACTION_SET_TEMP_FILTER_SERVICE, res);
           }
           if (typeof data?.callback === "function") data?.callback();
         },

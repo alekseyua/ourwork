@@ -17,11 +17,6 @@ class CarSellMenuComponent extends Component {
     });
   }
 
-
-  componentWillUnmount(){
-    document.documentElement.style.setProperty('--hight-scrollbar', '0px')
-  }
-
   handlerChangeScreen = ({ path }) => {
     if(path.includes('http')) return openOnlyURl(path)
     this.props.navigate(path);
