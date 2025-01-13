@@ -278,9 +278,9 @@ export async function gotoPointScroll(position){
     maxAmountPosition = 0;
     return;
   }
-  if (+position === +window.scrollY) return;
+  if (+position === +document.querySelector(".main-context").scrollTop) return;
     maxAmountPosition = maxAmountPosition + 1;
-    window.scrollTo(0, position);
+    document.querySelector(".main-context").scrollTo(0, position);
     await delay(50)
     gotoPointScroll(position);
 } 

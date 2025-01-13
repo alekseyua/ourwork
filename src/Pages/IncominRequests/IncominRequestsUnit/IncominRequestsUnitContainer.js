@@ -146,7 +146,7 @@ class IncominRequestsUnitContainer extends PureComponent {
       // }));
       setSessionStore(
         "position-" + this.props.toggleCurrentTabFilters,
-        window.scrollY
+        document.querySelector(".main-context").scrollTop
       );
       let countBlocks = event.target.querySelectorAll(selector).length;
       let distance = event.target

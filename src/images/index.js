@@ -51,6 +51,8 @@ import settingRedRotation from "./icon/loader-rotate.svg";
 
 
 import imageBanner from './baner/new-banner.jpg'
+import imageBanner1 from './baner/1.jpg'
+import imageBanner2 from './baner/2.jpg'
 
 // const settingRedRotation = "https://garsing.shop/media/market/setting-red-rotation.svg";
 
@@ -109,6 +111,8 @@ const profileFooterDefault = 'https://garsing.shop/media/market/profile-footer.s
 
 
 export {
+  imageBanner1,
+imageBanner2,
   homeCommon,
   homeActive,
   filterCommon,
