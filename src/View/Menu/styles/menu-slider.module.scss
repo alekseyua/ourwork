@@ -59,7 +59,7 @@
   &__item{
     // main-menu__item-container{}
     &-container{
-      width: 148px;
+      width: -webkit-fill-available;
       height: 190px;
       border-radius: 14px;
       background-color: var(--bg-item);
