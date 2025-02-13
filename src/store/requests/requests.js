@@ -46,14 +46,15 @@ id,
   store.on(ACTION_GET_LIST_BRANDS, (_, data = {}, { dispatch }) => {
 
     let params = {
-      url:API_GET_CARS_BRANDS,
+      url: API_GET_CARS_BRANDS,
       page_id: 2,
-      type: 'brand',
+      page_size: 99999,
+      type: "brand",
       dataRequst: (res) => {
         const isWarning = handlerWarningInfoMessageResponse(res, dispatch);
         if (isWarning) return;
-        if(typeof data?.callback === 'function') data.callback();
-        console.log({res})
+        if (typeof data?.callback === "function") data.callback();
+        console.log({ res });
         dispatch(ACTION_SET_LIST_BRANDS, [...getOptions(res.results)]);
       },
       ...data,
@@ -80,9 +81,9 @@ id,
     }
     let params = {
       type: data.type,
+      page_size: 99999,
       dataRequst: data.handlerChangeDataRequest,
-      page_size:99999,
-      url, 
+      url,
     };
     if (data.brand_id) {
       params = {

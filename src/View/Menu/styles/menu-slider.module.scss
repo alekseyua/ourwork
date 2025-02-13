@@ -17,14 +17,11 @@
   // main-menu__container{}
   &__container{
     display: grid;
-    grid-auto-flow: column;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     width: 100%; 
     justify-items: stretch;
     border-radius: 14px;
-    overflow-x: scroll;
-    height: 200px;
 
-    // overflow-y: hidden;
     &:not(:last-child){
       gap: 12px;
     }    

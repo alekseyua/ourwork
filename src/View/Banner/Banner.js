@@ -6,6 +6,7 @@ import { Pagination, Autoplay } from "swiper";
 import "swiper/scss";
 import "swiper/scss/pagination";
 import "swiper/scss/autoplay";
+import Label from '../Label/Label';
 
 const Banner = () => {
   const listBanners = [imageBanner1, imageBanner2]
@@ -23,7 +24,7 @@ const Banner = () => {
         spaceBetween={0}
         loop={true}
         autoplay={{
-          delay: 1500,
+          delay: 2500,
           disableOnInteraction: false,
         }}
         pagination={pagination}
@@ -41,7 +42,27 @@ const Banner = () => {
         {listBanners.map((banner, i) => {
           return (
             <SwiperSlide key={i}>
-              <ImageGalary src={banner} width={"100%"} height={180} />
+              <div style={{ position: "relative" }}>
+                <ImageGalary src={banner} width={"100%"} height={180} />
+                <Label
+                  style={{
+                    position: "absolute",
+                    top: i === 0 ? "80%" : "20%",
+                    left: i === 0 ? "20px" : "60%",
+                    maxWidth: 110,
+                    transform:
+                      i === 0 ? "translateY(-50%)" : "translateY(-20%)",
+                    fontSize: "18px",
+                    color: "var(--text-color-white)",
+                    fontWeight: "bold",
+                    textShadow: "0px 0px 5px rgba(0, 0, 0, 0.7)",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.5px",
+                  }}
+                >
+                  {i === 0 ? "baner.spare" : "baner.earn_many_with_us"}
+                </Label>
+              </div>
             </SwiperSlide>
           );
         })}
